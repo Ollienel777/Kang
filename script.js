@@ -1,0 +1,271 @@
+// images for primary column
+const HERO_IMAGES = [
+  'images/20250601_082935.jpg',
+  'images/20250719_115730.jpg',
+  'images/20250719_192400.jpg',
+  'images/20250720_211507.jpg',
+  'images/20250722_120126.jpg',
+  'images/20250723_202834(1).jpg',
+  'images/IMG_20240701_182805_452.jpg',
+  'images/PXL_20250605_201638821.MP.jpg',
+  'images/image0.jpg',
+  'images/mmexport1749246179061.jpg',
+  'images/mmexport1749246256186.jpg',
+  'images/mmexport1749465311435.jpg',
+  'images/mmexport1751084857485.jpg',
+  'images/mmexport1753167914099.jpg',
+  'images/mmexport1753223460741.jpg',
+  'images/mmexport1753223779798.jpg',
+  'images/mmexport1753223994645.jpg',
+  'images/mmexport1753224121882.jpg',
+  'images/mmexport1753224799563.jpg',
+];
+
+(function initCarousel() {
+  if (!HERO_IMAGES.length) return;
+
+  const [a, b]    = document.querySelectorAll('.hero-slide');
+  const HOLD      = 5000;   // ms each image stays fully visible
+  const FADE      = 1400;   // match CSS transition duration
+  let imgIndex    = 0;
+  let showingA    = true;
+
+  // Seed: A shows first image, B has second ready behind the scenes
+  a.style.backgroundImage = `url('${HERO_IMAGES[0]}')`;
+  b.style.backgroundImage = `url('${HERO_IMAGES[1 % HERO_IMAGES.length]}')`;
+  a.classList.add('is-active');
+
+  setInterval(() => {
+    const incoming = showingA ? b : a;
+    const outgoing = showingA ? a : b;
+
+    // crossfade
+    incoming.classList.add('is-active');
+    outgoing.classList.remove('is-active');
+    showingA = !showingA;
+
+    // only after the outgoing slide is fully invisible, load the next image into it
+    imgIndex = (imgIndex + 1) % HERO_IMAGES.length;
+    setTimeout(() => {
+      const nextUrl = HERO_IMAGES[(imgIndex + 1) % HERO_IMAGES.length];
+      outgoing.style.backgroundImage = `url('${nextUrl}')`;
+    }, FADE + 100); 
+    // 100ms buffer after fade completes
+  }, HOLD);
+}());
+
+// ── LANDING ANIMATION ──
+(function () {
+  const body      = document.body;
+  const cols      = Array.from(document.querySelectorAll('.col'));
+  const SLIDE_DUR = 580;  // ms for each column to travel to position
+  const STAGGER   = 210;  // ms between column starts — long enough to feel one-by-one
+  const HOLD      = 350;  // ms to show the stacked state before sequence begins
+
+  body.classList.add('is-landing');
+
+  // Wait for layout, then capture natural positions and stack everything at x = 0
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    const offsets = cols.map(col => col.getBoundingClientRect().left);
+
+    cols.forEach((col, i) => {
+      col.style.transform = `translateX(${-offsets[i]}px)`;
+      col.style.opacity   = '0';
+    });
+
+    setTimeout(() => {
+      // Nav + filter bar slide down as the columns begin
+      body.classList.remove('is-landing');
+
+      cols.forEach((col, i) => {
+        const startAt = i * STAGGER;
+
+        // Begin slide
+        setTimeout(() => {
+          col.classList.add('is-sliding');
+          col.style.transition =
+            `transform ${SLIDE_DUR}ms cubic-bezier(0.16, 1, 0.3, 1), `
+          + `opacity 280ms ease, `
+          + `box-shadow ${SLIDE_DUR}ms ease`;
+          col.style.transform = 'translateX(0)';
+          col.style.opacity   = '1';
+        }, startAt);
+
+        // Column has landed — remove glow, fire flash
+        setTimeout(() => {
+          col.classList.remove('is-sliding');
+
+          const flash = document.createElement('div');
+          flash.className = 'col-land-flash';
+          col.appendChild(flash);
+          flash.addEventListener('animationend', () => flash.remove());
+        }, startAt + SLIDE_DUR);
+      });
+
+      // all columns landed → reveal content
+      // landing animation
+      const allDone = (cols.length - 1) * STAGGER + SLIDE_DUR + 60;
+      setTimeout(() => body.classList.add('is-content-revealed'), allDone);
+
+    }, HOLD);
+  }));
+}());
+
+// MODALS
+const openModal  = id => document.getElementById(id)?.classList.add('is-open');
+const closeModal = id => document.getElementById(id)?.classList.remove('is-open');
+
+document.querySelectorAll('[data-modal]').forEach(btn => {
+  btn.addEventListener('click', () => openModal(btn.dataset.modal));
+});
+
+document.querySelectorAll('.modal-close').forEach(btn => {
+  btn.addEventListener('click', () => btn.closest('.modal').classList.remove('is-open'));
+});
+
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.addEventListener('click', e => {
+    if (e.target === modal) modal.classList.remove('is-open');
+  });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal.is-open').forEach(m => m.classList.remove('is-open'));
+  }
+});
+
+// HORIZONTAL SCROLL
+const world = document.querySelector('.world');
+
+let posX  = 0;   // current rendered position
+let targX = 0;   // dest
+let rafId = null;
+
+function maxScroll() { return world.scrollWidth - world.clientWidth; }
+function clamp(v)    { return Math.max(0, Math.min(v, maxScroll())); }
+
+function tick() {
+  const diff = targX - posX;
+  if (Math.abs(diff) < 0.5) {
+    posX = targX;
+    world.scrollLeft = posX;
+    rafId = null;
+    return;
+  }
+  posX += diff * 0.12;
+  world.scrollLeft = posX;
+  rafId = requestAnimationFrame(tick);
+}
+
+function nudge(delta) {
+  targX = clamp(targX + delta);
+  if (!rafId) rafId = requestAnimationFrame(tick);
+}
+
+// normalise any wheel event to pixels
+function toPx(e) {
+  if (e.deltaMode === 1) return (e.deltaY + e.deltaX) * 20;  // lines → px
+  if (e.deltaMode === 2) return (e.deltaY + e.deltaX) * window.innerHeight;
+  return e.deltaY + e.deltaX; // already pixels (trackpad)
+}
+
+world.addEventListener('wheel', e => {
+  e.preventDefault();
+  const px = toPx(e);
+
+  if (e.deltaMode === 0) {
+    // Trackpad: pixel events — snap immediately for 1:1 feel
+    posX  = clamp(posX + px);
+    targX = posX;
+    world.scrollLeft = posX;
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+  } else {
+    // mouse wheel: lerp for smooth glide
+    nudge(px);
+  }
+}, { passive: false });
+
+// ── KEYBOARD ARROW NAVIGATION ──
+document.addEventListener('keydown', e => {
+  if (document.querySelector('.modal.is-open')) return;
+  if (e.key === 'ArrowRight') nudge(380);
+  if (e.key === 'ArrowLeft')  nudge(-380);
+});
+
+// drag to scrol
+let isDragging = false, dragStartX = 0, dragOrigin = 0;
+
+world.addEventListener('mousedown', e => {
+  isDragging  = true;
+  dragStartX  = e.pageX;
+  dragOrigin  = posX;
+  world.style.cursor     = 'grabbing';
+  world.style.userSelect = 'none';
+  if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+});
+
+window.addEventListener('mousemove', e => {
+  if (!isDragging) return;
+  posX  = clamp(dragOrigin - (e.pageX - dragStartX));
+  targX = posX;
+  world.scrollLeft = posX;
+});
+
+window.addEventListener('mouseup', () => {
+  isDragging = false;
+  world.style.cursor     = '';
+  world.style.userSelect = '';
+});
+
+// ── PROJECT COLUMN → MODAL ──
+document.querySelectorAll('.col-project').forEach(col => {
+  col.addEventListener('click', e => {
+    // Don't hijack link clicks
+    if (e.target.closest('a')) return;
+    const id = col.dataset.projectModal;
+    if (id) openModal(id);
+  });
+});
+
+// ── FILTER TOGGLE ──
+const filterToggle = document.getElementById('filter-toggle');
+const filterBar    = document.getElementById('filter-bar');
+
+filterToggle.addEventListener('click', () => {
+  const opening = !filterBar.classList.contains('is-open');
+  filterBar.classList.toggle('is-open', opening);
+  filterToggle.classList.toggle('is-active', opening);
+});
+
+// Close filter if clicking outside
+document.addEventListener('click', e => {
+  if (!filterBar.contains(e.target) && e.target !== filterToggle) {
+    filterBar.classList.remove('is-open');
+    filterToggle.classList.remove('is-active');
+  }
+});
+
+// ── PROJECT FILTER ──
+const filterBtns  = document.querySelectorAll('.filter-btn');
+const projectCols = document.querySelectorAll('.col-project');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+
+    const skill = btn.dataset.filter;
+    projectCols.forEach(col => {
+      if (skill === 'all') {
+        col.classList.remove('is-filtered');
+      } else {
+        const skills = col.dataset.skills?.split(',') ?? [];
+        col.classList.toggle('is-filtered', !skills.includes(skill));
+      }
+    });
+
+    posX = targX = 0;
+    world.scrollLeft = 0;
+  });
+});

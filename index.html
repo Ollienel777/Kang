@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nelson Kang</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-logo">NKANG</div>
+    <ul class="nav-links">
+      <li><button class="nav-btn" data-modal="about-modal">ABOUT</button></li>
+      <li><button class="nav-btn" data-modal="resume-modal">RESUME</button></li>
+      <li><button class="nav-btn" id="filter-toggle">FILTER</button></li>
+      <li><button class="nav-btn" data-modal="contact-modal">CONTACT</button></li>
+    </ul>
+    <button class="nav-cta" data-modal="contact-modal">CONNECT</button>
+  </nav>
+
+  <!-- ── FILTER DROPDOWN ── -->
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn is-active" data-filter="all">ALL</button>
+    <button class="filter-btn" data-filter="Python">Python</button>
+    <button class="filter-btn" data-filter="TypeScript">TypeScript</button>
+    <button class="filter-btn" data-filter="FastAPI">FastAPI</button>
+    <button class="filter-btn" data-filter="Next.js">Next.js</button>
+    <button class="filter-btn" data-filter="PostgreSQL">PostgreSQL</button>
+    <button class="filter-btn" data-filter="Redis">Redis</button>
+    <button class="filter-btn" data-filter="PyTorch">PyTorch</button>
+    <button class="filter-btn" data-filter="Pandas">Pandas</button>
+    <button class="filter-btn" data-filter="Modal">Modal</button>
+  </div>
+
+  <!-- ── HORIZONTAL SCROLL WORLD ── -->
+  <main class="world">
+
+    <!-- COLUMN 1 — Hero / Name -->
+    <section class="col col-hero">
+      <div class="col-inner">
+        <div class="hero-tag">PORTFOLIO</div>
+        <h1 class="hero-name">NELSON<br/>KANG</h1>
+        <p class="hero-sub">CS &amp; Finance · Builder · UWaterloo</p>
+        <div class="hero-scroll-hint">SCROLL TO EXPLORE &nbsp;›</div>
+      </div>
+      <!-- carousel slides sit behind col-inner -->
+      <div class="hero-carousel" aria-hidden="true">
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+      </div>
+      <!-- red gradient overlay always on top of carousel -->
+      <div class="col-bg col-bg--hero"></div>
+    </section>
+
+    <!-- COLUMN 2 — About -->
+    <section class="col col-about">
+      <div class="col-inner">
+        <div class="section-label">01 &nbsp;/&nbsp; ABOUT</div>
+        <h2 class="col-title">IN THE<br/>GARDEN</h2>
+        <p class="col-body">
+          I'm a Computing and Financial Management student at the University of
+          Waterloo — bridging CS and Finance to build systems that are both
+          technically rigorous and commercially sharp.
+        </p>
+        <p class="col-body">
+          I gravitate toward hard problems: computer vision pipelines, ML engines,
+          and quantitative tools. If it's complex and consequential, I'm in.
+        </p>
+        <ul class="about-tags">
+          <li>Full-Stack</li>
+          <li>Machine Learning</li>
+          <li>Quant Finance</li>
+          <li>Systems Design</li>
+        </ul>
+      </div>
+      <div class="col-bg col-bg--about"></div>
+    </section>
+
+    <!-- COLUMN 3 — Skills -->
+    <section class="col col-skills">
+      <div class="col-inner">
+        <div class="section-label">02 &nbsp;/&nbsp; SKILLS</div>
+        <h2 class="col-title">TOOLS &amp;<br/>CRAFT</h2>
+        <div class="skills-details">
+          <div class="skills-grid">
+            <div class="skill-block">
+              <span class="skill-cat">LANGUAGES</span>
+              <span class="skill-list">Python · C# · C · SQL · TypeScript · JavaScript · HTML/CSS</span>
+            </div>
+            <div class="skill-block">
+              <span class="skill-cat">FRAMEWORKS</span>
+              <span class="skill-list">FastAPI · Next.js · .NET · PyTorch · Pandas · NumPy · Celery · SQLAlchemy</span>
+            </div>
+            <div class="skill-block">
+              <span class="skill-cat">INFRASTRUCTURE</span>
+              <span class="skill-list">PostgreSQL · Redis · Supabase · Modal · Cloudflare R2 · Git · Linux · Power BI</span>
+            </div>
+            <div class="skill-block">
+              <span class="skill-cat">TOOLS</span>
+              <span class="skill-list">FFmpeg · OpenCV · YOLOv8 · Selenium · Alembic · Jira</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-bg col-bg--skills"></div>
+    </section>
+
+    <!-- COLUMN 4 — ClipFarm -->
+    <section class="col col-project" data-skills="Python,FastAPI,TypeScript,Next.js,PostgreSQL,Redis,Modal" data-project-modal="project-clipfarm">
+      <div class="col-inner">
+        <div class="section-label">03 &nbsp;/&nbsp; PROJECTS</div>
+        <div class="project-num">01</div>
+        <h2 class="col-title">CLIP<br/>FARM</h2>
+        <div class="project-details">
+          <p class="col-body">
+            Automated volleyball highlight generator. Users upload game film;
+            YOLOv8-pose extracts player skeletons frame-by-frame, a rule-based
+            classifier scores spikes, serves, and blocks, and FFmpeg re-encodes
+            clips served via presigned Cloudflare R2 URLs. Audio RMS analysis
+            reduces false-positive clips by ~20%.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>FastAPI</span><span>Next.js</span>
+            <span>TypeScript</span><span>YOLOv8</span><span>PostgreSQL</span>
+            <span>Redis</span><span>Modal</span>
+          </div>
+          <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+        </div>
+      </div>
+      <div class="col-bg col-bg--p1"></div>
+    </section>
+
+    <!-- COLUMN 5 — ChessAI -->
+    <section class="col col-project" data-skills="Python,PyTorch,Modal" data-project-modal="project-chessai">
+      <div class="col-inner">
+        <div class="section-label">04 &nbsp;/&nbsp; PROJECTS</div>
+        <div class="project-num">02</div>
+        <h2 class="col-title">CHESS<br/>AI</h2>
+        <div class="project-details">
+          <p class="col-body">
+            Neural-network chess engine trained on millions of Stockfish-labeled
+            positions using distributed GPU compute on Modal. Classical alpha-beta
+            search paired with deep neural evaluation for real-time gameplay,
+            balancing search depth with inference latency.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>PyTorch</span><span>Modal</span>
+          </div>
+          <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+        </div>
+      </div>
+      <div class="col-bg col-bg--p2"></div>
+    </section>
+
+    <!-- COLUMN 6 — Robo-Advisor -->
+    <section class="col col-project" data-skills="Python,Pandas" data-project-modal="project-robo">
+      <div class="col-inner">
+        <div class="section-label">05 &nbsp;/&nbsp; PROJECTS</div>
+        <div class="project-num">03</div>
+        <h2 class="col-title">ROBO<br/>ADVISOR</h2>
+        <div class="project-details">
+          <p class="col-body">
+            1st place, Market Beat Competition. Multi-factor portfolio pipeline
+            applying momentum, volatility, correlation, and trend signals (RAAM).
+            Optimized a $1M CAD portfolio across U.S. and Canadian equities —
+            5.7% return vs. 3.7% benchmark, out of 18 teams.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>Pandas</span><span>NumPy</span><span>yfinance</span>
+          </div>
+          <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+        </div>
+      </div>
+      <div class="col-bg col-bg--p3"></div>
+    </section>
+
+    <!-- COLUMN 7 — End / CTA -->
+    <section class="col col-end">
+      <div class="col-inner">
+        <div class="section-label">FIN</div>
+        <h2 class="col-title">LET'S<br/>BUILD.</h2>
+        <p class="col-body">
+          Always open to interesting problems and good people.
+          Reach out and let's talk.
+        </p>
+        <button class="cta-btn" data-modal="contact-modal">GET IN TOUCH</button>
+      </div>
+      <div class="col-bg col-bg--end"></div>
+    </section>
+
+  </main>
+
+  <!-- ── MODALS ── -->
+
+  <!-- About Modal -->
+  <div class="modal" id="about-modal">
+    <div class="modal-box">
+      <button class="modal-close">✕</button>
+      <h2 class="modal-title">ABOUT ME</h2>
+      <p>
+        I'm Nelson Kang — a Computing and Financial Management student at the
+        University of Waterloo (CS&nbsp;+&nbsp;Finance, Expected 2029).
+      </p>
+      <p>
+        I build at the intersection of software engineering and quantitative
+        finance: full-stack pipelines, computer vision systems, and ML engines.
+        I care about clean architecture, measurable impact, and shipping things
+        that actually work.
+      </p>
+      <p>
+        Previously Business Intelligence Co-op at Ericsson Canada, where I built
+        ETL pipelines and Power BI dashboards for stakeholder reporting.
+      </p>
+    </div>
+  </div>
+
+  <!-- Resume Modal -->
+  <div class="modal" id="resume-modal">
+    <div class="modal-box modal-box--wide">
+      <button class="modal-close">✕</button>
+      <h2 class="modal-title">RESUME</h2>
+
+      <div class="resume-section">
+        <h3>EDUCATION</h3>
+        <div class="resume-item">
+          <span class="resume-place">University of Waterloo</span>
+          <span class="resume-date">Expected 2029</span>
+          <p>BMath, Computing and Financial Management (CS + Finance)</p>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h3>EXPERIENCE</h3>
+        <div class="resume-item">
+          <span class="resume-place">Ericsson Canada Inc.</span>
+          <span class="resume-date">Jun 2024 – Aug 2024</span>
+          <p>Business Intelligence Co-op — Built 4 ETL pipelines (C#, SQL Server)
+          to extract and transform Jira data into reporting tables. Developed
+          Power BI dashboards for trouble report visibility across the BI team.</p>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h3>PROJECTS</h3>
+        <div class="resume-item">
+          <span class="resume-place">ClipFarm — Automated Volleyball Highlight Generator</span>
+          <span class="resume-date">2026 – Present</span>
+          <p>Full-stack video processing pipeline using YOLOv8-pose, FastAPI, Celery, and Next.js.</p>
+        </div>
+        <div class="resume-item">
+          <span class="resume-place">ChessAI — Neural Network Chess Engine</span>
+          <span class="resume-date">Nov 2025</span>
+          <p>PyTorch chess engine trained on Stockfish-labeled positions with distributed GPU compute.</p>
+        </div>
+        <div class="resume-item">
+          <span class="resume-place">Multi-Factor Robo-Advisor — 1st Place, Market Beat</span>
+          <span class="resume-date">Nov 2025</span>
+          <p>5.7% return vs. 3.7% benchmark. 1st of 18 teams. Multi-factor portfolio pipeline in Python.</p>
+        </div>
+      </div>
+
+      <a href="C:\Users\nelso\Documents\Nelson_Kang_Resume_CFM__C1_.pdf" class="cta-btn" download>DOWNLOAD PDF ›</a>
+    </div>
+  </div>
+
+  <!-- Project Modal — ClipFarm -->
+  <div class="modal" id="project-clipfarm">
+    <div class="modal-box modal-box--project">
+      <button class="modal-close">✕</button>
+      <div class="project-modal-media">
+        <span class="project-modal-media-label">DEMO / PREVIEW</span>
+      </div>
+      <div class="project-modal-content">
+        <div class="project-modal-meta">
+          <span class="project-modal-num">01</span>
+          <span class="project-modal-date">2026 – Present</span>
+        </div>
+        <h2 class="project-modal-title">ClipFarm</h2>
+        <p class="project-modal-sub">Automated Volleyball Highlight Generator</p>
+        <p class="project-modal-body">
+          Users upload raw game film; YOLOv8-pose extracts player skeletons frame-by-frame.
+          A rule-based action classifier scores spikes, serves, digs, sets, and blocks.
+          FFmpeg cuts and re-encodes the resulting clips to H.264, served via presigned
+          Cloudflare R2 URLs.
+        </p>
+        <p class="project-modal-body">
+          Audio RMS analysis on extracted PCM weights detection confidence by crowd noise,
+          reducing false-positive clips by ~20%. The backend uses FastAPI for auth-gated
+          REST endpoints, Celery + Redis for async video jobs, and Modal for GPU-offloaded
+          YOLOv8 inference. Supabase Auth with ES256 JWKS verification handles per-user
+          data isolation and Row-Level Security.
+        </p>
+        <div class="project-modal-stack">
+          <span>Python</span><span>FastAPI</span><span>Celery</span>
+          <span>Next.js</span><span>TypeScript</span><span>YOLOv8-pose</span>
+          <span>PostgreSQL</span><span>Redis</span><span>Cloudflare R2</span>
+          <span>Modal</span><span>Supabase</span><span>FFmpeg</span>
+        </div>
+        <a href="https://github.com/Ollienel777" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal — ChessAI -->
+  <div class="modal" id="project-chessai">
+    <div class="modal-box modal-box--project">
+      <button class="modal-close">✕</button>
+      <div class="project-modal-media">
+        <span class="project-modal-media-label">DEMO / PREVIEW</span>
+      </div>
+      <div class="project-modal-content">
+        <div class="project-modal-meta">
+          <span class="project-modal-num">02</span>
+          <span class="project-modal-date">Nov 2025</span>
+        </div>
+        <h2 class="project-modal-title">ChessAI</h2>
+        <p class="project-modal-sub">Neural Network Chess Engine</p>
+        <p class="project-modal-body">
+          A neural-network-guided chess engine trained on millions of Stockfish-labeled
+          positions using distributed GPU compute on Modal. A scalable ML pipeline handles
+          ingestion and labeling of large Lichess datasets — data cleaning, feature
+          extraction, and batch processing.
+        </p>
+        <p class="project-modal-body">
+          Classical alpha-beta search is paired with deep neural board evaluation for
+          real-time gameplay, carefully balancing search depth against inference latency.
+        </p>
+        <div class="project-modal-stack">
+          <span>Python</span><span>PyTorch</span><span>Modal</span>
+        </div>
+        <a href="https://github.com/Ollienel777" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal — Robo-Advisor -->
+  <div class="modal" id="project-robo">
+    <div class="modal-box modal-box--project">
+      <button class="modal-close">✕</button>
+      <div class="project-modal-media">
+        <span class="project-modal-media-label">DEMO / PREVIEW</span>
+      </div>
+      <div class="project-modal-content">
+        <div class="project-modal-meta">
+          <span class="project-modal-num">03</span>
+          <span class="project-modal-date">Nov 2025</span>
+        </div>
+        <h2 class="project-modal-title">Robo-Advisor</h2>
+        <p class="project-modal-sub">Multi-Factor Portfolio Engine — 1st Place, Market Beat Competition</p>
+        <p class="project-modal-body">
+          A multi-factor portfolio construction pipeline applying momentum, volatility,
+          correlation, and trend signals inspired by the Ranked Asset Allocation Model
+          (RAAM). End-to-end automation covers data ingestion, liquidity screening,
+          factor ranking, sector-cap enforcement, and Sharpe-ratio optimization under
+          real-world constraints (transaction fees, FX conversion, position limits).
+        </p>
+        <p class="project-modal-body">
+          Optimized a $1M CAD portfolio across U.S. and Canadian equities. Achieved
+          <strong>5.7% return vs. 3.7% benchmark</strong>, placing 1st out of 18 teams.
+        </p>
+        <div class="project-modal-stack">
+          <span>Python</span><span>Pandas</span><span>NumPy</span><span>yfinance</span>
+        </div>
+        <a href="https://github.com/Ollienel777" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contact-modal">
+    <div class="modal-box">
+      <button class="modal-close">✕</button>
+      <h2 class="modal-title">CONNECT</h2>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-label">EMAIL</span>
+          <a href="mailto:Nelsonkang7@gmail.com">Nelsonkang7@gmail.com</a>
+        </li>
+        <li>
+          <span class="contact-label">GITHUB</span>
+          <a href="https://github.com/Ollienel777" target="_blank" rel="noopener">github.com/Ollienel777</a>
+        </li>
+        <li>
+          <span class="contact-label">LINKEDIN</span>
+          <a href="https://linkedin.com/in/nelson-kang-ekanl" target="_blank" rel="noopener">linkedin.com/in/nelson-kang-ekanl</a>
+        </li>
+        <li>
+          <span class="contact-label">PHONE</span>
+          <a href="tel:+16138543568">+1 (613) 854-3568</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

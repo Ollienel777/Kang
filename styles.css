@@ -902,6 +902,14 @@ html, body {
   );
 }
 
+.project-modal-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .project-modal-media-label {
   font-size: 0.62rem;
   font-weight: 700;

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hobbies — Nelson Kang</title>
+  <link rel="icon" type="image/jpeg" href="Images/Uchiha.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="hobbies.css" />
+</head>
+<body class="hobbies-page is-content-revealed">
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo" style="text-decoration:none;">NKANG</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-btn" style="text-decoration:none;">← BACK</a></li>
+      <li><button class="nav-btn" data-modal="resume-modal">RESUME</button></li>
+    </ul>
+    <button class="nav-cta" data-modal="contact-modal">CONNECT</button>
+  </nav>
+
+  <main class="hobbies-main">
+
+    <!-- PAGE HERO -->
+    <div class="hobbies-hero">
+      <div class="section-label">HOBBIES</div>
+      <h1 class="hobbies-page-title">OUTSIDE<br/>THE CODE</h1>
+      <p class="hobbies-page-sub">
+        What I do when I'm not building. Running long distances, playing volleyball,
+        and studying poker. Each one feeds back into how I think and work.
+      </p>
+    </div>
+
+    <!-- ── RUNNING ── -->
+    <section class="hobby-section">
+      <div class="hobby-section-header">
+        <h2 class="hobby-section-title">RUNNING</h2>
+        <p class="hobby-section-desc">
+          Long distance runner. Half marathons, 30k training runs, chasing the next PR.
+          Currently training out of Waterloo and Ottawa.
+        </p>
+        <a href="https://www.strava.com/athletes/121738602" class="hobby-strava-link" target="_blank" rel="noopener">VIEW ON STRAVA ›</a>
+      </div>
+
+      <!-- Dynamic stat bar -->
+      <div class="hobby-stats" id="strava-totals">
+        <div class="hobby-stat">
+          <span class="hobby-stat-val" id="stat-alltime">—</span>
+          <span class="hobby-stat-label">All-Time km</span>
+        </div>
+        <div class="hobby-stat">
+          <span class="hobby-stat-val" id="stat-ytd-km">—</span>
+          <span class="hobby-stat-label">km This Year</span>
+        </div>
+        <div class="hobby-stat">
+          <span class="hobby-stat-val" id="stat-ytd-runs">—</span>
+          <span class="hobby-stat-label">Runs This Year</span>
+        </div>
+        <div class="hobby-stat">
+          <span class="hobby-stat-val" id="stat-ytd-time">—</span>
+          <span class="hobby-stat-label">Time This Year</span>
+        </div>
+      </div>
+
+      <!-- Best efforts -->
+      <div class="hobby-subsection">
+        <h3 class="hobby-subsection-title">PERSONAL BESTS</h3>
+        <div class="hobby-bests" id="strava-bests">
+          <div class="hobby-best-empty">Syncing from Strava…</div>
+        </div>
+      </div>
+
+      <!-- Recent runs -->
+      <div class="hobby-subsection">
+        <h3 class="hobby-subsection-title">RECENT RUNS</h3>
+        <div class="hobby-runs" id="strava-recent">
+          <div class="hobby-best-empty">Syncing from Strava…</div>
+        </div>
+      </div>
+
+      <!-- Featured activity embeds -->
+      <div class="hobby-subsection">
+        <h3 class="hobby-subsection-title">HIGHLIGHTS</h3>
+        <div class="hobby-activities">
+          <div class="hobby-activity-card">
+            <div class="hobby-activity-label">Pizza Run &mdash; Apr 2026 &mdash; 30.12 km</div>
+            <div class="strava-embed-placeholder"
+                 data-embed-type="activity"
+                 data-embed-id="18246669401"
+                 data-style="standard"
+                 data-from-embed="false"
+                 data-token="6FxDIgA2licpA50x7DueAPxaFXQt3aL7ypn3tb8-I">
+            </div>
+          </div>
+          <div class="hobby-activity-card">
+            <div class="hobby-activity-label">Road to Recovery &mdash; Sep 2025 &mdash; 21.11 km</div>
+            <div class="strava-embed-placeholder"
+                 data-embed-type="activity"
+                 data-embed-id="15838077955"
+                 data-style="standard"
+                 data-from-embed="false"
+                 data-token="FSaVV_ImVs6sfKHkb9PRaNboNux37VAMsxJy53tVHs">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="strava-updated">Last synced: <span id="strava-updated">—</span></p>
+    </section>
+
+  </main>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contact-modal">
+    <div class="modal-box">
+      <button class="modal-close">✕</button>
+      <h2 class="modal-title">CONNECT</h2>
+      <ul class="contact-list">
+        <li><span class="contact-label">EMAIL</span><a href="mailto:Nelsonkang7@gmail.com">Nelsonkang7@gmail.com</a></li>
+        <li><span class="contact-label">GITHUB</span><a href="https://github.com/Ollienel777" target="_blank" rel="noopener">github.com/Ollienel777</a></li>
+        <li><span class="contact-label">LINKEDIN</span><a href="https://linkedin.com/in/nelson-kang-ekanl" target="_blank" rel="noopener">linkedin.com/in/nelson-kang-ekanl</a></li>
+        <li><span class="contact-label">INSTAGRAM</span><a href="https://www.instagram.com/nelsonkang02/" target="_blank" rel="noopener">@nelsonkang02</a></li>
+        <li><span class="contact-label">DISCORD</span><span>ollienel777</span></li>
+        <li><span class="contact-label">PHONE</span><a href="tel:+16138543568">+1 (613) 854-3568</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Resume Modal -->
+  <div class="modal" id="resume-modal">
+    <div class="modal-box modal-box--wide">
+      <button class="modal-close">✕</button>
+      <h2 class="modal-title">NELSON KANG</h2>
+      <div class="resume-contact">
+        <span>+1 (613) 854-3568</span>
+        <span>Nelsonkang7@gmail.com</span>
+        <a href="https://linkedin.com/in/nelson-kang-ekanl" target="_blank" rel="noopener">linkedin.com/in/nelson-kang-ekanl</a>
+        <a href="https://github.com/Ollienel777" target="_blank" rel="noopener">github.com/Ollienel777</a>
+      </div>
+      <a href="Nelson_Kang_Resume.pdf" class="cta-btn" download>DOWNLOAD PDF ›</a>
+    </div>
+  </div>
+
+  <script src="https://strava-embeds.com/embed.js"></script>
+  <script src="hobbies.js"></script>
+</body>
+</html>

@@ -15,7 +15,7 @@
     <ul class="nav-links">
       <li><button class="nav-btn" data-modal="resume-modal">RESUME</button></li>
       <li><button class="nav-btn" id="filter-toggle">FILTER</button></li>
-      <li><button class="nav-btn" data-modal="hobbies-modal">HOBBIES</button></li>
+      <li><a href="hobbies.html" class="nav-btn" style="text-decoration:none;">HOBBIES</a></li>
     </ul>
     <button class="nav-cta" data-modal="contact-modal">CONNECT</button>
   </nav>
@@ -240,7 +240,7 @@ challenge is just figuring out where to start.
         <div class="section-label">FIN</div>
         <h2 class="col-title">LET'S<br/>BUILD.</h2>
         <p class="col-body">
-          Always open to interesting problems and good people.
+          Always open to interesting problems or people.
           Reach out and let's talk.
         </p>
         <button class="cta-btn" data-modal="contact-modal">GET IN TOUCH</button>
@@ -251,28 +251,6 @@ challenge is just figuring out where to start.
   </main>
 
   <!-- ── MODALS ── -->
-
-  <!-- About Modal -->
-  <div class="modal" id="about-modal">
-    <div class="modal-box">
-      <button class="modal-close">✕</button>
-      <h2 class="modal-title">ABOUT ME</h2>
-      <p>
-        I'm Nelson Kang — a Computing and Financial Management student at the
-        University of Waterloo (CS&nbsp;+&nbsp;Finance, Expected 2029).
-      </p>
-      <p>
-        I build at the intersection of software engineering and quantitative
-        finance: full-stack pipelines, computer vision systems, and ML engines.
-        I care about clean architecture, measurable impact, and shipping things
-        that actually work.
-      </p>
-      <p>
-        Previously Business Intelligence Co-op at Ericsson Canada, where I built
-        ETL pipelines and Power BI dashboards for stakeholder reporting.
-      </p>
-    </div>
-  </div>
 
   <!-- Resume Modal -->
   <div class="modal" id="resume-modal">
@@ -375,12 +353,14 @@ challenge is just figuring out where to start.
     <div class="modal-box modal-box--project">
       <button class="modal-close">✕</button>
       <div class="project-modal-media">
-        <span class="project-modal-media-label">DEMO / PREVIEW</span>
+        <video class="project-modal-video" controls muted playsinline>
+          <source src="Images/Demo/ClipFarm_Recording.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="project-modal-content">
         <div class="project-modal-meta">
           <span class="project-modal-num">01</span>
-          <span class="project-modal-date">2026 – Present</span>
+          <span class="project-modal-date">Mar 2026 – Present</span>
         </div>
         <h2 class="project-modal-title">ClipFarm</h2>
         <p class="project-modal-sub">Automated Volleyball Highlight Generator</p>
@@ -403,7 +383,7 @@ challenge is just figuring out where to start.
           <span>PostgreSQL</span><span>Redis</span><span>Cloudflare R2</span>
           <span>Modal</span><span>Supabase</span><span>FFmpeg</span>
         </div>
-        <a href="https://github.com/Ollienel777" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+        <a href="https://github.com/Ollienel777/ClipFarm" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
       </div>
     </div>
   </div>
@@ -435,7 +415,7 @@ challenge is just figuring out where to start.
         <div class="project-modal-stack">
           <span>Python</span><span>PyTorch</span><span>Modal</span>
         </div>
-        <a href="https://github.com/Ollienel777" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+        <a href="https://github.com/Ollienel777/ChessAI" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
       </div>
     </div>
   </div>
@@ -468,7 +448,7 @@ challenge is just figuring out where to start.
         <div class="project-modal-stack">
           <span>Python</span><span>Pandas</span><span>NumPy</span><span>yfinance</span>
         </div>
-        <a href="https://github.com/Ollienel777" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+        <a href="https://github.com/Ollienel777/MarketBeat_CFM/blob/main/Team_17_Assignment.ipynb" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
       </div>
     </div>
   </div>
@@ -503,7 +483,7 @@ challenge is just figuring out where to start.
           <span>Python</span><span>Discord.py</span><span>Google Sheets API</span>
           <span>gspread</span><span>OAuth2</span><span>python-dotenv</span>
         </div>
-        <a href="https://github.com/Ollienel777" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+        <a href="https://github.com/Ollienel777/TBPoker" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
       </div>
     </div>
   </div>
@@ -538,7 +518,7 @@ challenge is just figuring out where to start.
           <span>Entity Framework Core</span><span>SQL Server</span>
           <span>ASP.NET Core Identity</span><span>Bootstrap</span><span>jQuery</span>
         </div>
-        <a href="https://github.com/Ollienel777" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+        <a href="https://github.com/Ollienel777/QuillifyEdu" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
       </div>
     </div>
   </div>
@@ -586,14 +566,6 @@ challenge is just figuring out where to start.
         <li>
           <span class="contact-label">LINKEDIN</span>
           <a href="https://linkedin.com/in/nelson-kang-ekanl" target="_blank" rel="noopener">linkedin.com/in/nelson-kang-ekanl</a>
-        </li>
-        <li>
-          <span class="contact-label">INSTAGRAM</span>
-          <a href="https://www.instagram.com/nelsonkang02/" target="_blank" rel="noopener">@nelsonkang02</a>
-        </li>
-        <li>
-          <span class="contact-label">DISCORD</span>
-          <span>ollienel777</span>
         </li>
         <li>
           <span class="contact-label">PHONE</span>

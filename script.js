@@ -186,11 +186,13 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft')  nudge(-380);
 });
 
-// drag to scrol
-let isDragging = false, dragStartX = 0, dragOrigin = 0;
+// drag to scroll
+let isDragging = false, dragStartX = 0, dragOrigin = 0, didDrag = false;
+const DRAG_THRESHOLD = 6; // px before we consider it a drag vs a click
 
 world.addEventListener('mousedown', e => {
   isDragging  = true;
+  didDrag     = false;
   dragStartX  = e.pageX;
   dragOrigin  = posX;
   world.style.cursor     = 'grabbing';
@@ -200,6 +202,7 @@ world.addEventListener('mousedown', e => {
 
 window.addEventListener('mousemove', e => {
   if (!isDragging) return;
+  if (Math.abs(e.pageX - dragStartX) > DRAG_THRESHOLD) didDrag = true;
   posX  = clamp(dragOrigin - (e.pageX - dragStartX));
   targX = posX;
   world.scrollLeft = posX;
@@ -214,7 +217,7 @@ window.addEventListener('mouseup', () => {
 // ── PROJECT COLUMN → MODAL ──
 document.querySelectorAll('.col-project').forEach(col => {
   col.addEventListener('click', e => {
-    // Don't hijack link clicks
+    if (didDrag) return; // suppress click after a drag
     if (e.target.closest('a')) return;
     const id = col.dataset.projectModal;
     if (id) openModal(id);

@@ -35,6 +35,7 @@
     <button class="filter-btn" data-filter="C#">C#</button>
     <button class="filter-btn" data-filter="ASP.NET">ASP.NET</button>
     <button class="filter-btn" data-filter="SQL Server">SQL Server</button>
+    <button class="filter-btn" data-filter="Discord.py">Discord.py</button>
   </div>
 
   <!-- ── HORIZONTAL SCROLL WORLD ── -->
@@ -210,7 +211,29 @@
       <div class="col-bg col-bg--p4"></div>
     </section>
 
-    <!-- COLUMN 8 — End / CTA -->
+    <!-- COLUMN 8 — TBPoker -->
+    <section class="col col-project" data-skills="Python,Discord.py" data-project-modal="project-tbpoker">
+      <div class="col-inner">
+        <div class="project-text-box">
+          <div class="section-label">07 &nbsp;/&nbsp; PROJECTS</div>
+          <div class="project-num">05</div>
+          <h2 class="col-title">TBPOKER</h2>
+          <div class="project-details">
+            <p class="col-body">
+              Discord bot managing poker stats and a live leaderboard for a private server.
+              Integrates with Google Sheets for persistent player data and real-time chip tracking.
+            </p>
+            <div class="project-tags">
+              <span>Python</span><span>Discord.py</span><span>Google Sheets API</span><span>gspread</span>
+            </div>
+            <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-bg col-bg--p5"></div>
+    </section>
+
+    <!-- COLUMN 9 — End / CTA -->
     <section class="col col-end">
       <div class="col-inner">
         <div class="section-label">FIN</div>
@@ -450,6 +473,40 @@
   </div>
 
   <!-- Project Modal — QuillifyEdu -->
+  <!-- Project Modal — TBPoker -->
+  <div class="modal" id="project-tbpoker">
+    <div class="modal-box modal-box--project">
+      <button class="modal-close">✕</button>
+      <div class="project-modal-media">
+        <span class="project-modal-media-label">DEMO / PREVIEW</span>
+      </div>
+      <div class="project-modal-content">
+        <div class="project-modal-meta">
+          <span class="project-modal-num">05</span>
+          <span class="project-modal-date">2024</span>
+        </div>
+        <h2 class="project-modal-title">TBPoker</h2>
+        <p class="project-modal-sub">Discord Poker Leaderboard Bot</p>
+        <p class="project-modal-body">
+          A Discord bot application that manages poker game statistics and maintains a leaderboard
+          of player performance for a private server (TBP — The Boys Premium). Integrates with
+          Google Sheets to persist player data and provides real-time chip tracking.
+        </p>
+        <p class="project-modal-body">
+          Command-driven chip logging (<code>$addchips</code>) calculates net winnings/losses from
+          buy-in amounts and final chip counts. Live leaderboard display (<code>$leaderboard</code>)
+          ranks players by net chips. Supports automatic new player registration, private messaging
+          for bot interactions, and secure credential management.
+        </p>
+        <div class="project-modal-stack">
+          <span>Python</span><span>Discord.py</span><span>Google Sheets API</span>
+          <span>gspread</span><span>OAuth2</span><span>python-dotenv</span>
+        </div>
+        <a href="https://github.com/Ollienel777" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+      </div>
+    </div>
+  </div>
+
   <div class="modal" id="project-quillify">
     <div class="modal-box modal-box--project">
       <button class="modal-close">✕</button>

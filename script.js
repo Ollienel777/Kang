@@ -85,9 +85,16 @@ function preloadImages(urls) {
       col.style.opacity   = '0';
     });
 
-    // Wait for all images AND the minimum hold time before animating
+    // Preload only what's visible at load: first hero image + column thumbnails
+    // Race image loading against a 3s cap so a slow connection never hangs
+    const criticalImages = [HERO_IMAGES[0], ...COLUMN_IMAGES];
+    const imageReady = Promise.race([
+      preloadImages(criticalImages),
+      new Promise(resolve => setTimeout(resolve, 3000)),
+    ]);
+
     Promise.all([
-      preloadImages([...HERO_IMAGES, ...COLUMN_IMAGES]),
+      imageReady,
       new Promise(resolve => setTimeout(resolve, HOLD)),
     ]).then(() => {
       body.classList.remove('is-landing');

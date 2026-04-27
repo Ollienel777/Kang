@@ -668,7 +668,7 @@ html, body {
   overflow-y: auto;
   animation: modal-in 0.25s ease;
 }
-.modal-box--wide { max-width: 640px; }
+.modal-box--wide { max-width: 780px; }
 
 @keyframes modal-in {
   from { opacity: 0; transform: translateY(16px); }
@@ -761,6 +761,75 @@ html, body {
 .contact-list a:hover { color: var(--red); }
 
 /* Resume */
+.resume-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--gray-mid);
+  font-size: 0.75rem;
+  color: var(--gray-lite);
+}
+.resume-contact a {
+  color: var(--gray-lite);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.resume-contact a:hover { color: var(--white); }
+
+.resume-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.resume-skill-row {
+  font-size: 0.78rem;
+  color: var(--gray-lite);
+  line-height: 1.5;
+}
+.resume-skill-cat {
+  color: var(--white);
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.resume-role {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--gray-lite);
+  margin-bottom: 8px;
+  margin-top: 2px;
+  font-style: italic;
+}
+.resume-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+.resume-bullets li {
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--gray-lite);
+  padding-left: 14px;
+  position: relative;
+}
+.resume-bullets li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+}
+
 .resume-section {
   margin-bottom: 32px;
 }

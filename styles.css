@@ -666,8 +666,10 @@ html, body {
   width: 90%;
   max-height: 85vh;
   overflow-y: auto;
+  scrollbar-width: none;
   animation: modal-in 0.25s ease;
 }
+.modal-box::-webkit-scrollbar { display: none; }
 .modal-box--wide { max-width: 780px; }
 
 @keyframes modal-in {
@@ -1047,8 +1049,6 @@ html, body {
 .is-content-revealed .col:nth-child(6) .col-inner { transition-delay: 0.35s; }
 .is-content-revealed .col:nth-child(7) .col-inner { transition-delay: 0.42s; }
 
-/* ── SCROLLBAR TRACK (visible on Windows) ── */
-.world { scrollbar-width: thin; scrollbar-color: var(--gray-mid) transparent; }
 
 /* ── KEYBOARD SCROLL FOCUS ── */
 body:focus { outline: none; }

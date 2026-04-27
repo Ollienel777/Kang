@@ -305,11 +305,6 @@ html, body {
   margin-bottom: 20px;
 }
 
-/* Red underline accent on first word */
-.hero-name::first-line {
-  /* can't do per-word with CSS alone; handled via structure */
-}
-
 .hero-sub {
   font-size: 0.8rem;
   letter-spacing: 0.18em;

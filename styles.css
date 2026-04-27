@@ -127,9 +127,8 @@ html, body {
   align-items: center;
   gap: 6px;
   padding: 10px 28px;
-  background: rgba(8,8,8,0.92);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--gray-mid);
+  background: none;
+  border-bottom: none;
   overflow-x: auto;
   scrollbar-width: none;
   /* hidden by default */
@@ -153,15 +152,15 @@ html, body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 4px 14px;
-  background: none;
-  border: 1px solid var(--gray-mid);
+  background: var(--off-white);
+  border: 1px solid var(--off-white);
   border-radius: 999px;
-  color: var(--gray-lite);
+  color: var(--red);
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
   white-space: nowrap;
 }
-.filter-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.5); }
+.filter-btn:hover { background: var(--white); border-color: var(--white); color: var(--red); }
 .filter-btn.is-active {
   background: var(--red);
   border-color: var(--red);

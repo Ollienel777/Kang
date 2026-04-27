@@ -1,15 +1,15 @@
 // images for primary column
 const HERO_IMAGES = [
-  'Images/Profile/mmexport1751084857485.jpg',  // always first
+  'Images/Profile/mmexport1751084857485.jpg',
   'Images/Profile/20250601_082935.jpg',
+  'Images/Profile/mmexport1753167914099.jpg',
+  'Images/Profile/mmexport1749465311435.jpg',
   'Images/Profile/20250719_192400.jpg',
   'Images/Profile/20250720_211507.jpg',
   'Images/Profile/20250722_120126.jpg',
   'Images/Profile/20250723_202834(1).jpg',
   'Images/Profile/IMG_20240701_182805_452.jpg',
   'Images/Profile/mmexport1749246179061.jpg',
-  'Images/Profile/mmexport1749465311435.jpg',
-  'Images/Profile/mmexport1753167914099.jpg',
   'Images/Profile/mmexport1753223460741.jpg',
   'Images/Profile/mmexport1753223779798.jpg',
 ];
@@ -47,17 +47,36 @@ const HERO_IMAGES = [
   }, HOLD);
 }());
 
+// ── IMAGE PRELOADER ──
+const COLUMN_IMAGES = [
+  'Images/ColumnThumbnail/ClipFarm.jpg',
+  'Images/ColumnThumbnail/ML_Chess_Model.jpg',
+  'Images/ColumnThumbnail/CFM_Market_Beat.jpg',
+  'Images/ColumnThumbnail/quilify.jpg',
+  'Images/ColumnThumbnail/TBPoker.jpg',
+  'Images/ColumnThumbnail/TechStack.jpg',
+  'Images/Garden/20250719_115730_cpy.jpg',
+];
+
+function preloadImages(urls) {
+  return Promise.all(urls.map(url => new Promise(resolve => {
+    const img = new Image();
+    img.onload = img.onerror = resolve; // resolve on either so we never hang
+    img.src = url;
+  })));
+}
+
 // ── LANDING ANIMATION ──
 (function () {
   const body      = document.body;
   const cols      = Array.from(document.querySelectorAll('.col'));
-  const SLIDE_DUR = 580;  // ms for each column to travel to position
-  const STAGGER   = 210;  // ms between column starts — long enough to feel one-by-one
-  const HOLD      = 350;  // ms to show the stacked state before sequence begins
+  const SLIDE_DUR = 580;
+  const STAGGER   = 210;
+  const HOLD      = 350;
 
   body.classList.add('is-landing');
 
-  // Wait for layout, then capture natural positions and stack everything at x = 0
+  // Stack columns immediately so layout is measured while images load
   requestAnimationFrame(() => requestAnimationFrame(() => {
     const offsets = cols.map(col => col.getBoundingClientRect().left);
 
@@ -66,14 +85,16 @@ const HERO_IMAGES = [
       col.style.opacity   = '0';
     });
 
-    setTimeout(() => {
-      // Nav + filter bar slide down as the columns begin
+    // Wait for all images AND the minimum hold time before animating
+    Promise.all([
+      preloadImages([...HERO_IMAGES, ...COLUMN_IMAGES]),
+      new Promise(resolve => setTimeout(resolve, HOLD)),
+    ]).then(() => {
       body.classList.remove('is-landing');
 
       cols.forEach((col, i) => {
         const startAt = i * STAGGER;
 
-        // Begin slide
         setTimeout(() => {
           col.classList.add('is-sliding');
           col.style.transition =
@@ -84,7 +105,6 @@ const HERO_IMAGES = [
           col.style.opacity   = '1';
         }, startAt);
 
-        // Column has landed — remove glow, fire flash
         setTimeout(() => {
           col.classList.remove('is-sliding');
 
@@ -95,12 +115,9 @@ const HERO_IMAGES = [
         }, startAt + SLIDE_DUR);
       });
 
-      // all columns landed → reveal content
-      // landing animation
       const allDone = (cols.length - 1) * STAGGER + SLIDE_DUR + 60;
       setTimeout(() => body.classList.add('is-content-revealed'), allDone);
-
-    }, HOLD);
+    });
   }));
 }());
 

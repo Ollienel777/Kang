@@ -15,6 +15,7 @@
       <li><button class="nav-btn" data-modal="about-modal">ABOUT</button></li>
       <li><button class="nav-btn" data-modal="resume-modal">RESUME</button></li>
       <li><button class="nav-btn" id="filter-toggle">FILTER</button></li>
+      <li><button class="nav-btn" data-modal="hobbies-modal">HOBBIES</button></li>
       <li><button class="nav-btn" data-modal="contact-modal">CONTACT</button></li>
     </ul>
     <button class="nav-cta" data-modal="contact-modal">CONNECT</button>
@@ -32,6 +33,9 @@
     <button class="filter-btn" data-filter="PyTorch">PyTorch</button>
     <button class="filter-btn" data-filter="Pandas">Pandas</button>
     <button class="filter-btn" data-filter="Modal">Modal</button>
+    <button class="filter-btn" data-filter="C#">C#</button>
+    <button class="filter-btn" data-filter="ASP.NET">ASP.NET</button>
+    <button class="filter-btn" data-filter="SQL Server">SQL Server</button>
   </div>
 
   <!-- ── HORIZONTAL SCROLL WORLD ── -->
@@ -82,7 +86,7 @@
     <section class="col col-skills">
       <div class="col-inner">
         <div class="section-label">02 &nbsp;/&nbsp; SKILLS</div>
-        <h2 class="col-title">TOOLS &amp;<br/>CRAFT</h2>
+        <h2 class="col-title">TECH<br/>STACK</h2>
         <div class="skills-details">
           <div class="skills-grid">
             <div class="skill-block">
@@ -110,23 +114,25 @@
     <!-- COLUMN 4 — ClipFarm -->
     <section class="col col-project" data-skills="Python,FastAPI,TypeScript,Next.js,PostgreSQL,Redis,Modal" data-project-modal="project-clipfarm">
       <div class="col-inner">
-        <div class="section-label">03 &nbsp;/&nbsp; PROJECTS</div>
-        <div class="project-num">01</div>
-        <h2 class="col-title">CLIP<br/>FARM</h2>
-        <div class="project-details">
-          <p class="col-body">
-            Automated volleyball highlight generator. Users upload game film;
-            YOLOv8-pose extracts player skeletons frame-by-frame, a rule-based
-            classifier scores spikes, serves, and blocks, and FFmpeg re-encodes
-            clips served via presigned Cloudflare R2 URLs. Audio RMS analysis
-            reduces false-positive clips by ~20%.
-          </p>
-          <div class="project-tags">
-            <span>Python</span><span>FastAPI</span><span>Next.js</span>
-            <span>TypeScript</span><span>YOLOv8</span><span>PostgreSQL</span>
-            <span>Redis</span><span>Modal</span>
+        <div class="project-text-box">
+          <div class="section-label">03 &nbsp;/&nbsp; PROJECTS</div>
+          <div class="project-num">01</div>
+          <h2 class="col-title">CLIP<br/>FARM</h2>
+          <div class="project-details">
+            <p class="col-body">
+              Automated volleyball highlight generator. Users upload game film;
+              YOLOv8-pose extracts player skeletons frame-by-frame, a rule-based
+              classifier scores spikes, serves, and blocks, and FFmpeg re-encodes
+              clips served via presigned Cloudflare R2 URLs. Audio RMS analysis
+              reduces false-positive clips by ~20%.
+            </p>
+            <div class="project-tags">
+              <span>Python</span><span>FastAPI</span><span>Next.js</span>
+              <span>TypeScript</span><span>YOLOv8</span><span>PostgreSQL</span>
+              <span>Redis</span><span>Modal</span>
+            </div>
+            <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
           </div>
-          <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
         </div>
       </div>
       <div class="col-bg col-bg--p1"></div>
@@ -135,31 +141,34 @@
     <!-- COLUMN 5 — ChessAI -->
     <section class="col col-project" data-skills="Python,PyTorch,Modal" data-project-modal="project-chessai">
       <div class="col-inner">
-        <div class="section-label">04 &nbsp;/&nbsp; PROJECTS</div>
-        <div class="project-num">02</div>
-        <h2 class="col-title">CHESS<br/>AI</h2>
-        <div class="project-details">
-          <p class="col-body">
-            Neural-network chess engine trained on millions of Stockfish-labeled
-            positions using distributed GPU compute on Modal. Classical alpha-beta
-            search paired with deep neural evaluation for real-time gameplay,
-            balancing search depth with inference latency.
-          </p>
-          <div class="project-tags">
-            <span>Python</span><span>PyTorch</span><span>Modal</span>
+        <div class="project-text-box">
+          <div class="section-label">04 &nbsp;/&nbsp; PROJECTS</div>
+          <div class="project-num">02</div>
+          <h2 class="col-title">CHESS<br/>AI</h2>
+          <div class="project-details">
+            <p class="col-body">
+              Neural-network chess engine trained on millions of Stockfish-labeled
+              positions using distributed GPU compute on Modal. Classical alpha-beta
+              search paired with deep neural evaluation for real-time gameplay,
+              balancing search depth with inference latency.
+            </p>
+            <div class="project-tags">
+              <span>Python</span><span>PyTorch</span><span>Modal</span>
+            </div>
+            <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
           </div>
-          <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
         </div>
       </div>
       <div class="col-bg col-bg--p2"></div>
     </section>
 
-    <!-- COLUMN 6 — Robo-Advisor -->
+    <!-- COLUMN 6 — Stock Portfolio Engine -->
     <section class="col col-project" data-skills="Python,Pandas" data-project-modal="project-robo">
       <div class="col-inner">
+        <div class="project-text-box">
         <div class="section-label">05 &nbsp;/&nbsp; PROJECTS</div>
         <div class="project-num">03</div>
-        <h2 class="col-title">ROBO<br/>ADVISOR</h2>
+        <h2 class="col-title">STOCK<br/>PORTFOLIO<br/>ENGINE</h2>
         <div class="project-details">
           <p class="col-body">
             1st place, Market Beat Competition. Multi-factor portfolio pipeline
@@ -172,11 +181,37 @@
           </div>
           <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
         </div>
+        </div>
       </div>
       <div class="col-bg col-bg--p3"></div>
     </section>
 
-    <!-- COLUMN 7 — End / CTA -->
+    <!-- COLUMN 7 — QuillifyEdu -->
+    <section class="col col-project" data-skills="C#,ASP.NET,SQL Server" data-project-modal="project-quillify">
+      <div class="col-inner">
+        <div class="project-text-box">
+          <div class="section-label">06 &nbsp;/&nbsp; PROJECTS</div>
+          <div class="project-num">04</div>
+          <h2 class="col-title">QUILLIFY<br/>EDU</h2>
+          <div class="project-details">
+            <p class="col-body">
+              Educational content management platform built with ASP.NET Core.
+              Full user auth with email confirmation, account lockout policies,
+              and strong password enforcement. Notes management, contact forms,
+              and content creation with Entity Framework + SQL Server.
+            </p>
+            <div class="project-tags">
+              <span>C#</span><span>ASP.NET Core</span><span>Razor Pages</span>
+              <span>Entity Framework</span><span>SQL Server</span><span>Bootstrap</span>
+            </div>
+            <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-bg col-bg--p4"></div>
+    </section>
+
+    <!-- COLUMN 8 — End / CTA -->
     <section class="col col-end">
       <div class="col-inner">
         <div class="section-label">FIN</div>
@@ -255,7 +290,7 @@
           <p>PyTorch chess engine trained on Stockfish-labeled positions with distributed GPU compute.</p>
         </div>
         <div class="resume-item">
-          <span class="resume-place">Multi-Factor Robo-Advisor — 1st Place, Market Beat</span>
+          <span class="resume-place">Stock Portfolio Engine — 1st Place, Market Beat</span>
           <span class="resume-date">Nov 2025</span>
           <p>5.7% return vs. 3.7% benchmark. 1st of 18 teams. Multi-factor portfolio pipeline in Python.</p>
         </div>
@@ -335,7 +370,7 @@
     </div>
   </div>
 
-  <!-- Project Modal — Robo-Advisor -->
+  <!-- Project Modal — Stock Portfolio Engine -->
   <div class="modal" id="project-robo">
     <div class="modal-box modal-box--project">
       <button class="modal-close">✕</button>
@@ -347,7 +382,7 @@
           <span class="project-modal-num">03</span>
           <span class="project-modal-date">Nov 2025</span>
         </div>
-        <h2 class="project-modal-title">Robo-Advisor</h2>
+        <h2 class="project-modal-title">Stock Portfolio Engine</h2>
         <p class="project-modal-sub">Multi-Factor Portfolio Engine — 1st Place, Market Beat Competition</p>
         <p class="project-modal-body">
           A multi-factor portfolio construction pipeline applying momentum, volatility,
@@ -364,6 +399,68 @@
           <span>Python</span><span>Pandas</span><span>NumPy</span><span>yfinance</span>
         </div>
         <a href="https://github.com/Ollienel777" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal — QuillifyEdu -->
+  <div class="modal" id="project-quillify">
+    <div class="modal-box modal-box--project">
+      <button class="modal-close">✕</button>
+      <div class="project-modal-media">
+        <span class="project-modal-media-label">DEMO / PREVIEW</span>
+      </div>
+      <div class="project-modal-content">
+        <div class="project-modal-meta">
+          <span class="project-modal-num">04</span>
+          <span class="project-modal-date">2024</span>
+        </div>
+        <h2 class="project-modal-title">QuillifyEdu</h2>
+        <p class="project-modal-sub">Educational Content Management Platform</p>
+        <p class="project-modal-body">
+          A full-stack educational platform built with ASP.NET Core 8.0 and Razor Pages.
+          Users can manage, organize, and share educational notes and content through a
+          secure, authenticated system with email confirmation requirements and account
+          lockout policies (5 failed attempts = 5-minute lockout).
+        </p>
+        <p class="project-modal-body">
+          Strong password enforcement, notes management, contact forms, and content
+          creation with title, description, date, and pricing fields. Built with
+          Entity Framework Core migrations, ASP.NET Core Identity for production-grade
+          auth, and QuickGrid for performant data display.
+        </p>
+        <div class="project-modal-stack">
+          <span>C#</span><span>ASP.NET Core 8.0</span><span>Razor Pages</span>
+          <span>Entity Framework Core</span><span>SQL Server</span>
+          <span>ASP.NET Core Identity</span><span>Bootstrap</span><span>jQuery</span>
+        </div>
+        <a href="https://github.com/Ollienel777" class="cta-btn" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hobbies Modal -->
+  <div class="modal" id="hobbies-modal">
+    <div class="modal-box">
+      <button class="modal-close">✕</button>
+      <h2 class="modal-title">HOBBIES</h2>
+      <div class="hobby-block">
+        <span class="hobby-label">VOLLEYBALL</span>
+        <p>
+          I've played volleyball competitively for years — it's where I learned
+          to read chaos fast and act faster. There's something about the rhythm
+          of the game, the split-second decisions, the team coordination, that
+          maps surprisingly well onto how I think about building software.
+        </p>
+      </div>
+      <div class="hobby-block">
+        <span class="hobby-label">POKER</span>
+        <p>
+          Poker is applied probability under pressure. I'm drawn to the intersection
+          of math, psychology, and discipline it demands — knowing when the expected
+          value is in your favour and executing anyway, even when it's uncomfortable.
+          The same logic drives how I approach risk in engineering and finance.
+        </p>
       </div>
     </div>
   </div>

@@ -1,24 +1,17 @@
 // images for primary column
 const HERO_IMAGES = [
-  'images/20250601_082935.jpg',
-  'images/20250719_115730.jpg',
-  'images/20250719_192400.jpg',
-  'images/20250720_211507.jpg',
-  'images/20250722_120126.jpg',
-  'images/20250723_202834(1).jpg',
-  'images/IMG_20240701_182805_452.jpg',
-  'images/PXL_20250605_201638821.MP.jpg',
-  'images/image0.jpg',
-  'images/mmexport1749246179061.jpg',
-  'images/mmexport1749246256186.jpg',
-  'images/mmexport1749465311435.jpg',
-  'images/mmexport1751084857485.jpg',
-  'images/mmexport1753167914099.jpg',
-  'images/mmexport1753223460741.jpg',
-  'images/mmexport1753223779798.jpg',
-  'images/mmexport1753223994645.jpg',
-  'images/mmexport1753224121882.jpg',
-  'images/mmexport1753224799563.jpg',
+  'Images/Profile/mmexport1751084857485.jpg',  // always first
+  'Images/Profile/20250601_082935.jpg',
+  'Images/Profile/20250719_192400.jpg',
+  'Images/Profile/20250720_211507.jpg',
+  'Images/Profile/20250722_120126.jpg',
+  'Images/Profile/20250723_202834(1).jpg',
+  'Images/Profile/IMG_20240701_182805_452.jpg',
+  'Images/Profile/mmexport1749246179061.jpg',
+  'Images/Profile/mmexport1749465311435.jpg',
+  'Images/Profile/mmexport1753167914099.jpg',
+  'Images/Profile/mmexport1753223460741.jpg',
+  'Images/Profile/mmexport1753223779798.jpg',
 ];
 
 (function initCarousel() {

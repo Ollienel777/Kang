@@ -178,7 +178,8 @@ html, body {
   overflow-y: hidden;
   scrollbar-width: none;
 }
-.world::-webkit-scrollbar { display: none; }
+.world::-webkit-scrollbar { width: 0; height: 0; display: none; }
+.world { -ms-overflow-style: none; }
 
 /* ── COLUMN BASE ── */
 .col {
@@ -193,6 +194,7 @@ html, body {
 
 /* hover: bring column to focus */
 .col:hover .col-bg { opacity: 0.25; }
+.col-project:hover .col-bg { opacity: 0.9; }
 
 /* Column size overrides */
 .col-hero  { flex-basis: var(--col-hero-w); }
@@ -206,7 +208,7 @@ html, body {
   background-size: cover;
   background-position: center;
   opacity: 0.15;
-  transition: opacity 0.4s;
+  transition: opacity 0.4s ease;
   z-index: 0;
 }
 
@@ -216,32 +218,46 @@ html, body {
     linear-gradient(to top,    rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.2) 45%, transparent 70%);
   opacity: 1;
 }
-.col-bg--about {
-  background: linear-gradient(180deg, #1a0305 0%, var(--black) 100%);
-  opacity: 0.8;
+.col-bg.col-bg--about {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/Garden/20250719_115730_cpy.jpg') center / cover no-repeat;
+  opacity: 0.7;
+}
+.col-about:hover .col-bg--about {
+  opacity: 0.85;
 }
 .col-bg--skills {
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 40px,
-    rgba(232,25,44,0.04) 40px,
-    rgba(232,25,44,0.04) 41px
-  );
-  opacity: 1;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/ColumnThumbnail/TechStack.jpg') center / cover no-repeat;
+  opacity: 0.55;
 }
 .col-bg--p1 {
-  background: linear-gradient(135deg, #1a0305 0%, #0a0a0a 60%);
-  opacity: 1;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/ColumnThumbnail/ClipFarm.jpg') center / cover no-repeat;
+  opacity: 0.55;
 }
 .col-bg--p2 {
-  background: linear-gradient(135deg, #0a0a0a 0%, #100508 60%);
-  opacity: 1;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/ColumnThumbnail/ML_Chess_Model.jpg') center / cover no-repeat;
+  opacity: 0.55;
 }
 .col-bg--p3 {
-  background: linear-gradient(135deg, #0d0103 0%, #0a0a0a 60%);
-  opacity: 1;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/ColumnThumbnail/CFM_Market_Beat.jpg') center / cover no-repeat;
+  opacity: 0.55;
 }
+.col-bg--p4 {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/ColumnThumbnail/quilify.jpg') center / cover no-repeat;
+  opacity: 0.55;
+}
+
 .col-bg--end {
   background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 40%, var(--black) 100%);
   opacity: 0.35;
@@ -550,6 +566,12 @@ html, body {
 
 .col-skills:hover { background: rgba(191,44,58,0.03); }
 
+/* ── PROJECT TEXT BOX — structural only, no visual ── */
+.project-text-box {
+  padding: 20px 24px;
+  margin: 0 -12px;
+}
+
 /* ── PROJECT FILTER HIDE ── */
 .col-project {
   cursor: default;
@@ -581,7 +603,8 @@ html, body {
 .project-details {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.45s ease;
+  background: transparent;
+  transition: max-height 0.45s ease, background 0.35s ease;
 }
 
 /* hover: reveal everything */
@@ -600,6 +623,7 @@ html, body {
 .col-project:hover .project-details {
   max-height: 320px;
   transition-delay: 0.08s;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.72) 22%);
 }
 
 .col-project:hover { background: rgba(191,44,58,0.04); }
@@ -684,6 +708,31 @@ html, body {
   line-height: 1.8;
   color: var(--gray-lite);
   margin-bottom: 16px;
+}
+
+/* Hobbies modal */
+.hobby-block {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--gray-mid);
+}
+.hobby-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.hobby-label {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 999px;
+  padding: 3px 12px;
+  margin-bottom: 14px;
 }
 
 /* Contact list */

@@ -11,9 +11,9 @@
 <body class="hobbies-page is-content-revealed">
 
   <nav class="nav">
-    <a href="index.html" class="nav-logo" style="text-decoration:none;">NKANG</a>
+    <a href="index.html" class="nav-logo">NKANG</a>
     <ul class="nav-links">
-      <li><a href="index.html" class="nav-btn" style="text-decoration:none;">← BACK</a></li>
+      <li><a href="index.html" class="nav-btn">← BACK</a></li>
       <li><button class="nav-btn" data-modal="resume-modal">RESUME</button></li>
     </ul>
     <button class="nav-cta" data-modal="contact-modal">CONNECT</button>
@@ -26,13 +26,20 @@
       <div class="section-label">HOBBIES</div>
       <h1 class="hobbies-page-title">OUTSIDE<br/>THE CODE</h1>
       <p class="hobbies-page-sub">
-        What I do when I'm not building. Running long distances, playing volleyball,
-        and studying poker. Each one feeds back into how I think and work.
+        What I do when I'm not building. Running long distances, playing poker,
+        and competing in volleyball. Each one feeds back into how I think and work.
       </p>
     </div>
 
-    <!-- ── RUNNING ── -->
-    <section class="hobby-section">
+    <!-- TAB BAR -->
+    <div class="hobby-tabs">
+      <button class="hobby-tab is-active" data-tab="running">RUNNING</button>
+      <button class="hobby-tab" data-tab="poker">POKER</button>
+      <button class="hobby-tab" data-tab="volleyball">VOLLEYBALL</button>
+    </div>
+
+    <!-- ── TAB: RUNNING ── -->
+    <section class="hobby-section tab-panel is-active" id="tab-running">
       <div class="hobby-section-header">
         <h2 class="hobby-section-title">RUNNING</h2>
         <p class="hobby-section-desc">
@@ -42,7 +49,6 @@
         <a href="https://www.strava.com/athletes/121738602" class="hobby-strava-link" target="_blank" rel="noopener">VIEW ON STRAVA ›</a>
       </div>
 
-      <!-- Dynamic stat bar -->
       <div class="hobby-stats" id="strava-totals">
         <div class="hobby-stat">
           <span class="hobby-stat-val" id="stat-alltime">—</span>
@@ -62,7 +68,6 @@
         </div>
       </div>
 
-      <!-- Best efforts -->
       <div class="hobby-subsection">
         <h3 class="hobby-subsection-title">PERSONAL BESTS</h3>
         <div class="hobby-bests" id="strava-bests">
@@ -70,7 +75,6 @@
         </div>
       </div>
 
-      <!-- Recent runs -->
       <div class="hobby-subsection">
         <h3 class="hobby-subsection-title">RECENT RUNS</h3>
         <div class="hobby-runs" id="strava-recent">
@@ -78,7 +82,6 @@
         </div>
       </div>
 
-      <!-- Featured activity embeds -->
       <div class="hobby-subsection">
         <h3 class="hobby-subsection-title">HIGHLIGHTS</h3>
         <div class="hobby-activities">
@@ -106,6 +109,100 @@
       </div>
 
       <p class="strava-updated">Last synced: <span id="strava-updated">—</span></p>
+    </section>
+
+    <!-- ── TAB: POKER ── -->
+    <section class="hobby-section tab-panel" id="tab-poker">
+      <div class="hobby-section-header">
+        <h2 class="hobby-section-title">POKER</h2>
+        <p class="hobby-section-desc">
+          Competitive tournament poker player at the University of Waterloo Poker Club.
+          Approaching the game the same way I approach engineering — study the system,
+          find the edge, execute under pressure.
+        </p>
+        <a href="https://www.strava.com/athletes/121738602" class="hobby-strava-link" style="visibility:hidden;">PLACEHOLDER</a>
+      </div>
+
+      <!-- Stat bar -->
+      <div class="hobby-stats">
+        <div class="hobby-stat">
+          <span class="hobby-stat-val">2 / 891</span>
+          <span class="hobby-stat-label">Fall Season Rank</span>
+        </div>
+        <div class="hobby-stat">
+          <span class="hobby-stat-val">33%</span>
+          <span class="hobby-stat-label">Final Table Rate</span>
+        </div>
+        <div class="hobby-stat">
+          <span class="hobby-stat-val">6 / 18</span>
+          <span class="hobby-stat-label">Tournaments Final Tabled</span>
+        </div>
+        <div class="hobby-stat">
+          <span class="hobby-stat-val">~250</span>
+          <span class="hobby-stat-label">Avg Field Size</span>
+        </div>
+      </div>
+
+      <!-- Results section -->
+      <div class="hobby-subsection">
+        <h3 class="hobby-subsection-title">FALL 2025 SEASON</h3>
+        <div class="poker-content-grid">
+          <div class="poker-text">
+            <p class="poker-body">
+              Finished 2nd out of 891 active members across the Fall 2025 UW Poker Club season —
+              the largest student poker club in Canada. Final tabled 6 of the 18 tournaments I
+              entered, putting me in the top 9 of an average field of 250 players per event.
+              A 33% final table rate in fields that size isn't luck — it's sustained edge.
+            </p>
+            <p class="poker-body">
+              Following the season I joined the club as an executive for the Winter term,
+              helping run games and grow the competitive structure of the club. Currently
+              studying ICM pressure and 3-bet pot construction with the goal of making
+              the UW IPA poker team.
+            </p>
+          </div>
+          <div class="poker-photo-tall">
+            <img src="Images/Hobby_Poker/FallRankings.png" alt="Fall 2025 Season Rankings" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Photos section -->
+      <div class="hobby-subsection">
+        <h3 class="hobby-subsection-title">AT THE TABLE</h3>
+        <div class="poker-photos-grid">
+          <div class="poker-photo-card">
+            <img src="Images/Hobby_Poker/Club_Chips.jpg" alt="825k chip stack at final table" />
+            <div class="poker-photo-caption">
+              <span class="poker-photo-label">FINAL TABLE</span>
+              <p>825,000 chips. Starting stack: 5,000. The kind of run where every decision compounds.</p>
+            </div>
+          </div>
+          <div class="poker-photo-card">
+            <img src="Images/Hobby_Poker/AAvsKK.jpg" alt="KK vs AA — variance at the table" />
+            <div class="poker-photo-caption">
+              <span class="poker-photo-label">VARIANCE</span>
+              <p>Running KK into AA on the last two tables of a midterm tournament. You can study
+                 the game deeply, sharpen every edge, and still run face-first into variance.
+                 Learning to separate process from outcome is the real skill.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TAB: VOLLEYBALL ── -->
+    <section class="hobby-section tab-panel" id="tab-volleyball">
+      <div class="hobby-section-header">
+        <h2 class="hobby-section-title">VOLLEYBALL</h2>
+        <p class="hobby-section-desc">
+          Competitive player. Photos and clips coming soon.
+        </p>
+      </div>
+      <div class="hobby-placeholder">
+        <span class="hobby-placeholder-label">COMING SOON</span>
+        <p>Media and writeup in progress.</p>
+      </div>
     </section>
 
   </main>

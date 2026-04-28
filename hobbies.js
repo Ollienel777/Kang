@@ -17,6 +17,22 @@ document.addEventListener('keydown', e => {
     document.querySelectorAll('.modal.is-open').forEach(m => m.classList.remove('is-open'));
 });
 
+// ── TAB SWITCHING ──
+document.querySelectorAll('.hobby-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+
+    // Update tab buttons
+    document.querySelectorAll('.hobby-tab').forEach(t => t.classList.remove('is-active'));
+    tab.classList.add('is-active');
+
+    // Update panels
+    document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('is-active'));
+    const panel = document.getElementById(`tab-${target}`);
+    if (panel) panel.classList.add('is-active');
+  });
+});
+
 // ── STRAVA DATA ──
 const BEST_EFFORT_ORDER = ['400m', '1/2 mile', '1k', '1 mile', '2 mile', '5k', '10k', '15k', '10 mile', '20k', 'Half-Marathon', '30k', 'Marathon'];
 const BEST_EFFORT_LABELS = {

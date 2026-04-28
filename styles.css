@@ -63,6 +63,8 @@ html, body {
 
 /* pill-outline hover — inverts to beige bg + red text */
 .nav-btn {
+  display: inline-flex;
+  align-items: center;
   background: none;
   border: 1.5px solid transparent;
   border-radius: 999px;
@@ -75,6 +77,7 @@ html, body {
   padding: 5px 16px;
   transition: color 0.2s, border-color 0.2s, background 0.2s;
   white-space: nowrap;
+  text-decoration: none;
 }
 .nav-btn:hover {
   color: var(--red);

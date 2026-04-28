@@ -42,6 +42,42 @@ html, body {
   max-width: 540px;
 }
 
+/* ── TAB BAR ── */
+.hobby-tabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--gray-mid);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 56px;
+}
+
+.hobby-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  border-right: 1px solid var(--gray-mid);
+  color: var(--gray-lite);
+  font-family: var(--font-head);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 16px 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.hobby-tab:last-child { border-right: none; }
+.hobby-tab:hover { background: var(--gray); color: var(--white); }
+.hobby-tab.is-active {
+  background: var(--red);
+  color: var(--white);
+}
+
+/* ── TAB PANELS ── */
+.tab-panel { display: none; }
+.tab-panel.is-active { display: block; }
+
 /* ── HOBBY SECTION ── */
 .hobby-section {
   margin-bottom: 100px;
@@ -281,4 +317,111 @@ html, body {
   .hobby-best-date { display: none; }
   .hobby-run-row   { grid-template-columns: 1fr 70px 70px; }
   .hobby-run-time, .hobby-run-date { display: none; }
+}
+
+/* ── POKER ── */
+.poker-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;
+  align-items: start;
+}
+
+.poker-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.poker-body {
+  font-size: 0.84rem;
+  color: var(--gray-lite);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.poker-photo-tall {
+  border: 1px solid var(--gray-mid);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.poker-photo-tall img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.poker-photos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.poker-photo-card {
+  border: 1px solid var(--gray-mid);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.poker-photo-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 320px;
+}
+
+.poker-photo-caption {
+  padding: 16px 20px;
+  background: var(--gray);
+  border-top: 1px solid var(--gray-mid);
+  flex: 1;
+}
+
+.poker-photo-label {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+
+.poker-photo-caption p {
+  font-size: 0.78rem;
+  color: var(--gray-lite);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .poker-content-grid { grid-template-columns: 1fr; }
+  .poker-photos-grid  { grid-template-columns: 1fr; }
+}
+
+/* ── VOLLEYBALL PLACEHOLDER ── */
+.hobby-placeholder {
+  border: 1px solid var(--gray-mid);
+  border-radius: 4px;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.hobby-placeholder-label {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+}
+
+.hobby-placeholder p {
+  font-size: 0.8rem;
+  color: var(--gray-lite);
+  margin: 0;
 }

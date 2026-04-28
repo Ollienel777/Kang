@@ -18,8 +18,14 @@ def get_access_token():
         'grant_type':    'refresh_token',
         'refresh_token': REFRESH_TOKEN,
     })
-    r.raise_for_status()
-    return r.json()['access_token']
+    data = r.json()
+    print(f'Token response status: {r.status_code}')
+    if 'access_token' not in data:
+        print(f'Token error: {data}')
+        r.raise_for_status()
+        raise Exception(f'No access_token in response: {data}')
+    print(f'Token scopes: {data.get("athlete", {}).get("id", "unknown athlete")}')
+    return data['access_token']
 
 
 def fmt_time(seconds):
@@ -60,6 +66,9 @@ def main():
         headers=headers,
         params={'per_page': MAX_ACTIVITIES}
     )
+    print(f'Activities response status: {acts_r.status_code}')
+    if not acts_r.ok:
+        print(f'Activities error: {acts_r.json()}')
     acts_r.raise_for_status()
     all_acts = [a for a in acts_r.json() if a.get('sport_type') == 'Run' or a.get('type') == 'Run']
 

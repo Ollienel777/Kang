@@ -99,6 +99,7 @@ def main():
 
         for effort in detail.get('best_efforts', []):
             name = effort['name']
+            print(f'  effort: {name}')
             if name not in BEST_EFFORT_NAMES:
                 continue
             elapsed = effort['elapsed_time']

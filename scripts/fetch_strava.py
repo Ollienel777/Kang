@@ -8,7 +8,6 @@ CLIENT_SECRET = os.environ['STRAVA_CLIENT_SECRET']
 REFRESH_TOKEN = os.environ['STRAVA_REFRESH_TOKEN']
 
 BEST_EFFORT_NAMES = ['400m', '1/2 mile', '1k', '1 mile', '2 mile', '5k', '10k', '15k', '10 mile', '20k', 'Half-Marathon', '30k', 'Marathon']
-MAX_ACTIVITIES    = 50  # how many recent runs to scan for PRs
 
 
 def get_access_token():
@@ -60,17 +59,28 @@ def main():
     stats_r.raise_for_status()
     stats = stats_r.json()
 
-    # ── Recent running activities ──
-    acts_r = requests.get(
-        'https://www.strava.com/api/v3/athlete/activities',
-        headers=headers,
-        params={'per_page': MAX_ACTIVITIES}
-    )
-    print(f'Activities response status: {acts_r.status_code}')
-    if not acts_r.ok:
-        print(f'Activities error: {acts_r.json()}')
-    acts_r.raise_for_status()
-    all_acts = [a for a in acts_r.json() if a.get('sport_type') == 'Run' or a.get('type') == 'Run']
+    # ── All running activities (paginated) ──
+    all_acts = []
+    page = 1
+    while True:
+        acts_r = requests.get(
+            'https://www.strava.com/api/v3/athlete/activities',
+            headers=headers,
+            params={'per_page': 200, 'page': page}
+        )
+        print(f'Activities page {page} status: {acts_r.status_code}')
+        if not acts_r.ok:
+            print(f'Activities error: {acts_r.json()}')
+        acts_r.raise_for_status()
+        batch = acts_r.json()
+        if not batch:
+            break
+        runs = [a for a in batch if a.get('sport_type') == 'Run' or a.get('type') == 'Run']
+        all_acts.extend(runs)
+        if len(batch) < 200:
+            break
+        page += 1
+    print(f'Total runs found: {len(all_acts)}')
 
     # ── Scan for best efforts ──
     best_efforts = {}
@@ -99,7 +109,6 @@ def main():
 
         for effort in detail.get('best_efforts', []):
             name = effort['name']
-            print(f'  effort: {name}')
             if name not in BEST_EFFORT_NAMES:
                 continue
             elapsed = effort['elapsed_time']

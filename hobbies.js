@@ -18,12 +18,20 @@ document.addEventListener('keydown', e => {
 });
 
 // ── STRAVA DATA ──
-const BEST_EFFORT_ORDER = ['1k', '5k', '10k', 'Half-Marathon', 'Marathon'];
+const BEST_EFFORT_ORDER = ['400m', '1/2 mile', '1k', '1 mile', '2 mile', '5k', '10k', '15k', '10 mile', '20k', 'Half-Marathon', '30k', 'Marathon'];
 const BEST_EFFORT_LABELS = {
+  '400m':          '400m',
+  '1/2 mile':      '½ Mile',
   '1k':            '1 km',
+  '1 mile':        '1 Mile',
+  '2 mile':        '2 Mile',
   '5k':            '5 km',
   '10k':           '10 km',
+  '15k':           '15 km',
+  '10 mile':       '10 Mile',
+  '20k':           '20 km',
   'Half-Marathon': 'Half Marathon',
+  '30k':           '30 km',
   'Marathon':      'Marathon',
 };
 

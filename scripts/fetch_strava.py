@@ -7,7 +7,7 @@ CLIENT_ID     = os.environ['STRAVA_CLIENT_ID']
 CLIENT_SECRET = os.environ['STRAVA_CLIENT_SECRET']
 REFRESH_TOKEN = os.environ['STRAVA_REFRESH_TOKEN']
 
-BEST_EFFORT_NAMES = ['1k', '5k', '10k', 'Half-Marathon', 'Marathon']
+BEST_EFFORT_NAMES = ['400m', '1/2 mile', '1k', '1 mile', '2 mile', '5k', '10k', '15k', '10 mile', '20k', 'Half-Marathon', '30k', 'Marathon']
 MAX_ACTIVITIES    = 50  # how many recent runs to scan for PRs
 
 
@@ -114,7 +114,7 @@ def main():
     output = {
         'updated_at': datetime.now(timezone.utc).strftime('%Y-%m-%d'),
         'totals': {
-            'all_time_km':  round(stats['all_time_totals']['distance'] / 1000, 1),
+            'all_time_km':  round(stats['all_run_totals']['distance'] / 1000, 1),
             'ytd_km':       round(stats['ytd_run_totals']['distance'] / 1000, 1),
             'ytd_runs':     stats['ytd_run_totals']['count'],
             'ytd_time':     fmt_time(stats['ytd_run_totals']['moving_time']),

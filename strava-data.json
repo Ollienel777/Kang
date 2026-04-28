@@ -1,11 +1,103 @@
 {
-  "updated_at": "—",
+  "updated_at": "2026-04-28",
   "totals": {
-    "all_time_km": 0,
-    "ytd_km": 0,
-    "ytd_runs": 0,
-    "ytd_time": "—"
+    "all_time_km": 991.4,
+    "ytd_km": 129.1,
+    "ytd_runs": 14,
+    "ytd_time": "13:29:24"
   },
-  "best_efforts": {},
-  "recent_runs": []
+  "best_efforts": {
+    "400m": {
+      "elapsed_time": 71,
+      "time": "1:11",
+      "pace": "2:57 /km",
+      "activity_id": 15809980153,
+      "date": "2025-09-12"
+    },
+    "1/2 mile": {
+      "elapsed_time": 199,
+      "time": "3:19",
+      "pace": "4:07 /km",
+      "activity_id": 15666487012,
+      "date": "2025-09-01"
+    },
+    "1 mile": {
+      "elapsed_time": 440,
+      "time": "7:20",
+      "pace": "4:33 /km",
+      "activity_id": 15666487012,
+      "date": "2025-09-01"
+    },
+    "2 mile": {
+      "elapsed_time": 946,
+      "time": "15:46",
+      "pace": "4:53 /km",
+      "activity_id": 16131216965,
+      "date": "2025-10-13"
+    },
+    "10 mile": {
+      "elapsed_time": 5016,
+      "time": "1:23:36",
+      "pace": "5:11 /km",
+      "activity_id": 15838077955,
+      "date": "2025-09-16"
+    },
+    "Half-Marathon": {
+      "elapsed_time": 6587,
+      "time": "1:49:47",
+      "pace": "5:12 /km",
+      "activity_id": 15838077955,
+      "date": "2025-09-16"
+    }
+  },
+  "recent_runs": [
+    {
+      "id": 18246669401,
+      "name": "Pizza Run",
+      "distance": 30.13,
+      "time": "3:04:00",
+      "pace": "6:06 /km",
+      "date": "2026-04-24"
+    },
+    {
+      "id": 18228525922,
+      "name": "After \ud83c\udfd0 run home",
+      "distance": 10.25,
+      "time": "58:31",
+      "pace": "5:42 /km",
+      "date": "2026-04-23"
+    },
+    {
+      "id": 18221687385,
+      "name": "Night Run",
+      "distance": 2.8,
+      "time": "17:45",
+      "pace": "6:19 /km",
+      "date": "2026-04-23"
+    },
+    {
+      "id": 18211789282,
+      "name": "Morning Run",
+      "distance": 10.01,
+      "time": "59:38",
+      "pace": "5:57 /km",
+      "date": "2026-04-22"
+    },
+    {
+      "id": 18197249700,
+      "name": "Morning Run",
+      "distance": 10.1,
+      "time": "1:05:12",
+      "pace": "6:27 /km",
+      "date": "2026-04-21"
+    },
+    {
+      "id": 18183710401,
+      "name": "Morning Run",
+      "distance": 10.27,
+      "time": "1:05:24",
+      "pace": "6:22 /km",
+      "date": "2026-04-20"
+    }
+  ]
 }

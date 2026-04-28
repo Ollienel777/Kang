@@ -177,7 +177,7 @@
             <img src="Images/Hobby_Poker/Club_Chips.jpg" alt="825k chip stack at final table" />
             <div class="poker-photo-caption">
               <span class="poker-photo-label">FINAL TABLE</span>
-              <p>825,000 chips. Starting stack: 5,000. The kind of run where every decision compounds.</p>
+              <p>875,000 chips. Starting stack: 5,000. The kind of run where every decision compounds.</p>
             </div>
           </div>
           <div class="poker-photo-card">
@@ -230,12 +230,93 @@
     <div class="modal-box modal-box--wide">
       <button class="modal-close">✕</button>
       <h2 class="modal-title">NELSON KANG</h2>
+
       <div class="resume-contact">
         <span>+1 (613) 854-3568</span>
         <span>Nelsonkang7@gmail.com</span>
         <a href="https://linkedin.com/in/nelson-kang-ekanl" target="_blank" rel="noopener">linkedin.com/in/nelson-kang-ekanl</a>
         <a href="https://github.com/Ollienel777" target="_blank" rel="noopener">github.com/Ollienel777</a>
       </div>
+
+      <div class="resume-section">
+        <h3>Technical Skills</h3>
+        <div class="resume-skills-list">
+          <div class="resume-skill-row"><span class="resume-skill-cat">Languages</span><span>Python, C#, C, SQL, TypeScript, JavaScript, HTML/CSS</span></div>
+          <div class="resume-skill-row"><span class="resume-skill-cat">Frameworks</span><span>FastAPI, Next.js, .NET, PyTorch, Pandas, NumPy, Celery, SQLAlchemy</span></div>
+          <div class="resume-skill-row"><span class="resume-skill-cat">Infrastructure</span><span>PostgreSQL, SQL Server, SSMS, Supabase, Redis, Modal, Cloudflare R2, Git, Linux, Power BI</span></div>
+          <div class="resume-skill-row"><span class="resume-skill-cat">Tools</span><span>Jira, FFmpeg, OpenCV, YOLOv8, Selenium, Alembic</span></div>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h3>Experience</h3>
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-place">Ericsson Canada Inc.</span>
+            <span class="resume-date">Jun 2024 – Aug 2024</span>
+          </div>
+          <span class="resume-role">Business Intelligence Co-op &mdash; Ottawa, ON</span>
+          <ul class="resume-bullets">
+            <li>Built 4 ETL pipelines using C# and SQL Server to extract Jira data from JSON payloads, transform custom field mappings, and load into reporting tables; used temporal tables for full change-history tracking.</li>
+            <li>Audited and catalogued all existing team pipelines, identifying and documenting faulty custom-field mappings producing NULL data; created a reference spreadsheet that became the team's pipeline debugging resource.</li>
+            <li>Developed and maintained Power BI dashboards for trouble report visibility, supporting stakeholder reporting and data-driven decision-making across the BI team.</li>
+            <li>Led a technical workshop on building LEGO Mindstorms autonomous vehicles, implementing image-based sign recognition with tuned confidence thresholds.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h3>Projects</h3>
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-place">ClipFarm — Automated Volleyball Highlight Generator</span>
+            <span class="resume-date">2026 – Present</span>
+          </div>
+          <span class="resume-role">Python, FastAPI, Celery, Next.js, TypeScript, YOLOv8-pose, PostgreSQL, Redis, Cloudflare R2, Modal</span>
+          <ul class="resume-bullets">
+            <li>Built a full-stack video processing pipeline: users upload game film, YOLOv8-pose extracts player skeletons frame-by-frame, a rule-based action classifier scores spikes, serves, digs, sets, and blocks, and FFmpeg cuts and re-encodes clips to H.264, served via presigned Cloudflare R2 URLs.</li>
+            <li>Added audio energy analysis (RMS on extracted PCM) to weight detection confidence by crowd noise, reducing false-positive clips by ~20%.</li>
+            <li>Designed the backend for async scale: FastAPI handles auth-gated REST endpoints, Celery + Redis manages video processing jobs, Modal provides GPU offload for YOLOv8 inference. Implemented Supabase Auth (ES256 JWKS verification), per-user data isolation, and Row-Level Security.</li>
+            <li>Built the frontend in Next.js + TypeScript with a filterable clip grid, inline multi-label correction UI for future model training, clip trimming with background re-cut via Celery, bulk operations, and lazy-loaded thumbnails.</li>
+          </ul>
+        </div>
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-place">ChessAI — Neural Network Chess Engine</span>
+            <span class="resume-date">Nov 2025</span>
+          </div>
+          <span class="resume-role">Python, PyTorch, Modal</span>
+          <ul class="resume-bullets">
+            <li>Built a neural-network-guided chess engine trained on millions of Stockfish-labeled positions using distributed GPU compute on Modal.</li>
+            <li>Designed a scalable ML pipeline for ingesting and labeling large Lichess datasets, handling data cleaning, feature extraction, and batch processing.</li>
+            <li>Integrated classical alpha-beta search with deep neural evaluation for real-time gameplay, balancing search depth with inference latency.</li>
+          </ul>
+        </div>
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-place">Multi-Factor Stock Portfolio Engine — 1st Place, Market Beat</span>
+            <span class="resume-date">Nov 2025</span>
+          </div>
+          <span class="resume-role">Python, Pandas, NumPy, yfinance</span>
+          <ul class="resume-bullets">
+            <li>Designed and implemented a multi-factor portfolio construction pipeline applying momentum, volatility, correlation, and trend signals inspired by the Ranked Asset Allocation Model (RAAM).</li>
+            <li>Built end-to-end automation: data ingestion, liquidity screening, factor ranking, sector-cap enforcement, and Sharpe-ratio optimization under real-world constraints (transaction fees, FX conversion, position limits).</li>
+            <li>Optimized a $1M CAD portfolio across U.S. and Canadian equities; achieved 5.7% return vs. 3.7% benchmark, placing 1st out of 18 teams.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h3>Education</h3>
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-place">University of Waterloo</span>
+            <span class="resume-date">Expected 2029</span>
+          </div>
+          <span class="resume-role">BMath, Computing and Financial Management (CS + Finance)</span>
+        </div>
+      </div>
+
       <a href="Nelson_Kang_Resume.pdf" class="cta-btn" download>DOWNLOAD PDF ›</a>
     </div>
   </div>

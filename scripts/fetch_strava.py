@@ -51,15 +51,10 @@ def main():
     athlete.raise_for_status()
     athlete_id = athlete.json()['id']
 
-    # ── All-time stats ──
-    stats_r = requests.get(
-        f'https://www.strava.com/api/v3/athletes/{athlete_id}/stats',
-        headers=headers
-    )
-    stats_r.raise_for_status()
-    stats = stats_r.json()
-
     # ── All running activities (paginated) ──
+    # Include all run-adjacent sport types so totals match the Strava app
+    RUN_TYPES = {'Run', 'TrailRun', 'VirtualRun', 'Treadmill'}
+
     all_acts = []
     page = 1
     while True:
@@ -75,7 +70,10 @@ def main():
         batch = acts_r.json()
         if not batch:
             break
-        runs = [a for a in batch if a.get('sport_type') == 'Run' or a.get('type') == 'Run']
+        runs = [
+            a for a in batch
+            if a.get('sport_type') in RUN_TYPES or a.get('type') in RUN_TYPES
+        ]
         all_acts.extend(runs)
         if len(batch) < 200:
             break
@@ -121,13 +119,47 @@ def main():
                     'date':         act['start_date_local'][:10],
                 }
 
+    # ── Synthetic bests for distances Strava skips ──
+    # For any run that covers the target distance, estimate the split
+    # from overall avg pace (proportional). Only fills gaps Strava didn't supply.
+    SYNTHETIC = [
+        ('5k',   5_000,  'km',   5000),
+        ('10k',  10_000, 'km',  10000),
+        ('15k',  15_000, 'km',  15000),
+        ('20k',  20_000, 'km',  20000),
+        ('30k',  30_000, 'km',  30000),
+    ]
+    for key, min_dist, _unit, effort_dist in SYNTHETIC:
+        if key in best_efforts:
+            continue  # Strava already provided it
+        for act in all_acts:
+            if act['distance'] < min_dist:
+                continue
+            # proportional split
+            elapsed = int(act['moving_time'] * (effort_dist / act['distance']))
+            if key not in best_efforts or elapsed < best_efforts[key]['elapsed_time']:
+                best_efforts[key] = {
+                    'elapsed_time': elapsed,
+                    'time':         fmt_time(elapsed),
+                    'pace':         fmt_pace(elapsed, effort_dist),
+                    'activity_id':  act['id'],
+                    'date':         act['start_date_local'][:10],
+                }
+
+    # ── Compute totals from fetched activities (more accurate than stats API) ──
+    current_year = datetime.now(timezone.utc).year
+    all_time_dist  = sum(a['distance'] for a in all_acts)
+    ytd_acts       = [a for a in all_acts if a['start_date_local'][:4] == str(current_year)]
+    ytd_dist       = sum(a['distance'] for a in ytd_acts)
+    ytd_time_secs  = sum(a['moving_time'] for a in ytd_acts)
+
     output = {
         'updated_at': datetime.now(timezone.utc).strftime('%Y-%m-%d'),
         'totals': {
-            'all_time_km':  round(stats['all_run_totals']['distance'] / 1000, 1),
-            'ytd_km':       round(stats['ytd_run_totals']['distance'] / 1000, 1),
-            'ytd_runs':     stats['ytd_run_totals']['count'],
-            'ytd_time':     fmt_time(stats['ytd_run_totals']['moving_time']),
+            'all_time_km': round(all_time_dist / 1000, 1),
+            'ytd_km':      round(ytd_dist / 1000, 1),
+            'ytd_runs':    len(ytd_acts),
+            'ytd_time':    fmt_time(ytd_time_secs),
         },
         'best_efforts': best_efforts,
         'recent_runs':  recent_runs,

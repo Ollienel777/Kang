@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-04-28",
   "totals": {
-    "all_time_km": 991.4,
+    "all_time_km": 1038.2,
     "ytd_km": 129.1,
     "ytd_runs": 14,
     "ytd_time": "13:29:24"
@@ -48,6 +48,13 @@
       "pace": "5:12 /km",
       "activity_id": 15838077955,
       "date": "2025-09-16"
+    },
+    "30k": {
+      "elapsed_time": 10993,
+      "time": "3:03:13",
+      "pace": "6:06 /km",
+      "activity_id": 18246669401,
+      "date": "2026-04-24"
     }
   },
   "recent_runs": [

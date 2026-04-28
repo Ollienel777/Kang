@@ -15,25 +15,25 @@
       "date": "2025-09-12"
     },
     "1/2 mile": {
-      "elapsed_time": 199,
-      "time": "3:19",
-      "pace": "4:07 /km",
-      "activity_id": 15666487012,
-      "date": "2025-09-01"
+      "elapsed_time": 192,
+      "time": "3:12",
+      "pace": "3:58 /km",
+      "activity_id": 15501490901,
+      "date": "2025-08-18"
     },
     "1 mile": {
-      "elapsed_time": 440,
-      "time": "7:20",
-      "pace": "4:33 /km",
-      "activity_id": 15666487012,
-      "date": "2025-09-01"
+      "elapsed_time": 417,
+      "time": "6:57",
+      "pace": "4:19 /km",
+      "activity_id": 15020599324,
+      "date": "2025-07-05"
     },
     "2 mile": {
-      "elapsed_time": 946,
-      "time": "15:46",
-      "pace": "4:53 /km",
-      "activity_id": 16131216965,
-      "date": "2025-10-13"
+      "elapsed_time": 861,
+      "time": "14:21",
+      "pace": "4:27 /km",
+      "activity_id": 15587814269,
+      "date": "2025-08-25"
     },
     "10 mile": {
       "elapsed_time": 5016,

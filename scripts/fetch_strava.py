@@ -9,6 +9,14 @@ REFRESH_TOKEN = os.environ['STRAVA_REFRESH_TOKEN']
 
 BEST_EFFORT_NAMES = ['400m', '1/2 mile', '1k', '1 mile', '2 mile', '5k', '10k', '15k', '10 mile', '20k', 'Half-Marathon', '30k', 'Marathon']
 
+# Known distances (meters) — used as fallback when Strava returns distance=0
+EFFORT_DISTANCES_M = {
+    '400m': 400, '1/2 mile': 805, '1k': 1000, '1 mile': 1609,
+    '2 mile': 3219, '5k': 5000, '10k': 10000, '15k': 15000,
+    '10 mile': 16093, '20k': 20000, 'Half-Marathon': 21098,
+    '30k': 30000, 'Marathon': 42195,
+}
+
 
 def get_access_token():
     r = requests.post('https://www.strava.com/oauth/token', data={
@@ -109,10 +117,11 @@ def main():
             name = effort['name']
             if name not in BEST_EFFORT_NAMES:
                 continue
-            elapsed = effort['elapsed_time']
-            dist    = effort.get('distance', 0)
+            elapsed    = effort['elapsed_time']
+            dist       = effort.get('distance', 0) or EFFORT_DISTANCES_M.get(name, 0)
             # Sanity check: reject pace faster than 2:00 /km (120 sec/km)
             # — catches corrupt GPS/indoor activities with bogus split data
+            # Uses the known canonical distance as fallback when Strava returns 0
             if dist > 0 and (elapsed / (dist / 1000)) < 120:
                 print(f'  Skipping bogus effort {name} on {act["id"]}: {elapsed}s over {dist}m')
                 continue

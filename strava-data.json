@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-04-28",
+  "updated_at": "2026-04-29",
   "totals": {
-    "all_time_km": 1038.2,
-    "ytd_km": 129.1,
-    "ytd_runs": 14,
-    "ytd_time": "13:29:24"
+    "all_time_km": 1048.3,
+    "ytd_km": 140.6,
+    "ytd_runs": 16,
+    "ytd_time": "14:35:19"
   },
   "best_efforts": {
     "400m": {
@@ -49,15 +49,51 @@
       "activity_id": 15838077955,
       "date": "2025-09-16"
     },
+    "5k": {
+      "elapsed_time": 11,
+      "time": "0:11",
+      "pace": "0:02 /km",
+      "activity_id": 10074390584,
+      "date": "2023-10-20"
+    },
+    "10k": {
+      "elapsed_time": 22,
+      "time": "0:22",
+      "pace": "0:02 /km",
+      "activity_id": 10074390584,
+      "date": "2023-10-20"
+    },
+    "15k": {
+      "elapsed_time": 33,
+      "time": "0:33",
+      "pace": "0:02 /km",
+      "activity_id": 10074390584,
+      "date": "2023-10-20"
+    },
+    "20k": {
+      "elapsed_time": 6241,
+      "time": "1:44:01",
+      "pace": "5:12 /km",
+      "activity_id": 15838077955,
+      "date": "2025-09-16"
+    },
     "30k": {
-      "elapsed_time": 10993,
-      "time": "3:03:13",
+      "elapsed_time": 10992,
+      "time": "3:03:12",
       "pace": "6:06 /km",
       "activity_id": 18246669401,
       "date": "2026-04-24"
     }
   },
   "recent_runs": [
+    {
+      "id": 18298748549,
+      "name": "Lunch Run",
+      "distance": 10.0,
+      "time": "57:21",
+      "pace": "5:43 /km",
+      "date": "2026-04-28"
+    },
     {
       "id": 18246669401,
       "name": "Pizza Run",
@@ -97,14 +133,6 @@
       "time": "1:05:12",
       "pace": "6:27 /km",
       "date": "2026-04-21"
-    },
-    {
-      "id": 18183710401,
-      "name": "Morning Run",
-      "distance": 10.27,
-      "time": "1:05:24",
-      "pace": "6:22 /km",
-      "date": "2026-04-20"
     }
   ]
 }

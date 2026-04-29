@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import time
 from datetime import datetime, timezone, timedelta
 
 CLIENT_ID     = os.environ['STRAVA_CLIENT_ID']
@@ -9,13 +10,18 @@ REFRESH_TOKEN = os.environ['STRAVA_REFRESH_TOKEN']
 
 BEST_EFFORT_NAMES = ['400m', '1/2 mile', '1k', '1 mile', '2 mile', '5k', '10k', '15k', '10 mile', '20k', 'Half-Marathon', '30k', 'Marathon']
 
-# Known distances (meters) — used as fallback when Strava returns distance=0
+# Known distances (meters) — fallback when Strava returns distance=0
 EFFORT_DISTANCES_M = {
     '400m': 400, '1/2 mile': 805, '1k': 1000, '1 mile': 1609,
     '2 mile': 3219, '5k': 5000, '10k': 10000, '15k': 15000,
     '10 mile': 16093, '20k': 20000, 'Half-Marathon': 21098,
     '30k': 30000, 'Marathon': 42195,
 }
+
+# Only fetch individual activity details for this many recent days.
+# Older PRs are preserved from the previous strava-data.json.
+# This keeps each run well under Strava's 1000 req/day limit.
+DETAIL_WINDOW_DAYS = 180
 
 
 def get_access_token():
@@ -31,7 +37,6 @@ def get_access_token():
         print(f'Token error: {data}')
         r.raise_for_status()
         raise Exception(f'No access_token in response: {data}')
-    print(f'Token scopes: {data.get("athlete", {}).get("id", "unknown athlete")}')
     return data['access_token']
 
 
@@ -60,7 +65,6 @@ def main():
     athlete_id = athlete.json()['id']
 
     # ── All running activities (paginated) ──
-    # Include all run-adjacent sport types so totals match the Strava app
     RUN_TYPES = {'Run', 'TrailRun', 'VirtualRun', 'Treadmill'}
 
     all_acts = []
@@ -88,28 +92,46 @@ def main():
         page += 1
     print(f'Total runs found: {len(all_acts)}')
 
-    # ── Scan for best efforts ──
-    best_efforts = {}
-    recent_runs  = []
+    # ── Load existing PRs as baseline ──
+    # Only activity details for the last DETAIL_WINDOW_DAYS are re-fetched.
+    # Any PR set before that window is preserved from the saved JSON so we
+    # don't need to re-fetch hundreds of old activities every day.
+    out_path = os.path.join(os.path.dirname(__file__), '..', 'strava-data.json')
+    try:
+        with open(out_path) as f:
+            existing_data = json.load(f)
+        best_efforts = {
+            k: v for k, v in existing_data.get('best_efforts', {}).items()
+            if k in BEST_EFFORT_NAMES
+        }
+        print(f'Loaded {len(best_efforts)} existing PRs from strava-data.json')
+    except (FileNotFoundError, json.JSONDecodeError):
+        best_efforts = {}
 
-    for act in all_acts:
-        # Collect recent runs (first 6)
-        if len(recent_runs) < 6:
-            recent_runs.append({
-                'id':       act['id'],
-                'name':     act['name'],
-                'distance': round(act['distance'] / 1000, 2),
-                'time':     fmt_time(act['moving_time']),
-                'pace':     fmt_pace(act['moving_time'], act['distance']),
-                'date':     act['start_date_local'][:10],
-            })
+    # ── Fetch detail only for recent activities ──
+    detail_cutoff = (datetime.now(timezone.utc) - timedelta(days=DETAIL_WINDOW_DAYS)).strftime('%Y-%m-%d')
+    recent_acts   = [a for a in all_acts if a['start_date_local'][:10] >= detail_cutoff]
+    print(f'Fetching details for {len(recent_acts)} activities (last {DETAIL_WINDOW_DAYS} days)')
 
-        # Fetch detail for best_efforts
+    recent_runs = []
+    for act in all_acts[:6]:   # recent_runs always from full sorted list
+        recent_runs.append({
+            'id':       act['id'],
+            'name':     act['name'],
+            'distance': round(act['distance'] / 1000, 2),
+            'time':     fmt_time(act['moving_time']),
+            'pace':     fmt_pace(act['moving_time'], act['distance']),
+            'date':     act['start_date_local'][:10],
+        })
+
+    for act in recent_acts:
+        time.sleep(0.3)   # stay well under the 100-req/15-min burst limit
         det_r = requests.get(
             f'https://www.strava.com/api/v3/activities/{act["id"]}',
             headers=headers
         )
         if not det_r.ok:
+            print(f'  Detail fetch failed for {act["id"]}: {det_r.status_code}')
             continue
         detail = det_r.json()
 
@@ -117,13 +139,11 @@ def main():
             name = effort['name']
             if name not in BEST_EFFORT_NAMES:
                 continue
-            elapsed    = effort['elapsed_time']
-            dist       = effort.get('distance', 0) or EFFORT_DISTANCES_M.get(name, 0)
-            # Sanity check: reject pace faster than 2:00 /km (120 sec/km)
-            # — catches corrupt GPS/indoor activities with bogus split data
-            # Uses the known canonical distance as fallback when Strava returns 0
+            elapsed = effort['elapsed_time']
+            dist    = effort.get('distance', 0) or EFFORT_DISTANCES_M.get(name, 0)
+            # Reject pace faster than 2:00 /km — catches corrupt GPS data
             if dist > 0 and (elapsed / (dist / 1000)) < 120:
-                print(f'  Skipping bogus effort {name} on {act["id"]}: {elapsed}s over {dist}m')
+                print(f'  Skipping bogus effort {name} on {act["id"]}: {elapsed}s')
                 continue
             if name not in best_efforts or elapsed < best_efforts[name]['elapsed_time']:
                 best_efforts[name] = {
@@ -134,23 +154,20 @@ def main():
                     'date':         act['start_date_local'][:10],
                 }
 
-    # ── Synthetic bests for distances Strava skips ──
-    # For any run that covers the target distance, estimate the split
-    # from overall avg pace (proportional). Only fills gaps Strava didn't supply.
+    # ── Synthetic bests (proportional splits) for gaps Strava doesn't track ──
     SYNTHETIC = [
-        ('5k',   5_000,  'km',   5000),
-        ('10k',  10_000, 'km',  10000),
-        ('15k',  15_000, 'km',  15000),
-        ('20k',  20_000, 'km',  20000),
-        ('30k',  30_000, 'km',  30000),
+        ('5k',  5_000,  5000),
+        ('10k', 10_000, 10000),
+        ('15k', 15_000, 15000),
+        ('20k', 20_000, 20000),
+        ('30k', 30_000, 30000),
     ]
-    for key, min_dist, _unit, effort_dist in SYNTHETIC:
+    for key, min_dist, effort_dist in SYNTHETIC:
         if key in best_efforts:
-            continue  # Strava already provided it
+            continue
         for act in all_acts:
             if act['distance'] < min_dist:
                 continue
-            # proportional split
             elapsed = int(act['moving_time'] * (effort_dist / act['distance']))
             if key not in best_efforts or elapsed < best_efforts[key]['elapsed_time']:
                 best_efforts[key] = {
@@ -161,15 +178,15 @@ def main():
                     'date':         act['start_date_local'][:10],
                 }
 
-    # ── Daily km map (for heatmap) ──
+    # ── Daily km map (heatmap) ──
     daily_km = {}
     for act in all_acts:
         date = act['start_date_local'][:10]
         km   = act['distance'] / 1000
         daily_km[date] = round(daily_km.get(date, 0) + km, 2)
 
-    # ── Compute totals from fetched activities ──
-    cutoff_365 = (datetime.now(timezone.utc) - timedelta(days=365)).strftime('%Y-%m-%d')
+    # ── Totals (rolling 365-day window) ──
+    cutoff_365    = (datetime.now(timezone.utc) - timedelta(days=365)).strftime('%Y-%m-%d')
     all_time_dist = sum(a['distance'] for a in all_acts)
     l365_acts     = [a for a in all_acts if a['start_date_local'][:10] >= cutoff_365]
     l365_dist     = sum(a['distance'] for a in l365_acts)
@@ -188,11 +205,11 @@ def main():
         'daily_km':     daily_km,
     }
 
-    out_path = os.path.join(os.path.dirname(__file__), '..', 'strava-data.json')
     with open(out_path, 'w') as f:
         json.dump(output, f, indent=2)
 
-    print(f"Done. {len(recent_runs)} recent runs, {len(best_efforts)} PRs found.")
+    total_reqs = 2 + page + len(recent_acts)  # token + athlete + pages + details
+    print(f'Done. {len(recent_runs)} recent runs, {len(best_efforts)} PRs. ~{total_reqs} API requests used.')
 
 
 if __name__ == '__main__':

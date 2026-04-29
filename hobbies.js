@@ -63,20 +63,29 @@ function buildHeatmap(dailyKm, ytdKm) {
     return 4;
   };
 
-  let cursor   = new Date(start);
-  let weekIdx  = 0;
-  let prevMonth = -1;
+  let cursor        = new Date(start);
+  let weekIdx       = 0;
+  let prevMonth     = -1;
+  let lastLabel     = null;   // DOM element of the most-recently placed month label
+  let lastLabelCol  = -99;    // column index where it was placed
+  const MIN_GAP_COLS = 3;     // minimum columns between labels before they'd visually overlap
 
   while (cursor <= today) {
     // Month label at first week of each new month
     const mo = cursor.getMonth();
     if (mo !== prevMonth) {
+      // If the previous label is too close, remove it — the new month wins
+      if (lastLabel && weekIdx - lastLabelCol < MIN_GAP_COLS) {
+        lastLabel.remove();
+      }
       const lbl = document.createElement('span');
       lbl.className = 'heatmap-month-label';
       lbl.textContent = cursor.toLocaleString('en-US', { month: 'short' }).toUpperCase();
       lbl.style.left = (weekIdx * WEEK_W) + 'px';
       monthsEl.appendChild(lbl);
-      prevMonth = mo;
+      lastLabel    = lbl;
+      lastLabelCol = weekIdx;
+      prevMonth    = mo;
     }
 
     const weekEl = document.createElement('div');

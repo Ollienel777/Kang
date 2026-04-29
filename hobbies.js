@@ -33,6 +33,90 @@ document.querySelectorAll('.hobby-tab').forEach(tab => {
   });
 });
 
+// ── HEATMAP ──
+function buildHeatmap(dailyKm, ytdKm) {
+  const grid     = document.getElementById('run-heatmap');
+  const monthsEl = document.getElementById('heatmap-months');
+  const tooltip  = document.getElementById('heatmap-tooltip');
+  const ytdLabel = document.getElementById('heatmap-ytd-label');
+  if (!grid || !monthsEl) return;
+
+  if (ytdLabel && ytdKm != null) {
+    ytdLabel.textContent = `${ytdKm.toLocaleString()} km this year`;
+  }
+
+  const CELL = 13, GAP = 3, WEEK_W = CELL + GAP;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Snap to the Sunday ≥ 52 weeks ago
+  const start = new Date(today);
+  start.setDate(start.getDate() - 52 * 7);
+  start.setDate(start.getDate() - start.getDay());
+
+  const getLevel = km => {
+    if (!km) return 0;
+    if (km < 5)  return 1;
+    if (km < 10) return 2;
+    if (km < 15) return 3;
+    return 4;
+  };
+
+  let cursor   = new Date(start);
+  let weekIdx  = 0;
+  let prevMonth = -1;
+
+  while (cursor <= today) {
+    // Month label at first week of each new month
+    const mo = cursor.getMonth();
+    if (mo !== prevMonth) {
+      const lbl = document.createElement('span');
+      lbl.className = 'heatmap-month-label';
+      lbl.textContent = cursor.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+      lbl.style.left = (weekIdx * WEEK_W) + 'px';
+      monthsEl.appendChild(lbl);
+      prevMonth = mo;
+    }
+
+    const weekEl = document.createElement('div');
+    weekEl.className = 'heatmap-week';
+
+    for (let d = 0; d < 7; d++) {
+      const dateStr = cursor.toISOString().slice(0, 10);
+      const km      = dailyKm[dateStr] || 0;
+      const future  = cursor > today;
+
+      const cell = document.createElement('div');
+      cell.className = `heatmap-cell level-${future ? 'x' : getLevel(km)}`;
+
+      if (!future && tooltip) {
+        const snap = new Date(cursor); // capture for closure
+        const fmtDate = snap.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        const kmText  = km > 0 ? `${km} km` : 'Rest day';
+
+        cell.addEventListener('mouseenter', () => {
+          tooltip.textContent = `${kmText} — ${fmtDate}`;
+          tooltip.classList.add('is-visible');
+        });
+        cell.addEventListener('mousemove', e => {
+          tooltip.style.left = (e.clientX + 14) + 'px';
+          tooltip.style.top  = (e.clientY - 36) + 'px';
+        });
+        cell.addEventListener('mouseleave', () => {
+          tooltip.classList.remove('is-visible');
+        });
+      }
+
+      weekEl.appendChild(cell);
+      cursor.setDate(cursor.getDate() + 1);
+    }
+
+    grid.appendChild(weekEl);
+    weekIdx++;
+  }
+}
+
 // ── STRAVA DATA ──
 const BEST_EFFORT_ORDER = ['400m', '1/2 mile', '1k', '1 mile', '2 mile', '5k', '10k', '15k', '10 mile', '20k', 'Half-Marathon', '30k', 'Marathon'];
 const BEST_EFFORT_LABELS = {
@@ -60,6 +144,9 @@ fetch('strava-data.json')
     document.getElementById('stat-ytd-runs').textContent = data.totals.ytd_runs;
     document.getElementById('stat-ytd-time').textContent = data.totals.ytd_time;
     document.getElementById('strava-updated').textContent = data.updated_at;
+
+    // Heatmap
+    buildHeatmap(data.daily_km || {}, data.totals.ytd_km);
 
     // Best efforts
     const bestsEl = document.getElementById('strava-bests');

@@ -146,6 +146,13 @@ def main():
                     'date':         act['start_date_local'][:10],
                 }
 
+    # ── Daily km map (for heatmap) ──
+    daily_km = {}
+    for act in all_acts:
+        date = act['start_date_local'][:10]
+        km   = act['distance'] / 1000
+        daily_km[date] = round(daily_km.get(date, 0) + km, 2)
+
     # ── Compute totals from fetched activities (more accurate than stats API) ──
     current_year = datetime.now(timezone.utc).year
     all_time_dist  = sum(a['distance'] for a in all_acts)
@@ -163,6 +170,7 @@ def main():
         },
         'best_efforts': best_efforts,
         'recent_runs':  recent_runs,
+        'daily_km':     daily_km,
     }
 
     out_path = os.path.join(os.path.dirname(__file__), '..', 'strava-data.json')

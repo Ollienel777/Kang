@@ -304,6 +304,149 @@ html, body {
   color: var(--gray-lite);
 }
 
+/* ── RUNNING HEATMAP ── */
+.heatmap-headline {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-mid);
+}
+
+.heatmap-ytd-text {
+  font-size: 0.72rem;
+  color: var(--gray-lite);
+  letter-spacing: 0.06em;
+}
+
+.run-heatmap-outer {
+  background: var(--gray);
+  border: 1px solid var(--gray-mid);
+  border-radius: 4px;
+  padding: 20px 20px 14px;
+  overflow-x: auto;
+}
+
+.run-heatmap-scroll {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 100%;
+}
+
+.heatmap-month-row {
+  position: relative;
+  height: 18px;
+  margin-left: 28px;
+  margin-bottom: 6px;
+}
+
+.heatmap-month-label {
+  position: absolute;
+  font-family: var(--font-head);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gray-lite);
+  top: 0;
+  white-space: nowrap;
+}
+
+.heatmap-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.heatmap-day-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.heatmap-day-labels span {
+  display: block;
+  height: 13px;
+  font-size: 0.55rem;
+  color: var(--gray-lite);
+  line-height: 13px;
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 4px;
+  letter-spacing: 0.08em;
+}
+
+.heatmap-grid {
+  display: flex;
+  gap: 3px;
+}
+
+.heatmap-week {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.heatmap-cell {
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  cursor: default;
+}
+
+.heatmap-cell.level-0 { background: #1e1e1e; }
+.heatmap-cell.level-1 { background: #4d0f17; }
+.heatmap-cell.level-2 { background: #7a1a24; }
+.heatmap-cell.level-3 { background: #a32230; }
+.heatmap-cell.level-4 { background: var(--red); }
+.heatmap-cell.level-x { background: #141414; }
+
+.heatmap-cell:not(.level-0):not(.level-x):hover {
+  outline: 1px solid rgba(255,255,255,0.3);
+  outline-offset: 1px;
+}
+
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+
+.heatmap-legend-text {
+  font-size: 0.58rem;
+  color: var(--gray-lite);
+  letter-spacing: 0.06em;
+}
+
+.heatmap-legend .heatmap-cell {
+  cursor: default;
+}
+
+.heatmap-tooltip {
+  position: fixed;
+  background: #2a2a2a;
+  border: 1px solid var(--gray-mid);
+  color: var(--white);
+  font-size: 0.7rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  z-index: 500;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  letter-spacing: 0.04em;
+}
+
+.heatmap-tooltip.is-visible {
+  opacity: 1;
+}
+
 /* ── UPDATED TIMESTAMP ── */
 .strava-updated {
   margin-top: 20px;

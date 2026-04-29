@@ -1,7 +1,7 @@
 import requests
 import json
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 CLIENT_ID     = os.environ['STRAVA_CLIENT_ID']
 CLIENT_SECRET = os.environ['STRAVA_CLIENT_SECRET']
@@ -110,11 +110,17 @@ def main():
             if name not in BEST_EFFORT_NAMES:
                 continue
             elapsed = effort['elapsed_time']
+            dist    = effort.get('distance', 0)
+            # Sanity check: reject pace faster than 2:00 /km (120 sec/km)
+            # — catches corrupt GPS/indoor activities with bogus split data
+            if dist > 0 and (elapsed / (dist / 1000)) < 120:
+                print(f'  Skipping bogus effort {name} on {act["id"]}: {elapsed}s over {dist}m')
+                continue
             if name not in best_efforts or elapsed < best_efforts[name]['elapsed_time']:
                 best_efforts[name] = {
                     'elapsed_time': elapsed,
                     'time':         fmt_time(elapsed),
-                    'pace':         fmt_pace(elapsed, effort['distance']),
+                    'pace':         fmt_pace(elapsed, dist),
                     'activity_id':  act['id'],
                     'date':         act['start_date_local'][:10],
                 }
@@ -153,20 +159,20 @@ def main():
         km   = act['distance'] / 1000
         daily_km[date] = round(daily_km.get(date, 0) + km, 2)
 
-    # ── Compute totals from fetched activities (more accurate than stats API) ──
-    current_year = datetime.now(timezone.utc).year
-    all_time_dist  = sum(a['distance'] for a in all_acts)
-    ytd_acts       = [a for a in all_acts if a['start_date_local'][:4] == str(current_year)]
-    ytd_dist       = sum(a['distance'] for a in ytd_acts)
-    ytd_time_secs  = sum(a['moving_time'] for a in ytd_acts)
+    # ── Compute totals from fetched activities ──
+    cutoff_365 = (datetime.now(timezone.utc) - timedelta(days=365)).strftime('%Y-%m-%d')
+    all_time_dist = sum(a['distance'] for a in all_acts)
+    l365_acts     = [a for a in all_acts if a['start_date_local'][:10] >= cutoff_365]
+    l365_dist     = sum(a['distance'] for a in l365_acts)
+    l365_time     = sum(a['moving_time'] for a in l365_acts)
 
     output = {
         'updated_at': datetime.now(timezone.utc).strftime('%Y-%m-%d'),
         'totals': {
             'all_time_km': round(all_time_dist / 1000, 1),
-            'ytd_km':      round(ytd_dist / 1000, 1),
-            'ytd_runs':    len(ytd_acts),
-            'ytd_time':    fmt_time(ytd_time_secs),
+            'ytd_km':      round(l365_dist / 1000, 1),
+            'ytd_runs':    len(l365_acts),
+            'ytd_time':    fmt_time(l365_time),
         },
         'best_efforts': best_efforts,
         'recent_runs':  recent_runs,

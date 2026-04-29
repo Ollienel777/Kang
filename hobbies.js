@@ -42,7 +42,7 @@ function buildHeatmap(dailyKm, ytdKm) {
   if (!grid || !monthsEl) return;
 
   if (ytdLabel && ytdKm != null) {
-    ytdLabel.textContent = `${ytdKm.toLocaleString()} km this year`;
+    ytdLabel.textContent = `${ytdKm.toLocaleString()} km in the last 365 days`;
   }
 
   const CELL = 13, GAP = 3, WEEK_W = CELL + GAP;

@@ -1058,14 +1058,16 @@ html, body {
   top: var(--nav-h);
   left: 0; right: 0;
   background: var(--black);
-  border-top: 1px solid rgba(255,255,255,0.08);
   z-index: 98;
   flex-direction: column;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.25s ease;
 }
-.nav-mobile-menu.is-open { max-height: 320px; }
+.nav-mobile-menu.is-open {
+  max-height: 320px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
 
 .nav-mobile-btn {
   display: block;

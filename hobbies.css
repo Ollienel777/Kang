@@ -329,13 +329,14 @@ html, body {
 .run-heatmap-outer {
   flex: 1;
   min-width: 0;
-}
   background: var(--gray);
   border: 1px solid var(--gray-mid);
   border-radius: 4px;
   padding: 20px 20px 14px;
   overflow-x: auto;
+  scrollbar-width: none;
 }
+.run-heatmap-outer::-webkit-scrollbar { display: none; }
 
 .run-heatmap-scroll {
   display: inline-flex;
@@ -496,6 +497,23 @@ html, body {
   font-size: 0.65rem;
   color: var(--gray-lite);
   letter-spacing: 0.08em;
+}
+
+@media (max-width: 680px) {
+  /* Stats bar scrolls horizontally */
+  .hobby-stats {
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+  }
+  .hobby-stats::-webkit-scrollbar { display: none; }
+  .hobby-stat {
+    flex-shrink: 0;
+    min-width: 130px;
+  }
+
+  /* Year selector moves to left so heatmap scrolls right */
+  .heatmap-year-selector { order: -1; }
 }
 
 @media (max-width: 600px) {

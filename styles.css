@@ -223,7 +223,7 @@ html, body {
 .col-bg.col-bg--about {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/Garden/20250719_115730_cpy.jpg') center / cover no-repeat;
+    url('Images/Garden/20250719_115730_cpy.webp') center / cover no-repeat;
   opacity: 0.7;
 }
 .col-about:hover .col-bg--about {
@@ -232,38 +232,38 @@ html, body {
 .col-bg--skills {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/ColumnThumbnail/TechStack.jpg') center / cover no-repeat;
+    url('Images/ColumnThumbnail/TechStack.webp') center / cover no-repeat;
   opacity: 0.55;
 }
 .col-bg--p1 {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/ColumnThumbnail/ClipFarm.jpg') center / cover no-repeat;
+    url('Images/ColumnThumbnail/ClipFarm.webp') center / cover no-repeat;
   opacity: 0.55;
 }
 .col-bg--p2 {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/ColumnThumbnail/ML_Chess_Model.jpg') center / cover no-repeat;
+    url('Images/ColumnThumbnail/ML_Chess_Model.webp') center / cover no-repeat;
   opacity: 0.55;
 }
 .col-bg--p3 {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/ColumnThumbnail/CFM_Market_Beat.jpg') center / cover no-repeat;
+    url('Images/ColumnThumbnail/CFM_Market_Beat.webp') center / cover no-repeat;
   opacity: 0.55;
 }
 .col-bg--p4 {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/ColumnThumbnail/quilify.jpg') center / cover no-repeat;
+    url('Images/ColumnThumbnail/quilify.webp') center / cover no-repeat;
   opacity: 0.55;
 }
 
 .col-bg--p5 {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/ColumnThumbnail/TBPoker.jpg') center / cover no-repeat;
+    url('Images/ColumnThumbnail/TBPoker.webp') center / cover no-repeat;
   opacity: 0.55;
 }
 

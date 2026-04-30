@@ -320,7 +320,16 @@ html, body {
   letter-spacing: 0.06em;
 }
 
+.run-heatmap-wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
 .run-heatmap-outer {
+  flex: 1;
+  min-width: 0;
+}
   background: var(--gray);
   border: 1px solid var(--gray-mid);
   border-radius: 4px;
@@ -445,6 +454,40 @@ html, body {
 
 .heatmap-tooltip.is-visible {
   opacity: 1;
+}
+
+/* ── YEAR SELECTOR ── */
+.heatmap-year-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.heatmap-year-btn {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--gray-lite);
+  cursor: pointer;
+  font-family: var(--font-head);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  text-align: center;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.heatmap-year-btn:hover {
+  color: var(--white);
+  border-color: var(--gray-mid);
+}
+.heatmap-year-btn.is-active {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
 }
 
 /* ── UPDATED TIMESTAMP ── */

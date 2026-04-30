@@ -34,26 +34,25 @@ document.querySelectorAll('.hobby-tab').forEach(tab => {
 });
 
 // ── HEATMAP ──
-function buildHeatmap(dailyKm, ytdKm) {
+function buildHeatmap(dailyKm) {
   const grid     = document.getElementById('run-heatmap');
   const monthsEl = document.getElementById('heatmap-months');
   const tooltip  = document.getElementById('heatmap-tooltip');
   const ytdLabel = document.getElementById('heatmap-ytd-label');
+  const yearsEl  = document.getElementById('heatmap-years');
   if (!grid || !monthsEl) return;
 
-  if (ytdLabel && ytdKm != null) {
-    ytdLabel.textContent = `${ytdKm.toLocaleString()} km in the last 365 days`;
-  }
-
   const CELL = 13, GAP = 3, WEEK_W = CELL + GAP;
+  const MIN_GAP_COLS = 3;
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+  const currentYear = today.getFullYear();
 
-  // Snap to the Sunday ≥ 52 weeks ago
-  const start = new Date(today);
-  start.setDate(start.getDate() - 52 * 7);
-  start.setDate(start.getDate() - start.getDay());
+  // ── Collect available years from data ──
+  const yearSet = new Set(Object.keys(dailyKm).map(d => parseInt(d.slice(0, 4))));
+  yearSet.add(currentYear);
+  const years = [...yearSet].sort((a, b) => b - a); // newest first
 
   const getLevel = km => {
     if (!km) return 0;
@@ -63,67 +62,102 @@ function buildHeatmap(dailyKm, ytdKm) {
     return 4;
   };
 
-  let cursor        = new Date(start);
-  let weekIdx       = 0;
-  let prevMonth     = -1;
-  let lastLabel     = null;   // DOM element of the most-recently placed month label
-  let lastLabelCol  = -99;    // column index where it was placed
-  const MIN_GAP_COLS = 3;     // minimum columns between labels before they'd visually overlap
-
-  while (cursor <= today) {
-    // Month label at first week of each new month
-    const mo = cursor.getMonth();
-    if (mo !== prevMonth) {
-      // If the previous label is too close, remove it — the new month wins
-      if (lastLabel && weekIdx - lastLabelCol < MIN_GAP_COLS) {
-        lastLabel.remove();
-      }
-      const lbl = document.createElement('span');
-      lbl.className = 'heatmap-month-label';
-      lbl.textContent = cursor.toLocaleString('en-US', { month: 'short' }).toUpperCase();
-      lbl.style.left = (weekIdx * WEEK_W) + 'px';
-      monthsEl.appendChild(lbl);
-      lastLabel    = lbl;
-      lastLabelCol = weekIdx;
-      prevMonth    = mo;
-    }
-
-    const weekEl = document.createElement('div');
-    weekEl.className = 'heatmap-week';
-
-    for (let d = 0; d < 7; d++) {
-      const dateStr = cursor.toISOString().slice(0, 10);
-      const km      = dailyKm[dateStr] || 0;
-      const future  = cursor > today;
-
-      const cell = document.createElement('div');
-      cell.className = `heatmap-cell level-${future ? 'x' : getLevel(km)}`;
-
-      if (!future && tooltip) {
-        const snap = new Date(cursor); // capture for closure
-        const fmtDate = snap.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-        const kmText  = km > 0 ? `${km} km` : 'Rest day';
-
-        cell.addEventListener('mouseenter', () => {
-          tooltip.textContent = `${kmText} — ${fmtDate}`;
-          tooltip.classList.add('is-visible');
-        });
-        cell.addEventListener('mousemove', e => {
-          tooltip.style.left = (e.clientX + 14) + 'px';
-          tooltip.style.top  = (e.clientY - 36) + 'px';
-        });
-        cell.addEventListener('mouseleave', () => {
-          tooltip.classList.remove('is-visible');
-        });
-      }
-
-      weekEl.appendChild(cell);
-      cursor.setDate(cursor.getDate() + 1);
-    }
-
-    grid.appendChild(weekEl);
-    weekIdx++;
+  function getYearKm(year) {
+    return Object.entries(dailyKm)
+      .filter(([d]) => d.startsWith(year + '-'))
+      .reduce((sum, [, km]) => sum + km, 0);
   }
+
+  // ── Render grid for a given year ──
+  function renderGrid(year) {
+    grid.innerHTML     = '';
+    monthsEl.innerHTML = '';
+
+    const yearStart = new Date(year, 0, 1);
+    const yearEnd   = year === currentYear ? today : new Date(year, 11, 31);
+
+    // Snap to Sunday on or before Jan 1
+    const start = new Date(yearStart);
+    start.setDate(start.getDate() - start.getDay());
+
+    const km = Math.round(getYearKm(year) * 10) / 10;
+    if (ytdLabel) ytdLabel.textContent = `${km.toLocaleString()} km in ${year}`;
+
+    let cursor       = new Date(start);
+    let weekIdx      = 0;
+    let prevMonth    = -1;
+    let lastLabel    = null;
+    let lastLabelCol = -99;
+
+    while (cursor <= yearEnd) {
+      const mo = cursor.getMonth();
+      if (mo !== prevMonth) {
+        if (lastLabel && weekIdx - lastLabelCol < MIN_GAP_COLS) lastLabel.remove();
+        const lbl = document.createElement('span');
+        lbl.className   = 'heatmap-month-label';
+        lbl.textContent = cursor.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+        lbl.style.left  = (weekIdx * WEEK_W) + 'px';
+        monthsEl.appendChild(lbl);
+        lastLabel    = lbl;
+        lastLabelCol = weekIdx;
+        prevMonth    = mo;
+      }
+
+      const weekEl = document.createElement('div');
+      weekEl.className = 'heatmap-week';
+
+      for (let d = 0; d < 7; d++) {
+        const dateStr = cursor.toISOString().slice(0, 10);
+        const km      = dailyKm[dateStr] || 0;
+        const future  = cursor > today;
+        const outside = cursor < yearStart; // Sunday padding before Jan 1
+
+        const cell = document.createElement('div');
+        cell.className = `heatmap-cell level-${(future || outside) ? 'x' : getLevel(km)}`;
+
+        if (!future && !outside && tooltip) {
+          const snap    = new Date(cursor);
+          const fmtDate = snap.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          const kmText  = km > 0 ? `${km} km` : 'Rest day';
+          cell.addEventListener('mouseenter', () => {
+            tooltip.textContent = `${kmText} — ${fmtDate}`;
+            tooltip.classList.add('is-visible');
+          });
+          cell.addEventListener('mousemove', e => {
+            tooltip.style.left = (e.clientX + 14) + 'px';
+            tooltip.style.top  = (e.clientY - 36) + 'px';
+          });
+          cell.addEventListener('mouseleave', () => tooltip.classList.remove('is-visible'));
+        }
+
+        weekEl.appendChild(cell);
+        cursor.setDate(cursor.getDate() + 1);
+      }
+
+      grid.appendChild(weekEl);
+      weekIdx++;
+    }
+  }
+
+  // ── Build year buttons ──
+  let activeYear = currentYear;
+  if (yearsEl) {
+    years.forEach(year => {
+      const btn = document.createElement('button');
+      btn.className   = 'heatmap-year-btn' + (year === activeYear ? ' is-active' : '');
+      btn.textContent = year;
+      btn.addEventListener('click', () => {
+        if (year === activeYear) return;
+        activeYear = year;
+        yearsEl.querySelectorAll('.heatmap-year-btn').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        renderGrid(year);
+      });
+      yearsEl.appendChild(btn);
+    });
+  }
+
+  renderGrid(activeYear);
 }
 
 // ── STRAVA DATA ──
@@ -155,7 +189,7 @@ fetch('strava-data.json')
     document.getElementById('strava-updated').textContent = data.updated_at;
 
     // Heatmap
-    buildHeatmap(data.daily_km || {}, data.totals.ytd_km);
+    buildHeatmap(data.daily_km || {});
 
     // Best efforts
     const bestsEl = document.getElementById('strava-bests');

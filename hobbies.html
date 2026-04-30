@@ -74,25 +74,28 @@
           <h3 class="hobby-subsection-title" style="border:none;margin:0;padding:0;">RUNNING LOG</h3>
           <span class="heatmap-ytd-text" id="heatmap-ytd-label"></span>
         </div>
-        <div class="run-heatmap-outer">
-          <div class="run-heatmap-scroll">
-            <div class="heatmap-month-row" id="heatmap-months"></div>
-            <div class="heatmap-main">
-              <div class="heatmap-day-labels">
-                <span></span><span>Mon</span><span></span><span>Wed</span><span></span><span>Fri</span><span></span>
+        <div class="run-heatmap-wrapper">
+          <div class="run-heatmap-outer">
+            <div class="run-heatmap-scroll">
+              <div class="heatmap-month-row" id="heatmap-months"></div>
+              <div class="heatmap-main">
+                <div class="heatmap-day-labels">
+                  <span></span><span>Mon</span><span></span><span>Wed</span><span></span><span>Fri</span><span></span>
+                </div>
+                <div class="heatmap-grid" id="run-heatmap"></div>
               </div>
-              <div class="heatmap-grid" id="run-heatmap"></div>
+            </div>
+            <div class="heatmap-legend">
+              <span class="heatmap-legend-text">Less</span>
+              <div class="heatmap-cell level-0"></div>
+              <div class="heatmap-cell level-1"></div>
+              <div class="heatmap-cell level-2"></div>
+              <div class="heatmap-cell level-3"></div>
+              <div class="heatmap-cell level-4"></div>
+              <span class="heatmap-legend-text">More</span>
             </div>
           </div>
-          <div class="heatmap-legend">
-            <span class="heatmap-legend-text">Less</span>
-            <div class="heatmap-cell level-0"></div>
-            <div class="heatmap-cell level-1"></div>
-            <div class="heatmap-cell level-2"></div>
-            <div class="heatmap-cell level-3"></div>
-            <div class="heatmap-cell level-4"></div>
-            <span class="heatmap-legend-text">More</span>
-          </div>
+          <div class="heatmap-year-selector" id="heatmap-years"></div>
         </div>
         <div class="heatmap-tooltip" id="heatmap-tooltip"></div>
       </div>

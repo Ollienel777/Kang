@@ -1,3 +1,22 @@
+// ── MOBILE NAV ──
+(function () {
+  const hamburger  = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('nav-mobile-menu');
+  if (!hamburger || !mobileMenu) return;
+
+  hamburger.addEventListener('click', () => {
+    const opening = mobileMenu.classList.toggle('is-open');
+    hamburger.classList.toggle('is-open', opening);
+  });
+
+  mobileMenu.querySelectorAll('.nav-mobile-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      mobileMenu.classList.remove('is-open');
+      hamburger.classList.remove('is-open');
+    });
+  });
+}());
+
 // ── MODALS ──
 const openModal = id => document.getElementById(id)?.classList.add('is-open');
 

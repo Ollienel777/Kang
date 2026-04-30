@@ -128,6 +128,36 @@ function preloadImages(urls) {
   }));
 }());
 
+// ── MOBILE NAV ──
+(function () {
+  const hamburger  = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('nav-mobile-menu');
+  if (!hamburger || !mobileMenu) return;
+
+  function closeMenu() {
+    mobileMenu.classList.remove('is-open');
+    hamburger.classList.remove('is-open');
+  }
+
+  hamburger.addEventListener('click', () => {
+    const opening = mobileMenu.classList.toggle('is-open');
+    hamburger.classList.toggle('is-open', opening);
+  });
+
+  // Close when any item is tapped
+  mobileMenu.querySelectorAll('.nav-mobile-btn').forEach(btn => {
+    btn.addEventListener('click', closeMenu);
+  });
+
+  // Mobile FILTER wires to the same filter bar
+  const mobileFilter = document.getElementById('mobile-filter-toggle');
+  if (mobileFilter) {
+    mobileFilter.addEventListener('click', () => {
+      document.getElementById('filter-bar')?.classList.toggle('is-open');
+    });
+  }
+}());
+
 // MODALS
 const openModal  = id => document.getElementById(id)?.classList.add('is-open');
 const closeModal = id => document.getElementById(id)?.classList.remove('is-open');

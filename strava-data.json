@@ -63,27 +63,6 @@
       "activity_id": 18246669401,
       "date": "2026-04-24"
     },
-    "5k": {
-      "elapsed_time": 11,
-      "time": "0:11",
-      "pace": "0:02 /km",
-      "activity_id": 10074390584,
-      "date": "2023-10-20"
-    },
-    "10k": {
-      "elapsed_time": 22,
-      "time": "0:22",
-      "pace": "0:02 /km",
-      "activity_id": 10074390584,
-      "date": "2023-10-20"
-    },
-    "15k": {
-      "elapsed_time": 33,
-      "time": "0:33",
-      "pace": "0:02 /km",
-      "activity_id": 10074390584,
-      "date": "2023-10-20"
-    }
   },
   "recent_runs": [
     {

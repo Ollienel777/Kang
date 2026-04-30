@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-04-29",
+  "updated_at": "2026-04-30",
   "totals": {
     "all_time_km": 1058.3,
-    "ytd_km": 644.0,
-    "ytd_runs": 108,
-    "ytd_time": "63:48:14"
+    "ytd_km": 642.8,
+    "ytd_runs": 107,
+    "ytd_time": "63:41:21"
   },
   "best_efforts": {
     "400m": {
@@ -62,6 +62,27 @@
       "pace": "6:06 /km",
       "activity_id": 18246669401,
       "date": "2026-04-24"
+    },
+    "5k": {
+      "elapsed_time": 11,
+      "time": "0:11",
+      "pace": "0:02 /km",
+      "activity_id": 10074390584,
+      "date": "2023-10-20"
+    },
+    "10k": {
+      "elapsed_time": 22,
+      "time": "0:22",
+      "pace": "0:02 /km",
+      "activity_id": 10074390584,
+      "date": "2023-10-20"
+    },
+    "15k": {
+      "elapsed_time": 33,
+      "time": "0:33",
+      "pace": "0:02 /km",
+      "activity_id": 10074390584,
+      "date": "2023-10-20"
     }
   },
   "recent_runs": [

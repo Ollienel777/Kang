@@ -68,20 +68,35 @@ function buildHeatmap(dailyKm) {
       .reduce((sum, [, km]) => sum + km, 0);
   }
 
-  // ── Render grid for a given year ──
+  // ── Render grid ──
+  // year = number (calendar year) or 'rolling' (last 365 days)
   function renderGrid(year) {
     grid.innerHTML     = '';
     monthsEl.innerHTML = '';
 
-    const yearStart = new Date(year, 0, 1);
-    const yearEnd   = year === currentYear ? today : new Date(year, 11, 31);
+    let start, yearEnd, yearStart;
 
-    // Snap to Sunday on or before Jan 1
-    const start = new Date(yearStart);
-    start.setDate(start.getDate() - start.getDay());
+    if (year === 'rolling') {
+      // Last 52 weeks ending today
+      yearStart = null; // no hard boundary — all cells are valid
+      yearEnd   = today;
+      start     = new Date(today);
+      start.setDate(start.getDate() - 52 * 7);
+      start.setDate(start.getDate() - start.getDay());
 
-    const km = Math.round(getYearKm(year) * 10) / 10;
-    if (ytdLabel) ytdLabel.textContent = `${km.toLocaleString()} km in ${year}`;
+      const rollingKm = Object.entries(dailyKm)
+        .filter(([d]) => d >= start.toISOString().slice(0, 10))
+        .reduce((sum, [, km]) => sum + km, 0);
+      if (ytdLabel) ytdLabel.textContent = `${Math.round(rollingKm * 10) / 10} km in the last 365 days`;
+    } else {
+      yearStart = new Date(year, 0, 1);
+      yearEnd   = year === currentYear ? today : new Date(year, 11, 31);
+      start     = new Date(yearStart);
+      start.setDate(start.getDate() - start.getDay()); // snap to Sunday
+
+      const km = Math.round(getYearKm(year) * 10) / 10;
+      if (ytdLabel) ytdLabel.textContent = `${km.toLocaleString()} km in ${year}`;
+    }
 
     let cursor       = new Date(start);
     let weekIdx      = 0;
@@ -110,7 +125,7 @@ function buildHeatmap(dailyKm) {
         const dateStr = cursor.toISOString().slice(0, 10);
         const km      = dailyKm[dateStr] || 0;
         const future  = cursor > today;
-        const outside = cursor < yearStart; // Sunday padding before Jan 1
+        const outside = yearStart && cursor < yearStart; // pre-Jan padding in calendar mode
 
         const cell = document.createElement('div');
         cell.className = `heatmap-cell level-${(future || outside) ? 'x' : getLevel(km)}`;
@@ -140,24 +155,36 @@ function buildHeatmap(dailyKm) {
   }
 
   // ── Build year buttons ──
-  let activeYear = currentYear;
+  let activeYear = 'rolling';
+
+  function setActive(selected) {
+    activeYear = selected;
+    yearsEl.querySelectorAll('.heatmap-year-btn').forEach(b => b.classList.remove('is-active'));
+    yearsEl.querySelector(`[data-year="${selected}"]`)?.classList.add('is-active');
+    renderGrid(selected);
+  }
+
   if (yearsEl) {
+    // "Last 365 days" pill at the top
+    const rollingBtn = document.createElement('button');
+    rollingBtn.className      = 'heatmap-year-btn is-active';
+    rollingBtn.dataset.year   = 'rolling';
+    rollingBtn.textContent    = '365 DAYS';
+    rollingBtn.addEventListener('click', () => setActive('rolling'));
+    yearsEl.appendChild(rollingBtn);
+
+    // Individual year buttons
     years.forEach(year => {
       const btn = document.createElement('button');
-      btn.className   = 'heatmap-year-btn' + (year === activeYear ? ' is-active' : '');
-      btn.textContent = year;
-      btn.addEventListener('click', () => {
-        if (year === activeYear) return;
-        activeYear = year;
-        yearsEl.querySelectorAll('.heatmap-year-btn').forEach(b => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        renderGrid(year);
-      });
+      btn.className      = 'heatmap-year-btn';
+      btn.dataset.year   = year;
+      btn.textContent    = year;
+      btn.addEventListener('click', () => setActive(year));
       yearsEl.appendChild(btn);
     });
   }
 
-  renderGrid(activeYear);
+  renderGrid('rolling');
 }
 
 // ── STRAVA DATA ──

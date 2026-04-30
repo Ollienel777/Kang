@@ -21,7 +21,7 @@ EFFORT_DISTANCES_M = {
 # Only fetch individual activity details for this many recent days.
 # Older PRs are preserved from the previous strava-data.json.
 # This keeps each run well under Strava's 1000 req/day limit.
-DETAIL_WINDOW_DAYS = 180
+DETAIL_WINDOW_DAYS = 60
 
 
 def get_access_token():

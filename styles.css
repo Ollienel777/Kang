@@ -267,6 +267,13 @@ html, body {
   opacity: 0.55;
 }
 
+.col-bg--experience {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/Demo/Stock_Portfolio_Engine_Demo.webp') center / cover no-repeat;
+  opacity: 0.55;
+}
+
 .col-bg--end {
   background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 40%, var(--black) 100%);
   opacity: 0.35;

@@ -1142,6 +1142,62 @@ html, body {
   }
 }
 
+/* ── TOUCH: scroll-reveal replaces hover ──
+   On touch screens (hover:none) .is-in-view is added by JS when >50%
+   of the column is visible — mirrors every :hover rule above. */
+@media (hover: none) and (pointer: coarse) {
+  /* Generic dim on all non-focused cols */
+  .col.is-in-view .col-bg { opacity: 0.25; }
+
+  /* Project columns */
+  .col-project.is-in-view .col-bg        { opacity: 0.9; }
+  .col-project.is-in-view                { background: rgba(191,44,58,0.04); }
+  .col-project.is-in-view .section-label {
+    max-height: 30px;
+    opacity: 1;
+    margin-bottom: 16px;
+    transition-delay: 0s;
+  }
+  .col-project.is-in-view .project-num {
+    max-height: 90px;
+    opacity: 1;
+    margin-bottom: -12px;
+    transition-delay: 0.05s;
+  }
+  .col-project.is-in-view .project-details {
+    max-height: 320px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.72) 22%);
+    transition-delay: 0.08s;
+  }
+
+  /* About column */
+  .col-about.is-in-view .col-bg--about   { opacity: 0.85; }
+
+  /* Skills column */
+  .col-skills.is-in-view                 { background: rgba(191,44,58,0.03); }
+  .col-skills.is-in-view .section-label  {
+    max-height: 30px;
+    opacity: 1;
+    margin-bottom: 16px;
+  }
+  .col-skills.is-in-view .skills-details {
+    max-height: 400px;
+    transition-delay: 0.06s;
+  }
+
+  /* Hero column accents */
+  .col-hero.is-in-view .col-bg--hero     { opacity: 0.9; }
+  .col-hero.is-in-view::after            { opacity: 1; }
+  .col-hero.is-in-view .col-inner::before {
+    top: 4%;
+    bottom: 4%;
+    box-shadow: 0 0 14px rgba(191,44,58,0.8), 0 0 40px rgba(191,44,58,0.3);
+  }
+  .col-hero.is-in-view .hero-name {
+    text-shadow: 0 0 80px rgba(191,44,58,0.4);
+  }
+}
+
 /* GPU hint */
 .col { will-change: transform, opacity; }
 

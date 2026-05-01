@@ -296,6 +296,25 @@ document.addEventListener('click', e => {
   }
 });
 
+// ── MOBILE SCROLL-INTO-VIEW HOVER (touch devices only) ──
+// On touch screens there's no hover, so use IntersectionObserver to add
+// `is-in-view` when a column is >50% visible — CSS treats it like :hover.
+(function () {
+  if (!window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
+
+  const allCols = document.querySelectorAll('.col');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('is-in-view', entry.isIntersecting);
+    });
+  }, {
+    root:      world,   // observe within the horizontal scroll container
+    threshold: 0.5,     // fire when ≥50% of the column is visible
+  });
+
+  allCols.forEach(col => observer.observe(col));
+}());
+
 // ── PROJECT FILTER ──
 const filterBtns  = document.querySelectorAll('.filter-btn');
 const projectCols = document.querySelectorAll('.col-project');

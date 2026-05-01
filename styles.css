@@ -886,11 +886,12 @@ html, body {
 /* ── PROJECT MODALS ── */
 .modal-box--project {
   max-width: 720px;
+  width: 100%;
+  height: 88vh;
   padding: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  max-height: 88vh;
 }
 
 .project-modal-media {

@@ -885,21 +885,20 @@ html, body {
 
 /* ── PROJECT MODALS ── */
 .modal-box--project {
-  max-width: 720px;
+  max-width: 960px;
   width: 100%;
   height: 88vh;
   padding: 0;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .project-modal-media {
   flex: 1;
-  width: 100%;
-  min-height: 80px;
+  min-width: 0;
   background: var(--black);
-  border-bottom: 1px solid var(--gray-mid);
+  border-right: 1px solid var(--gray-mid);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -941,9 +940,9 @@ html, body {
 }
 
 .project-modal-content {
-  flex-shrink: 0;
-  max-height: 52vh;
-  padding: 36px 40px 40px;
+  flex: 0 0 340px;
+  overflow-y: auto;
+  padding: 36px 36px 40px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -1013,7 +1012,7 @@ html, body {
   color: var(--gray-lite);
 }
 
-/* close button repositioned for project modal */
+/* close button sits top-right of the content panel */
 .modal-box--project > .modal-close {
   position: absolute;
   top: 14px;
@@ -1026,6 +1025,23 @@ html, body {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(4px);
+}
+
+/* mobile: stack vertically */
+@media (max-width: 680px) {
+  .modal-box--project {
+    flex-direction: column;
+    height: 92vh;
+  }
+  .project-modal-media {
+    flex: 0 0 240px;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-mid);
+  }
+  .project-modal-content {
+    flex: 1;
+    min-width: 0;
+  }
 }
 
 /* make project columns feel clickable */

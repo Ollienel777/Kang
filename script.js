@@ -296,24 +296,30 @@ document.addEventListener('click', e => {
   }
 });
 
-// ── MOBILE SCROLL-INTO-VIEW HOVER (touch devices only) ──
-// On touch screens there's no hover, so use IntersectionObserver to add
-// `is-in-view` when a column is >50% visible — CSS treats it like :hover.
-// Always runs; CSS @media(hover:none) gates which styles actually apply.
+// ── MOBILE SCROLL-INTO-VIEW HOVER (touch/non-mouse devices only) ──
+// IntersectionObserver is unreliable for horizontal overflow containers, so
+// we use a scroll listener instead. The CSS guard (@media hover:none) also
+// mismatches on some Android browsers, so we gate purely in JS and leave
+// the CSS rules ungated — they're harmless on desktop since the class is
+// never added there.
 (function () {
-  const allCols = document.querySelectorAll('.col');
+  // Skip on devices with a real hover-capable fine pointer (desktop mouse).
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
 
-  // Use viewport as root (more reliable than a custom overflow element).
-  // rootMargin trims the left/right edges so a column must be well-centred.
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      entry.target.classList.toggle('is-in-view', entry.isIntersecting);
+  const allCols = Array.from(document.querySelectorAll('.col'));
+
+  function updateInView() {
+    const wRect = world.getBoundingClientRect();
+    allCols.forEach(col => {
+      const rect    = col.getBoundingClientRect();
+      const overlap = Math.min(rect.right, wRect.right) - Math.max(rect.left, wRect.left);
+      const ratio   = overlap / rect.width;
+      col.classList.toggle('is-in-view', ratio >= 0.5);
     });
-  }, {
-    threshold: 0.5,    // fire when ≥50% of the column area is in the viewport
-  });
+  }
 
-  allCols.forEach(col => observer.observe(col));
+  world.addEventListener('scroll', updateInView, { passive: true });
+  updateInView(); // reveal the first column immediately on load
 }());
 
 // ── PROJECT FILTER ──

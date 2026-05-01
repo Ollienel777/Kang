@@ -78,7 +78,8 @@ function buildHeatmap(dailyKm) {
     if (km < 5)  return 1;
     if (km < 10) return 2;
     if (km < 15) return 3;
-    return 4;
+    if (km < 20) return 4;
+    return 5;
   };
 
   function getYearKm(year) {

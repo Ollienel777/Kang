@@ -411,6 +411,7 @@ html, body {
 .heatmap-cell.level-2 { background: #7a1a24; }
 .heatmap-cell.level-3 { background: #a32230; }
 .heatmap-cell.level-4 { background: var(--red); }
+.heatmap-cell.level-5 { background: #f5a623; box-shadow: 0 0 4px rgba(245,166,35,0.6); }
 .heatmap-cell.level-x { background: #141414; }
 
 .heatmap-cell:not(.level-0):not(.level-x):hover {

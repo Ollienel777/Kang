@@ -299,17 +299,18 @@ document.addEventListener('click', e => {
 // ── MOBILE SCROLL-INTO-VIEW HOVER (touch devices only) ──
 // On touch screens there's no hover, so use IntersectionObserver to add
 // `is-in-view` when a column is >50% visible — CSS treats it like :hover.
+// Always runs; CSS @media(hover:none) gates which styles actually apply.
 (function () {
-  if (!window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
-
   const allCols = document.querySelectorAll('.col');
+
+  // Use viewport as root (more reliable than a custom overflow element).
+  // rootMargin trims the left/right edges so a column must be well-centred.
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       entry.target.classList.toggle('is-in-view', entry.isIntersecting);
     });
   }, {
-    root:      world,   // observe within the horizontal scroll container
-    threshold: 0.5,     // fire when ≥50% of the column is visible
+    threshold: 0.5,    // fire when ≥50% of the column area is in the viewport
   });
 
   allCols.forEach(col => observer.observe(col));

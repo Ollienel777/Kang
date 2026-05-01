@@ -1145,7 +1145,7 @@ html, body {
 /* ── TOUCH: scroll-reveal replaces hover ──
    On touch screens (hover:none) .is-in-view is added by JS when >50%
    of the column is visible — mirrors every :hover rule above. */
-@media (hover: none) and (pointer: coarse) {
+@media (hover: none) {
   /* Generic dim on all non-focused cols */
   .col.is-in-view .col-bg { opacity: 0.25; }
 

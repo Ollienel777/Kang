@@ -1,17 +1,17 @@
 // images for primary column
 const HERO_IMAGES = [
-  'Images/Profile/mmexport1751084857485.jpg',
-  'Images/Profile/20250601_082935.jpg',
-  'Images/Profile/mmexport1753167914099.jpg',
-  'Images/Profile/mmexport1749465311435.jpg',
-  'Images/Profile/20250719_192400.jpg',
-  'Images/Profile/20250720_211507.jpg',
-  'Images/Profile/20250722_120126.jpg',
-  'Images/Profile/20250723_202834(1).jpg',
+  'Images/Profile/mmexport1751084857485.webp',
+  'Images/Profile/20250601_082935.webp',
+  'Images/Profile/mmexport1753167914099.webp',
+  'Images/Profile/mmexport1749465311435.webp',
+  'Images/Profile/20250719_192400.webp',
+  'Images/Profile/20250720_211507.webp',
+  'Images/Profile/20250722_120126.webp',
+  'Images/Profile/20250723_202834(1).webp',
   'Images/Profile/IMG_20240701_182805_452.jpg',
-  'Images/Profile/mmexport1749246179061.jpg',
-  'Images/Profile/mmexport1753223460741.jpg',
-  'Images/Profile/mmexport1753223779798.jpg',
+  'Images/Profile/mmexport1749246179061.webp',
+  'Images/Profile/mmexport1753223460741.webp',
+  'Images/Profile/mmexport1753223779798.webp',
 ];
 
 (function initCarousel() {
@@ -49,13 +49,13 @@ const HERO_IMAGES = [
 
 // ── IMAGE PRELOADER ──
 const COLUMN_IMAGES = [
-  'Images/ColumnThumbnail/ClipFarm.jpg',
-  'Images/ColumnThumbnail/ML_Chess_Model.jpg',
-  'Images/ColumnThumbnail/CFM_Market_Beat.jpg',
-  'Images/ColumnThumbnail/quilify.jpg',
-  'Images/ColumnThumbnail/TBPoker.jpg',
-  'Images/ColumnThumbnail/TechStack.jpg',
-  'Images/Garden/20250719_115730_cpy.jpg',
+  'Images/ColumnThumbnail/ClipFarm.webp',
+  'Images/ColumnThumbnail/ML_Chess_Model.webp',
+  'Images/ColumnThumbnail/CFM_Market_Beat.webp',
+  'Images/ColumnThumbnail/quilify.webp',
+  'Images/ColumnThumbnail/TBPoker.webp',
+  'Images/ColumnThumbnail/TechStack.webp',
+  'Images/Garden/20250719_115730_cpy.webp',
 ];
 
 function preloadImages(urls) {

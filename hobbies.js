@@ -254,6 +254,17 @@ fetch('strava-data.json')
       }).join('');
     }
 
+    // Always append Marathon as a goal row if no real PR exists
+    if (!bests['Marathon']) {
+      bestsEl.innerHTML += `
+        <div class="hobby-best-row">
+          <span class="hobby-best-dist">Marathon</span>
+          <span class="hobby-best-time">working on it 🫩</span>
+          <span class="hobby-best-pace"></span>
+          <span class="hobby-best-date"></span>
+        </div>`;
+    }
+
     // Recent runs
     const recentEl = document.getElementById('strava-recent');
     const runs = data.recent_runs;

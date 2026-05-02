@@ -2,7 +2,9 @@
 html, body {
   overflow: auto;
   height: auto;
+  scrollbar-width: none;
 }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 
 .hobbies-main {
   padding-top: calc(var(--nav-h) + 60px);

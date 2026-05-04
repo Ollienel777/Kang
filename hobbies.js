@@ -226,13 +226,22 @@ fetch('strava-data.json')
   .then(data => {
     // Totals
     document.getElementById('stat-alltime').textContent  = data.totals.all_time_km.toLocaleString() + ' km';
-    document.getElementById('stat-ytd-km').textContent   = data.totals.ytd_km.toLocaleString() + ' km';
     document.getElementById('stat-ytd-runs').textContent = data.totals.ytd_runs;
     document.getElementById('stat-ytd-time').textContent = data.totals.ytd_time;
     document.getElementById('strava-updated').textContent = data.updated_at;
 
+    // Rolling 365-day km — calculated from daily_km so it matches the heatmap
+    const dailyKm  = data.daily_km || {};
+    const cutoff   = new Date();
+    cutoff.setDate(cutoff.getDate() - 365);
+    const cutoffStr = cutoff.toISOString().slice(0, 10);
+    const rolling365 = Object.entries(dailyKm)
+      .filter(([d]) => d >= cutoffStr)
+      .reduce((sum, [, km]) => sum + km, 0);
+    document.getElementById('stat-ytd-km').textContent = (Math.round(rolling365 * 10) / 10).toLocaleString() + ' km';
+
     // Heatmap
-    buildHeatmap(data.daily_km || {});
+    buildHeatmap(dailyKm);
 
     // Best efforts
     const bestsEl = document.getElementById('strava-bests');

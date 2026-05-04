@@ -1,3 +1,14 @@
+// ── NAV SCROLL FADE ──
+// NKANG logo + Connect stay sticky; ← Back + Resume fade when scrolled down.
+(function () {
+  const THRESHOLD = 60;
+  function update() {
+    document.body.classList.toggle('is-scrolled', window.scrollY > THRESHOLD);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}());
+
 // ── MOBILE NAV ──
 (function () {
   const hamburger  = document.getElementById('nav-hamburger');

@@ -6,6 +6,15 @@ html, body {
 }
 html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 
+/* ← Back + Resume fade on scroll; logo + Connect stay sticky */
+.nav-links {
+  transition: opacity 0.3s ease, pointer-events 0s;
+}
+.is-scrolled .nav-links {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .hobbies-main {
   padding-top: calc(var(--nav-h) + 60px);
   padding-bottom: 120px;

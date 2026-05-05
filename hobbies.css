@@ -6,6 +6,9 @@ html, body {
 }
 html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 
+/* Remove underline from NKANG logo link */
+.nav-logo { text-decoration: none; }
+
 /* ← Back + Resume fade on scroll; logo + Connect stay sticky */
 .nav-links {
   transition: opacity 0.3s ease, pointer-events 0s;

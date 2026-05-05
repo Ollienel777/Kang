@@ -219,9 +219,8 @@ function buildHeatmap(dailyKm) {
 }
 
 // ── STRAVA DATA ──
-const BEST_EFFORT_ORDER = ['2 mile', '5k', '10k', '15k', '10 mile', '20k', 'Half-Marathon', '30k', 'Marathon'];
+const BEST_EFFORT_ORDER = ['5k', '10k', '15k', '10 mile', '20k', 'Half-Marathon', '30k', 'Marathon'];
 const BEST_EFFORT_LABELS = {
-  '2 mile':        '2 Mile',
   '5k':            '5 km',
   '10k':           '10 km',
   '15k':           '15 km',

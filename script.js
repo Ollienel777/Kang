@@ -172,6 +172,9 @@ document.querySelectorAll('.modal-carousel').forEach(carousel => {
     current = (idx + slides.length) % slides.length;
     slides[current].classList.add('is-active');
     dots[current]?.classList.add('is-active');
+    // Force-load if browser skipped it while the slide was display:none
+    const vid = slides[current].querySelector('video');
+    if (vid && vid.readyState === 0) vid.load();
   }
 
   carousel.querySelector('.carousel-btn--prev')?.addEventListener('click', () => goTo(current - 1));

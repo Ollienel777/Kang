@@ -1,10 +1,10 @@
 {
   "updated_at": "2026-05-05",
   "totals": {
-    "all_time_km": 1088.5,
-    "ytd_km": 663.4,
-    "ytd_runs": 108,
-    "ytd_time": "65:34:57"
+    "all_time_km": 1099.3,
+    "ytd_km": 674.2,
+    "ytd_runs": 109,
+    "ytd_time": "66:34:57"
   },
   "best_efforts": {
     "400m": {
@@ -87,6 +87,14 @@
   },
   "recent_runs": [
     {
+      "id": 18380240383,
+      "name": "Night Run",
+      "distance": 10.81,
+      "time": "1:00:00",
+      "pace": "5:33 /km",
+      "date": "2026-05-04"
+    },
+    {
       "id": 18367295655,
       "name": "38.3/260km May 3rd",
       "distance": 11.0,
@@ -125,17 +133,10 @@
       "time": "55:27",
       "pace": "5:18 /km",
       "date": "2026-04-30"
-    },
-    {
-      "id": 18307729928,
-      "name": "Lunch Run with Butter",
-      "distance": 10.01,
-      "time": "56:38",
-      "pace": "5:39 /km",
-      "date": "2026-04-29"
     }
   ],
   "daily_km": {
+    "2026-05-04": 10.81,
     "2026-05-03": 11.0,
     "2026-05-02": 15.36,
     "2026-05-01": 12.03,

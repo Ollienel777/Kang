@@ -158,6 +158,35 @@ function preloadImages(urls) {
   }
 }());
 
+// ── MODAL CAROUSELS ──
+document.querySelectorAll('.modal-carousel').forEach(carousel => {
+  const slides = Array.from(carousel.querySelectorAll('.modal-carousel-slide'));
+  const dots   = Array.from(carousel.querySelectorAll('.carousel-dot'));
+  let current  = 0;
+
+  function goTo(idx) {
+    // pause the leaving video
+    slides[current].querySelector('video')?.pause();
+    slides[current].classList.remove('is-active');
+    dots[current]?.classList.remove('is-active');
+    current = (idx + slides.length) % slides.length;
+    slides[current].classList.add('is-active');
+    dots[current]?.classList.add('is-active');
+  }
+
+  carousel.querySelector('.carousel-btn--prev')?.addEventListener('click', () => goTo(current - 1));
+  carousel.querySelector('.carousel-btn--next')?.addEventListener('click', () => goTo(current + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+  // reset to first slide whenever the parent modal opens
+  const modal = carousel.closest('.modal');
+  if (modal) {
+    new MutationObserver(() => {
+      if (modal.classList.contains('is-open')) goTo(0);
+    }).observe(modal, { attributes: true, attributeFilter: ['class'] });
+  }
+});
+
 // MODALS
 const openModal  = id => document.getElementById(id)?.classList.add('is-open');
 const closeModal = id => document.getElementById(id)?.classList.remove('is-open');

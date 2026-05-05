@@ -400,9 +400,26 @@ challenge is just figuring out where to start.
     <div class="modal-box modal-box--project">
       <button class="modal-close">✕</button>
       <div class="project-modal-media">
-        <video class="project-modal-video" controls muted playsinline>
-          <source src="Images/Demo/ClipFarm_Recording.mp4" type="video/mp4">
-        </video>
+        <div class="modal-carousel">
+          <div class="modal-carousel-track">
+            <div class="modal-carousel-slide is-active">
+              <video class="project-modal-video" controls muted playsinline>
+                <source src="Images/Demo/ClipFarm_Recording.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="modal-carousel-slide">
+              <video class="project-modal-video" controls muted playsinline>
+                <source src="Images/Demo/ClipFarm_annotated_spike.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <button class="carousel-btn carousel-btn--prev" aria-label="Previous">&#8249;</button>
+          <button class="carousel-btn carousel-btn--next" aria-label="Next">&#8250;</button>
+          <div class="carousel-dots">
+            <span class="carousel-dot is-active"></span>
+            <span class="carousel-dot"></span>
+          </div>
+        </div>
       </div>
       <div class="project-modal-content">
         <div class="project-modal-meta">

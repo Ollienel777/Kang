@@ -240,10 +240,14 @@ fetch('strava-data.json')
     document.getElementById('stat-ytd-time').textContent = data.totals.ytd_time;
     document.getElementById('strava-updated').textContent = data.updated_at;
 
-    // Rolling 365-day km — calculated from daily_km so it matches the heatmap
+    // Rolling km — use the exact same window as the heatmap (52 weeks snapped
+    // to Sunday) so both numbers are always identical.
     const dailyKm  = data.daily_km || {};
-    const cutoff   = new Date();
-    cutoff.setDate(cutoff.getDate() - 365);
+    const today    = new Date();
+    today.setHours(0, 0, 0, 0);
+    const cutoff   = new Date(today);
+    cutoff.setDate(cutoff.getDate() - 52 * 7);
+    cutoff.setDate(cutoff.getDate() - cutoff.getDay()); // snap to Sunday
     const cutoffStr = cutoff.toISOString().slice(0, 10);
     const rolling365 = Object.entries(dailyKm)
       .filter(([d]) => d >= cutoffStr)

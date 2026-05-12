@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-05-11",
+  "updated_at": "2026-05-12",
   "totals": {
-    "all_time_km": 1159.9,
-    "ytd_km": 709.7,
-    "ytd_runs": 111,
-    "ytd_time": "69:35:51"
+    "all_time_km": 1181.2,
+    "ytd_km": 731.0,
+    "ytd_runs": 112,
+    "ytd_time": "71:38:46"
   },
   "best_efforts": {
     "400m": {
@@ -87,6 +87,14 @@
   },
   "recent_runs": [
     {
+      "id": 18471909877,
+      "name": "wait . . . ain't i just do one of these yesterday",
+      "distance": 21.27,
+      "time": "2:02:55",
+      "pace": "5:46 /km",
+      "date": "2026-05-11"
+    },
+    {
       "id": 18458942403,
       "name": "Evening Run",
       "distance": 6.36,
@@ -125,17 +133,10 @@
       "time": "54:34",
       "pace": "5:27 /km",
       "date": "2026-05-05"
-    },
-    {
-      "id": 18380240383,
-      "name": "Night Run",
-      "distance": 10.81,
-      "time": "1:00:00",
-      "pace": "5:33 /km",
-      "date": "2026-05-04"
     }
   ],
   "daily_km": {
+    "2026-05-11": 21.27,
     "2026-05-10": 6.36,
     "2026-05-09": 21.12,
     "2026-05-07": 11.6,

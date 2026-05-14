@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-05-13",
+  "updated_at": "2026-05-14",
   "totals": {
-    "all_time_km": 1181.2,
-    "ytd_km": 729.9,
-    "ytd_runs": 111,
-    "ytd_time": "71:29:33"
+    "all_time_km": 1190.2,
+    "ytd_km": 735.2,
+    "ytd_runs": 110,
+    "ytd_time": "72:03:08"
   },
   "best_efforts": {
     "400m": {
@@ -87,6 +87,14 @@
   },
   "recent_runs": [
     {
+      "id": 18498861143,
+      "name": "Pre vb run",
+      "distance": 8.97,
+      "time": "51:21",
+      "pace": "5:43 /km",
+      "date": "2026-05-13"
+    },
+    {
       "id": 18471909877,
       "name": "wait . . . ain't i just do one of these yesterday",
       "distance": 21.27,
@@ -125,17 +133,10 @@
       "time": "1:01:55",
       "pace": "5:21 /km",
       "date": "2026-05-06"
-    },
-    {
-      "id": 18392668395,
-      "name": "Evening Run",
-      "distance": 10.0,
-      "time": "54:34",
-      "pace": "5:27 /km",
-      "date": "2026-05-05"
     }
   ],
   "daily_km": {
+    "2026-05-13": 8.97,
     "2026-05-11": 21.27,
     "2026-05-10": 6.36,
     "2026-05-09": 21.12,

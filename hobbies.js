@@ -64,7 +64,9 @@ document.querySelectorAll('.hobby-tab').forEach(tab => {
 });
 
 // ── HEATMAP ──
-function buildHeatmap(dailyKm) {
+// dailyActivities: { "YYYY-MM-DD": { run?: km, swim?: km, ride?: km } }
+// Falls back gracefully if only legacy daily_km is available.
+function buildHeatmap(dailyActivities) {
   const grid     = document.getElementById('run-heatmap');
   const monthsEl = document.getElementById('heatmap-months');
   const tooltip  = document.getElementById('heatmap-tooltip');
@@ -79,28 +81,55 @@ function buildHeatmap(dailyKm) {
   today.setHours(0, 0, 0, 0);
   const currentYear = today.getFullYear();
 
-  // ── Collect available years from data ──
-  const yearSet = new Set(Object.keys(dailyKm).map(d => parseInt(d.slice(0, 4))));
-  yearSet.add(currentYear);
-  const years = [...yearSet].sort((a, b) => b - a); // newest first
-
-  const getLevel = km => {
-    if (!km) return 0;
-    if (km < 5)  return 1;
-    if (km < 10) return 2;
-    if (km < 15) return 3;
-    if (km < 20) return 4;
-    return 5;
+  // ── Sport colour palettes (index = level 0–5) ──
+  const COLORS = {
+    run:  ['#1e1e1e', '#4d0f17', '#7a1a24', '#a32230', '#bf2c3a', '#de4355'],
+    swim: ['#1e1e1e', '#0a2240', '#0f3a6e', '#1a57a0', '#1a75cc', '#2a96e8'],
+    ride: ['#1e1e1e', '#0d2b1a', '#1a4d2e', '#256e3f', '#2d8a50', '#3aab64'],
   };
 
-  function getYearKm(year) {
-    return Object.entries(dailyKm)
+  const levelFn = {
+    run:  km => !km ? 0 : km < 5  ? 1 : km < 10 ? 2 : km < 15 ? 3 : km < 20 ? 4 : 5,
+    swim: km => !km ? 0 : km < 1  ? 1 : km < 2  ? 2 : km < 3  ? 3 : km < 4  ? 4 : 5,
+    ride: km => !km ? 0 : km < 20 ? 1 : km < 40 ? 2 : km < 60 ? 3 : km < 90 ? 4 : 5,
+  };
+
+  function sportColor(sport, km) {
+    return COLORS[sport][levelFn[sport](km)];
+  }
+
+  // Background for a day's activities — diagonal gradient for multi-sport
+  function cellBackground(acts) {
+    const active = ['run', 'swim', 'ride'].filter(s => (acts[s] || 0) > 0);
+    if (active.length === 0) return COLORS.run[0];
+    if (active.length === 1) return sportColor(active[0], acts[active[0]]);
+    const cols = active.map(s => sportColor(s, acts[s]));
+    if (cols.length === 2)
+      return `linear-gradient(135deg, ${cols[0]} 50%, ${cols[1]} 50%)`;
+    return `linear-gradient(135deg, ${cols[0]} 33%, ${cols[1]} 33% 66%, ${cols[2]} 66%)`;
+  }
+
+  // Tooltip text — separate line per sport
+  function cellLabel(acts) {
+    const parts = [];
+    if (acts.run  > 0) parts.push(`Run ${acts.run} km`);
+    if (acts.swim > 0) parts.push(`Swim ${acts.swim} km`);
+    if (acts.ride > 0) parts.push(`Ride ${acts.ride} km`);
+    return parts.length ? parts.join(' · ') : 'Rest day';
+  }
+
+  // ── Collect available years ──
+  const yearSet = new Set(Object.keys(dailyActivities).map(d => parseInt(d.slice(0, 4))));
+  yearSet.add(currentYear);
+  const years = [...yearSet].sort((a, b) => b - a);
+
+  function getYearRunKm(year) {
+    return Object.entries(dailyActivities)
       .filter(([d]) => d.startsWith(year + '-'))
-      .reduce((sum, [, km]) => sum + km, 0);
+      .reduce((sum, [, acts]) => sum + (acts.run || 0), 0);
   }
 
   // ── Render grid ──
-  // year = number (calendar year) or 'rolling' (last 365 days)
   function renderGrid(year) {
     grid.innerHTML     = '';
     monthsEl.innerHTML = '';
@@ -108,32 +137,29 @@ function buildHeatmap(dailyKm) {
     let start, yearEnd, yearStart;
 
     if (year === 'rolling') {
-      // Last 52 weeks ending today
-      yearStart = null; // no hard boundary — all cells are valid
+      yearStart = null;
       yearEnd   = today;
       start     = new Date(today);
       start.setDate(start.getDate() - 52 * 7);
       start.setDate(start.getDate() - start.getDay());
 
-      const rollingKm = Object.entries(dailyKm)
-        .filter(([d]) => d >= start.toISOString().slice(0, 10))
-        .reduce((sum, [, km]) => sum + km, 0);
-      if (ytdLabel) ytdLabel.textContent = `${Math.round(rollingKm * 10) / 10} km in the last 365 days`;
+      const cutStr    = start.toISOString().slice(0, 10);
+      const rollingKm = Object.entries(dailyActivities)
+        .filter(([d]) => d >= cutStr)
+        .reduce((sum, [, acts]) => sum + (acts.run || 0), 0);
+      if (ytdLabel) ytdLabel.textContent = `${Math.round(rollingKm * 10) / 10} km running in the last 365 days`;
     } else {
       yearStart = new Date(year, 0, 1);
       yearEnd   = year === currentYear ? today : new Date(year, 11, 31);
       start     = new Date(yearStart);
-      start.setDate(start.getDate() - start.getDay()); // snap to Sunday
+      start.setDate(start.getDate() - start.getDay());
 
-      const km = Math.round(getYearKm(year) * 10) / 10;
-      if (ytdLabel) ytdLabel.textContent = `${km.toLocaleString()} km in ${year}`;
+      const km = Math.round(getYearRunKm(year) * 10) / 10;
+      if (ytdLabel) ytdLabel.textContent = `${km.toLocaleString()} km running in ${year}`;
     }
 
-    let cursor       = new Date(start);
-    let weekIdx      = 0;
-    let prevMonth    = -1;
-    let lastLabel    = null;
-    let lastLabelCol = -99;
+    let cursor = new Date(start), weekIdx = 0, prevMonth = -1;
+    let lastLabel = null, lastLabelCol = -99;
 
     while (cursor <= yearEnd) {
       const mo = cursor.getMonth();
@@ -144,9 +170,7 @@ function buildHeatmap(dailyKm) {
         lbl.textContent = cursor.toLocaleString('en-US', { month: 'short' }).toUpperCase();
         lbl.style.left  = (weekIdx * WEEK_W) + 'px';
         monthsEl.appendChild(lbl);
-        lastLabel    = lbl;
-        lastLabelCol = weekIdx;
-        prevMonth    = mo;
+        lastLabel = lbl; lastLabelCol = weekIdx; prevMonth = mo;
       }
 
       const weekEl = document.createElement('div');
@@ -154,26 +178,32 @@ function buildHeatmap(dailyKm) {
 
       for (let d = 0; d < 7; d++) {
         const dateStr = cursor.toISOString().slice(0, 10);
-        const km      = dailyKm[dateStr] || 0;
+        const acts    = dailyActivities[dateStr] || {};
         const future  = cursor > today;
-        const outside = yearStart && cursor < yearStart; // pre-Jan padding in calendar mode
+        const outside = yearStart && cursor < yearStart;
 
         const cell = document.createElement('div');
-        cell.className = `heatmap-cell level-${(future || outside) ? 'x' : getLevel(km)}`;
+        cell.className = 'heatmap-cell';
 
-        if (!future && !outside && tooltip) {
-          const snap    = new Date(cursor);
-          const fmtDate = snap.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-          const kmText  = km > 0 ? `${km} km` : 'Rest day';
-          cell.addEventListener('mouseenter', () => {
-            tooltip.textContent = `${kmText} — ${fmtDate}`;
-            tooltip.classList.add('is-visible');
-          });
-          cell.addEventListener('mousemove', e => {
-            tooltip.style.left = (e.clientX + 14) + 'px';
-            tooltip.style.top  = (e.clientY - 36) + 'px';
-          });
-          cell.addEventListener('mouseleave', () => tooltip.classList.remove('is-visible'));
+        if (future || outside) {
+          cell.classList.add('level-x');
+        } else {
+          cell.style.background = cellBackground(acts);
+
+          if (tooltip) {
+            const snap    = new Date(cursor);
+            const fmtDate = snap.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            const label   = cellLabel(acts);
+            cell.addEventListener('mouseenter', () => {
+              tooltip.textContent = `${label} — ${fmtDate}`;
+              tooltip.classList.add('is-visible');
+            });
+            cell.addEventListener('mousemove', e => {
+              tooltip.style.left = (e.clientX + 14) + 'px';
+              tooltip.style.top  = (e.clientY - 36) + 'px';
+            });
+            cell.addEventListener('mouseleave', () => tooltip.classList.remove('is-visible'));
+          }
         }
 
         weekEl.appendChild(cell);
@@ -240,22 +270,28 @@ fetch('strava-data.json')
     document.getElementById('stat-ytd-time').textContent = data.totals.ytd_time;
     document.getElementById('strava-updated').textContent = data.updated_at;
 
-    // Rolling km — use the exact same window as the heatmap (52 weeks snapped
-    // to Sunday) so both numbers are always identical.
-    const dailyKm  = data.daily_km || {};
-    const today    = new Date();
-    today.setHours(0, 0, 0, 0);
-    const cutoff   = new Date(today);
-    cutoff.setDate(cutoff.getDate() - 52 * 7);
-    cutoff.setDate(cutoff.getDate() - cutoff.getDay()); // snap to Sunday
-    const cutoffStr = cutoff.toISOString().slice(0, 10);
-    const rolling365 = Object.entries(dailyKm)
+    // Normalise to daily_activities format (fall back to daily_km for old JSON)
+    const dailyActivities = {};
+    if (data.daily_activities) {
+      Object.assign(dailyActivities, data.daily_activities);
+    } else {
+      for (const [date, km] of Object.entries(data.daily_km || {}))
+        dailyActivities[date] = { run: km };
+    }
+
+    // Rolling run km — same 52-week window as the heatmap so numbers match
+    const _today   = new Date(); _today.setHours(0,0,0,0);
+    const _cutoff  = new Date(_today);
+    _cutoff.setDate(_cutoff.getDate() - 52 * 7);
+    _cutoff.setDate(_cutoff.getDate() - _cutoff.getDay());
+    const cutoffStr  = _cutoff.toISOString().slice(0, 10);
+    const rolling365 = Object.entries(dailyActivities)
       .filter(([d]) => d >= cutoffStr)
-      .reduce((sum, [, km]) => sum + km, 0);
+      .reduce((sum, [, acts]) => sum + (acts.run || 0), 0);
     document.getElementById('stat-ytd-km').textContent = (Math.round(rolling365 * 10) / 10).toLocaleString() + ' km';
 
     // Heatmap
-    buildHeatmap(dailyKm);
+    buildHeatmap(dailyActivities);
 
     // Best efforts
     const bestsEl = document.getElementById('strava-bests');

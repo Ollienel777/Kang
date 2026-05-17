@@ -64,10 +64,19 @@ def main():
     athlete.raise_for_status()
     athlete_id = athlete.json()['id']
 
-    # ── All running activities (paginated) ──
-    RUN_TYPES = {'Run', 'TrailRun', 'VirtualRun', 'Treadmill'}
+    # ── All activities (paginated) — run / swim / ride ──
+    SPORT_MAP = {}
+    for sport, types in {
+        'run':  {'Run', 'TrailRun', 'VirtualRun', 'Treadmill'},
+        'swim': {'Swim', 'OpenWaterSwim'},
+        'ride': {'Ride', 'VirtualRide', 'EBikeRide', 'MountainBikeRide', 'GravelRide'},
+    }.items():
+        for t in types:
+            SPORT_MAP[t] = sport
 
-    all_acts = []
+    all_acts    = []   # runs only — used for PRs / recent runs
+    all_tracked = []   # all run+swim+ride — used for heatmap
+
     page = 1
     while True:
         acts_r = requests.get(
@@ -82,15 +91,17 @@ def main():
         batch = acts_r.json()
         if not batch:
             break
-        runs = [
-            a for a in batch
-            if a.get('sport_type') in RUN_TYPES or a.get('type') in RUN_TYPES
-        ]
-        all_acts.extend(runs)
+        for a in batch:
+            sport = SPORT_MAP.get(a.get('sport_type') or a.get('type', ''))
+            if sport == 'run':
+                all_acts.append(a)
+                all_tracked.append(('run', a))
+            elif sport in ('swim', 'ride'):
+                all_tracked.append((sport, a))
         if len(batch) < 200:
             break
         page += 1
-    print(f'Total runs found: {len(all_acts)}')
+    print(f'Total runs: {len(all_acts)}  |  Total tracked: {len(all_tracked)}')
 
     # ── Load existing PRs as baseline ──
     # Only activity details for the last DETAIL_WINDOW_DAYS are re-fetched.
@@ -178,12 +189,18 @@ def main():
                     'date':         act['start_date_local'][:10],
                 }
 
-    # ── Daily km map (heatmap) ──
-    daily_km = {}
-    for act in all_acts:
+    # ── Daily activities map (heatmap) — keyed by sport ──
+    daily_activities = {}
+    daily_km = {}   # run-only legacy field for backward compat
+    for sport, act in all_tracked:
         date = act['start_date_local'][:10]
-        km   = act['distance'] / 1000
-        daily_km[date] = round(daily_km.get(date, 0) + km, 2)
+        km   = round(act['distance'] / 1000, 2)
+        if date not in daily_activities:
+            daily_activities[date] = {}
+        prev = daily_activities[date].get(sport, 0)
+        daily_activities[date][sport] = round(prev + km, 2)
+        if sport == 'run':
+            daily_km[date] = round(daily_km.get(date, 0) + km, 2)
 
     # ── Totals (rolling 365-day window) ──
     cutoff_365    = (datetime.now(timezone.utc) - timedelta(days=365)).strftime('%Y-%m-%d')
@@ -200,9 +217,10 @@ def main():
             'ytd_runs':    len(l365_acts),
             'ytd_time':    fmt_time(l365_time),
         },
-        'best_efforts': best_efforts,
-        'recent_runs':  recent_runs,
-        'daily_km':     daily_km,
+        'best_efforts':      best_efforts,
+        'recent_runs':       recent_runs,
+        'daily_km':          daily_km,          # run-only legacy
+        'daily_activities':  daily_activities,  # run + swim + ride
     }
 
     with open(out_path, 'w') as f:

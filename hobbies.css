@@ -444,10 +444,26 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 
 .heatmap-legend {
   display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 12px;
+  align-items: flex-end;
+}
+
+.heatmap-legend-row {
+  display: flex;
   align-items: center;
   gap: 4px;
-  margin-top: 12px;
-  justify-content: flex-end;
+}
+
+.heatmap-legend-sport {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gray-lite);
+  width: 30px;
+  text-align: right;
+  margin-right: 2px;
 }
 
 .heatmap-legend-text {

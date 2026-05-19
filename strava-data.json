@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-05-18",
+  "updated_at": "2026-05-19",
   "totals": {
-    "all_time_km": 1240.2,
-    "ytd_km": 767.6,
+    "all_time_km": 1247.7,
+    "ytd_km": 768.0,
     "ytd_runs": 114,
-    "ytd_time": "75:02:58"
+    "ytd_time": "75:05:50"
   },
   "best_efforts": {
     "400m": {
@@ -87,6 +87,14 @@
   },
   "recent_runs": [
     {
+      "id": 18558779210,
+      "name": "Weather starting to get hot :(",
+      "distance": 7.45,
+      "time": "41:21",
+      "pace": "5:32 /km",
+      "date": "2026-05-18"
+    },
+    {
       "id": 18550254719,
       "name": "Night Run",
       "distance": 10.56,
@@ -112,7 +120,7 @@
     },
     {
       "id": 18530214379,
-      "name": "Morning Run",
+      "name": "Westboro half with Duncan",
       "distance": 21.63,
       "time": "1:58:28",
       "pace": "5:28 /km",
@@ -125,17 +133,10 @@
       "time": "19:02",
       "pace": "6:06 /km",
       "date": "2026-05-15"
-    },
-    {
-      "id": 18510749459,
-      "name": "Evening Run",
-      "distance": 11.38,
-      "time": "1:03:23",
-      "pace": "5:34 /km",
-      "date": "2026-05-14"
     }
   ],
   "daily_km": {
+    "2026-05-18": 7.45,
     "2026-05-17": 11.64,
     "2026-05-16": 23.88,
     "2026-05-15": 3.11,
@@ -342,6 +343,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-05-18": {
+      "run": 7.45
+    },
     "2026-05-17": {
       "run": 11.64
     },

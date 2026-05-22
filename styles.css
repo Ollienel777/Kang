@@ -93,8 +93,9 @@ html, body {
 
 /* FILTER toggle arrow flips when open */
 #filter-toggle::after {
-  content: ' ›';
+  content: '›';
   display: inline-block;
+  margin-left: 6px;
   transition: transform 0.25s ease;
 }
 #filter-toggle.is-active::after {

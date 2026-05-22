@@ -365,12 +365,18 @@ filterBtns.forEach(btn => {
 
     const skill = btn.dataset.filter;
     projectCols.forEach(col => {
+      let hide = false;
       if (skill === 'all') {
-        col.classList.remove('is-filtered');
+        hide = false;
+      } else if (skill === '_projects') {
+        hide = col.dataset.type !== 'project';
+      } else if (skill === '_experience') {
+        hide = col.dataset.type !== 'experience';
       } else {
         const skills = col.dataset.skills?.split(',') ?? [];
-        col.classList.toggle('is-filtered', !skills.includes(skill));
+        hide = !skills.includes(skill);
       }
+      col.classList.toggle('is-filtered', hide);
     });
 
     posX = targX = 0;

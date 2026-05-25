@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-05-24",
+  "updated_at": "2026-05-25",
   "totals": {
-    "all_time_km": 1250.9,
-    "ytd_km": 756.3,
-    "ytd_runs": 111,
-    "ytd_time": "74:01:24"
+    "all_time_km": 1294.0,
+    "ytd_km": 799.4,
+    "ytd_runs": 112,
+    "ytd_time": "78:14:05"
   },
   "best_efforts": {
     "400m": {
@@ -15,11 +15,11 @@
       "date": "2025-09-12"
     },
     "1/2 mile": {
-      "elapsed_time": 192,
-      "time": "3:12",
-      "pace": "3:58 /km",
-      "activity_id": 15501490901,
-      "date": "2025-08-18"
+      "elapsed_time": 186,
+      "time": "3:06",
+      "pace": "3:51 /km",
+      "activity_id": 18637238873,
+      "date": "2026-05-24"
     },
     "1 mile": {
       "elapsed_time": 417,
@@ -83,9 +83,24 @@
       "pace": "5:12 /km",
       "activity_id": 15838077955,
       "date": "2025-09-16"
+    },
+    "Marathon": {
+      "elapsed_time": 14817,
+      "time": "4:06:57",
+      "pace": "5:51 /km",
+      "activity_id": 18637238873,
+      "date": "2026-05-24"
     }
   },
   "recent_runs": [
+    {
+      "id": 18637238873,
+      "name": "Tamarack Marathon",
+      "distance": 43.16,
+      "time": "4:12:41",
+      "pace": "5:51 /km",
+      "date": "2026-05-24"
+    },
     {
       "id": 18579992977,
       "name": "Shake out run",
@@ -125,17 +140,10 @@
       "time": "11:53",
       "pace": "5:16 /km",
       "date": "2026-05-16"
-    },
-    {
-      "id": 18530214379,
-      "name": "Westboro half with Duncan",
-      "distance": 21.63,
-      "time": "1:58:28",
-      "pace": "5:28 /km",
-      "date": "2026-05-16"
     }
   ],
   "daily_km": {
+    "2026-05-24": 43.16,
     "2026-05-20": 3.21,
     "2026-05-18": 7.45,
     "2026-05-17": 11.64,
@@ -344,6 +352,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-05-24": {
+      "run": 43.16
+    },
     "2026-05-20": {
       "run": 3.21
     },

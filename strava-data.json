@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-05-25",
+  "updated_at": "2026-05-26",
   "totals": {
-    "all_time_km": 1294.0,
-    "ytd_km": 799.4,
-    "ytd_runs": 112,
-    "ytd_time": "78:14:05"
+    "all_time_km": 1297.3,
+    "ytd_km": 802.7,
+    "ytd_runs": 113,
+    "ytd_time": "78:46:48"
   },
   "best_efforts": {
     "400m": {
@@ -94,6 +94,14 @@
   },
   "recent_runs": [
     {
+      "id": 18654326387,
+      "name": "Post marathon walk",
+      "distance": 3.3,
+      "time": "32:43",
+      "pace": "9:54 /km",
+      "date": "2026-05-25"
+    },
+    {
       "id": 18637238873,
       "name": "Tamarack Marathon",
       "distance": 43.16,
@@ -132,17 +140,10 @@
       "time": "6:14",
       "pace": "5:46 /km",
       "date": "2026-05-17"
-    },
-    {
-      "id": 18530611326,
-      "name": "Morning Run",
-      "distance": 2.25,
-      "time": "11:53",
-      "pace": "5:16 /km",
-      "date": "2026-05-16"
     }
   ],
   "daily_km": {
+    "2026-05-25": 3.3,
     "2026-05-24": 43.16,
     "2026-05-20": 3.21,
     "2026-05-18": 7.45,
@@ -352,6 +353,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-05-25": {
+      "run": 3.3
+    },
     "2026-05-24": {
       "run": 43.16
     },

@@ -9,6 +9,9 @@ CLIENT_SECRET = os.environ['STRAVA_CLIENT_SECRET']
 REFRESH_TOKEN = os.environ['STRAVA_REFRESH_TOKEN']
 
 BEST_EFFORT_NAMES = ['400m', '1/2 mile', '1k', '1 mile', '2 mile', '5k', '10k', '15k', '10 mile', '20k', 'Half-Marathon', '30k', 'Marathon']
+# Strava's API inconsistently capitalises distance names (e.g. "30K" vs "30k").
+# Build a case-insensitive lookup so we never miss a segment.
+BEST_EFFORT_LOOKUP = {n.lower(): n for n in BEST_EFFORT_NAMES}
 
 # Known distances (meters) — fallback when Strava returns distance=0
 EFFORT_DISTANCES_M = {
@@ -147,8 +150,8 @@ def main():
         detail = det_r.json()
 
         for effort in detail.get('best_efforts', []):
-            name = effort['name']
-            if name not in BEST_EFFORT_NAMES:
+            name = BEST_EFFORT_LOOKUP.get(effort['name'].lower())
+            if name is None:
                 continue
             elapsed = effort['elapsed_time']
             dist    = effort.get('distance', 0) or EFFORT_DISTANCES_M.get(name, 0)
@@ -166,6 +169,9 @@ def main():
                 }
 
     # ── Synthetic bests (proportional splits) for gaps Strava doesn't track ──
+    # Note: we do NOT skip keys that already exist — a later (longer) run can
+    # produce a faster proportional split. The "elapsed < existing" guard below
+    # prevents any synthetic from replacing a genuinely better real PR.
     SYNTHETIC = [
         ('5k',  5_000,  5000),
         ('10k', 10_000, 10000),
@@ -174,8 +180,6 @@ def main():
         ('30k', 30_000, 30000),
     ]
     for key, min_dist, effort_dist in SYNTHETIC:
-        if key in best_efforts:
-            continue
         for act in all_acts:
             if act['distance'] < min_dist:
                 continue

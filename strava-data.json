@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-05-27",
+  "updated_at": "2026-05-28",
   "totals": {
-    "all_time_km": 1301.2,
-    "ytd_km": 806.6,
-    "ytd_runs": 114,
-    "ytd_time": "79:12:40"
+    "all_time_km": 1318.8,
+    "ytd_km": 824.2,
+    "ytd_runs": 117,
+    "ytd_time": "81:04:28"
   },
   "best_efforts": {
     "400m": {
@@ -90,9 +90,40 @@
       "pace": "5:51 /km",
       "activity_id": 18637238873,
       "date": "2026-05-24"
+    },
+    "1k": {
+      "elapsed_time": 255,
+      "time": "4:15",
+      "pace": "4:15 /km",
+      "activity_id": 18637238873,
+      "date": "2026-05-24"
     }
   },
   "recent_runs": [
+    {
+      "id": 18688953074,
+      "name": "Morning run with mom",
+      "distance": 10.12,
+      "time": "1:04:45",
+      "pace": "6:23 /km",
+      "date": "2026-05-28"
+    },
+    {
+      "id": 18682785699,
+      "name": "Run with mom+Duncan",
+      "distance": 4.29,
+      "time": "26:20",
+      "pace": "6:08 /km",
+      "date": "2026-05-27"
+    },
+    {
+      "id": 18678496385,
+      "name": "Afternoon Butter jog",
+      "distance": 3.17,
+      "time": "20:43",
+      "pace": "6:31 /km",
+      "date": "2026-05-27"
+    },
     {
       "id": 18668935955,
       "name": "Evening Run",
@@ -116,33 +147,11 @@
       "time": "4:12:41",
       "pace": "5:51 /km",
       "date": "2026-05-24"
-    },
-    {
-      "id": 18579992977,
-      "name": "Shake out run",
-      "distance": 3.21,
-      "time": "20:17",
-      "pace": "6:19 /km",
-      "date": "2026-05-20"
-    },
-    {
-      "id": 18558779210,
-      "name": "Weather starting to get hot :(",
-      "distance": 7.45,
-      "time": "41:21",
-      "pace": "5:32 /km",
-      "date": "2026-05-18"
-    },
-    {
-      "id": 18550254719,
-      "name": "Night Run",
-      "distance": 10.56,
-      "time": "56:51",
-      "pace": "5:23 /km",
-      "date": "2026-05-17"
     }
   ],
   "daily_km": {
+    "2026-05-28": 10.12,
+    "2026-05-27": 7.46,
     "2026-05-26": 3.86,
     "2026-05-25": 3.3,
     "2026-05-24": 43.16,
@@ -354,6 +363,12 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-05-28": {
+      "run": 10.12
+    },
+    "2026-05-27": {
+      "run": 7.46
+    },
     "2026-05-26": {
       "run": 3.86
     },

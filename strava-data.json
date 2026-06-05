@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-06-04",
+  "updated_at": "2026-06-05",
   "totals": {
-    "all_time_km": 1359.2,
-    "ytd_km": 849.5,
-    "ytd_runs": 116,
-    "ytd_time": "81:47:10"
+    "all_time_km": 1364.2,
+    "ytd_km": 854.5,
+    "ytd_runs": 117,
+    "ytd_time": "82:09:34"
   },
   "best_efforts": {
     "400m": {
@@ -101,6 +101,14 @@
   },
   "recent_runs": [
     {
+      "id": 18791829396,
+      "name": "+0.3g protein inhaled a bug",
+      "distance": 5.0,
+      "time": "22:24",
+      "pace": "4:28 /km",
+      "date": "2026-06-04"
+    },
+    {
       "id": 18778638970,
       "name": "Evening Run",
       "distance": 2.85,
@@ -139,17 +147,10 @@
       "time": "57:26",
       "pace": "5:37 /km",
       "date": "2026-05-29"
-    },
-    {
-      "id": 18688953074,
-      "name": "Morning run with mom",
-      "distance": 10.12,
-      "time": "1:04:45",
-      "pace": "6:23 /km",
-      "date": "2026-05-28"
     }
   ],
   "daily_km": {
+    "2026-06-04": 5.0,
     "2026-06-03": 2.85,
     "2026-06-02": 3.2,
     "2026-05-31": 15.4,
@@ -368,6 +369,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-06-04": {
+      "run": 5.0
+    },
     "2026-06-03": {
       "run": 2.85
     },

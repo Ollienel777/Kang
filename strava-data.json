@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-06-11",
+  "updated_at": "2026-06-12",
   "totals": {
-    "all_time_km": 1392.1,
-    "ytd_km": 882.2,
+    "all_time_km": 1395.7,
+    "ytd_km": 881.5,
     "ytd_runs": 122,
-    "ytd_time": "85:00:29"
+    "ytd_time": "84:47:46"
   },
   "best_efforts": {
     "400m": {
@@ -101,6 +101,14 @@
   },
   "recent_runs": [
     {
+      "id": 18885985963,
+      "name": "Whys biking hard",
+      "distance": 3.54,
+      "time": "7:30",
+      "pace": "2:07 /km",
+      "date": "2026-06-11"
+    },
+    {
       "id": 18845061917,
       "name": "Run through Nelson Street",
       "distance": 8.55,
@@ -139,17 +147,10 @@
       "time": "22:24",
       "pace": "4:58 /km",
       "date": "2026-06-05"
-    },
-    {
-      "id": 18803485745,
-      "name": "Evening Run",
-      "distance": 1.04,
-      "time": "5:36",
-      "pace": "5:22 /km",
-      "date": "2026-06-05"
     }
   ],
   "daily_km": {
+    "2026-06-11": 3.54,
     "2026-06-08": 8.55,
     "2026-06-07": 11.01,
     "2026-06-06": 2.88,
@@ -373,6 +374,10 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-06-11": {
+      "run": 3.54,
+      "ride": 8.05
+    },
     "2026-06-08": {
       "run": 8.55
     },

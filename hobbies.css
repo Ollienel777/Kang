@@ -141,6 +141,42 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
   color: var(--white);
 }
 
+/* ── SPORT SWITCHER ── */
+.sport-switcher {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.sport-pill {
+  padding: 6px 18px;
+  border: 1px solid var(--gray-mid);
+  background: transparent;
+  color: var(--gray-lite);
+  font-family: var(--font-head);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.sport-pill:hover:not(.is-active) {
+  border-color: var(--white);
+  color: var(--white);
+}
+.sport-pill--run.is-active  { background: #de4355; border-color: #de4355; color: #fff; }
+.sport-pill--swim.is-active { background: #2a96e8; border-color: #2a96e8; color: #fff; }
+.sport-pill--ride.is-active { background: #3aab64; border-color: #3aab64; color: #fff; }
+
+/* Pace / speed column accent colour driven by active sport */
+#strava-bests[data-sport="run"]  .hobby-best-pace,
+#strava-recent[data-sport="run"] .hobby-run-pace  { color: #de4355; }
+#strava-bests[data-sport="swim"]  .hobby-best-pace,
+#strava-recent[data-sport="swim"] .hobby-run-pace  { color: #2a96e8; }
+#strava-bests[data-sport="ride"]  .hobby-best-pace,
+#strava-recent[data-sport="ride"] .hobby-run-pace  { color: #3aab64; }
+
 /* ── STAT BAR ── */
 .hobby-stats {
   display: flex;

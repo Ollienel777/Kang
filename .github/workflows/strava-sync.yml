@@ -26,7 +26,19 @@ jobs:
           STRAVA_CLIENT_ID:     ${{ secrets.STRAVA_CLIENT_ID }}
           STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
           STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
-        run: python scripts/fetch_strava.py
+        run: |
+          # Retry up to 3 times with a 30s pause — handles transient Strava API hiccups
+          for attempt in 1 2 3; do
+            echo "=== Attempt $attempt/3 ==="
+            python scripts/fetch_strava.py && break
+            if [ $attempt -lt 3 ]; then
+              echo "Fetch failed — waiting 30s before retry..."
+              sleep 30
+            else
+              echo "All 3 attempts failed."
+              exit 1
+            fi
+          done
 
       - name: Commit strava-data.json if changed
         run: |

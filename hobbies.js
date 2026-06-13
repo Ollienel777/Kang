@@ -251,26 +251,116 @@ function buildHeatmap(dailyActivities) {
 // ── STRAVA DATA ──
 const BEST_EFFORT_ORDER = ['5k', '10k', '15k', '10 mile', '20k', 'Half-Marathon', '30k', 'Marathon'];
 const BEST_EFFORT_LABELS = {
-  '5k':            '5 km',
-  '10k':           '10 km',
-  '15k':           '15 km',
-  '10 mile':       '10 Mile',
-  '20k':           '20 km',
-  'Half-Marathon': 'Half Marathon',
-  '30k':           '30 km',
-  'Marathon':      'Marathon',
+  '5k': '5 km', '10k': '10 km', '15k': '15 km', '10 mile': '10 Mile',
+  '20k': '20 km', 'Half-Marathon': 'Half Marathon', '30k': '30 km', 'Marathon': 'Marathon',
 };
+
+const SPORT_CONFIG = {
+  run:  { countLabel: 'Runs',  bestsTitle: 'PERSONAL BESTS', recentTitle: 'RECENT RUNS',  accentColor: '#de4355' },
+  swim: { countLabel: 'Swims', bestsTitle: 'TOP SWIMS',       recentTitle: 'RECENT SWIMS', accentColor: '#2a96e8' },
+  ride: { countLabel: 'Rides', bestsTitle: 'LONGEST RIDES',   recentTitle: 'RECENT RIDES', accentColor: '#3aab64' },
+};
+
+let _stravaData = null;
+
+function renderStats(sport) {
+  const t = _stravaData.sport_totals?.[sport];
+  if (!t) return;
+  document.getElementById('stat-alltime').textContent     = t.all_time_km.toLocaleString() + ' km';
+  document.getElementById('stat-ytd-km').textContent      = t.ytd_km.toLocaleString() + ' km';
+  document.getElementById('stat-ytd-runs').textContent    = t.ytd_count;
+  document.getElementById('stat-ytd-time').textContent    = t.ytd_time;
+  document.getElementById('stat-count-label').textContent = SPORT_CONFIG[sport].countLabel + ' (365 Days)';
+}
+
+function renderBests(sport) {
+  const bestsEl = document.getElementById('strava-bests');
+  bestsEl.dataset.sport = sport;
+  document.getElementById('bests-title').textContent = SPORT_CONFIG[sport].bestsTitle;
+
+  if (sport === 'run') {
+    const bests    = _stravaData.best_efforts;
+    const bestKeys = BEST_EFFORT_ORDER.filter(k => bests[k]);
+    if (bestKeys.length === 0) {
+      bestsEl.innerHTML = '<div class="hobby-best-empty">No PRs synced yet.</div>';
+    } else {
+      bestsEl.innerHTML = bestKeys.map(k => {
+        const e = bests[k];
+        return `<a class="hobby-best-row" href="https://www.strava.com/activities/${e.activity_id}" target="_blank" rel="noopener">
+          <span class="hobby-best-dist">${BEST_EFFORT_LABELS[k]}</span>
+          <span class="hobby-best-time">${e.time}</span>
+          <span class="hobby-best-pace">${e.pace}</span>
+          <span class="hobby-best-date">${e.date}</span>
+        </a>`;
+      }).join('');
+    }
+    if (!bests['Marathon']) {
+      bestsEl.innerHTML += `<div class="hobby-best-row">
+        <span class="hobby-best-dist">Marathon</span>
+        <span class="hobby-best-time">working on it 🫩</span>
+        <span class="hobby-best-pace"></span>
+        <span class="hobby-best-date"></span>
+      </div>`;
+    }
+    return;
+  }
+
+  // Swim / Ride — top sessions by distance
+  const sessions = _stravaData.top_sessions?.[sport] ?? [];
+  if (sessions.length === 0) {
+    bestsEl.innerHTML = `<div class="hobby-best-empty">No ${sport} sessions recorded yet.</div>`;
+    return;
+  }
+  bestsEl.innerHTML = sessions.map(s => `
+    <a class="hobby-run-row" href="https://www.strava.com/activities/${s.id}" target="_blank" rel="noopener">
+      <span class="hobby-run-name">${s.name}</span>
+      <span class="hobby-run-dist">${s.distance} km</span>
+      <span class="hobby-run-pace">${s.perf}</span>
+      <span class="hobby-run-time">${s.time}</span>
+      <span class="hobby-run-date">${s.date}</span>
+    </a>`).join('');
+}
+
+function renderRecent(sport) {
+  const recentEl = document.getElementById('strava-recent');
+  recentEl.dataset.sport = sport;
+  document.getElementById('recent-title').textContent = SPORT_CONFIG[sport].recentTitle;
+
+  // Fall back to legacy recent_runs for run when new field not yet in JSON
+  const activities = _stravaData.recent_activities?.[sport]
+    ?? (sport === 'run'
+        ? (_stravaData.recent_runs ?? []).map(r => ({ ...r, perf: r.pace }))
+        : []);
+
+  if (activities.length === 0) {
+    recentEl.innerHTML = `<div class="hobby-best-empty">No recent ${sport} activities.</div>`;
+    return;
+  }
+  recentEl.innerHTML = activities.map(a => `
+    <a class="hobby-run-row" href="https://www.strava.com/activities/${a.id}" target="_blank" rel="noopener">
+      <span class="hobby-run-name">${a.name}</span>
+      <span class="hobby-run-dist">${a.distance} km</span>
+      <span class="hobby-run-pace">${a.perf}</span>
+      <span class="hobby-run-time">${a.time}</span>
+      <span class="hobby-run-date">${a.date}</span>
+    </a>`).join('');
+}
+
+function switchSport(sport) {
+  document.querySelectorAll('.sport-pill').forEach(p =>
+    p.classList.toggle('is-active', p.dataset.sport === sport));
+  renderStats(sport);
+  renderBests(sport);
+  renderRecent(sport);
+}
 
 fetch('strava-data.json')
   .then(r => r.json())
   .then(data => {
-    // Totals
-    document.getElementById('stat-alltime').textContent  = data.totals.all_time_km.toLocaleString() + ' km';
-    document.getElementById('stat-ytd-runs').textContent = data.totals.ytd_runs;
-    document.getElementById('stat-ytd-time').textContent = data.totals.ytd_time;
+    _stravaData = data;
     document.getElementById('strava-updated').textContent = data.updated_at;
 
-    // Normalise to daily_activities format (fall back to daily_km for old JSON)
+    // Build dailyActivities for heatmap
     const dailyActivities = {};
     if (data.daily_activities) {
       Object.assign(dailyActivities, data.daily_activities);
@@ -278,68 +368,30 @@ fetch('strava-data.json')
       for (const [date, km] of Object.entries(data.daily_km || {}))
         dailyActivities[date] = { run: km };
     }
-
-    // Rolling run km — same 52-week window as the heatmap so numbers match
-    const _today   = new Date(); _today.setHours(0,0,0,0);
-    const _cutoff  = new Date(_today);
-    _cutoff.setDate(_cutoff.getDate() - 52 * 7);
-    _cutoff.setDate(_cutoff.getDate() - _cutoff.getDay());
-    const cutoffStr  = _cutoff.toISOString().slice(0, 10);
-    const rolling365 = Object.entries(dailyActivities)
-      .filter(([d]) => d >= cutoffStr)
-      .reduce((sum, [, acts]) => sum + (acts.run || 0), 0);
-    document.getElementById('stat-ytd-km').textContent = (Math.round(rolling365 * 10) / 10).toLocaleString() + ' km';
-
-    // Heatmap
     buildHeatmap(dailyActivities);
 
-    // Best efforts
-    const bestsEl = document.getElementById('strava-bests');
-    const bests = data.best_efforts;
-    const bestKeys = BEST_EFFORT_ORDER.filter(k => bests[k]);
-
-    if (bestKeys.length === 0) {
-      bestsEl.innerHTML = '<div class="hobby-best-empty">No PRs synced yet.</div>';
-    } else {
-      bestsEl.innerHTML = bestKeys.map(k => {
-        const e = bests[k];
-        return `
-          <a class="hobby-best-row" href="https://www.strava.com/activities/${e.activity_id}" target="_blank" rel="noopener">
-            <span class="hobby-best-dist">${BEST_EFFORT_LABELS[k]}</span>
-            <span class="hobby-best-time">${e.time}</span>
-            <span class="hobby-best-pace">${e.pace}</span>
-            <span class="hobby-best-date">${e.date}</span>
-          </a>`;
-      }).join('');
+    // Backward compat: synthesise sport_totals from old flat totals if not present
+    if (!data.sport_totals) {
+      const _t      = new Date(); _t.setHours(0, 0, 0, 0);
+      const _cut    = new Date(_t);
+      _cut.setDate(_cut.getDate() - 52 * 7);
+      _cut.setDate(_cut.getDate() - _cut.getDay());
+      const cutStr  = _cut.toISOString().slice(0, 10);
+      const rolling = Object.entries(dailyActivities)
+        .filter(([d]) => d >= cutStr)
+        .reduce((s, [, a]) => s + (a.run || 0), 0);
+      _stravaData.sport_totals = {
+        run:  { all_time_km: data.totals.all_time_km, ytd_km: Math.round(rolling * 10) / 10,
+                ytd_count: data.totals.ytd_runs, ytd_time: data.totals.ytd_time },
+        swim: { all_time_km: 0, ytd_km: 0, ytd_count: 0, ytd_time: '—' },
+        ride: { all_time_km: 0, ytd_km: 0, ytd_count: 0, ytd_time: '—' },
+      };
     }
 
-    // Always append Marathon as a goal row if no real PR exists
-    if (!bests['Marathon']) {
-      bestsEl.innerHTML += `
-        <div class="hobby-best-row">
-          <span class="hobby-best-dist">Marathon</span>
-          <span class="hobby-best-time">working on it 🫩</span>
-          <span class="hobby-best-pace"></span>
-          <span class="hobby-best-date"></span>
-        </div>`;
-    }
+    document.querySelectorAll('.sport-pill').forEach(pill =>
+      pill.addEventListener('click', () => switchSport(pill.dataset.sport)));
 
-    // Recent runs
-    const recentEl = document.getElementById('strava-recent');
-    const runs = data.recent_runs;
-
-    if (runs.length === 0) {
-      recentEl.innerHTML = '<div class="hobby-best-empty">No runs synced yet.</div>';
-    } else {
-      recentEl.innerHTML = runs.map(r => `
-        <a class="hobby-run-row" href="https://www.strava.com/activities/${r.id}" target="_blank" rel="noopener">
-          <span class="hobby-run-name">${r.name}</span>
-          <span class="hobby-run-dist">${r.distance} km</span>
-          <span class="hobby-run-pace">${r.pace}</span>
-          <span class="hobby-run-time">${r.time}</span>
-          <span class="hobby-run-date">${r.date}</span>
-        </a>`).join('');
-    }
+    switchSport('run');
   })
   .catch(() => {
     ['strava-bests', 'strava-recent'].forEach(id => {

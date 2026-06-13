@@ -57,6 +57,12 @@
         <a href="https://www.strava.com/athletes/121738602" class="hobby-strava-link" target="_blank" rel="noopener">VIEW ON STRAVA ›</a>
       </div>
 
+      <div class="sport-switcher">
+        <button class="sport-pill sport-pill--run is-active" data-sport="run">RUN</button>
+        <button class="sport-pill sport-pill--swim" data-sport="swim">SWIM</button>
+        <button class="sport-pill sport-pill--ride" data-sport="ride">RIDE</button>
+      </div>
+
       <div class="hobby-stats" id="strava-totals">
         <div class="hobby-stat">
           <span class="hobby-stat-val" id="stat-alltime">—</span>
@@ -68,7 +74,7 @@
         </div>
         <div class="hobby-stat">
           <span class="hobby-stat-val" id="stat-ytd-runs">—</span>
-          <span class="hobby-stat-label">Runs (365 Days)</span>
+          <span class="hobby-stat-label" id="stat-count-label">Runs (365 Days)</span>
         </div>
         <div class="hobby-stat">
           <span class="hobby-stat-val" id="stat-ytd-time">—</span>
@@ -126,14 +132,14 @@
       </div>
 
       <div class="hobby-subsection">
-        <h3 class="hobby-subsection-title">PERSONAL BESTS</h3>
+        <h3 class="hobby-subsection-title" id="bests-title">PERSONAL BESTS</h3>
         <div class="hobby-bests" id="strava-bests">
           <div class="hobby-best-empty">Syncing from Strava…</div>
         </div>
       </div>
 
       <div class="hobby-subsection">
-        <h3 class="hobby-subsection-title">RECENT RUNS</h3>
+        <h3 class="hobby-subsection-title" id="recent-title">RECENT RUNS</h3>
         <div class="hobby-runs" id="strava-recent">
           <div class="hobby-best-empty">Syncing from Strava…</div>
         </div>

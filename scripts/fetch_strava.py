@@ -34,10 +34,23 @@ def get_access_token():
         'grant_type':    'refresh_token',
         'refresh_token': REFRESH_TOKEN,
     })
-    data = r.json()
+    # Log status + raw body BEFORE parsing so we always see what Strava returned,
+    # even if the body is empty or non-JSON (the original crash point).
     print(f'Token response status: {r.status_code}')
+    if not r.text.strip():
+        raise Exception(
+            f'Strava token endpoint returned an empty body (HTTP {r.status_code}). '
+            'This is a transient Strava API issue — re-running the workflow should fix it.'
+        )
+    try:
+        data = r.json()
+    except Exception as e:
+        raise Exception(
+            f'Strava token response was not valid JSON (HTTP {r.status_code}). '
+            f'Raw body (first 500 chars): {r.text[:500]!r}'
+        ) from e
     if 'access_token' not in data:
-        print(f'Token error: {data}')
+        print(f'Token error payload: {data}')
         r.raise_for_status()
         raise Exception(f'No access_token in response: {data}')
     return data['access_token']
@@ -56,6 +69,23 @@ def fmt_pace(elapsed_seconds, distance_meters):
     sec_per_km = elapsed_seconds / (distance_meters / 1000)
     m, s = divmod(int(sec_per_km), 60)
     return f'{m}:{s:02d} /km'
+
+
+def fmt_swim_pace(elapsed_seconds, distance_meters):
+    """Pace per 100 m — the standard unit for swimming."""
+    if not distance_meters:
+        return '—'
+    sec_per_100m = elapsed_seconds / (distance_meters / 100)
+    m, s = divmod(int(sec_per_100m), 60)
+    return f'{m}:{s:02d}/100m'
+
+
+def fmt_speed(elapsed_seconds, distance_meters):
+    """Average speed in km/h — the standard unit for cycling."""
+    if not elapsed_seconds:
+        return '—'
+    kmh = (distance_meters / 1000) / (elapsed_seconds / 3600)
+    return f'{kmh:.1f} km/h'
 
 
 def main():
@@ -213,18 +243,76 @@ def main():
     l365_dist     = sum(a['distance'] for a in l365_acts)
     l365_time     = sum(a['moving_time'] for a in l365_acts)
 
+    # ── Per-sport totals ──
+    sport_totals = {}
+    for sport in ('run', 'swim', 'ride'):
+        acts   = [a for (s, a) in all_tracked if s == sport]
+        l365_s = [a for a in acts if a['start_date_local'][:10] >= cutoff_365]
+        sport_totals[sport] = {
+            'all_time_km': round(sum(a['distance'] for a in acts) / 1000, 1),
+            'ytd_km':      round(sum(a['distance'] for a in l365_s) / 1000, 1),
+            'ytd_count':   len(l365_s),
+            'ytd_time':    fmt_time(sum(a['moving_time'] for a in l365_s)),
+        }
+
+    # ── Per-sport recent activities (last 6) ──
+    recent_activities = {}
+    for sport in ('run', 'swim', 'ride'):
+        acts = [a for (s, a) in all_tracked if s == sport]
+        rows = []
+        for a in acts[:6]:
+            if sport == 'swim':
+                perf = fmt_swim_pace(a['moving_time'], a['distance'])
+            elif sport == 'ride':
+                perf = fmt_speed(a['moving_time'], a['distance'])
+            else:
+                perf = fmt_pace(a['moving_time'], a['distance'])
+            rows.append({
+                'id':       a['id'],
+                'name':     a['name'],
+                'distance': round(a['distance'] / 1000, 2),
+                'time':     fmt_time(a['moving_time']),
+                'perf':     perf,
+                'date':     a['start_date_local'][:10],
+            })
+        recent_activities[sport] = rows
+
+    # ── Top sessions per sport (swim & ride — by distance) ──
+    top_sessions = {}
+    for sport in ('swim', 'ride'):
+        acts = sorted(
+            [a for (s, a) in all_tracked if s == sport],
+            key=lambda a: a['distance'], reverse=True
+        )[:5]
+        rows = []
+        for a in acts:
+            perf = fmt_swim_pace(a['moving_time'], a['distance']) \
+                   if sport == 'swim' else fmt_speed(a['moving_time'], a['distance'])
+            rows.append({
+                'id':       a['id'],
+                'name':     a['name'],
+                'distance': round(a['distance'] / 1000, 2),
+                'time':     fmt_time(a['moving_time']),
+                'perf':     perf,
+                'date':     a['start_date_local'][:10],
+            })
+        top_sessions[sport] = rows
+
     output = {
         'updated_at': datetime.now(timezone.utc).strftime('%Y-%m-%d'),
-        'totals': {
+        'totals': {                              # legacy — kept for backward compat
             'all_time_km': round(all_time_dist / 1000, 1),
             'ytd_km':      round(l365_dist / 1000, 1),
             'ytd_runs':    len(l365_acts),
             'ytd_time':    fmt_time(l365_time),
         },
+        'sport_totals':      sport_totals,
         'best_efforts':      best_efforts,
-        'recent_runs':       recent_runs,
-        'daily_km':          daily_km,          # run-only legacy
-        'daily_activities':  daily_activities,  # run + swim + ride
+        'recent_runs':       recent_runs,        # legacy
+        'recent_activities': recent_activities,
+        'top_sessions':      top_sessions,
+        'daily_km':          daily_km,           # run-only legacy
+        'daily_activities':  daily_activities,   # run + swim + ride
     }
 
     with open(out_path, 'w') as f:

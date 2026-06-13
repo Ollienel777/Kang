@@ -6,6 +6,26 @@
     "ytd_runs": 122,
     "ytd_time": "85:00:32"
   },
+  "sport_totals": {
+    "run": {
+      "all_time_km": 1395.4,
+      "ytd_km": 881.1,
+      "ytd_count": 122,
+      "ytd_time": "85:00:32"
+    },
+    "swim": {
+      "all_time_km": 0.0,
+      "ytd_km": 0.0,
+      "ytd_count": 0,
+      "ytd_time": "0:00"
+    },
+    "ride": {
+      "all_time_km": 36.4,
+      "ytd_km": 36.4,
+      "ytd_count": 3,
+      "ytd_time": "1:27:36"
+    }
+  },
   "best_efforts": {
     "400m": {
       "elapsed_time": 71,
@@ -149,6 +169,114 @@
       "date": "2026-06-05"
     }
   ],
+  "recent_activities": {
+    "run": [
+      {
+        "id": 18889766113,
+        "name": "Morning run after workout",
+        "distance": 3.22,
+        "time": "20:16",
+        "perf": "6:17 /km",
+        "date": "2026-06-12"
+      },
+      {
+        "id": 18845061917,
+        "name": "Run through Nelson Street",
+        "distance": 8.55,
+        "time": "48:19",
+        "perf": "5:38 /km",
+        "date": "2026-06-08"
+      },
+      {
+        "id": 18825076451,
+        "name": "Exploring downtown with parents",
+        "distance": 11.01,
+        "time": "1:13:50",
+        "perf": "6:42 /km",
+        "date": "2026-06-07"
+      },
+      {
+        "id": 18817840240,
+        "name": "Night Run",
+        "distance": 1.21,
+        "time": "8:39",
+        "perf": "7:09 /km",
+        "date": "2026-06-06"
+      },
+      {
+        "id": 18817187433,
+        "name": "Afternoon Run",
+        "distance": 1.67,
+        "time": "13:17",
+        "perf": "7:58 /km",
+        "date": "2026-06-06"
+      },
+      {
+        "id": 18808174039,
+        "name": "Pist volleyball run with Duncan",
+        "distance": 4.5,
+        "time": "22:24",
+        "perf": "4:58 /km",
+        "date": "2026-06-05"
+      }
+    ],
+    "swim": [],
+    "ride": [
+      {
+        "id": 18897924376,
+        "name": "bike while completing security training \ud83d\ude05",
+        "distance": 24.78,
+        "time": "1:01:16",
+        "perf": "24.3 km/h",
+        "date": "2026-06-12"
+      },
+      {
+        "id": 18885985963,
+        "name": "Whys biking hard",
+        "distance": 3.54,
+        "time": "7:30",
+        "perf": "28.3 km/h",
+        "date": "2026-06-11"
+      },
+      {
+        "id": 18881792917,
+        "name": "First lunch bike \ud83e\udd14",
+        "distance": 8.05,
+        "time": "18:50",
+        "perf": "25.6 km/h",
+        "date": "2026-06-11"
+      }
+    ]
+  },
+  "top_sessions": {
+    "swim": [],
+    "ride": [
+      {
+        "id": 18897924376,
+        "name": "bike while completing security training \ud83d\ude05",
+        "distance": 24.78,
+        "time": "1:01:16",
+        "perf": "24.3 km/h",
+        "date": "2026-06-12"
+      },
+      {
+        "id": 18881792917,
+        "name": "First lunch bike \ud83e\udd14",
+        "distance": 8.05,
+        "time": "18:50",
+        "perf": "25.6 km/h",
+        "date": "2026-06-11"
+      },
+      {
+        "id": 18885985963,
+        "name": "Whys biking hard",
+        "distance": 3.54,
+        "time": "7:30",
+        "perf": "28.3 km/h",
+        "date": "2026-06-11"
+      }
+    ]
+  },
   "daily_km": {
     "2026-06-12": 3.22,
     "2026-06-08": 8.55,

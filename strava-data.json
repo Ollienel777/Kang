@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-06-16",
+  "updated_at": "2026-06-17",
   "totals": {
-    "all_time_km": 1416.5,
-    "ytd_km": 902.3,
-    "ytd_runs": 123,
-    "ytd_time": "86:59:01"
+    "all_time_km": 1420.5,
+    "ytd_km": 906.2,
+    "ytd_runs": 124,
+    "ytd_time": "87:18:53"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1416.5,
-      "ytd_km": 902.3,
-      "ytd_count": 123,
-      "ytd_time": "86:59:01"
+      "all_time_km": 1420.5,
+      "ytd_km": 906.2,
+      "ytd_count": 124,
+      "ytd_time": "87:18:53"
     },
     "swim": {
       "all_time_km": 0.0,
@@ -121,6 +121,14 @@
   },
   "recent_runs": [
     {
+      "id": 18944083726,
+      "name": "\ud83c\udf05",
+      "distance": 3.97,
+      "time": "19:52",
+      "pace": "5:00 /km",
+      "date": "2026-06-15"
+    },
+    {
       "id": 18906738752,
       "name": "Sub2 half with Founder's Run Club",
       "distance": 21.12,
@@ -159,18 +167,18 @@
       "time": "8:39",
       "pace": "7:09 /km",
       "date": "2026-06-06"
-    },
-    {
-      "id": 18817187433,
-      "name": "Afternoon Run",
-      "distance": 1.67,
-      "time": "13:17",
-      "pace": "7:58 /km",
-      "date": "2026-06-06"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": 18944083726,
+        "name": "\ud83c\udf05",
+        "distance": 3.97,
+        "time": "19:52",
+        "perf": "5:00 /km",
+        "date": "2026-06-15"
+      },
       {
         "id": 18906738752,
         "name": "Sub2 half with Founder's Run Club",
@@ -209,14 +217,6 @@
         "distance": 1.21,
         "time": "8:39",
         "perf": "7:09 /km",
-        "date": "2026-06-06"
-      },
-      {
-        "id": 18817187433,
-        "name": "Afternoon Run",
-        "distance": 1.67,
-        "time": "13:17",
-        "perf": "7:58 /km",
         "date": "2026-06-06"
       }
     ],
@@ -294,6 +294,7 @@
     ]
   },
   "daily_km": {
+    "2026-06-15": 3.97,
     "2026-06-13": 21.12,
     "2026-06-12": 3.22,
     "2026-06-08": 8.55,
@@ -519,6 +520,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-06-15": {
+      "run": 3.97
+    },
     "2026-06-13": {
       "ride": 50.21,
       "run": 21.12

@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-06-17",
+  "updated_at": "2026-06-18",
   "totals": {
-    "all_time_km": 1420.5,
-    "ytd_km": 906.2,
-    "ytd_runs": 124,
-    "ytd_time": "87:18:53"
+    "all_time_km": 1421.5,
+    "ytd_km": 907.2,
+    "ytd_runs": 125,
+    "ytd_time": "87:23:53"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1420.5,
-      "ytd_km": 906.2,
-      "ytd_count": 124,
-      "ytd_time": "87:18:53"
+      "all_time_km": 1421.5,
+      "ytd_km": 907.2,
+      "ytd_count": 125,
+      "ytd_time": "87:23:53"
     },
     "swim": {
       "all_time_km": 0.0,
@@ -20,10 +20,10 @@
       "ytd_time": "0:00"
     },
     "ride": {
-      "all_time_km": 86.6,
-      "ytd_km": 86.6,
-      "ytd_count": 4,
-      "ytd_time": "3:24:40"
+      "all_time_km": 186.8,
+      "ytd_km": 186.8,
+      "ytd_count": 5,
+      "ytd_time": "7:02:23"
     }
   },
   "best_efforts": {
@@ -121,6 +121,14 @@
   },
   "recent_runs": [
     {
+      "id": 18966424949,
+      "name": "post 100k bike \ud83e\uddf1 brick run 1k",
+      "distance": 1.0,
+      "time": "5:00",
+      "pace": "5:00 /km",
+      "date": "2026-06-17"
+    },
+    {
       "id": 18944083726,
       "name": "\ud83c\udf05",
       "distance": 3.97,
@@ -159,18 +167,18 @@
       "time": "1:13:50",
       "pace": "6:42 /km",
       "date": "2026-06-07"
-    },
-    {
-      "id": 18817840240,
-      "name": "Night Run",
-      "distance": 1.21,
-      "time": "8:39",
-      "pace": "7:09 /km",
-      "date": "2026-06-06"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": 18966424949,
+        "name": "post 100k bike \ud83e\uddf1 brick run 1k",
+        "distance": 1.0,
+        "time": "5:00",
+        "perf": "5:00 /km",
+        "date": "2026-06-17"
+      },
       {
         "id": 18944083726,
         "name": "\ud83c\udf05",
@@ -210,18 +218,18 @@
         "time": "1:13:50",
         "perf": "6:42 /km",
         "date": "2026-06-07"
-      },
-      {
-        "id": 18817840240,
-        "name": "Night Run",
-        "distance": 1.21,
-        "time": "8:39",
-        "perf": "7:09 /km",
-        "date": "2026-06-06"
       }
     ],
     "swim": [],
     "ride": [
+      {
+        "id": 18966417637,
+        "name": "Pain cave",
+        "distance": 100.26,
+        "time": "3:37:43",
+        "perf": "27.6 km/h",
+        "date": "2026-06-17"
+      },
       {
         "id": 18911067937,
         "name": "Night ride while finishing an assignment",
@@ -260,6 +268,14 @@
     "swim": [],
     "ride": [
       {
+        "id": 18966417637,
+        "name": "Pain cave",
+        "distance": 100.26,
+        "time": "3:37:43",
+        "perf": "27.6 km/h",
+        "date": "2026-06-17"
+      },
+      {
         "id": 18911067937,
         "name": "Night ride while finishing an assignment",
         "distance": 50.21,
@@ -294,6 +310,7 @@
     ]
   },
   "daily_km": {
+    "2026-06-17": 1.0,
     "2026-06-15": 3.97,
     "2026-06-13": 21.12,
     "2026-06-12": 3.22,
@@ -520,6 +537,10 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-06-17": {
+      "run": 1.0,
+      "ride": 100.26
+    },
     "2026-06-15": {
       "run": 3.97
     },

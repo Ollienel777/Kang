@@ -66,6 +66,12 @@ document.querySelectorAll('.hobby-tab').forEach(tab => {
 // ── HEATMAP ──
 // dailyActivities: { "YYYY-MM-DD": { run?: km, swim?: km, ride?: km } }
 // Falls back gracefully if only legacy daily_km is available.
+
+// Module-level state used by both buildHeatmap and switchSport
+let _activeSport    = 'run';
+let _heatmapRerender = null;
+const SPORT_LABEL   = { run: 'running', swim: 'swimming', ride: 'cycling' };
+
 function buildHeatmap(dailyActivities) {
   const grid     = document.getElementById('run-heatmap');
   const monthsEl = document.getElementById('heatmap-months');
@@ -123,10 +129,10 @@ function buildHeatmap(dailyActivities) {
   yearSet.add(currentYear);
   const years = [...yearSet].sort((a, b) => b - a);
 
-  function getYearRunKm(year) {
+  function getYearSportKm(year) {
     return Object.entries(dailyActivities)
       .filter(([d]) => d.startsWith(year + '-'))
-      .reduce((sum, [, acts]) => sum + (acts.run || 0), 0);
+      .reduce((sum, [, acts]) => sum + (acts[_activeSport] || 0), 0);
   }
 
   // ── Render grid ──
@@ -146,16 +152,16 @@ function buildHeatmap(dailyActivities) {
       const cutStr    = start.toISOString().slice(0, 10);
       const rollingKm = Object.entries(dailyActivities)
         .filter(([d]) => d >= cutStr)
-        .reduce((sum, [, acts]) => sum + (acts.run || 0), 0);
-      if (ytdLabel) ytdLabel.textContent = `${Math.round(rollingKm * 10) / 10} km running in the last 365 days`;
+        .reduce((sum, [, acts]) => sum + (acts[_activeSport] || 0), 0);
+      if (ytdLabel) ytdLabel.textContent = `${Math.round(rollingKm * 10) / 10} km ${SPORT_LABEL[_activeSport]} in the last 365 days`;
     } else {
       yearStart = new Date(year, 0, 1);
       yearEnd   = year === currentYear ? today : new Date(year, 11, 31);
       start     = new Date(yearStart);
       start.setDate(start.getDate() - start.getDay());
 
-      const km = Math.round(getYearRunKm(year) * 10) / 10;
-      if (ytdLabel) ytdLabel.textContent = `${km.toLocaleString()} km running in ${year}`;
+      const km = Math.round(getYearSportKm(year) * 10) / 10;
+      if (ytdLabel) ytdLabel.textContent = `${km.toLocaleString()} km ${SPORT_LABEL[_activeSport]} in ${year}`;
     }
 
     let cursor = new Date(start), weekIdx = 0, prevMonth = -1;
@@ -245,6 +251,7 @@ function buildHeatmap(dailyActivities) {
     });
   }
 
+  _heatmapRerender = () => setActive(activeYear);
   renderGrid('rolling');
 }
 
@@ -256,9 +263,9 @@ const BEST_EFFORT_LABELS = {
 };
 
 const SPORT_CONFIG = {
-  run:  { countLabel: 'Runs',  bestsTitle: 'PERSONAL BESTS', recentTitle: 'RECENT RUNS',  accentColor: '#de4355' },
-  swim: { countLabel: 'Swims', bestsTitle: 'TOP SWIMS',       recentTitle: 'RECENT SWIMS', accentColor: '#2a96e8' },
-  ride: { countLabel: 'Rides', bestsTitle: 'LONGEST RIDES',   recentTitle: 'RECENT RIDES', accentColor: '#3aab64' },
+  run:  { sectionTitle: 'RUNNING',  countLabel: 'Runs',  bestsTitle: 'PERSONAL BESTS', recentTitle: 'RECENT RUNS',  accentColor: '#de4355' },
+  swim: { sectionTitle: 'SWIMMING', countLabel: 'Swims', bestsTitle: 'TOP SWIMS',       recentTitle: 'RECENT SWIMS', accentColor: '#2a96e8' },
+  ride: { sectionTitle: 'CYCLING',  countLabel: 'Rides', bestsTitle: 'LONGEST RIDES',   recentTitle: 'RECENT RIDES', accentColor: '#3aab64' },
 };
 
 let _stravaData = null;
@@ -347,11 +354,15 @@ function renderRecent(sport) {
 }
 
 function switchSport(sport) {
+  _activeSport = sport;
   document.querySelectorAll('.sport-pill').forEach(p =>
     p.classList.toggle('is-active', p.dataset.sport === sport));
+  const titleEl = document.getElementById('sport-section-title');
+  if (titleEl) titleEl.textContent = SPORT_CONFIG[sport].sectionTitle;
   renderStats(sport);
   renderBests(sport);
   renderRecent(sport);
+  _heatmapRerender?.();
 }
 
 fetch('strava-data.json')

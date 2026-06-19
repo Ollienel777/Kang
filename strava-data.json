@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-06-18",
+  "updated_at": "2026-06-19",
   "totals": {
-    "all_time_km": 1421.5,
-    "ytd_km": 907.2,
-    "ytd_runs": 125,
-    "ytd_time": "87:23:53"
+    "all_time_km": 1426.8,
+    "ytd_km": 912.6,
+    "ytd_runs": 126,
+    "ytd_time": "87:49:57"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1421.5,
-      "ytd_km": 907.2,
-      "ytd_count": 125,
-      "ytd_time": "87:23:53"
+      "all_time_km": 1426.8,
+      "ytd_km": 912.6,
+      "ytd_count": 126,
+      "ytd_time": "87:49:57"
     },
     "swim": {
       "all_time_km": 0.0,
@@ -121,6 +121,14 @@
   },
   "recent_runs": [
     {
+      "id": 18979567718,
+      "name": "Breather",
+      "distance": 5.39,
+      "time": "26:04",
+      "pace": "4:50 /km",
+      "date": "2026-06-18"
+    },
+    {
       "id": 18966424949,
       "name": "post 100k bike \ud83e\uddf1 brick run 1k",
       "distance": 1.0,
@@ -159,18 +167,18 @@
       "time": "48:19",
       "pace": "5:38 /km",
       "date": "2026-06-08"
-    },
-    {
-      "id": 18825076451,
-      "name": "Exploring downtown with parents",
-      "distance": 11.01,
-      "time": "1:13:50",
-      "pace": "6:42 /km",
-      "date": "2026-06-07"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": 18979567718,
+        "name": "Breather",
+        "distance": 5.39,
+        "time": "26:04",
+        "perf": "4:50 /km",
+        "date": "2026-06-18"
+      },
       {
         "id": 18966424949,
         "name": "post 100k bike \ud83e\uddf1 brick run 1k",
@@ -210,14 +218,6 @@
         "time": "48:19",
         "perf": "5:38 /km",
         "date": "2026-06-08"
-      },
-      {
-        "id": 18825076451,
-        "name": "Exploring downtown with parents",
-        "distance": 11.01,
-        "time": "1:13:50",
-        "perf": "6:42 /km",
-        "date": "2026-06-07"
       }
     ],
     "swim": [],
@@ -310,6 +310,7 @@
     ]
   },
   "daily_km": {
+    "2026-06-18": 5.39,
     "2026-06-17": 1.0,
     "2026-06-15": 3.97,
     "2026-06-13": 21.12,
@@ -537,6 +538,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-06-18": {
+      "run": 5.39
+    },
     "2026-06-17": {
       "run": 1.0,
       "ride": 100.26

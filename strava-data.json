@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-06-20",
+  "updated_at": "2026-06-21",
   "totals": {
-    "all_time_km": 1428.8,
-    "ytd_km": 914.6,
-    "ytd_runs": 127,
-    "ytd_time": "88:00:29"
+    "all_time_km": 1444.1,
+    "ytd_km": 929.9,
+    "ytd_runs": 128,
+    "ytd_time": "89:25:24"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1428.8,
-      "ytd_km": 914.6,
-      "ytd_count": 127,
-      "ytd_time": "88:00:29"
+      "all_time_km": 1444.1,
+      "ytd_km": 929.9,
+      "ytd_count": 128,
+      "ytd_time": "89:25:24"
     },
     "swim": {
       "all_time_km": 0.0,
@@ -121,6 +121,14 @@
   },
   "recent_runs": [
     {
+      "id": 19004071859,
+      "name": "AMP",
+      "distance": 15.28,
+      "time": "1:24:55",
+      "pace": "5:33 /km",
+      "date": "2026-06-20"
+    },
+    {
       "id": 18986031951,
       "name": "Kunyuan send off",
       "distance": 2.0,
@@ -159,18 +167,18 @@
       "time": "1:58:29",
       "pace": "5:36 /km",
       "date": "2026-06-13"
-    },
-    {
-      "id": 18889766113,
-      "name": "Morning run after workout",
-      "distance": 3.22,
-      "time": "20:16",
-      "pace": "6:17 /km",
-      "date": "2026-06-12"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": 19004071859,
+        "name": "AMP",
+        "distance": 15.28,
+        "time": "1:24:55",
+        "perf": "5:33 /km",
+        "date": "2026-06-20"
+      },
       {
         "id": 18986031951,
         "name": "Kunyuan send off",
@@ -210,14 +218,6 @@
         "time": "1:58:29",
         "perf": "5:36 /km",
         "date": "2026-06-13"
-      },
-      {
-        "id": 18889766113,
-        "name": "Morning run after workout",
-        "distance": 3.22,
-        "time": "20:16",
-        "perf": "6:17 /km",
-        "date": "2026-06-12"
       }
     ],
     "swim": [],
@@ -310,6 +310,7 @@
     ]
   },
   "daily_km": {
+    "2026-06-20": 15.28,
     "2026-06-19": 2.0,
     "2026-06-18": 5.39,
     "2026-06-17": 1.0,
@@ -539,6 +540,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-06-20": {
+      "run": 15.28
+    },
     "2026-06-19": {
       "run": 2.0
     },

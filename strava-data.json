@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-06-24",
+  "updated_at": "2026-06-25",
   "totals": {
-    "all_time_km": 1444.1,
-    "ytd_km": 929.9,
-    "ytd_runs": 128,
-    "ytd_time": "89:25:24"
+    "all_time_km": 1447.1,
+    "ytd_km": 932.9,
+    "ytd_runs": 129,
+    "ytd_time": "89:41:30"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1444.1,
-      "ytd_km": 929.9,
-      "ytd_count": 128,
-      "ytd_time": "89:25:24"
+      "all_time_km": 1447.1,
+      "ytd_km": 932.9,
+      "ytd_count": 129,
+      "ytd_time": "89:41:30"
     },
     "swim": {
       "all_time_km": 0.0,
@@ -121,6 +121,14 @@
   },
   "recent_runs": [
     {
+      "id": 19056858309,
+      "name": "night treadmill 3k",
+      "distance": 3.0,
+      "time": "16:06",
+      "pace": "5:22 /km",
+      "date": "2026-06-24"
+    },
+    {
       "id": 19004071859,
       "name": "AMP",
       "distance": 15.28,
@@ -159,18 +167,18 @@
       "time": "19:52",
       "pace": "5:00 /km",
       "date": "2026-06-15"
-    },
-    {
-      "id": 18906738752,
-      "name": "Sub2 half with Founder's Run Club",
-      "distance": 21.12,
-      "time": "1:58:29",
-      "pace": "5:36 /km",
-      "date": "2026-06-13"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": 19056858309,
+        "name": "night treadmill 3k",
+        "distance": 3.0,
+        "time": "16:06",
+        "perf": "5:22 /km",
+        "date": "2026-06-24"
+      },
       {
         "id": 19004071859,
         "name": "AMP",
@@ -210,14 +218,6 @@
         "time": "19:52",
         "perf": "5:00 /km",
         "date": "2026-06-15"
-      },
-      {
-        "id": 18906738752,
-        "name": "Sub2 half with Founder's Run Club",
-        "distance": 21.12,
-        "time": "1:58:29",
-        "perf": "5:36 /km",
-        "date": "2026-06-13"
       }
     ],
     "swim": [],
@@ -310,6 +310,7 @@
     ]
   },
   "daily_km": {
+    "2026-06-24": 3.0,
     "2026-06-20": 15.28,
     "2026-06-19": 2.0,
     "2026-06-18": 5.39,
@@ -540,6 +541,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-06-24": {
+      "run": 3.0
+    },
     "2026-06-20": {
       "run": 15.28
     },

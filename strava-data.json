@@ -1,17 +1,17 @@
 {
   "updated_at": "2026-06-26",
   "totals": {
-    "all_time_km": 1447.1,
-    "ytd_km": 924.9,
-    "ytd_runs": 127,
-    "ytd_time": "89:01:31"
+    "all_time_km": 1457.5,
+    "ytd_km": 935.3,
+    "ytd_runs": 128,
+    "ytd_time": "89:56:06"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1447.1,
-      "ytd_km": 924.9,
-      "ytd_count": 127,
-      "ytd_time": "89:01:31"
+      "all_time_km": 1457.5,
+      "ytd_km": 935.3,
+      "ytd_count": 128,
+      "ytd_time": "89:56:06"
     },
     "swim": {
       "all_time_km": 0.0,
@@ -20,10 +20,10 @@
       "ytd_time": "0:00"
     },
     "ride": {
-      "all_time_km": 186.8,
-      "ytd_km": 186.8,
-      "ytd_count": 5,
-      "ytd_time": "7:02:23"
+      "all_time_km": 200.3,
+      "ytd_km": 200.3,
+      "ytd_count": 6,
+      "ytd_time": "7:31:18"
     }
   },
   "best_efforts": {
@@ -121,6 +121,14 @@
   },
   "recent_runs": [
     {
+      "id": 19073013399,
+      "name": "Evening Run",
+      "distance": 10.4,
+      "time": "54:35",
+      "pace": "5:14 /km",
+      "date": "2026-06-25"
+    },
+    {
       "id": 19056858309,
       "name": "night treadmill 3k",
       "distance": 3.0,
@@ -159,18 +167,18 @@
       "time": "5:00",
       "pace": "5:00 /km",
       "date": "2026-06-17"
-    },
-    {
-      "id": 18944083726,
-      "name": "\ud83c\udf05",
-      "distance": 3.97,
-      "time": "19:52",
-      "pace": "5:00 /km",
-      "date": "2026-06-15"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": 19073013399,
+        "name": "Evening Run",
+        "distance": 10.4,
+        "time": "54:35",
+        "perf": "5:14 /km",
+        "date": "2026-06-25"
+      },
       {
         "id": 19056858309,
         "name": "night treadmill 3k",
@@ -210,18 +218,18 @@
         "time": "5:00",
         "perf": "5:00 /km",
         "date": "2026-06-17"
-      },
-      {
-        "id": 18944083726,
-        "name": "\ud83c\udf05",
-        "distance": 3.97,
-        "time": "19:52",
-        "perf": "5:00 /km",
-        "date": "2026-06-15"
       }
     ],
     "swim": [],
     "ride": [
+      {
+        "id": 19073030654,
+        "name": "Afternoon Ride",
+        "distance": 13.5,
+        "time": "28:55",
+        "perf": "28.0 km/h",
+        "date": "2026-06-25"
+      },
       {
         "id": 18966417637,
         "name": "Pain cave",
@@ -292,24 +300,25 @@
         "date": "2026-06-12"
       },
       {
+        "id": 19073030654,
+        "name": "Afternoon Ride",
+        "distance": 13.5,
+        "time": "28:55",
+        "perf": "28.0 km/h",
+        "date": "2026-06-25"
+      },
+      {
         "id": 18881792917,
         "name": "First lunch bike \ud83e\udd14",
         "distance": 8.05,
         "time": "18:50",
         "perf": "25.6 km/h",
         "date": "2026-06-11"
-      },
-      {
-        "id": 18885985963,
-        "name": "Whys biking hard",
-        "distance": 3.54,
-        "time": "7:30",
-        "perf": "28.3 km/h",
-        "date": "2026-06-11"
       }
     ]
   },
   "daily_km": {
+    "2026-06-25": 10.4,
     "2026-06-24": 3.0,
     "2026-06-20": 15.28,
     "2026-06-19": 2.0,
@@ -541,6 +550,11 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-06-25": {
+      "run": 10.4,
+      "lift": 40.0,
+      "ride": 13.5
+    },
     "2026-06-24": {
       "run": 3.0
     },
@@ -981,6 +995,9 @@
     },
     "2025-04-02": {
       "run": 4.31
+    },
+    "2025-04-01": {
+      "lift": 35.0
     },
     "2025-03-31": {
       "run": 4.56

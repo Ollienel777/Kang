@@ -113,17 +113,21 @@ function buildHeatmap(dailyActivities) {
     return COLORS[sport][levelFn[sport](km)];
   }
 
-  // Background for a day's activities — diagonal gradient for multi-sport
+  // Background for a day's activities — diagonal gradient for multi-sport.
+  // Uses explicit start/end stops per band (not the double-position shorthand,
+  // which some browsers render inconsistently — middle bands could vanish).
   function cellBackground(acts) {
     const active = ['run', 'swim', 'ride', 'lift'].filter(s => (acts[s] || 0) > 0);
     if (active.length === 0) return COLORS.run[0];
     if (active.length === 1) return sportColor(active[0], acts[active[0]]);
-    const cols = active.map(s => sportColor(s, acts[s]));
-    if (cols.length === 2)
-      return `linear-gradient(135deg, ${cols[0]} 50%, ${cols[1]} 50%)`;
-    if (cols.length === 3)
-      return `linear-gradient(135deg, ${cols[0]} 33%, ${cols[1]} 33% 66%, ${cols[2]} 66%)`;
-    return `linear-gradient(135deg, ${cols[0]} 25%, ${cols[1]} 25% 50%, ${cols[2]} 50% 75%, ${cols[3]} 75%)`;
+    const cols  = active.map(s => sportColor(s, acts[s]));
+    const n     = cols.length;
+    const stops = cols.map((c, i) => {
+      const start = (i / n * 100).toFixed(2);
+      const end   = ((i + 1) / n * 100).toFixed(2);
+      return `${c} ${start}%, ${c} ${end}%`;
+    }).join(', ');
+    return `linear-gradient(135deg, ${stops})`;
   }
 
   // Tooltip text — separate line per sport

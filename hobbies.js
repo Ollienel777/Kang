@@ -88,17 +88,26 @@ function buildHeatmap(dailyActivities) {
   const currentYear = today.getFullYear();
 
   // ── Sport colour palettes (index = level 0–5) ──
+  // Lift is binary (did/didn't) rather than intensity-graded, so it only has 2 entries.
   const COLORS = {
     run:  ['#1e1e1e', '#4d0f17', '#7a1a24', '#a32230', '#bf2c3a', '#de4355'],
     swim: ['#1e1e1e', '#0a2240', '#0f3a6e', '#1a57a0', '#1a75cc', '#2a96e8'],
     ride: ['#1e1e1e', '#0d2b1a', '#1a4d2e', '#256e3f', '#2d8a50', '#3aab64'],
+    lift: ['#1e1e1e', '#8b3fd1'],
   };
 
   const levelFn = {
-    run:  km => !km ? 0 : km < 5  ? 1 : km < 10 ? 2 : km < 15 ? 3 : km < 20 ? 4 : 5,
-    swim: km => !km ? 0 : km < 1  ? 1 : km < 2  ? 2 : km < 3  ? 3 : km < 4  ? 4 : 5,
-    ride: km => !km ? 0 : km < 20 ? 1 : km < 40 ? 2 : km < 60 ? 3 : km < 90 ? 4 : 5,
+    run:  km   => !km ? 0 : km < 5  ? 1 : km < 10 ? 2 : km < 15 ? 3 : km < 20 ? 4 : 5,
+    swim: km   => !km ? 0 : km < 1  ? 1 : km < 2  ? 2 : km < 3  ? 3 : km < 4  ? 4 : 5,
+    ride: km   => !km ? 0 : km < 20 ? 1 : km < 40 ? 2 : km < 60 ? 3 : km < 90 ? 4 : 5,
+    lift: mins => mins > 0 ? 1 : 0,
   };
+
+  function fmtMins(mins) {
+    if (mins < 60) return `${Math.round(mins)} min`;
+    const h = Math.floor(mins / 60), m = Math.round(mins % 60);
+    return m > 0 ? `${h}h ${m}m` : `${h}h`;
+  }
 
   function sportColor(sport, km) {
     return COLORS[sport][levelFn[sport](km)];
@@ -106,13 +115,15 @@ function buildHeatmap(dailyActivities) {
 
   // Background for a day's activities — diagonal gradient for multi-sport
   function cellBackground(acts) {
-    const active = ['run', 'swim', 'ride'].filter(s => (acts[s] || 0) > 0);
+    const active = ['run', 'swim', 'ride', 'lift'].filter(s => (acts[s] || 0) > 0);
     if (active.length === 0) return COLORS.run[0];
     if (active.length === 1) return sportColor(active[0], acts[active[0]]);
     const cols = active.map(s => sportColor(s, acts[s]));
     if (cols.length === 2)
       return `linear-gradient(135deg, ${cols[0]} 50%, ${cols[1]} 50%)`;
-    return `linear-gradient(135deg, ${cols[0]} 33%, ${cols[1]} 33% 66%, ${cols[2]} 66%)`;
+    if (cols.length === 3)
+      return `linear-gradient(135deg, ${cols[0]} 33%, ${cols[1]} 33% 66%, ${cols[2]} 66%)`;
+    return `linear-gradient(135deg, ${cols[0]} 25%, ${cols[1]} 25% 50%, ${cols[2]} 50% 75%, ${cols[3]} 75%)`;
   }
 
   // Tooltip text — separate line per sport
@@ -121,6 +132,7 @@ function buildHeatmap(dailyActivities) {
     if (acts.run  > 0) parts.push(`Run ${acts.run} km`);
     if (acts.swim > 0) parts.push(`Swim ${acts.swim} km`);
     if (acts.ride > 0) parts.push(`Ride ${acts.ride} km`);
+    if (acts.lift > 0) parts.push(`Lift ${fmtMins(acts.lift)}`);
     return parts.length ? parts.join(' · ') : 'Rest day';
   }
 

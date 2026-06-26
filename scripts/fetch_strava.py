@@ -97,12 +97,13 @@ def main():
     athlete.raise_for_status()
     athlete_id = athlete.json()['id']
 
-    # ── All activities (paginated) — run / swim / ride ──
+    # ── All activities (paginated) — run / swim / ride / lift ──
     SPORT_MAP = {}
     for sport, types in {
         'run':  {'Run', 'TrailRun', 'VirtualRun', 'Treadmill'},
         'swim': {'Swim', 'OpenWaterSwim'},
         'ride': {'Ride', 'VirtualRide', 'EBikeRide', 'MountainBikeRide', 'GravelRide'},
+        'lift': {'WeightTraining', 'Workout'},
     }.items():
         for t in types:
             SPORT_MAP[t] = sport
@@ -129,7 +130,7 @@ def main():
             if sport == 'run':
                 all_acts.append(a)
                 all_tracked.append(('run', a))
-            elif sport in ('swim', 'ride'):
+            elif sport in ('swim', 'ride', 'lift'):
                 all_tracked.append((sport, a))
         if len(batch) < 200:
             break
@@ -224,13 +225,20 @@ def main():
                 }
 
     # ── Daily activities map (heatmap) — keyed by sport ──
+    # run/swim/ride are tracked by distance (km); lift has no meaningful
+    # distance on Strava, so it's tracked by duration (minutes) instead.
     daily_activities = {}
     daily_km = {}   # run-only legacy field for backward compat
     for sport, act in all_tracked:
         date = act['start_date_local'][:10]
-        km   = round(act['distance'] / 1000, 2)
         if date not in daily_activities:
             daily_activities[date] = {}
+        if sport == 'lift':
+            mins = round(act['moving_time'] / 60, 1)
+            prev = daily_activities[date].get('lift', 0)
+            daily_activities[date]['lift'] = round(prev + mins, 1)
+            continue
+        km   = round(act['distance'] / 1000, 2)
         prev = daily_activities[date].get(sport, 0)
         daily_activities[date][sport] = round(prev + km, 2)
         if sport == 'run':

@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-06-26",
+  "updated_at": "2026-06-27",
   "totals": {
-    "all_time_km": 1457.5,
-    "ytd_km": 935.3,
-    "ytd_runs": 128,
-    "ytd_time": "89:56:06"
+    "all_time_km": 1473.4,
+    "ytd_km": 939.2,
+    "ytd_runs": 129,
+    "ytd_time": "90:19:39"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1457.5,
-      "ytd_km": 935.3,
-      "ytd_count": 128,
-      "ytd_time": "89:56:06"
+      "all_time_km": 1473.4,
+      "ytd_km": 939.2,
+      "ytd_count": 129,
+      "ytd_time": "90:19:39"
     },
     "swim": {
       "all_time_km": 0.0,
@@ -121,6 +121,22 @@
   },
   "recent_runs": [
     {
+      "id": 19075831499,
+      "name": "Lunch run",
+      "distance": 5.53,
+      "time": "28:38",
+      "pace": "5:10 /km",
+      "date": "2026-06-26"
+    },
+    {
+      "id": 19075346084,
+      "name": "Evening Run",
+      "distance": 10.35,
+      "time": "55:12",
+      "pace": "5:19 /km",
+      "date": "2026-06-25"
+    },
+    {
       "id": 19073013399,
       "name": "Evening Run",
       "distance": 10.4,
@@ -151,26 +167,26 @@
       "time": "10:32",
       "pace": "5:16 /km",
       "date": "2026-06-19"
-    },
-    {
-      "id": 18979567718,
-      "name": "Breather",
-      "distance": 5.39,
-      "time": "26:04",
-      "pace": "4:50 /km",
-      "date": "2026-06-18"
-    },
-    {
-      "id": 18966424949,
-      "name": "post 100k bike \ud83e\uddf1 brick run 1k",
-      "distance": 1.0,
-      "time": "5:00",
-      "pace": "5:00 /km",
-      "date": "2026-06-17"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": 19075831499,
+        "name": "Lunch run",
+        "distance": 5.53,
+        "time": "28:38",
+        "perf": "5:10 /km",
+        "date": "2026-06-26"
+      },
+      {
+        "id": 19075346084,
+        "name": "Evening Run",
+        "distance": 10.35,
+        "time": "55:12",
+        "perf": "5:19 /km",
+        "date": "2026-06-25"
+      },
       {
         "id": 19073013399,
         "name": "Evening Run",
@@ -202,22 +218,6 @@
         "time": "10:32",
         "perf": "5:16 /km",
         "date": "2026-06-19"
-      },
-      {
-        "id": 18979567718,
-        "name": "Breather",
-        "distance": 5.39,
-        "time": "26:04",
-        "perf": "4:50 /km",
-        "date": "2026-06-18"
-      },
-      {
-        "id": 18966424949,
-        "name": "post 100k bike \ud83e\uddf1 brick run 1k",
-        "distance": 1.0,
-        "time": "5:00",
-        "perf": "5:00 /km",
-        "date": "2026-06-17"
       }
     ],
     "swim": [],
@@ -318,7 +318,8 @@
     ]
   },
   "daily_km": {
-    "2026-06-25": 10.4,
+    "2026-06-26": 5.53,
+    "2026-06-25": 20.75,
     "2026-06-24": 3.0,
     "2026-06-20": 15.28,
     "2026-06-19": 2.0,
@@ -550,8 +551,11 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-06-26": {
+      "run": 5.53
+    },
     "2026-06-25": {
-      "run": 10.4,
+      "run": 20.75,
       "lift": 40.0,
       "ride": 13.5
     },

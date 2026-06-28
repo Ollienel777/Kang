@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-06-27",
+  "updated_at": "2026-06-28",
   "totals": {
-    "all_time_km": 1473.4,
-    "ytd_km": 939.2,
-    "ytd_runs": 129,
-    "ytd_time": "90:19:39"
+    "all_time_km": 1494.6,
+    "ytd_km": 960.4,
+    "ytd_runs": 130,
+    "ytd_time": "92:15:23"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1473.4,
-      "ytd_km": 939.2,
-      "ytd_count": 129,
-      "ytd_time": "90:19:39"
+      "all_time_km": 1494.6,
+      "ytd_km": 960.4,
+      "ytd_count": 130,
+      "ytd_time": "92:15:23"
     },
     "swim": {
       "all_time_km": 0.0,
@@ -35,11 +35,11 @@
       "date": "2025-09-12"
     },
     "1/2 mile": {
-      "elapsed_time": 186,
-      "time": "3:06",
-      "pace": "3:51 /km",
-      "activity_id": 18637238873,
-      "date": "2026-05-24"
+      "elapsed_time": 157,
+      "time": "2:37",
+      "pace": "3:15 /km",
+      "activity_id": 19088256687,
+      "date": "2026-06-27"
     },
     "1 mile": {
       "elapsed_time": 417,
@@ -112,14 +112,22 @@
       "date": "2026-05-24"
     },
     "1k": {
-      "elapsed_time": 255,
-      "time": "4:15",
-      "pace": "4:15 /km",
-      "activity_id": 18637238873,
-      "date": "2026-05-24"
+      "elapsed_time": 230,
+      "time": "3:50",
+      "pace": "3:50 /km",
+      "activity_id": 19088256687,
+      "date": "2026-06-27"
     }
   },
   "recent_runs": [
+    {
+      "id": 19088256687,
+      "name": "Sunnyside beach FRC 27",
+      "distance": 21.19,
+      "time": "1:55:44",
+      "pace": "5:27 /km",
+      "date": "2026-06-27"
+    },
     {
       "id": 19075831499,
       "name": "Lunch run",
@@ -159,18 +167,18 @@
       "time": "1:24:55",
       "pace": "5:33 /km",
       "date": "2026-06-20"
-    },
-    {
-      "id": 18986031951,
-      "name": "Kunyuan send off",
-      "distance": 2.0,
-      "time": "10:32",
-      "pace": "5:16 /km",
-      "date": "2026-06-19"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": 19088256687,
+        "name": "Sunnyside beach FRC 27",
+        "distance": 21.19,
+        "time": "1:55:44",
+        "perf": "5:27 /km",
+        "date": "2026-06-27"
+      },
       {
         "id": 19075831499,
         "name": "Lunch run",
@@ -210,14 +218,6 @@
         "time": "1:24:55",
         "perf": "5:33 /km",
         "date": "2026-06-20"
-      },
-      {
-        "id": 18986031951,
-        "name": "Kunyuan send off",
-        "distance": 2.0,
-        "time": "10:32",
-        "perf": "5:16 /km",
-        "date": "2026-06-19"
       }
     ],
     "swim": [],
@@ -318,6 +318,7 @@
     ]
   },
   "daily_km": {
+    "2026-06-27": 21.19,
     "2026-06-26": 5.53,
     "2026-06-25": 20.75,
     "2026-06-24": 3.0,
@@ -551,6 +552,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-06-27": {
+      "run": 21.19
+    },
     "2026-06-26": {
       "run": 5.53
     },

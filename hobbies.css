@@ -112,6 +112,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--white);
+  transition: color 0.2s ease;
 }
 
 .hobby-section-desc {
@@ -211,6 +212,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--red);
+  transition: color 0.2s ease;
 }
 
 /* ── ACTIVITY EMBEDS ── */
@@ -271,6 +273,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
   margin-bottom: 16px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--gray-mid);
+  transition: color 0.2s ease;
 }
 
 /* ── BEST EFFORTS TABLE ── */

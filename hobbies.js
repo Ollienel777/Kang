@@ -373,8 +373,22 @@ function switchSport(sport) {
   _activeSport = sport;
   document.querySelectorAll('.sport-pill').forEach(p =>
     p.classList.toggle('is-active', p.dataset.sport === sport));
+  const { accentColor } = SPORT_CONFIG[sport];
+
   const titleEl = document.getElementById('sport-section-title');
-  if (titleEl) titleEl.textContent = SPORT_CONFIG[sport].sectionTitle;
+  if (titleEl) {
+    titleEl.textContent = SPORT_CONFIG[sport].sectionTitle;
+    titleEl.style.color = accentColor;
+  }
+
+  document.querySelectorAll('#strava-totals .hobby-stat-label').forEach(el => {
+    el.style.color = accentColor;
+  });
+  ['bests-title', 'recent-title'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.color = accentColor;
+  });
+
   renderStats(sport);
   renderBests(sport);
   renderRecent(sport);

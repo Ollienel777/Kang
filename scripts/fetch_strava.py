@@ -53,6 +53,7 @@ def get_access_token():
         print(f'Token error payload: {data}')
         r.raise_for_status()
         raise Exception(f'No access_token in response: {data}')
+    print(f'Token scopes: {data.get("scope", "(not returned)")}')
     return data['access_token']
 
 
@@ -94,6 +95,8 @@ def main():
 
     # ── Athlete ID ──
     athlete = requests.get('https://www.strava.com/api/v3/athlete', headers=headers)
+    if not athlete.ok:
+        print(f'Athlete endpoint {athlete.status_code}: {athlete.text[:300]}')
     athlete.raise_for_status()
     athlete_id = athlete.json()['id']
 

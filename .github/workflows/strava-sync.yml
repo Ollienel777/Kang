@@ -31,11 +31,12 @@ jobs:
           # Retry up to 3 times with a 30s pause — handles transient Strava API hiccups
           for attempt in 1 2 3; do
             echo "=== Attempt $attempt/3 ==="
-            if python scripts/fetch_strava.py 2>&1; then
+            python scripts/fetch_strava.py 2>&1
+            EXIT_CODE=$?
+            if [ $EXIT_CODE -eq 0 ]; then
               echo "last_attempt=$attempt" >> "$GITHUB_OUTPUT"
               exit 0
             fi
-            EXIT_CODE=$?
             echo "::warning::Attempt $attempt/3 failed (exit $EXIT_CODE)"
             if [ $attempt -lt 3 ]; then
               echo "Waiting 30s before retry..."

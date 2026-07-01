@@ -331,4 +331,10 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import traceback, sys
+    try:
+        main()
+    except Exception as e:
+        print(f'\nFATAL: {type(e).__name__}: {e}', file=sys.stderr)
+        traceback.print_exc(file=sys.stderr)
+        sys.exit(1)

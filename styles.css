@@ -785,7 +785,7 @@ html, body {
   transition-delay: 0.05s;
 }
 .col-project:hover .project-details {
-  max-height: 320px;
+  max-height: 420px;
   transition-delay: 0.08s;
 }
 
@@ -1418,7 +1418,7 @@ html, body {
   transition-delay: 0.05s;
 }
 .col-project.is-in-view .project-details {
-  max-height: 320px;
+  max-height: 420px;
   transition-delay: 0.08s;
 }
 .col-project.is-in-view .col-inner::after { opacity: 1; }

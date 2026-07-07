@@ -16,8 +16,8 @@
   --col-hero-w: 460px;
   --col-end-w: 420px;
 
-  --font-head: 'Arial Black', 'Arial Bold', Arial, sans-serif;
-  --font-body: 'Arial', Helvetica, sans-serif;
+  --font-head: 'Archivo Black', 'Arial Black', Arial, sans-serif;
+  --font-body: 'Space Grotesk', 'Arial', Helvetica, sans-serif;
 }
 
 html, body {
@@ -284,9 +284,52 @@ html, body {
 }
 
 .col-bg--end {
-  background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 40%, var(--black) 100%);
-  opacity: 0.35;
+  background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 45%, var(--black) 100%);
+  opacity: 0.9;
 }
+/* animated red bloom that breathes behind the CTA */
+.col-end::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 30% 78%, rgba(191,44,58,0.55) 0%, transparent 62%);
+  animation: end-bloom 6s ease-in-out infinite alternate;
+}
+@keyframes end-bloom {
+  from { opacity: 0.5; transform: scale(1); }
+  to   { opacity: 1;   transform: scale(1.12); }
+}
+
+/* Bigger, louder end statement */
+.col-end .col-title--end {
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  margin-bottom: 20px;
+}
+
+.end-email {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  text-decoration: none;
+  margin-bottom: 24px;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid rgba(255,255,255,0.35);
+  transition: border-color 0.25s ease, color 0.25s ease;
+  width: fit-content;
+}
+.end-email:hover { color: var(--white); border-color: var(--white); }
+
+.col-end .cta-btn--end {
+  background: var(--white);
+  color: var(--red);
+  align-self: flex-start;
+}
+.col-end .cta-btn--end:hover { background: var(--off-white); color: var(--red-dark); }
 
 /* ── COLUMN INNER (content sits above bg + carousel) ── */
 .col-inner {
@@ -596,6 +639,41 @@ html, body {
   padding: 20px 24px;
   margin: 0 -12px;
 }
+
+/* ── PROJECT "OPEN" CUE ── */
+.project-open-cue {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-head);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--red);
+  padding: 6px 14px;
+  /* collapsed: reserve no vertical space so the title stays pinned low */
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              max-height 0.4s ease, margin-top 0.4s ease, padding 0.4s ease,
+              background 0.2s ease, letter-spacing 0.25s ease;
+}
+.col-project:hover .project-open-cue,
+.col-project.is-in-view .project-open-cue {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 32px;
+  margin-top: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  transition-delay: 0.42s;
+}
+.col-project:hover .project-open-cue { background: var(--red-dark); letter-spacing: 0.3em; }
 
 /* ── PROJECT FILTER HIDE ── */
 .col-project {
@@ -1374,3 +1452,36 @@ html, body {
 
 /* ── KEYBOARD SCROLL FOCUS ── */
 body:focus { outline: none; }
+
+/* ── REDUCED MOTION ──
+   Kill continuous/large-scale motion for users who ask for it, but keep
+   the reveals functional as instant opacity fades so nothing stays hidden. */
+@media (prefers-reduced-motion: reduce) {
+  /* stop all looping animations */
+  .hero-slide,
+  .hero-scroll-hint,
+  .col-end::after,
+  .col-hero:hover::before {
+    animation: none !important;
+  }
+
+  /* no Ken Burns zoom */
+  .col-project:hover .col-bg,
+  .col-project.is-in-view .col-bg { transform: none !important; }
+
+  /* content reveal: fade only, no rise */
+  .col-inner { transform: none !important; }
+
+  /* cascade + cue: appear in place, no translate, minimal delay */
+  .project-details .col-body,
+  .project-details .project-tags,
+  .project-details .project-link,
+  .project-open-cue {
+    transform: none !important;
+    transition-duration: 0.2s !important;
+    transition-delay: 0s !important;
+  }
+
+  /* hero float keyframe target sits still */
+  .hero-slide { transform: none !important; }
+}

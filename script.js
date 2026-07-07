@@ -302,6 +302,12 @@ window.addEventListener('mouseup', () => {
 
 // ── PROJECT COLUMN → MODAL ──
 document.querySelectorAll('.col-project').forEach(col => {
+  // Inject an "OPEN ›" affordance chip that reveals with the hover cascade
+  const cue = document.createElement('span');
+  cue.className = 'project-open-cue';
+  cue.textContent = 'OPEN ›';
+  col.querySelector('.project-text-box')?.appendChild(cue);
+
   col.addEventListener('click', e => {
     if (didDrag) return; // suppress click after a drag
     if (e.target.closest('a')) return;

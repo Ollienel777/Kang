@@ -681,40 +681,36 @@ html, body {
   margin: 0 -12px;
 }
 
-/* ── PROJECT "OPEN" CUE ── */
+/* ── PROJECT "CLICK TO OPEN" CUE ──
+   Subtle bottom-left affordance styled like the hero scroll hint: red,
+   letter-spaced, no box. Absolutely positioned so it's out of the content
+   flow and can never push or overlap the card body (e.g. the GitHub link
+   or future live-site links). Anchored to the card's bottom-left corner. */
 .project-open-cue {
-  display: inline-flex;
+  position: absolute;
+  left: 36px;
+  bottom: 20px;
+  z-index: 3;
+  display: flex;
   align-items: center;
+  gap: 7px;
   font-family: var(--font-head);
-  font-size: 0.6rem;
-  letter-spacing: 0.22em;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--white);
-  background: var(--red);
-  padding: 6px 14px;
-  /* collapsed: reserve no vertical space so the title stays pinned low */
-  max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-              max-height 0.4s ease, margin-top 0.4s ease, padding 0.4s ease,
-              background 0.2s ease, letter-spacing 0.25s ease;
+  color: var(--red);
+  background: none;
+  padding: 0;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, letter-spacing 0.3s ease;
 }
 .col-project:hover .project-open-cue,
 .col-project.is-in-view .project-open-cue {
   opacity: 1;
-  transform: translateY(0);
-  max-height: 32px;
-  margin-top: 18px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  transition-delay: 0.42s;
+  letter-spacing: 0.28em;
 }
-.col-project:hover .project-open-cue { background: var(--red-dark); letter-spacing: 0.3em; }
 
 /* ── PROJECT FILTER HIDE ── */
 .col-project {
@@ -1392,6 +1388,11 @@ html, body {
   .project-num {
     font-size: 3.5rem;
   }
+
+  /* Reserve corner room on project cards so the "click to open" hint
+     clears the body content, and align it to the tighter mobile padding. */
+  .col-project .col-inner { padding-bottom: 44px; }
+  .project-open-cue { left: 24px; bottom: 14px; }
 }
 
 /* ── TOUCH: scroll-reveal replaces hover ──

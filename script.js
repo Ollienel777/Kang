@@ -305,8 +305,10 @@ document.querySelectorAll('.col-project').forEach(col => {
   // Inject an "OPEN ›" affordance chip that reveals with the hover cascade
   const cue = document.createElement('span');
   cue.className = 'project-open-cue';
-  cue.textContent = 'OPEN ›';
-  col.querySelector('.project-text-box')?.appendChild(cue);
+  cue.textContent = 'CLICK TO OPEN ›';
+  // Append to the card itself (not .col-inner) so the absolute bottom-left
+  // offsets resolve against the card box and it isn't clipped off the bottom.
+  col.appendChild(cue);
 
   col.addEventListener('click', e => {
     if (didDrag) return; // suppress click after a drag

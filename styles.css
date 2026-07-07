@@ -546,6 +546,17 @@ html, body {
   gap: 6px;
   padding-left: 14px;
   border-left: 2px solid var(--red);
+  cursor: default;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease, box-shadow 0.3s ease,
+              background 0.3s ease;
+}
+/* individual block hover: border glows, label brightens, block nudges right */
+.skill-block:hover {
+  transform: translateX(6px);
+  border-left-color: var(--red);
+  box-shadow: -2px 0 0 0 var(--red), -8px 0 20px -6px rgba(191,44,58,0.7);
+  background: linear-gradient(to right, rgba(191,44,58,0.08), transparent 80%);
 }
 
 .skill-cat {
@@ -554,13 +565,43 @@ html, body {
   letter-spacing: 0.2em;
   color: var(--red);
   text-transform: uppercase;
+  transition: color 0.25s ease, letter-spacing 0.3s ease;
+}
+.skill-block:hover .skill-cat {
+  color: var(--white);
+  letter-spacing: 0.26em;
 }
 
 .skill-list {
   font-size: 0.78rem;
   color: var(--gray-lite);
   line-height: 1.6;
+  transition: color 0.25s ease;
 }
+.skill-block:hover .skill-list { color: var(--off-white); }
+
+/* staggered entrance for the four blocks when the column opens */
+.skills-grid .skill-block {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+.col-skills:hover .skills-grid .skill-block,
+.col-skills.is-in-view .skills-grid .skill-block {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.col-skills:hover .skills-grid .skill-block:nth-child(1),
+.col-skills.is-in-view .skills-grid .skill-block:nth-child(1) { transition-delay: 0.10s; }
+.col-skills:hover .skills-grid .skill-block:nth-child(2),
+.col-skills.is-in-view .skills-grid .skill-block:nth-child(2) { transition-delay: 0.18s; }
+.col-skills:hover .skills-grid .skill-block:nth-child(3),
+.col-skills.is-in-view .skills-grid .skill-block:nth-child(3) { transition-delay: 0.26s; }
+.col-skills:hover .skills-grid .skill-block:nth-child(4),
+.col-skills.is-in-view .skills-grid .skill-block:nth-child(4) { transition-delay: 0.34s; }
+/* restore instant hover feedback once revealed (override the entrance delay) */
+.col-skills:hover .skills-grid .skill-block:hover { transition-delay: 0s; }
 
 /* ── PROJECT COLUMNS ── */
 .project-num {
@@ -1476,11 +1517,16 @@ body:focus { outline: none; }
   .project-details .col-body,
   .project-details .project-tags,
   .project-details .project-link,
-  .project-open-cue {
+  .project-open-cue,
+  .skills-grid .skill-block,
+  .col-skills:hover .skills-grid .skill-block,
+  .col-skills.is-in-view .skills-grid .skill-block {
     transform: none !important;
     transition-duration: 0.2s !important;
     transition-delay: 0s !important;
   }
+  /* keep skill-block hover feedback subtle (no shift) */
+  .skill-block:hover { transform: none !important; }
 
   /* hero float keyframe target sits still */
   .hero-slide { transform: none !important; }

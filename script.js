@@ -70,8 +70,8 @@ function preloadImages(urls) {
 (function () {
   const body      = document.body;
   const cols      = Array.from(document.querySelectorAll('.col'));
-  const SLIDE_DUR = 580;
-  const STAGGER   = 210;
+  const SLIDE_DUR = 640;
+  const STAGGER   = 150;
   const HOLD      = 350;
 
   body.classList.add('is-landing');

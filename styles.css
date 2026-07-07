@@ -214,9 +214,14 @@ html, body {
   background-size: cover;
   background-position: center;
   opacity: 0.15;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 0;
+  will-change: transform;
 }
+
+/* slow Ken Burns push-in while hovered */
+.col-project:hover .col-bg,
+.col-project.is-in-view .col-bg { transform: scale(1.07); }
 
 .col-bg--hero {
   background:
@@ -341,6 +346,11 @@ html, body {
   display: flex;
   align-items: center;
   gap: 8px;
+  animation: hint-nudge 2.6s ease-in-out infinite;
+}
+@keyframes hint-nudge {
+  0%, 100% { transform: translateX(0);   opacity: 0.65; }
+  50%      { transform: translateX(6px); opacity: 1; }
 }
 
 /* Red left border accent on hero */
@@ -618,9 +628,33 @@ html, body {
 .project-details {
   max-height: 0;
   overflow: hidden;
-  background: transparent;
-  transition: max-height 0.45s ease, background 0.35s ease;
+  transition: max-height 0.45s ease;
 }
+
+/* Frosted scrim — blurs and darkens the image behind the text as one smooth
+   gradient anchored to the column bottom, so there's no visible box edge.
+   Sits at z-index -1: inside .col-inner's stacking context it stays behind
+   the text but above .col-bg. */
+.col-project .col-inner::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 80%;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to top,
+    rgba(10,10,10,0.82) 0%,
+    rgba(10,10,10,0.55) 40%,
+    rgba(10,10,10,0.18) 72%,
+    transparent 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  mask-image: linear-gradient(to top, black 45%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 45%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.col-project:hover .col-inner::after { opacity: 1; }
 
 /* hover: reveal everything */
 .col-project:hover .section-label {
@@ -638,10 +672,43 @@ html, body {
 .col-project:hover .project-details {
   max-height: 320px;
   transition-delay: 0.08s;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.72) 22%);
 }
 
 .col-project:hover { background: rgba(191,44,58,0.04); }
+
+/* red accent bar draws in under the title as it lifts */
+.col-project .col-title::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: var(--red);
+  margin-top: 14px;
+  transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.col-project:hover .col-title::after,
+.col-project.is-in-view .col-title::after { width: 52px; transition-delay: 0.12s; }
+
+/* details content cascades up as the panel expands */
+.project-details .col-body,
+.project-details .project-tags,
+.project-details .project-link {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.col-project:hover .project-details .col-body,
+.col-project.is-in-view .project-details .col-body {
+  opacity: 1; transform: translateY(0); transition-delay: 0.14s;
+}
+.col-project:hover .project-details .project-tags,
+.col-project.is-in-view .project-details .project-tags {
+  opacity: 1; transform: translateY(0); transition-delay: 0.24s;
+}
+.col-project:hover .project-details .project-link,
+.col-project.is-in-view .project-details .project-link {
+  opacity: 1; transform: translateY(0); transition-delay: 0.34s;
+}
 
 /* ── END COLUMN ── */
 .cta-btn {
@@ -1232,9 +1299,9 @@ html, body {
 }
 .col-project.is-in-view .project-details {
   max-height: 320px;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.72) 22%);
   transition-delay: 0.08s;
 }
+.col-project.is-in-view .col-inner::after { opacity: 1; }
 
 /* About column */
 .col-about.is-in-view .col-bg--about   { opacity: 0.85; }
@@ -1288,12 +1355,13 @@ html, body {
   animation: col-land-flash 0.45s ease forwards;
 }
 
-/* Content inside columns fades up after all columns land */
+/* Content inside columns rises up after all columns land */
 .col-inner {
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.is-content-revealed .col-inner { opacity: 1; }
+.is-content-revealed .col-inner { opacity: 1; transform: translateY(0); }
 
 .is-content-revealed .col:nth-child(1) .col-inner { transition-delay: 0.00s; }
 .is-content-revealed .col:nth-child(2) .col-inner { transition-delay: 0.07s; }

@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-07-09",
+  "updated_at": "2026-07-20",
   "totals": {
-    "all_time_km": 1530.2,
-    "ytd_km": 973.6,
-    "ytd_runs": 129,
-    "ytd_time": "94:21:56"
+    "all_time_km": 1588.9,
+    "ytd_km": 1019.7,
+    "ytd_runs": 134,
+    "ytd_time": "100:51:12"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1530.2,
-      "ytd_km": 973.6,
-      "ytd_count": 129,
-      "ytd_time": "94:21:56"
+      "all_time_km": 1588.9,
+      "ytd_km": 1019.7,
+      "ytd_count": 134,
+      "ytd_time": "100:51:12"
     },
     "swim": {
       "all_time_km": 3.9,
@@ -121,103 +121,103 @@
   },
   "recent_runs": [
     {
-      "id": "19218336414",
-      "name": "pogo",
-      "distance": 7.28,
-      "time": "1:07:54",
-      "pace": "9:19 /km",
-      "date": "2026-07-06"
+      "id": "19354401087",
+      "name": "Afternoon Run",
+      "distance": 3.0,
+      "time": "15:36",
+      "pace": "5:12 /km",
+      "date": "2026-07-17"
     },
     {
-      "id": "19174947319",
-      "name": "IM113 Run Leg",
-      "distance": 21.12,
-      "time": "2:04:25",
+      "id": "19342371113",
+      "name": "Afternoon Run",
+      "distance": 3.0,
+      "time": "17:00",
+      "pace": "5:40 /km",
+      "date": "2026-07-14"
+    },
+    {
+      "id": "19342363196",
+      "name": "Morning Run",
+      "distance": 8.13,
+      "time": "52:44",
+      "pace": "6:29 /km",
+      "date": "2026-07-11"
+    },
+    {
+      "id": "19269804778",
+      "name": "morning jog \ud83d\ude36\u200d\ud83c\udf2b\ufe0f",
+      "distance": 5.32,
+      "time": "31:20",
       "pace": "5:53 /km",
-      "date": "2026-07-04"
+      "date": "2026-07-11"
     },
     {
-      "id": "19158110783",
-      "name": "Evening Run",
-      "distance": 1.36,
-      "time": "6:58",
-      "pace": "5:06 /km",
-      "date": "2026-07-02"
+      "id": "19263249569",
+      "name": "Afternoon Run",
+      "distance": 23.42,
+      "time": "4:33:15",
+      "pace": "11:40 /km",
+      "date": "2026-07-10"
     },
     {
-      "id": "19145699429",
-      "name": "Forgot to end . . .",
-      "distance": 4.43,
-      "time": "34:59",
-      "pace": "7:54 /km",
-      "date": "2026-07-02"
-    },
-    {
-      "id": "19118663967",
-      "name": "fun game of am I really injured (yes)",
-      "distance": 1.4,
-      "time": "7:59",
-      "pace": "5:42 /km",
-      "date": "2026-06-30"
-    },
-    {
-      "id": "19088256687",
-      "name": "Sunnyside beach FRC 27",
-      "distance": 21.19,
-      "time": "1:55:44",
-      "pace": "5:27 /km",
-      "date": "2026-06-27"
+      "id": "19244474316",
+      "name": "Morning 10",
+      "distance": 10.01,
+      "time": "57:18",
+      "pace": "5:43 /km",
+      "date": "2026-07-09"
     }
   ],
   "recent_activities": {
     "run": [
       {
-        "id": "19218336414",
-        "name": "pogo",
-        "distance": 7.28,
-        "time": "1:07:54",
-        "perf": "9:19 /km",
-        "date": "2026-07-06"
+        "id": "19354401087",
+        "name": "Afternoon Run",
+        "distance": 3.0,
+        "time": "15:36",
+        "perf": "5:12 /km",
+        "date": "2026-07-17"
       },
       {
-        "id": "19174947319",
-        "name": "IM113 Run Leg",
-        "distance": 21.12,
-        "time": "2:04:25",
+        "id": "19342371113",
+        "name": "Afternoon Run",
+        "distance": 3.0,
+        "time": "17:00",
+        "perf": "5:40 /km",
+        "date": "2026-07-14"
+      },
+      {
+        "id": "19342363196",
+        "name": "Morning Run",
+        "distance": 8.13,
+        "time": "52:44",
+        "perf": "6:29 /km",
+        "date": "2026-07-11"
+      },
+      {
+        "id": "19269804778",
+        "name": "morning jog \ud83d\ude36\u200d\ud83c\udf2b\ufe0f",
+        "distance": 5.32,
+        "time": "31:20",
         "perf": "5:53 /km",
-        "date": "2026-07-04"
+        "date": "2026-07-11"
       },
       {
-        "id": "19158110783",
-        "name": "Evening Run",
-        "distance": 1.36,
-        "time": "6:58",
-        "perf": "5:06 /km",
-        "date": "2026-07-02"
+        "id": "19263249569",
+        "name": "Afternoon Run",
+        "distance": 23.42,
+        "time": "4:33:15",
+        "perf": "11:40 /km",
+        "date": "2026-07-10"
       },
       {
-        "id": "19145699429",
-        "name": "Forgot to end . . .",
-        "distance": 4.43,
-        "time": "34:59",
-        "perf": "7:54 /km",
-        "date": "2026-07-02"
-      },
-      {
-        "id": "19118663967",
-        "name": "fun game of am I really injured (yes)",
-        "distance": 1.4,
-        "time": "7:59",
-        "perf": "5:42 /km",
-        "date": "2026-06-30"
-      },
-      {
-        "id": "19088256687",
-        "name": "Sunnyside beach FRC 27",
-        "distance": 21.19,
-        "time": "1:55:44",
-        "perf": "5:27 /km",
-        "date": "2026-06-27"
+        "id": "19244474316",
+        "name": "Morning 10",
+        "distance": 10.01,
+        "time": "57:18",
+        "perf": "5:43 /km",
+        "date": "2026-07-09"
       }
     ],
     "swim": [
@@ -352,6 +352,12 @@
     ]
   },
   "daily_km": {
+    "2026-07-17": 3.0,
+    "2026-07-14": 3.0,
+    "2026-07-11": 13.45,
+    "2026-07-10": 23.42,
+    "2026-07-09": 10.01,
+    "2026-07-07": 5.79,
     "2026-07-06": 7.28,
     "2026-07-04": 21.12,
     "2026-07-02": 5.79,
@@ -575,6 +581,29 @@
     "2023-07-25": 3.01
   },
   "daily_activities": {
+    "2026-07-17": {
+      "run": 3.0,
+      "lift": 30.0
+    },
+    "2026-07-14": {
+      "run": 3.0
+    },
+    "2026-07-13": {
+      "lift": 38.0
+    },
+    "2026-07-11": {
+      "run": 13.45
+    },
+    "2026-07-10": {
+      "run": 23.42
+    },
+    "2026-07-09": {
+      "lift": 40.0,
+      "run": 10.01
+    },
+    "2026-07-07": {
+      "run": 5.79
+    },
     "2026-07-06": {
       "run": 7.28
     },

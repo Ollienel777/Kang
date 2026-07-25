@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="1000" fill="#141414"/>
+  <rect x="24" y="24" width="752" height="952" fill="none" stroke="#2E2E2E" stroke-width="2"/>
+  <g fill="none" stroke="#3a3a3a" stroke-width="6" transform="translate(400 470)">
+    <rect x="-70" y="-46" width="140" height="100" rx="10"/>
+    <circle cx="0" cy="6" r="30"/>
+    <rect x="-28" y="-64" width="56" height="22" rx="6" fill="#3a3a3a" stroke="none"/>
+  </g>
+  <rect x="360" y="560" width="80" height="4" fill="#bf2c3a"/>
+  <text x="400" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="6" fill="#666">IMAGE COMING SOON</text>
+</svg>

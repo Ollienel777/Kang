@@ -283,6 +283,21 @@ html, body {
   opacity: 0.55;
 }
 
+/* Aquanow + HUME use a placeholder until real photos are added —
+   swap the url() below for the real image path when ready. */
+.col-bg--aquanow {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/placeholder.svg') center / cover no-repeat;
+  opacity: 0.55;
+}
+.col-bg--hume {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/placeholder.svg') center / cover no-repeat;
+  opacity: 0.55;
+}
+
 .col-bg--end {
   background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 45%, var(--black) 100%);
   opacity: 0.9;

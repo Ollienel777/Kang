@@ -316,6 +316,18 @@ challenge is just figuring out where to start.
         <h3>Experience</h3>
         <div class="resume-item">
           <div class="resume-item-header">
+            <span class="resume-place">Aquanow</span>
+            <span class="resume-date">Jun 2026 – Present</span>
+          </div>
+          <span class="resume-role">Backend &amp; Data Engineering Co-op &mdash; Toronto, ON</span>
+          <ul class="resume-bullets">
+            <li>Built and own a daily <strong>credit-exposure reporting pipeline</strong> (<strong>Python, PyIceberg, AWS Athena, S3</strong>) scanning multi-currency client balances against <strong>Apache Iceberg</strong> tables and converting exposure to USD via live FX rates; covered by <strong>31 unit tests</strong> with all AWS/Kafka dependencies mocked.</li>
+            <li>Diagnosed and fixed <strong>5 production bugs</strong> in a live regulatory reporting system submitting daily trading activity to a national financial regulator, including a full-day snapshot-boundary offset and in-asset fee misattribution. Restored reconciliation from <strong>0% to 107/107 currencies</strong> across three reporting days.</li>
+            <li>Engineered an offline <strong>reconciliation harness</strong> (<strong>Python, DuckDB</strong>) reproducing the regulator's consistency checks against production data, and audited <strong>10+ files</strong> across three report jobs, surfacing silent data-loss bugs by severity.</li>
+          </ul>
+        </div>
+        <div class="resume-item">
+          <div class="resume-item-header">
             <span class="resume-place">Ericsson Canada Inc.</span>
             <span class="resume-date">Jun 2024 – Aug 2024</span>
           </div>
@@ -337,9 +349,21 @@ challenge is just figuring out where to start.
           </div>
           <span class="resume-role">Python, FastAPI, Next.js, TypeScript, YOLOv8-pose, Roboflow, PostgreSQL, Docker, Cloudflare R2</span>
           <ul class="resume-bullets">
-            <li>Engineered a <strong>dual-detection video pipeline</strong>: <strong>YOLOv8-pose</strong> classifies player actions while a custom-trained <strong>Roboflow</strong> ball detector tracks trajectory to identify rally boundaries, reducing false-positive clips by <strong>~40%</strong>.</li>
+            <li>Engineered a <strong>multi-signal highlight pipeline</strong>: a custom-trained <strong>Roboflow</strong> ball detector tracks trajectory to bound rallies, <strong>audio cheer detection</strong> and rally-shape scoring gate highlights, and <strong>YOLOv8-pose</strong> classifies player actions.</li>
             <li>Containerized with <strong>Docker Compose</strong>; <strong>FastAPI</strong> serves auth-gated endpoints, <strong>Celery + Redis</strong> distributes processing jobs, and <strong>Modal</strong> offloads GPU inference. Auth via <strong>Supabase JWKS</strong> with <strong>Row-Level Security</strong>.</li>
             <li>Implemented the frontend in <strong>Next.js + TypeScript</strong> with a filterable clip grid, inline multi-label correction UI for future model training, clip trimming with background re-cut via Celery, and lazy-loaded thumbnails.</li>
+          </ul>
+        </div>
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-place">HUME — 1st Place, CORTEX BioSciences Track @ Hack the 6ix ($1,000 + work trial)</span>
+            <span class="resume-date">Jul 2026</span>
+          </div>
+          <span class="resume-role">Python (standard library only), Knowledge Graphs, Adversarial Robustness, Metamorphic Testing</span>
+          <ul class="resume-bullets">
+            <li>Built a <strong>deterministic belief-revision engine</strong> (<strong>no LLM</strong>) that ingests streaming evidence into a <strong>knowledge graph</strong>, sizing each update in <strong>log-odds</strong> by evidence strength and scoping refuted claims to the condition that breaks them.</li>
+            <li>Blocked <strong>prompt-injection</strong> structurally. Untrusted text cannot mutate state; writes pass a closed <strong>delta vocabulary</strong> with magnitude from <strong>structured provenance</strong> only. Independent ~90-attack red-team: <strong>zero</strong> text-driven mutations.</li>
+            <li>Locked extraction behind one audited seam with <strong>19 probe suites</strong>: <strong>metamorphic tests</strong> (paraphrase, entity renaming, negation) plus an <strong>AST build guard</strong>, catching two silent false-negative regressions.</li>
           </ul>
         </div>
         <div class="resume-item">
@@ -382,8 +406,8 @@ challenge is just figuring out where to start.
         <h3>Technical Skills</h3>
         <div class="resume-skills-list">
           <div class="resume-skill-row"><span class="resume-skill-cat">Languages</span><span>Python, C#, C, SQL, TypeScript, JavaScript, HTML/CSS</span></div>
-          <div class="resume-skill-row"><span class="resume-skill-cat">Frameworks</span><span>FastAPI, Next.js, .NET, PyTorch, Pandas, NumPy, Celery, SQLAlchemy</span></div>
-          <div class="resume-skill-row"><span class="resume-skill-cat">Infrastructure</span><span>PostgreSQL, SQL Server, SSMS, Supabase, Redis, Modal, Cloudflare R2, Git, Linux, Power BI</span></div>
+          <div class="resume-skill-row"><span class="resume-skill-cat">Frameworks</span><span>FastAPI, Next.js, .NET, PyTorch, Pandas, NumPy, Celery, SQLAlchemy, PyIceberg, DuckDB</span></div>
+          <div class="resume-skill-row"><span class="resume-skill-cat">Infrastructure</span><span>PostgreSQL, SQL Server, SSMS, Supabase, Redis, Modal, AWS (Athena, S3), Apache Iceberg, Kafka, Cloudflare R2, Git, Linux, Power BI</span></div>
           <div class="resume-skill-row"><span class="resume-skill-cat">Tools</span><span>Jira, FFmpeg, OpenCV, YOLOv8, Selenium, Alembic, Docker, Roboflow</span></div>
         </div>
       </div>

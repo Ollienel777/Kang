@@ -283,19 +283,18 @@ html, body {
   opacity: 0.55;
 }
 
-/* Aquanow + HUME use a placeholder until real photos are added —
-   swap the url() below for the real image path when ready. */
 .col-bg--aquanow {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/placeholder.svg') center / cover no-repeat;
+    url('Images/ColumnThumbnail/Aquanow.webp') center / cover no-repeat;
   opacity: 0.55;
 }
+/* HUME's cover art is already near-black, so it needs less dimming than a photo */
 .col-bg--hume {
   background:
-    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/placeholder.svg') center / cover no-repeat;
-  opacity: 0.55;
+    linear-gradient(to top, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.62) 38%, rgba(0,0,0,0.15) 68%, transparent 100%),
+    url('Images/ColumnThumbnail/HUME.webp') center 32% / cover no-repeat;
+  opacity: 0.75;
 }
 
 .col-bg--end {
@@ -1120,6 +1119,10 @@ html, body {
   object-fit: cover;
   display: block;
 }
+
+/* For designed graphics (logos / cover art) where cropping would cut off
+   type — show the whole image against the panel's grid backdrop instead. */
+.project-modal-thumb--contain { object-fit: contain; }
 
 .project-modal-video {
   position: absolute;

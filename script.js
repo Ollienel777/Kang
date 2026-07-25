@@ -49,6 +49,7 @@ const HERO_IMAGES = [
 
 // ── IMAGE PRELOADER ──
 const COLUMN_IMAGES = [
+  'Images/ColumnThumbnail/Aquanow.webp',
   'Images/ColumnThumbnail/ClipFarm.webp',
   'Images/ColumnThumbnail/ML_Chess_Model.webp',
   'Images/ColumnThumbnail/CFM_Market_Beat.webp',

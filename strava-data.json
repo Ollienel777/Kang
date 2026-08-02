@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-07-20",
+  "updated_at": "2026-08-02",
   "totals": {
-    "all_time_km": 1588.9,
-    "ytd_km": 1019.7,
-    "ytd_runs": 134,
-    "ytd_time": "100:51:12"
+    "all_time_km": 1654.5,
+    "ytd_km": 1032.0,
+    "ytd_runs": 132,
+    "ytd_time": "102:20:33"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1588.9,
-      "ytd_km": 1019.7,
-      "ytd_count": 134,
-      "ytd_time": "100:51:12"
+      "all_time_km": 1654.5,
+      "ytd_km": 1032.0,
+      "ytd_count": 132,
+      "ytd_time": "102:20:33"
     },
     "swim": {
       "all_time_km": 3.9,
@@ -121,103 +121,103 @@
   },
   "recent_runs": [
     {
-      "id": "19354401087",
+      "id": "19558675224",
+      "name": "Give or take 19km for 19th birthday",
+      "distance": 30.64,
+      "time": "3:26:03",
+      "pace": "6:43 /km",
+      "date": "2026-08-01"
+    },
+    {
+      "id": "19540039248",
+      "name": "we did NOT make it to OU",
+      "distance": 14.25,
+      "time": "1:31:14",
+      "pace": "6:24 /km",
+      "date": "2026-07-31"
+    },
+    {
+      "id": "19519436126",
       "name": "Afternoon Run",
-      "distance": 3.0,
-      "time": "15:36",
-      "pace": "5:12 /km",
-      "date": "2026-07-17"
+      "distance": 2.35,
+      "time": "13:45",
+      "pace": "5:50 /km",
+      "date": "2026-07-29"
     },
     {
-      "id": "19342371113",
-      "name": "Afternoon Run",
-      "distance": 3.0,
-      "time": "17:00",
-      "pace": "5:40 /km",
-      "date": "2026-07-14"
+      "id": "19515461023",
+      "name": "Evening Run",
+      "distance": 3.17,
+      "time": "18:57",
+      "pace": "5:58 /km",
+      "date": "2026-07-29"
     },
     {
-      "id": "19342363196",
-      "name": "Morning Run",
-      "distance": 8.13,
-      "time": "52:44",
-      "pace": "6:29 /km",
-      "date": "2026-07-11"
-    },
-    {
-      "id": "19269804778",
-      "name": "morning jog \ud83d\ude36\u200d\ud83c\udf2b\ufe0f",
-      "distance": 5.32,
-      "time": "31:20",
-      "pace": "5:53 /km",
-      "date": "2026-07-11"
-    },
-    {
-      "id": "19263249569",
-      "name": "Afternoon Run",
-      "distance": 23.42,
-      "time": "4:33:15",
-      "pace": "11:40 /km",
-      "date": "2026-07-10"
-    },
-    {
-      "id": "19244474316",
-      "name": "Morning 10",
-      "distance": 10.01,
-      "time": "57:18",
+      "id": "19440785228",
+      "name": "Night Run",
+      "distance": 1.2,
+      "time": "6:53",
       "pace": "5:43 /km",
-      "date": "2026-07-09"
+      "date": "2026-07-24"
+    },
+    {
+      "id": "19440699065",
+      "name": "Toronto Night Run",
+      "distance": 4.01,
+      "time": "18:12",
+      "pace": "4:32 /km",
+      "date": "2026-07-24"
     }
   ],
   "recent_activities": {
     "run": [
       {
-        "id": "19354401087",
+        "id": "19558675224",
+        "name": "Give or take 19km for 19th birthday",
+        "distance": 30.64,
+        "time": "3:26:03",
+        "perf": "6:43 /km",
+        "date": "2026-08-01"
+      },
+      {
+        "id": "19540039248",
+        "name": "we did NOT make it to OU",
+        "distance": 14.25,
+        "time": "1:31:14",
+        "perf": "6:24 /km",
+        "date": "2026-07-31"
+      },
+      {
+        "id": "19519436126",
         "name": "Afternoon Run",
-        "distance": 3.0,
-        "time": "15:36",
-        "perf": "5:12 /km",
-        "date": "2026-07-17"
+        "distance": 2.35,
+        "time": "13:45",
+        "perf": "5:50 /km",
+        "date": "2026-07-29"
       },
       {
-        "id": "19342371113",
-        "name": "Afternoon Run",
-        "distance": 3.0,
-        "time": "17:00",
-        "perf": "5:40 /km",
-        "date": "2026-07-14"
+        "id": "19515461023",
+        "name": "Evening Run",
+        "distance": 3.17,
+        "time": "18:57",
+        "perf": "5:58 /km",
+        "date": "2026-07-29"
       },
       {
-        "id": "19342363196",
-        "name": "Morning Run",
-        "distance": 8.13,
-        "time": "52:44",
-        "perf": "6:29 /km",
-        "date": "2026-07-11"
-      },
-      {
-        "id": "19269804778",
-        "name": "morning jog \ud83d\ude36\u200d\ud83c\udf2b\ufe0f",
-        "distance": 5.32,
-        "time": "31:20",
-        "perf": "5:53 /km",
-        "date": "2026-07-11"
-      },
-      {
-        "id": "19263249569",
-        "name": "Afternoon Run",
-        "distance": 23.42,
-        "time": "4:33:15",
-        "perf": "11:40 /km",
-        "date": "2026-07-10"
-      },
-      {
-        "id": "19244474316",
-        "name": "Morning 10",
-        "distance": 10.01,
-        "time": "57:18",
+        "id": "19440785228",
+        "name": "Night Run",
+        "distance": 1.2,
+        "time": "6:53",
         "perf": "5:43 /km",
-        "date": "2026-07-09"
+        "date": "2026-07-24"
+      },
+      {
+        "id": "19440699065",
+        "name": "Toronto Night Run",
+        "distance": 4.01,
+        "time": "18:12",
+        "perf": "4:32 /km",
+        "date": "2026-07-24"
       }
     ],
     "swim": [
@@ -352,6 +352,11 @@
     ]
   },
   "daily_km": {
+    "2026-08-01": 30.64,
+    "2026-07-31": 14.25,
+    "2026-07-29": 5.52,
+    "2026-07-24": 5.21,
+    "2026-07-22": 10.03,
     "2026-07-17": 3.0,
     "2026-07-14": 3.0,
     "2026-07-11": 13.45,
@@ -581,6 +586,21 @@
     "2023-07-25": 3.01
   },
   "daily_activities": {
+    "2026-08-01": {
+      "run": 30.64
+    },
+    "2026-07-31": {
+      "run": 14.25
+    },
+    "2026-07-29": {
+      "run": 5.52
+    },
+    "2026-07-24": {
+      "run": 5.21
+    },
+    "2026-07-22": {
+      "run": 10.03
+    },
     "2026-07-17": {
       "run": 3.0,
       "lift": 30.0

@@ -1,0 +1,3087 @@
+{
+  "source": "strava",
+  "fetched_at": "2026-08-06 16:44:13",
+  "count": 308,
+  "activities": [
+    {
+      "id": "strava-19558675224",
+      "source": "strava",
+      "name": "Give or take 19km for 19th birthday",
+      "date": "2026-08-01",
+      "start": "2026-08-01 12:37:06",
+      "sport": "run",
+      "moving_time": 12363.0,
+      "distance": 30637.4
+    },
+    {
+      "id": "strava-19540039248",
+      "source": "strava",
+      "name": "we did NOT make it to OU",
+      "date": "2026-07-31",
+      "start": "2026-07-31 07:43:50",
+      "sport": "run",
+      "moving_time": 5474.0,
+      "distance": 14245.3
+    },
+    {
+      "id": "strava-19519436126",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2026-07-29",
+      "start": "2026-07-29 19:01:58",
+      "sport": "run",
+      "moving_time": 825.0,
+      "distance": 2353.2
+    },
+    {
+      "id": "strava-19515461023",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-07-29",
+      "start": "2026-07-29 00:44:44",
+      "sport": "run",
+      "moving_time": 1137.0,
+      "distance": 3170.0
+    },
+    {
+      "id": "strava-19440785228",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2026-07-24",
+      "start": "2026-07-24 04:38:08",
+      "sport": "run",
+      "moving_time": 413.0,
+      "distance": 1202.6
+    },
+    {
+      "id": "strava-19440699065",
+      "source": "strava",
+      "name": "Toronto Night Run",
+      "date": "2026-07-24",
+      "start": "2026-07-24 04:06:00",
+      "sport": "run",
+      "moving_time": 1092.0,
+      "distance": 4012.5
+    },
+    {
+      "id": "strava-19411681109",
+      "source": "strava",
+      "name": "First run with garmin \ud83d\ude36\u200d\ud83c\udf2b\ufe0f",
+      "date": "2026-07-22",
+      "start": "2026-07-22 00:46:44",
+      "sport": "run",
+      "moving_time": 3346.0,
+      "distance": 10031.5
+    },
+    {
+      "id": "strava-19354401087",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2026-07-17",
+      "start": "2026-07-17 20:34:29",
+      "sport": "run",
+      "moving_time": 936.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-19354394122",
+      "source": "strava",
+      "name": "Afternoon Activity",
+      "date": "2026-07-17",
+      "start": "2026-07-17 20:19:09",
+      "sport": "lift",
+      "moving_time": 1800.0,
+      "distance": 0.0
+    },
+    {
+      "id": "strava-19342371113",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2026-07-14",
+      "start": "2026-07-14 21:44:35",
+      "sport": "run",
+      "moving_time": 1020.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-19342382106",
+      "source": "strava",
+      "name": "Afternoon Activity",
+      "date": "2026-07-13",
+      "start": "2026-07-13 21:46:16",
+      "sport": "lift",
+      "moving_time": 2280.0,
+      "distance": 0.0
+    },
+    {
+      "id": "strava-19342363196",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2026-07-11",
+      "start": "2026-07-11 14:32:04",
+      "sport": "run",
+      "moving_time": 3164.0,
+      "distance": 8127.7
+    },
+    {
+      "id": "strava-19269804778",
+      "source": "strava",
+      "name": "morning jog \ud83d\ude36\u200d\ud83c\udf2b\ufe0f",
+      "date": "2026-07-11",
+      "start": "2026-07-11 13:22:00",
+      "sport": "run",
+      "moving_time": 1880.0,
+      "distance": 5322.8
+    },
+    {
+      "id": "strava-19263249569",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2026-07-10",
+      "start": "2026-07-10 21:47:02",
+      "sport": "run",
+      "moving_time": 16395.0,
+      "distance": 23421.4
+    },
+    {
+      "id": "strava-19258434525",
+      "source": "strava",
+      "name": "Lunch Activity",
+      "date": "2026-07-09",
+      "start": "2026-07-09 15:30:23",
+      "sport": "lift",
+      "moving_time": 2400.0,
+      "distance": 0.0
+    },
+    {
+      "id": "strava-19244474316",
+      "source": "strava",
+      "name": "Morning 10",
+      "date": "2026-07-09",
+      "start": "2026-07-09 11:29:49",
+      "sport": "run",
+      "moving_time": 3438.0,
+      "distance": 10012.1
+    },
+    {
+      "id": "strava-19237337900",
+      "source": "strava",
+      "name": "pogo2",
+      "date": "2026-07-07",
+      "start": "2026-07-07 21:43:43",
+      "sport": "run",
+      "moving_time": 3000.0,
+      "distance": 5792.8
+    },
+    {
+      "id": "strava-19218336414",
+      "source": "strava",
+      "name": "pogo",
+      "date": "2026-07-06",
+      "start": "2026-07-06 21:56:06",
+      "sport": "run",
+      "moving_time": 4074.0,
+      "distance": 7276.3
+    },
+    {
+      "id": "strava-19218368235",
+      "source": "strava",
+      "name": "Afternoon Activity",
+      "date": "2026-07-05",
+      "start": "2026-07-05 18:25:15",
+      "sport": "lift",
+      "moving_time": 3180.0,
+      "distance": 0.0
+    },
+    {
+      "id": "strava-19179413673",
+      "source": "strava",
+      "name": "IM113 Swim leg",
+      "date": "2026-07-04",
+      "start": "2026-07-04 16:08:45",
+      "sport": "swim",
+      "moving_time": 3369.0,
+      "distance": 1900.0
+    },
+    {
+      "id": "strava-19178108078",
+      "source": "strava",
+      "name": "IM113 Bike Leg",
+      "date": "2026-07-04",
+      "start": "2026-07-04 11:35:59",
+      "sport": "ride",
+      "moving_time": 12117.0,
+      "distance": 90000.0
+    },
+    {
+      "id": "strava-19174947319",
+      "source": "strava",
+      "name": "IM113 Run Leg",
+      "date": "2026-07-04",
+      "start": "2026-07-04 08:25:12",
+      "sport": "run",
+      "moving_time": 7465.0,
+      "distance": 21121.2
+    },
+    {
+      "id": "strava-19158110783",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-07-02",
+      "start": "2026-07-02 23:59:59",
+      "sport": "run",
+      "moving_time": 418.0,
+      "distance": 1364.8
+    },
+    {
+      "id": "strava-19145699429",
+      "source": "strava",
+      "name": "Forgot to end . . .",
+      "date": "2026-07-02",
+      "start": "2026-07-02 03:29:09",
+      "sport": "run",
+      "moving_time": 2099.0,
+      "distance": 4425.4
+    },
+    {
+      "id": "strava-19145991816",
+      "source": "strava",
+      "name": "Afternoon Activity",
+      "date": "2026-07-01",
+      "start": "2026-07-01 21:36:20",
+      "sport": "lift",
+      "moving_time": 2400.0,
+      "distance": 0.0
+    },
+    {
+      "id": "strava-19131472210",
+      "source": "strava",
+      "name": "Evening Swim",
+      "date": "2026-07-01",
+      "start": "2026-07-01 00:11:02",
+      "sport": "swim",
+      "moving_time": 3600.0,
+      "distance": 2000.0
+    },
+    {
+      "id": "strava-19118668868",
+      "source": "strava",
+      "name": "Night Activity",
+      "date": "2026-06-30",
+      "start": "2026-06-30 02:54:32",
+      "sport": "lift",
+      "moving_time": 2700.0,
+      "distance": 0.0
+    },
+    {
+      "id": "strava-19118663967",
+      "source": "strava",
+      "name": "fun game of am I really injured (yes)",
+      "date": "2026-06-30",
+      "start": "2026-06-30 02:23:16",
+      "sport": "run",
+      "moving_time": 479.0,
+      "distance": 1397.8
+    },
+    {
+      "id": "strava-19088256687",
+      "source": "strava",
+      "name": "Sunnyside beach FRC 27",
+      "date": "2026-06-27",
+      "start": "2026-06-27 13:21:18",
+      "sport": "run",
+      "moving_time": 6944.0,
+      "distance": 21193.2
+    },
+    {
+      "id": "strava-19075831499",
+      "source": "strava",
+      "name": "Lunch run",
+      "date": "2026-06-26",
+      "start": "2026-06-26 16:13:25",
+      "sport": "run",
+      "moving_time": 1718.0,
+      "distance": 5527.8
+    },
+    {
+      "id": "strava-19075346084",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-06-25",
+      "start": "2026-06-25 23:29:38",
+      "sport": "run",
+      "moving_time": 3312.0,
+      "distance": 10352.6
+    },
+    {
+      "id": "strava-19073013399",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-06-25",
+      "start": "2026-06-25 23:13:58",
+      "sport": "run",
+      "moving_time": 3275.0,
+      "distance": 10400.0
+    },
+    {
+      "id": "strava-19073049960",
+      "source": "strava",
+      "name": "Afternoon Activity",
+      "date": "2026-06-25",
+      "start": "2026-06-25 20:40:47",
+      "sport": "lift",
+      "moving_time": 2400.0,
+      "distance": 0.0
+    },
+    {
+      "id": "strava-19073030654",
+      "source": "strava",
+      "name": "Afternoon Ride",
+      "date": "2026-06-25",
+      "start": "2026-06-25 19:47:26",
+      "sport": "ride",
+      "moving_time": 1735.0,
+      "distance": 13500.0
+    },
+    {
+      "id": "strava-19056858309",
+      "source": "strava",
+      "name": "night treadmill 3k",
+      "date": "2026-06-25",
+      "start": "2026-06-25 02:44:26",
+      "sport": "run",
+      "moving_time": 966.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-19004071859",
+      "source": "strava",
+      "name": "AMP",
+      "date": "2026-06-20",
+      "start": "2026-06-20 22:35:52",
+      "sport": "run",
+      "moving_time": 5095.0,
+      "distance": 15282.7
+    },
+    {
+      "id": "strava-18986031951",
+      "source": "strava",
+      "name": "Kunyuan send off",
+      "date": "2026-06-19",
+      "start": "2026-06-19 16:00:31",
+      "sport": "run",
+      "moving_time": 632.0,
+      "distance": 2000.0
+    },
+    {
+      "id": "strava-18979567718",
+      "source": "strava",
+      "name": "Breather",
+      "date": "2026-06-18",
+      "start": "2026-06-18 23:47:44",
+      "sport": "run",
+      "moving_time": 1564.0,
+      "distance": 5386.4
+    },
+    {
+      "id": "strava-18966424949",
+      "source": "strava",
+      "name": "post 100k bike \ud83e\uddf1 brick run 1k",
+      "date": "2026-06-18",
+      "start": "2026-06-18 03:19:52",
+      "sport": "run",
+      "moving_time": 300.0,
+      "distance": 996.7
+    },
+    {
+      "id": "strava-18966417637",
+      "source": "strava",
+      "name": "Pain cave",
+      "date": "2026-06-17",
+      "start": "2026-06-17 23:29:32",
+      "sport": "ride",
+      "moving_time": 13063.0,
+      "distance": 100262.1
+    },
+    {
+      "id": "strava-18944083726",
+      "source": "strava",
+      "name": "\ud83c\udf05",
+      "date": "2026-06-15",
+      "start": "2026-06-15 11:55:01",
+      "sport": "run",
+      "moving_time": 1192.0,
+      "distance": 3970.2
+    },
+    {
+      "id": "strava-18911067937",
+      "source": "strava",
+      "name": "Night ride while finishing an assignment",
+      "date": "2026-06-14",
+      "start": "2026-06-14 00:30:00",
+      "sport": "ride",
+      "moving_time": 7024.0,
+      "distance": 50211.5
+    },
+    {
+      "id": "strava-18906738752",
+      "source": "strava",
+      "name": "Sub2 half with Founder's Run Club",
+      "date": "2026-06-13",
+      "start": "2026-06-13 13:44:30",
+      "sport": "run",
+      "moving_time": 7109.0,
+      "distance": 21123.4
+    },
+    {
+      "id": "strava-18897924376",
+      "source": "strava",
+      "name": "bike while completing security training \ud83d\ude05",
+      "date": "2026-06-13",
+      "start": "2026-06-13 02:44:41",
+      "sport": "ride",
+      "moving_time": 3676.0,
+      "distance": 24783.9
+    },
+    {
+      "id": "strava-18889766113",
+      "source": "strava",
+      "name": "Morning run after workout",
+      "date": "2026-06-12",
+      "start": "2026-06-12 11:47:51",
+      "sport": "run",
+      "moving_time": 1216.0,
+      "distance": 3218.7
+    },
+    {
+      "id": "strava-18885985963",
+      "source": "strava",
+      "name": "Whys biking hard",
+      "date": "2026-06-12",
+      "start": "2026-06-12 03:28:22",
+      "sport": "ride",
+      "moving_time": 450.0,
+      "distance": 3540.6
+    },
+    {
+      "id": "strava-18881792917",
+      "source": "strava",
+      "name": "First lunch bike \ud83e\udd14",
+      "date": "2026-06-11",
+      "start": "2026-06-11 18:16:02",
+      "sport": "ride",
+      "moving_time": 1130.0,
+      "distance": 8046.7
+    },
+    {
+      "id": "strava-18845061917",
+      "source": "strava",
+      "name": "Run through Nelson Street",
+      "date": "2026-06-09",
+      "start": "2026-06-09 00:52:43",
+      "sport": "run",
+      "moving_time": 2899.0,
+      "distance": 8553.0
+    },
+    {
+      "id": "strava-18825076451",
+      "source": "strava",
+      "name": "Exploring downtown with parents",
+      "date": "2026-06-07",
+      "start": "2026-06-07 12:44:29",
+      "sport": "run",
+      "moving_time": 4430.0,
+      "distance": 11007.4
+    },
+    {
+      "id": "strava-18817840240",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2026-06-07",
+      "start": "2026-06-07 01:15:04",
+      "sport": "run",
+      "moving_time": 519.0,
+      "distance": 1208.6
+    },
+    {
+      "id": "strava-18817187433",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2026-06-06",
+      "start": "2026-06-06 21:27:46",
+      "sport": "run",
+      "moving_time": 797.0,
+      "distance": 1665.2
+    },
+    {
+      "id": "strava-18808174039",
+      "source": "strava",
+      "name": "Pist volleyball run with Duncan",
+      "date": "2026-06-06",
+      "start": "2026-06-06 01:01:58",
+      "sport": "run",
+      "moving_time": 1344.0,
+      "distance": 4500.9
+    },
+    {
+      "id": "strava-18803485745",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-06-05",
+      "start": "2026-06-05 23:32:04",
+      "sport": "run",
+      "moving_time": 336.0,
+      "distance": 1042.8
+    },
+    {
+      "id": "strava-18791829396",
+      "source": "strava",
+      "name": "+0.3g protein inhaled a bug",
+      "date": "2026-06-05",
+      "start": "2026-06-05 02:09:39",
+      "sport": "run",
+      "moving_time": 1344.0,
+      "distance": 5004.4
+    },
+    {
+      "id": "strava-18778638970",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-06-03",
+      "start": "2026-06-03 23:43:34",
+      "sport": "run",
+      "moving_time": 918.0,
+      "distance": 2848.3
+    },
+    {
+      "id": "strava-18764399821",
+      "source": "strava",
+      "name": "Scenic \ud83d\udc15\ud83d\udca9",
+      "date": "2026-06-03",
+      "start": "2026-06-03 00:50:50",
+      "sport": "run",
+      "moving_time": 1076.0,
+      "distance": 3204.6
+    },
+    {
+      "id": "strava-18737077576",
+      "source": "strava",
+      "name": "310km in 31 days May",
+      "date": "2026-06-01",
+      "start": "2026-06-01 02:16:45",
+      "sport": "run",
+      "moving_time": 5336.0,
+      "distance": 15403.1
+    },
+    {
+      "id": "strava-18715491437",
+      "source": "strava",
+      "name": "Sat morning run club with mom",
+      "date": "2026-05-30",
+      "start": "2026-05-30 12:05:26",
+      "sport": "run",
+      "moving_time": 3376.0,
+      "distance": 8712.2
+    },
+    {
+      "id": "strava-18704019003",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2026-05-29",
+      "start": "2026-05-29 14:48:37",
+      "sport": "run",
+      "moving_time": 3446.0,
+      "distance": 10220.6
+    },
+    {
+      "id": "strava-18688953074",
+      "source": "strava",
+      "name": "Morning run with mom",
+      "date": "2026-05-28",
+      "start": "2026-05-28 11:59:39",
+      "sport": "run",
+      "moving_time": 3885.0,
+      "distance": 10124.5
+    },
+    {
+      "id": "strava-18682785699",
+      "source": "strava",
+      "name": "Run with mom+Duncan",
+      "date": "2026-05-27",
+      "start": "2026-05-27 23:53:29",
+      "sport": "run",
+      "moving_time": 1580.0,
+      "distance": 4286.8
+    },
+    {
+      "id": "strava-18678496385",
+      "source": "strava",
+      "name": "Afternoon Butter jog",
+      "date": "2026-05-27",
+      "start": "2026-05-27 17:27:05",
+      "sport": "run",
+      "moving_time": 1243.0,
+      "distance": 3171.0
+    },
+    {
+      "id": "strava-18668935955",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-05-27",
+      "start": "2026-05-27 00:08:47",
+      "sport": "run",
+      "moving_time": 1552.0,
+      "distance": 3859.3
+    },
+    {
+      "id": "strava-18654326387",
+      "source": "strava",
+      "name": "Post marathon walk",
+      "date": "2026-05-25",
+      "start": "2026-05-25 22:02:33",
+      "sport": "run",
+      "moving_time": 1963.0,
+      "distance": 3301.7
+    },
+    {
+      "id": "strava-18637238873",
+      "source": "strava",
+      "name": "Tamarack Marathon",
+      "date": "2026-05-24",
+      "start": "2026-05-24 11:33:23",
+      "sport": "run",
+      "moving_time": 15161.0,
+      "distance": 43163.6
+    },
+    {
+      "id": "strava-18579992977",
+      "source": "strava",
+      "name": "Shake out run",
+      "date": "2026-05-20",
+      "start": "2026-05-20 10:36:43",
+      "sport": "run",
+      "moving_time": 1217.0,
+      "distance": 3210.1
+    },
+    {
+      "id": "strava-18558779210",
+      "source": "strava",
+      "name": "Weather starting to get hot :(",
+      "date": "2026-05-18",
+      "start": "2026-05-18 18:02:29",
+      "sport": "run",
+      "moving_time": 2481.0,
+      "distance": 7454.5
+    },
+    {
+      "id": "strava-18550254719",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2026-05-18",
+      "start": "2026-05-18 02:09:07",
+      "sport": "run",
+      "moving_time": 3411.0,
+      "distance": 10556.2
+    },
+    {
+      "id": "strava-18550038255",
+      "source": "strava",
+      "name": "ran into friends so I guess this the warm up",
+      "date": "2026-05-18",
+      "start": "2026-05-18 01:08:31",
+      "sport": "run",
+      "moving_time": 374.0,
+      "distance": 1080.3
+    },
+    {
+      "id": "strava-18530611326",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2026-05-16",
+      "start": "2026-05-16 14:26:44",
+      "sport": "run",
+      "moving_time": 713.0,
+      "distance": 2253.2
+    },
+    {
+      "id": "strava-18530214379",
+      "source": "strava",
+      "name": "Westboro half with Duncan",
+      "date": "2026-05-16",
+      "start": "2026-05-16 11:10:20",
+      "sport": "run",
+      "moving_time": 7108.0,
+      "distance": 21633.2
+    },
+    {
+      "id": "strava-18521914323",
+      "source": "strava",
+      "name": "Butter run",
+      "date": "2026-05-15",
+      "start": "2026-05-15 21:59:45",
+      "sport": "run",
+      "moving_time": 1142.0,
+      "distance": 3113.6
+    },
+    {
+      "id": "strava-18510749459",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-05-14",
+      "start": "2026-05-14 22:08:21",
+      "sport": "run",
+      "moving_time": 3803.0,
+      "distance": 11382.7
+    },
+    {
+      "id": "strava-18498861143",
+      "source": "strava",
+      "name": "Pre vb run",
+      "date": "2026-05-13",
+      "start": "2026-05-13 23:14:28",
+      "sport": "run",
+      "moving_time": 3081.0,
+      "distance": 8972.2
+    },
+    {
+      "id": "strava-18471909877",
+      "source": "strava",
+      "name": "wait . . . ain't i just do one of these yesterday",
+      "date": "2026-05-12",
+      "start": "2026-05-12 00:52:50",
+      "sport": "run",
+      "moving_time": 7375.0,
+      "distance": 21265.3
+    },
+    {
+      "id": "strava-18458942403",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-05-11",
+      "start": "2026-05-11 00:49:00",
+      "sport": "run",
+      "moving_time": 2131.0,
+      "distance": 6356.8
+    },
+    {
+      "id": "strava-18441961686",
+      "source": "strava",
+      "name": "smt like that",
+      "date": "2026-05-09",
+      "start": "2026-05-09 14:41:18",
+      "sport": "run",
+      "moving_time": 7139.0,
+      "distance": 21122.4
+    },
+    {
+      "id": "strava-18418802913",
+      "source": "strava",
+      "name": "6:2 on red lights \ud83d\ude49",
+      "date": "2026-05-07",
+      "start": "2026-05-07 21:47:27",
+      "sport": "run",
+      "moving_time": 4018.0,
+      "distance": 11604.1
+    },
+    {
+      "id": "strava-18406997772",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-05-07",
+      "start": "2026-05-07 00:43:47",
+      "sport": "run",
+      "moving_time": 3715.0,
+      "distance": 11556.6
+    },
+    {
+      "id": "strava-18392668395",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-05-05",
+      "start": "2026-05-05 22:58:41",
+      "sport": "run",
+      "moving_time": 3274.0,
+      "distance": 10003.7
+    },
+    {
+      "id": "strava-18380240383",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2026-05-05",
+      "start": "2026-05-05 02:16:13",
+      "sport": "run",
+      "moving_time": 3600.0,
+      "distance": 10808.9
+    },
+    {
+      "id": "strava-18367295655",
+      "source": "strava",
+      "name": "38.3/260km May 3rd",
+      "date": "2026-05-04",
+      "start": "2026-05-04 02:44:26",
+      "sport": "run",
+      "moving_time": 3671.0,
+      "distance": 11000.3
+    },
+    {
+      "id": "strava-18352462169",
+      "source": "strava",
+      "name": "'I don't need a ride'",
+      "date": "2026-05-02",
+      "start": "2026-05-02 21:46:37",
+      "sport": "run",
+      "moving_time": 952.0,
+      "distance": 2841.7
+    },
+    {
+      "id": "strava-18348999557",
+      "source": "strava",
+      "name": "24.5/260 May 2nd",
+      "date": "2026-05-02",
+      "start": "2026-05-02 15:21:06",
+      "sport": "run",
+      "moving_time": 4386.0,
+      "distance": 12520.7
+    },
+    {
+      "id": "strava-18337852782",
+      "source": "strava",
+      "name": "12/260km May 1st",
+      "date": "2026-05-01",
+      "start": "2026-05-01 19:34:44",
+      "sport": "run",
+      "moving_time": 3891.0,
+      "distance": 12028.3
+    },
+    {
+      "id": "strava-18324941391",
+      "source": "strava",
+      "name": "I guess bro",
+      "date": "2026-04-30",
+      "start": "2026-04-30 21:57:41",
+      "sport": "run",
+      "moving_time": 3327.0,
+      "distance": 10454.1
+    },
+    {
+      "id": "strava-18307729928",
+      "source": "strava",
+      "name": "Lunch Run with Butter",
+      "date": "2026-04-29",
+      "start": "2026-04-29 14:38:55",
+      "sport": "run",
+      "moving_time": 3398.0,
+      "distance": 10014.2
+    },
+    {
+      "id": "strava-18298748549",
+      "source": "strava",
+      "name": "Lunch Run",
+      "date": "2026-04-28",
+      "start": "2026-04-28 16:56:09",
+      "sport": "run",
+      "moving_time": 3441.0,
+      "distance": 10003.6
+    },
+    {
+      "id": "strava-18246669401",
+      "source": "strava",
+      "name": "Pizza Run",
+      "date": "2026-04-25",
+      "start": "2026-04-25 01:44:51",
+      "sport": "run",
+      "moving_time": 11040.0,
+      "distance": 30128.8
+    },
+    {
+      "id": "strava-18228525922",
+      "source": "strava",
+      "name": "After \ud83c\udfd0 run home",
+      "date": "2026-04-23",
+      "start": "2026-04-23 16:17:04",
+      "sport": "run",
+      "moving_time": 3511.0,
+      "distance": 10250.5
+    },
+    {
+      "id": "strava-18221687385",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2026-04-23",
+      "start": "2026-04-23 06:26:18",
+      "sport": "run",
+      "moving_time": 1065.0,
+      "distance": 2802.9
+    },
+    {
+      "id": "strava-18211789282",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2026-04-22",
+      "start": "2026-04-22 12:16:53",
+      "sport": "run",
+      "moving_time": 3578.0,
+      "distance": 10007.3
+    },
+    {
+      "id": "strava-18197249700",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2026-04-21",
+      "start": "2026-04-21 11:49:44",
+      "sport": "run",
+      "moving_time": 3912.0,
+      "distance": 10100.8
+    },
+    {
+      "id": "strava-18183710401",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2026-04-20",
+      "start": "2026-04-20 11:50:48",
+      "sport": "run",
+      "moving_time": 3924.0,
+      "distance": 10268.4
+    },
+    {
+      "id": "strava-18166245385",
+      "source": "strava",
+      "name": "showing parents around campus jog",
+      "date": "2026-04-19",
+      "start": "2026-04-19 01:12:31",
+      "sport": "run",
+      "moving_time": 2565.0,
+      "distance": 5853.7
+    },
+    {
+      "id": "strava-18112850640",
+      "source": "strava",
+      "name": "Zzz",
+      "date": "2026-04-15",
+      "start": "2026-04-15 00:59:20",
+      "sport": "run",
+      "moving_time": 1632.0,
+      "distance": 5004.5
+    },
+    {
+      "id": "strava-18083973438",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2026-04-12",
+      "start": "2026-04-12 18:35:06",
+      "sport": "run",
+      "moving_time": 942.0,
+      "distance": 3004.8
+    },
+    {
+      "id": "strava-18070644482",
+      "source": "strava",
+      "name": "Run w Ethan + Matthew",
+      "date": "2026-04-11",
+      "start": "2026-04-11 17:47:38",
+      "sport": "run",
+      "moving_time": 2861.0,
+      "distance": 8580.5
+    },
+    {
+      "id": "strava-18039144903",
+      "source": "strava",
+      "name": "Regardless",
+      "date": "2026-04-09",
+      "start": "2026-04-09 10:43:25",
+      "sport": "run",
+      "moving_time": 950.0,
+      "distance": 3112.1
+    },
+    {
+      "id": "strava-17666730389",
+      "source": "strava",
+      "name": "Pre Lunch Run with friends",
+      "date": "2026-03-09",
+      "start": "2026-03-09 19:20:08",
+      "sport": "run",
+      "moving_time": 2213.0,
+      "distance": 6819.0
+    },
+    {
+      "id": "strava-17453706032",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2026-02-18",
+      "start": "2026-02-18 00:33:54",
+      "sport": "run",
+      "moving_time": 514.0,
+      "distance": 1434.5
+    },
+    {
+      "id": "strava-17434125696",
+      "source": "strava",
+      "name": "Butter walk",
+      "date": "2026-02-17",
+      "start": "2026-02-17 21:41:43",
+      "sport": "run",
+      "moving_time": 1492.0,
+      "distance": 2927.0
+    },
+    {
+      "id": "strava-16905773236",
+      "source": "strava",
+      "name": "20.26km",
+      "date": "2026-01-01",
+      "start": "2026-01-01 15:58:24",
+      "sport": "run",
+      "moving_time": 8879.0,
+      "distance": 20262.1
+    },
+    {
+      "id": "strava-16838090328",
+      "source": "strava",
+      "name": "Lunch Run",
+      "date": "2025-12-25",
+      "start": "2025-12-25 16:16:28",
+      "sport": "run",
+      "moving_time": 900.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-16811869701",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-12-22",
+      "start": "2025-12-22 14:47:02",
+      "sport": "run",
+      "moving_time": 1480.0,
+      "distance": 4112.8
+    },
+    {
+      "id": "strava-16500924366",
+      "source": "strava",
+      "name": "Quick 1mile",
+      "date": "2025-11-19",
+      "start": "2025-11-19 01:57:06",
+      "sport": "run",
+      "moving_time": 480.0,
+      "distance": 1600.0
+    },
+    {
+      "id": "strava-16298100326",
+      "source": "strava",
+      "name": "Tell me how far to go",
+      "date": "2025-10-29",
+      "start": "2025-10-29 23:02:08",
+      "sport": "run",
+      "moving_time": 7777.0,
+      "distance": 21110.8
+    },
+    {
+      "id": "strava-16286685897",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2025-10-28",
+      "start": "2025-10-28 22:04:11",
+      "sport": "run",
+      "moving_time": 1631.0,
+      "distance": 5012.8
+    },
+    {
+      "id": "strava-16131216965",
+      "source": "strava",
+      "name": "\ud83e\udd83",
+      "date": "2025-10-13",
+      "start": "2025-10-13 20:10:09",
+      "sport": "run",
+      "moving_time": 2411.0,
+      "distance": 8105.7
+    },
+    {
+      "id": "strava-16121504690",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-10-12",
+      "start": "2025-10-12 20:25:03",
+      "sport": "run",
+      "moving_time": 990.0,
+      "distance": 3300.0
+    },
+    {
+      "id": "strava-16092440015",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-10-09",
+      "start": "2025-10-09 21:18:22",
+      "sport": "run",
+      "moving_time": 1158.0,
+      "distance": 3600.0
+    },
+    {
+      "id": "strava-16089712642",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2025-10-09",
+      "start": "2025-10-09 05:43:22",
+      "sport": "run",
+      "moving_time": 473.0,
+      "distance": 1283.1
+    },
+    {
+      "id": "strava-16070536881",
+      "source": "strava",
+      "name": "Treadmill",
+      "date": "2025-10-08",
+      "start": "2025-10-08 04:15:07",
+      "sport": "run",
+      "moving_time": 960.0,
+      "distance": 3300.0
+    },
+    {
+      "id": "strava-16047009686",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2025-10-04",
+      "start": "2025-10-04 06:17:00",
+      "sport": "run",
+      "moving_time": 267.0,
+      "distance": 694.7
+    },
+    {
+      "id": "strava-16018430794",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-10-02",
+      "start": "2025-10-02 21:26:21",
+      "sport": "run",
+      "moving_time": 3501.0,
+      "distance": 6257.3
+    },
+    {
+      "id": "strava-15993867716",
+      "source": "strava",
+      "name": "100k Sept",
+      "date": "2025-10-01",
+      "start": "2025-10-01 01:40:11",
+      "sport": "run",
+      "moving_time": 2675.0,
+      "distance": 8408.0
+    },
+    {
+      "id": "strava-15992219451",
+      "source": "strava",
+      "name": "Sept 90",
+      "date": "2025-09-30",
+      "start": "2025-09-30 22:35:34",
+      "sport": "run",
+      "moving_time": 3250.0,
+      "distance": 10000.0
+    },
+    {
+      "id": "strava-15935950970",
+      "source": "strava",
+      "name": "Pot committed",
+      "date": "2025-09-25",
+      "start": "2025-09-25 17:48:44",
+      "sport": "run",
+      "moving_time": 7206.0,
+      "distance": 21115.0
+    },
+    {
+      "id": "strava-15871955292",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2025-09-19",
+      "start": "2025-09-19 22:50:48",
+      "sport": "run",
+      "moving_time": 422.0,
+      "distance": 1302.1
+    },
+    {
+      "id": "strava-15838077955",
+      "source": "strava",
+      "name": "Road to recovery",
+      "date": "2025-09-17",
+      "start": "2025-09-17 00:31:18",
+      "sport": "run",
+      "moving_time": 6589.0,
+      "distance": 21114.0
+    },
+    {
+      "id": "strava-15826262215",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2025-09-15",
+      "start": "2025-09-15 22:57:53",
+      "sport": "run",
+      "moving_time": 381.0,
+      "distance": 1089.9
+    },
+    {
+      "id": "strava-15814197928",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-09-14",
+      "start": "2025-09-14 14:42:40",
+      "sport": "run",
+      "moving_time": 1889.0,
+      "distance": 7934.4
+    },
+    {
+      "id": "strava-15809980153",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-09-12",
+      "start": "2025-09-12 20:55:21",
+      "sport": "run",
+      "moving_time": 2375.0,
+      "distance": 5353.7
+    },
+    {
+      "id": "strava-15759889747",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2025-09-08",
+      "start": "2025-09-08 04:40:17",
+      "sport": "run",
+      "moving_time": 573.0,
+      "distance": 2003.3
+    },
+    {
+      "id": "strava-15736072576",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2025-09-08",
+      "start": "2025-09-08 00:52:34",
+      "sport": "run",
+      "moving_time": 750.0,
+      "distance": 1582.3
+    },
+    {
+      "id": "strava-15722172364",
+      "source": "strava",
+      "name": "pt2",
+      "date": "2025-09-06",
+      "start": "2025-09-06 22:23:06",
+      "sport": "run",
+      "moving_time": 633.0,
+      "distance": 2072.3
+    },
+    {
+      "id": "strava-15722061209",
+      "source": "strava",
+      "name": "where did I go",
+      "date": "2025-09-06",
+      "start": "2025-09-06 21:50:28",
+      "sport": "run",
+      "moving_time": 1379.0,
+      "distance": 4673.0
+    },
+    {
+      "id": "strava-15705759847",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-09-05",
+      "start": "2025-09-05 12:35:13",
+      "sport": "run",
+      "moving_time": 986.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-15695487034",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-09-04",
+      "start": "2025-09-04 14:53:51",
+      "sport": "run",
+      "moving_time": 902.0,
+      "distance": 3021.4
+    },
+    {
+      "id": "strava-15690021781",
+      "source": "strava",
+      "name": "CIF VB",
+      "date": "2025-09-04",
+      "start": "2025-09-04 02:19:26",
+      "sport": "run",
+      "moving_time": 374.0,
+      "distance": 1193.7
+    },
+    {
+      "id": "strava-15689023307",
+      "source": "strava",
+      "name": "Gym + tread",
+      "date": "2025-09-03",
+      "start": "2025-09-03 23:47:22",
+      "sport": "run",
+      "moving_time": 524.0,
+      "distance": 1600.0
+    },
+    {
+      "id": "strava-15666487012",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2025-09-02",
+      "start": "2025-09-02 03:45:22",
+      "sport": "run",
+      "moving_time": 433.0,
+      "distance": 1624.7
+    },
+    {
+      "id": "strava-15658337900",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-09-01",
+      "start": "2025-09-01 12:08:06",
+      "sport": "run",
+      "moving_time": 936.0,
+      "distance": 3003.5
+    },
+    {
+      "id": "strava-15653888680",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-08-31",
+      "start": "2025-08-31 12:02:02",
+      "sport": "run",
+      "moving_time": 1545.0,
+      "distance": 5004.4
+    },
+    {
+      "id": "strava-15635399737",
+      "source": "strava",
+      "name": "Sayonara",
+      "date": "2025-08-30",
+      "start": "2025-08-30 09:53:00",
+      "sport": "run",
+      "moving_time": 2140.0,
+      "distance": 6703.9
+    },
+    {
+      "id": "strava-15617500548",
+      "source": "strava",
+      "name": "stopped early cause of \ud83c\udf27\ud83c\udf27",
+      "date": "2025-08-28",
+      "start": "2025-08-28 15:23:08",
+      "sport": "run",
+      "moving_time": 2910.0,
+      "distance": 9112.4
+    },
+    {
+      "id": "strava-15611850965",
+      "source": "strava",
+      "name": "warm up for tomorrow",
+      "date": "2025-08-28",
+      "start": "2025-08-28 03:01:34",
+      "sport": "run",
+      "moving_time": 1697.0,
+      "distance": 5405.8
+    },
+    {
+      "id": "strava-15594426466",
+      "source": "strava",
+      "name": "Lunch Run",
+      "date": "2025-08-26",
+      "start": "2025-08-26 16:05:36",
+      "sport": "run",
+      "moving_time": 1036.0,
+      "distance": 1949.4
+    },
+    {
+      "id": "strava-15587814269",
+      "source": "strava",
+      "name": "caterpillar",
+      "date": "2025-08-26",
+      "start": "2025-08-26 03:00:54",
+      "sport": "run",
+      "moving_time": 1335.0,
+      "distance": 5000.9
+    },
+    {
+      "id": "strava-15564252371",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2025-08-24",
+      "start": "2025-08-24 00:02:20",
+      "sport": "run",
+      "moving_time": 85.0,
+      "distance": 434.5
+    },
+    {
+      "id": "strava-15559413939",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-08-23",
+      "start": "2025-08-23 13:35:12",
+      "sport": "run",
+      "moving_time": 906.0,
+      "distance": 2778.2
+    },
+    {
+      "id": "strava-15527439552",
+      "source": "strava",
+      "name": "Lunch Run",
+      "date": "2025-08-20",
+      "start": "2025-08-20 15:56:26",
+      "sport": "run",
+      "moving_time": 6865.0,
+      "distance": 21115.1
+    },
+    {
+      "id": "strava-15507693872",
+      "source": "strava",
+      "name": "soccer warm up with bag",
+      "date": "2025-08-18",
+      "start": "2025-08-18 21:07:21",
+      "sport": "run",
+      "moving_time": 1553.0,
+      "distance": 4586.4
+    },
+    {
+      "id": "strava-15501490901",
+      "source": "strava",
+      "name": "kn race jog",
+      "date": "2025-08-18",
+      "start": "2025-08-18 14:41:33",
+      "sport": "run",
+      "moving_time": 801.0,
+      "distance": 2911.9
+    },
+    {
+      "id": "strava-15466071098",
+      "source": "strava",
+      "name": "6am Run",
+      "date": "2025-08-15",
+      "start": "2025-08-15 10:25:41",
+      "sport": "run",
+      "moving_time": 1903.0,
+      "distance": 6007.2
+    },
+    {
+      "id": "strava-15383577830",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2025-08-08",
+      "start": "2025-08-08 02:27:15",
+      "sport": "run",
+      "moving_time": 2606.0,
+      "distance": 8051.5
+    },
+    {
+      "id": "strava-15370291616",
+      "source": "strava",
+      "name": "Soccer pract",
+      "date": "2025-08-06",
+      "start": "2025-08-06 22:05:17",
+      "sport": "run",
+      "moving_time": 1457.0,
+      "distance": 4898.7
+    },
+    {
+      "id": "strava-15320897842",
+      "source": "strava",
+      "name": "\ud83c\udf82",
+      "date": "2025-08-02",
+      "start": "2025-08-02 13:56:56",
+      "sport": "run",
+      "moving_time": 7017.0,
+      "distance": 21111.8
+    },
+    {
+      "id": "strava-15297859511",
+      "source": "strava",
+      "name": "103/100km July. Hat stolen \u2639\ufe0f",
+      "date": "2025-07-31",
+      "start": "2025-07-31 12:48:32",
+      "sport": "run",
+      "moving_time": 3162.0,
+      "distance": 10000.8
+    },
+    {
+      "id": "strava-15280779265",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-07-29",
+      "start": "2025-07-29 19:47:46",
+      "sport": "run",
+      "moving_time": 1914.0,
+      "distance": 2839.7
+    },
+    {
+      "id": "strava-15273782058",
+      "source": "strava",
+      "name": "92/100km July D6",
+      "date": "2025-07-29",
+      "start": "2025-07-29 11:11:32",
+      "sport": "run",
+      "moving_time": 1405.0,
+      "distance": 5001.5
+    },
+    {
+      "id": "strava-15263402175",
+      "source": "strava",
+      "name": "87/100km July D5",
+      "date": "2025-07-28",
+      "start": "2025-07-28 13:01:17",
+      "sport": "run",
+      "moving_time": 1899.0,
+      "distance": 6002.0
+    },
+    {
+      "id": "strava-15242673921",
+      "source": "strava",
+      "name": "wee donuts 81/100k July D3",
+      "date": "2025-07-26",
+      "start": "2025-07-26 12:22:26",
+      "sport": "run",
+      "moving_time": 5792.0,
+      "distance": 16007.0
+    },
+    {
+      "id": "strava-15241348071",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-07-25",
+      "start": "2025-07-25 14:43:01",
+      "sport": "run",
+      "moving_time": 254.0,
+      "distance": 705.3
+    },
+    {
+      "id": "strava-15231316715",
+      "source": "strava",
+      "name": "100km July D2",
+      "date": "2025-07-25",
+      "start": "2025-07-25 12:29:27",
+      "sport": "run",
+      "moving_time": 1758.0,
+      "distance": 5604.5
+    },
+    {
+      "id": "strava-15220163654",
+      "source": "strava",
+      "name": "1st morning back",
+      "date": "2025-07-24",
+      "start": "2025-07-24 11:39:36",
+      "sport": "run",
+      "moving_time": 1608.0,
+      "distance": 5009.0
+    },
+    {
+      "id": "strava-15205565722",
+      "source": "strava",
+      "name": "Last japan morning walk",
+      "date": "2025-07-22",
+      "start": "2025-07-22 21:33:24",
+      "sport": "run",
+      "moving_time": 1497.0,
+      "distance": 2226.1
+    },
+    {
+      "id": "strava-15150497758",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-07-18",
+      "start": "2025-07-18 01:23:39",
+      "sport": "run",
+      "moving_time": 1447.0,
+      "distance": 1570.5
+    },
+    {
+      "id": "strava-15135168816",
+      "source": "strava",
+      "name": "Choomed by night city",
+      "date": "2025-07-16",
+      "start": "2025-07-16 15:06:16",
+      "sport": "run",
+      "moving_time": 5030.0,
+      "distance": 11008.0
+    },
+    {
+      "id": "strava-15035279169",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2025-07-07",
+      "start": "2025-07-07 13:07:35",
+      "sport": "run",
+      "moving_time": 770.0,
+      "distance": 1831.1
+    },
+    {
+      "id": "strava-15020599324",
+      "source": "strava",
+      "name": "high gear",
+      "date": "2025-07-06",
+      "start": "2025-07-06 02:21:51",
+      "sport": "run",
+      "moving_time": 787.0,
+      "distance": 3005.5
+    },
+    {
+      "id": "strava-15006300817",
+      "source": "strava",
+      "name": "\ud83d\ude36\u200d\ud83c\udf2b\ufe0f",
+      "date": "2025-07-04",
+      "start": "2025-07-04 15:55:55",
+      "sport": "run",
+      "moving_time": 1610.0,
+      "distance": 5000.2
+    },
+    {
+      "id": "strava-15000552985",
+      "source": "strava",
+      "name": "29",
+      "date": "2025-07-04",
+      "start": "2025-07-04 02:16:19",
+      "sport": "run",
+      "moving_time": 1565.0,
+      "distance": 5306.4
+    },
+    {
+      "id": "strava-14979275503",
+      "source": "strava",
+      "name": "Canada Day",
+      "date": "2025-07-02",
+      "start": "2025-07-02 00:32:44",
+      "sport": "run",
+      "moving_time": 1330.0,
+      "distance": 4502.2
+    },
+    {
+      "id": "strava-14947556837",
+      "source": "strava",
+      "name": "Run with Bobo and cappy",
+      "date": "2025-06-29",
+      "start": "2025-06-29 00:53:12",
+      "sport": "run",
+      "moving_time": 880.0,
+      "distance": 2677.3
+    },
+    {
+      "id": "strava-14922989825",
+      "source": "strava",
+      "name": "Duncan road to recovery",
+      "date": "2025-06-26",
+      "start": "2025-06-26 14:08:03",
+      "sport": "run",
+      "moving_time": 3617.0,
+      "distance": 12005.9
+    },
+    {
+      "id": "strava-14916205334",
+      "source": "strava",
+      "name": "3k",
+      "date": "2025-06-25",
+      "start": "2025-06-25 21:49:56",
+      "sport": "run",
+      "moving_time": 869.0,
+      "distance": 3006.9
+    },
+    {
+      "id": "strava-14912175731",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-06-25",
+      "start": "2025-06-25 14:40:06",
+      "sport": "run",
+      "moving_time": 1530.0,
+      "distance": 5000.0
+    },
+    {
+      "id": "strava-14764685110",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-06-11",
+      "start": "2025-06-11 11:14:06",
+      "sport": "run",
+      "moving_time": 1213.0,
+      "distance": 4301.5
+    },
+    {
+      "id": "strava-14711785653",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-06-06",
+      "start": "2025-06-06 08:38:58",
+      "sport": "run",
+      "moving_time": 70.0,
+      "distance": 222.1
+    },
+    {
+      "id": "strava-14683745035",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-06-03",
+      "start": "2025-06-03 13:46:34",
+      "sport": "run",
+      "moving_time": 1339.0,
+      "distance": 2258.5
+    },
+    {
+      "id": "strava-14682967622",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-06-03",
+      "start": "2025-06-03 13:04:46",
+      "sport": "run",
+      "moving_time": 681.0,
+      "distance": 1317.5
+    },
+    {
+      "id": "strava-14682511821",
+      "source": "strava",
+      "name": "Stairs Master",
+      "date": "2025-06-03",
+      "start": "2025-06-03 12:22:18",
+      "sport": "run",
+      "moving_time": 448.0,
+      "distance": 141.3
+    },
+    {
+      "id": "strava-14676687260",
+      "source": "strava",
+      "name": "Forgot to end activity \ud83d\udc80",
+      "date": "2025-06-02",
+      "start": "2025-06-02 19:23:33",
+      "sport": "run",
+      "moving_time": 6759.0,
+      "distance": 3649.3
+    },
+    {
+      "id": "strava-14658435251",
+      "source": "strava",
+      "name": "Trevi fountain",
+      "date": "2025-06-01",
+      "start": "2025-06-01 05:47:25",
+      "sport": "run",
+      "moving_time": 561.0,
+      "distance": 1717.1
+    },
+    {
+      "id": "strava-14633090470",
+      "source": "strava",
+      "name": "100km May",
+      "date": "2025-05-29",
+      "start": "2025-05-29 16:16:36",
+      "sport": "run",
+      "moving_time": 1802.0,
+      "distance": 6002.2
+    },
+    {
+      "id": "strava-14573322787",
+      "source": "strava",
+      "name": "Run home with kunkun",
+      "date": "2025-05-23",
+      "start": "2025-05-23 19:40:08",
+      "sport": "run",
+      "moving_time": 1201.0,
+      "distance": 3604.9
+    },
+    {
+      "id": "strava-14569752715",
+      "source": "strava",
+      "name": "Adams = \ud83d\udc10",
+      "date": "2025-05-23",
+      "start": "2025-05-23 12:18:39",
+      "sport": "run",
+      "moving_time": 1407.0,
+      "distance": 5004.5
+    },
+    {
+      "id": "strava-14552337511",
+      "source": "strava",
+      "name": "ruh roh",
+      "date": "2025-05-21",
+      "start": "2025-05-21 16:43:22",
+      "sport": "run",
+      "moving_time": 675.0,
+      "distance": 2322.1
+    },
+    {
+      "id": "strava-14539918282",
+      "source": "strava",
+      "name": "Butter walk",
+      "date": "2025-05-20",
+      "start": "2025-05-20 14:22:56",
+      "sport": "run",
+      "moving_time": 1800.0,
+      "distance": 4000.0
+    },
+    {
+      "id": "strava-14518823839",
+      "source": "strava",
+      "name": "Whyd he actually show up",
+      "date": "2025-05-18",
+      "start": "2025-05-18 11:57:12",
+      "sport": "run",
+      "moving_time": 2309.0,
+      "distance": 7112.8
+    },
+    {
+      "id": "strava-14508197777",
+      "source": "strava",
+      "name": "Might as well have swam an hour",
+      "date": "2025-05-17",
+      "start": "2025-05-17 11:53:30",
+      "sport": "run",
+      "moving_time": 4551.0,
+      "distance": 13409.2
+    },
+    {
+      "id": "strava-14488960683",
+      "source": "strava",
+      "name": "Classic flakeflake and snakecun",
+      "date": "2025-05-15",
+      "start": "2025-05-15 14:11:58",
+      "sport": "run",
+      "moving_time": 1210.0,
+      "distance": 4162.3
+    },
+    {
+      "id": "strava-14468889912",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-05-13",
+      "start": "2025-05-13 17:00:44",
+      "sport": "run",
+      "moving_time": 447.0,
+      "distance": 1550.8
+    },
+    {
+      "id": "strava-14468458338",
+      "source": "strava",
+      "name": "Lunch Run",
+      "date": "2025-05-13",
+      "start": "2025-05-13 16:24:09",
+      "sport": "run",
+      "moving_time": 619.0,
+      "distance": 2102.1
+    },
+    {
+      "id": "strava-14468337917",
+      "source": "strava",
+      "name": "Butter",
+      "date": "2025-05-12",
+      "start": "2025-05-12 20:49:35",
+      "sport": "run",
+      "moving_time": 553.0,
+      "distance": 1136.0
+    },
+    {
+      "id": "strava-14436903098",
+      "source": "strava",
+      "name": "\u2600\ufe0f\u2600\ufe0f=\ud83d\udc4e\ud83d\udc4e",
+      "date": "2025-05-10",
+      "start": "2025-05-10 12:52:32",
+      "sport": "run",
+      "moving_time": 8261.0,
+      "distance": 21130.1
+    },
+    {
+      "id": "strava-14424370706",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-05-09",
+      "start": "2025-05-09 11:04:51",
+      "sport": "run",
+      "moving_time": 312.0,
+      "distance": 1206.6
+    },
+    {
+      "id": "strava-14388700654",
+      "source": "strava",
+      "name": "Pregym run",
+      "date": "2025-05-05",
+      "start": "2025-05-05 20:56:18",
+      "sport": "run",
+      "moving_time": 850.0,
+      "distance": 2805.3
+    },
+    {
+      "id": "strava-14365992384",
+      "source": "strava",
+      "name": "First half marathon with the boys",
+      "date": "2025-05-03",
+      "start": "2025-05-03 13:03:15",
+      "sport": "run",
+      "moving_time": 7133.0,
+      "distance": 21112.8
+    },
+    {
+      "id": "strava-14349282164",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2025-05-01",
+      "start": "2025-05-01 22:57:03",
+      "sport": "run",
+      "moving_time": 308.0,
+      "distance": 1049.7
+    },
+    {
+      "id": "strava-14349061222",
+      "source": "strava",
+      "name": "Butter walk",
+      "date": "2025-05-01",
+      "start": "2025-05-01 22:06:44",
+      "sport": "run",
+      "moving_time": 840.0,
+      "distance": 2345.3
+    },
+    {
+      "id": "strava-14336323798",
+      "source": "strava",
+      "name": "April 100km clutch",
+      "date": "2025-04-30",
+      "start": "2025-04-30 19:22:43",
+      "sport": "run",
+      "moving_time": 1130.0,
+      "distance": 3704.9
+    },
+    {
+      "id": "strava-14318167883",
+      "source": "strava",
+      "name": "Post 10km cool down",
+      "date": "2025-04-29",
+      "start": "2025-04-29 04:09:33",
+      "sport": "run",
+      "moving_time": 413.0,
+      "distance": 1205.3
+    },
+    {
+      "id": "strava-14318140228",
+      "source": "strava",
+      "name": "Messin with my head \ud83c\udf05",
+      "date": "2025-04-29",
+      "start": "2025-04-29 03:12:47",
+      "sport": "run",
+      "moving_time": 2800.0,
+      "distance": 10001.0
+    },
+    {
+      "id": "strava-14312772435",
+      "source": "strava",
+      "name": "Pit stop \ud83d\udc68\u200d\ud83d\udd27",
+      "date": "2025-04-28",
+      "start": "2025-04-28 15:36:39",
+      "sport": "run",
+      "moving_time": 540.0,
+      "distance": 1700.8
+    },
+    {
+      "id": "strava-14312468911",
+      "source": "strava",
+      "name": "\ud83d\ude15",
+      "date": "2025-04-28",
+      "start": "2025-04-28 14:53:14",
+      "sport": "run",
+      "moving_time": 1543.0,
+      "distance": 5002.0
+    },
+    {
+      "id": "strava-14285486439",
+      "source": "strava",
+      "name": "More circles",
+      "date": "2025-04-25",
+      "start": "2025-04-25 21:14:46",
+      "sport": "run",
+      "moving_time": 1432.0,
+      "distance": 5002.0
+    },
+    {
+      "id": "strava-14282394664",
+      "source": "strava",
+      "name": "Circles",
+      "date": "2025-04-25",
+      "start": "2025-04-25 14:12:26",
+      "sport": "run",
+      "moving_time": 1421.0,
+      "distance": 5020.0
+    },
+    {
+      "id": "strava-14275826263",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-04-24",
+      "start": "2025-04-24 19:31:27",
+      "sport": "run",
+      "moving_time": 717.0,
+      "distance": 2611.5
+    },
+    {
+      "id": "strava-14272294347",
+      "source": "strava",
+      "name": "\ud83d\ude05",
+      "date": "2025-04-24",
+      "start": "2025-04-24 12:23:42",
+      "sport": "run",
+      "moving_time": 3118.0,
+      "distance": 10003.9
+    },
+    {
+      "id": "strava-14266079284",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-04-23",
+      "start": "2025-04-23 19:26:13",
+      "sport": "run",
+      "moving_time": 843.0,
+      "distance": 3004.4
+    },
+    {
+      "id": "strava-14255802309",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-04-22",
+      "start": "2025-04-22 19:19:51",
+      "sport": "run",
+      "moving_time": 857.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-14252222469",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-04-22",
+      "start": "2025-04-22 13:41:42",
+      "sport": "run",
+      "moving_time": 1259.0,
+      "distance": 4253.5
+    },
+    {
+      "id": "strava-14227011913",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-04-19",
+      "start": "2025-04-19 20:59:44",
+      "sport": "run",
+      "moving_time": 1482.0,
+      "distance": 5104.9
+    },
+    {
+      "id": "strava-14206896567",
+      "source": "strava",
+      "name": "\ud83d\ude37\ud83d\ude37",
+      "date": "2025-04-17",
+      "start": "2025-04-17 19:32:57",
+      "sport": "run",
+      "moving_time": 955.0,
+      "distance": 3134.7
+    },
+    {
+      "id": "strava-14148846716",
+      "source": "strava",
+      "name": "run home \ud83c\udfe1",
+      "date": "2025-04-11",
+      "start": "2025-04-11 19:25:39",
+      "sport": "run",
+      "moving_time": 845.0,
+      "distance": 3126.3
+    },
+    {
+      "id": "strava-14147456648",
+      "source": "strava",
+      "name": "\ud83e\udda6",
+      "date": "2025-04-11",
+      "start": "2025-04-11 15:25:18",
+      "sport": "run",
+      "moving_time": 1367.0,
+      "distance": 5008.4
+    },
+    {
+      "id": "strava-14140050993",
+      "source": "strava",
+      "name": "Run home",
+      "date": "2025-04-10",
+      "start": "2025-04-10 19:24:21",
+      "sport": "run",
+      "moving_time": 840.0,
+      "distance": 3107.3
+    },
+    {
+      "id": "strava-14137041057",
+      "source": "strava",
+      "name": "5k pb maybe",
+      "date": "2025-04-07",
+      "start": "2025-04-07 22:08:06",
+      "sport": "run",
+      "moving_time": 1374.0,
+      "distance": 5000.9
+    },
+    {
+      "id": "strava-14110086246",
+      "source": "strava",
+      "name": "Run home",
+      "date": "2025-04-07",
+      "start": "2025-04-07 16:00:16",
+      "sport": "run",
+      "moving_time": 883.0,
+      "distance": 3343.3
+    },
+    {
+      "id": "strava-14103152507",
+      "source": "strava",
+      "name": "Treamill",
+      "date": "2025-04-07",
+      "start": "2025-04-07 03:15:43",
+      "sport": "run",
+      "moving_time": 1490.0,
+      "distance": 5000.0
+    },
+    {
+      "id": "strava-14078625790",
+      "source": "strava",
+      "name": "Delivery for kunkun (completing side quests)",
+      "date": "2025-04-04",
+      "start": "2025-04-04 13:46:38",
+      "sport": "run",
+      "moving_time": 2530.0,
+      "distance": 8451.3
+    },
+    {
+      "id": "strava-14059106798",
+      "source": "strava",
+      "name": "D44",
+      "date": "2025-04-02",
+      "start": "2025-04-02 14:24:30",
+      "sport": "run",
+      "moving_time": 1295.0,
+      "distance": 4305.3
+    },
+    {
+      "id": "strava-14054916371",
+      "source": "strava",
+      "name": "Weight training arc starts now",
+      "date": "2025-04-02",
+      "start": "2025-04-02 02:58:14",
+      "sport": "lift",
+      "moving_time": 2100.0,
+      "distance": 0.0
+    },
+    {
+      "id": "strava-14038493511",
+      "source": "strava",
+      "name": "D43",
+      "date": "2025-03-31",
+      "start": "2025-03-31 12:57:51",
+      "sport": "run",
+      "moving_time": 1313.0,
+      "distance": 4563.4
+    },
+    {
+      "id": "strava-14033261560",
+      "source": "strava",
+      "name": "Treadmill D42",
+      "date": "2025-03-30",
+      "start": "2025-03-30 19:03:30",
+      "sport": "run",
+      "moving_time": 1788.0,
+      "distance": 6000.0
+    },
+    {
+      "id": "strava-14030766783",
+      "source": "strava",
+      "name": "D41",
+      "date": "2025-03-30",
+      "start": "2025-03-30 04:16:17",
+      "sport": "run",
+      "moving_time": 1110.0,
+      "distance": 3432.5
+    },
+    {
+      "id": "strava-14025626927",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2025-03-28",
+      "start": "2025-03-28 23:50:19",
+      "sport": "run",
+      "moving_time": 171.0,
+      "distance": 686.2
+    },
+    {
+      "id": "strava-14015038365",
+      "source": "strava",
+      "name": "Run outside D40",
+      "date": "2025-03-28",
+      "start": "2025-03-28 22:18:10",
+      "sport": "run",
+      "moving_time": 2062.0,
+      "distance": 7105.1
+    },
+    {
+      "id": "strava-14005399412",
+      "source": "strava",
+      "name": "Run home D39",
+      "date": "2025-03-27",
+      "start": "2025-03-27 19:27:49",
+      "sport": "run",
+      "moving_time": 920.0,
+      "distance": 3507.6
+    },
+    {
+      "id": "strava-13998073640",
+      "source": "strava",
+      "name": "Butter walk D38",
+      "date": "2025-03-26",
+      "start": "2025-03-26 21:46:13",
+      "sport": "run",
+      "moving_time": 2501.0,
+      "distance": 5684.8
+    },
+    {
+      "id": "strava-13985915915",
+      "source": "strava",
+      "name": "Run home D37",
+      "date": "2025-03-25",
+      "start": "2025-03-25 19:26:37",
+      "sport": "run",
+      "moving_time": 1080.0,
+      "distance": 3531.6
+    },
+    {
+      "id": "strava-13968245849",
+      "source": "strava",
+      "name": "100km March D36",
+      "date": "2025-03-23",
+      "start": "2025-03-23 19:53:28",
+      "sport": "run",
+      "moving_time": 2105.0,
+      "distance": 7004.9
+    },
+    {
+      "id": "strava-13958674161",
+      "source": "strava",
+      "name": "Tread D35",
+      "date": "2025-03-22",
+      "start": "2025-03-22 22:41:56",
+      "sport": "run",
+      "moving_time": 2100.0,
+      "distance": 6700.0
+    },
+    {
+      "id": "strava-13948862739",
+      "source": "strava",
+      "name": "Tread",
+      "date": "2025-03-21",
+      "start": "2025-03-21 22:14:04",
+      "sport": "run",
+      "moving_time": 960.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-13948439817",
+      "source": "strava",
+      "name": "Butter walk + soccer",
+      "date": "2025-03-21",
+      "start": "2025-03-21 20:18:21",
+      "sport": "run",
+      "moving_time": 2561.0,
+      "distance": 3910.8
+    },
+    {
+      "id": "strava-13947917345",
+      "source": "strava",
+      "name": "Run home D34",
+      "date": "2025-03-21",
+      "start": "2025-03-21 19:20:59",
+      "sport": "run",
+      "moving_time": 915.0,
+      "distance": 3205.6
+    },
+    {
+      "id": "strava-13936667029",
+      "source": "strava",
+      "name": "Morning run D33",
+      "date": "2025-03-20",
+      "start": "2025-03-20 14:31:20",
+      "sport": "run",
+      "moving_time": 840.0,
+      "distance": 3007.7
+    },
+    {
+      "id": "strava-13929989639",
+      "source": "strava",
+      "name": "Run home D32",
+      "date": "2025-03-19",
+      "start": "2025-03-19 19:24:17",
+      "sport": "run",
+      "moving_time": 978.0,
+      "distance": 3579.1
+    },
+    {
+      "id": "strava-13919837690",
+      "source": "strava",
+      "name": "Run home D31",
+      "date": "2025-03-18",
+      "start": "2025-03-18 19:28:59",
+      "sport": "run",
+      "moving_time": 830.0,
+      "distance": 3013.6
+    },
+    {
+      "id": "strava-13910289626",
+      "source": "strava",
+      "name": "Day 30",
+      "date": "2025-03-17",
+      "start": "2025-03-17 19:20:33",
+      "sport": "run",
+      "moving_time": 1314.0,
+      "distance": 3891.5
+    },
+    {
+      "id": "strava-13902273934",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-03-16",
+      "start": "2025-03-16 19:07:49",
+      "sport": "run",
+      "moving_time": 1604.0,
+      "distance": 2064.1
+    },
+    {
+      "id": "strava-13890303854",
+      "source": "strava",
+      "name": "Lunch Run",
+      "date": "2025-03-15",
+      "start": "2025-03-15 15:04:57",
+      "sport": "run",
+      "moving_time": 1192.0,
+      "distance": 1869.6
+    },
+    {
+      "id": "strava-13857491007",
+      "source": "strava",
+      "name": "Butter D29",
+      "date": "2025-03-11",
+      "start": "2025-03-11 23:31:11",
+      "sport": "run",
+      "moving_time": 1837.0,
+      "distance": 2988.6
+    },
+    {
+      "id": "strava-13847712777",
+      "source": "strava",
+      "name": "\ud83d\ude49 D28",
+      "date": "2025-03-11",
+      "start": "2025-03-11 00:08:47",
+      "sport": "run",
+      "moving_time": 4511.0,
+      "distance": 13100.0
+    },
+    {
+      "id": "strava-13837804918",
+      "source": "strava",
+      "name": "Treadmill D27",
+      "date": "2025-03-09",
+      "start": "2025-03-09 20:53:31",
+      "sport": "run",
+      "moving_time": 1080.0,
+      "distance": 3200.0
+    },
+    {
+      "id": "strava-13829044842",
+      "source": "strava",
+      "name": "Treadmill D26",
+      "date": "2025-03-09",
+      "start": "2025-03-09 04:02:58",
+      "sport": "run",
+      "moving_time": 1680.0,
+      "distance": 5100.0
+    },
+    {
+      "id": "strava-13819010395",
+      "source": "strava",
+      "name": "Treadmill D25",
+      "date": "2025-03-08",
+      "start": "2025-03-08 01:55:15",
+      "sport": "run",
+      "moving_time": 960.0,
+      "distance": 3200.0
+    },
+    {
+      "id": "strava-13815129166",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-03-07",
+      "start": "2025-03-07 15:38:13",
+      "sport": "run",
+      "moving_time": 583.0,
+      "distance": 2003.8
+    },
+    {
+      "id": "strava-13811107955",
+      "source": "strava",
+      "name": "Treadmill D24",
+      "date": "2025-03-07",
+      "start": "2025-03-07 04:41:10",
+      "sport": "run",
+      "moving_time": 1500.0,
+      "distance": 5200.0
+    },
+    {
+      "id": "strava-13800990135",
+      "source": "strava",
+      "name": "Treadmill D23",
+      "date": "2025-03-06",
+      "start": "2025-03-06 00:05:07",
+      "sport": "run",
+      "moving_time": 960.0,
+      "distance": 3200.0
+    },
+    {
+      "id": "strava-13796154558",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-03-05",
+      "start": "2025-03-05 14:08:15",
+      "sport": "run",
+      "moving_time": 496.0,
+      "distance": 1573.7
+    },
+    {
+      "id": "strava-13791030058",
+      "source": "strava",
+      "name": "Quarter marathon D22",
+      "date": "2025-03-04",
+      "start": "2025-03-04 22:19:28",
+      "sport": "run",
+      "moving_time": 3780.0,
+      "distance": 10600.0
+    },
+    {
+      "id": "strava-13780836119",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-03-03",
+      "start": "2025-03-03 20:48:30",
+      "sport": "run",
+      "moving_time": 136.0,
+      "distance": 434.5
+    },
+    {
+      "id": "strava-13780791673",
+      "source": "strava",
+      "name": "Run from school D21",
+      "date": "2025-03-03",
+      "start": "2025-03-03 20:28:11",
+      "sport": "run",
+      "moving_time": 900.0,
+      "distance": 3004.9
+    },
+    {
+      "id": "strava-13772941319",
+      "source": "strava",
+      "name": "Butter walk D20",
+      "date": "2025-03-02",
+      "start": "2025-03-02 21:27:43",
+      "sport": "run",
+      "moving_time": 1048.0,
+      "distance": 2749.7
+    },
+    {
+      "id": "strava-13764502119",
+      "source": "strava",
+      "name": "Butter run D19",
+      "date": "2025-03-02",
+      "start": "2025-03-02 03:07:01",
+      "sport": "run",
+      "moving_time": 1433.0,
+      "distance": 3373.3
+    },
+    {
+      "id": "strava-13753430837",
+      "source": "strava",
+      "name": "Treadmill D18",
+      "date": "2025-02-28",
+      "start": "2025-02-28 21:07:55",
+      "sport": "run",
+      "moving_time": 970.0,
+      "distance": 3200.0
+    },
+    {
+      "id": "strava-13744931413",
+      "source": "strava",
+      "name": "Run home D17",
+      "date": "2025-02-27",
+      "start": "2025-02-27 20:26:31",
+      "sport": "run",
+      "moving_time": 950.0,
+      "distance": 3104.3
+    },
+    {
+      "id": "strava-13738421326",
+      "source": "strava",
+      "name": "Treadmill D16",
+      "date": "2025-02-27",
+      "start": "2025-02-27 04:43:12",
+      "sport": "run",
+      "moving_time": 1070.0,
+      "distance": 3600.0
+    },
+    {
+      "id": "strava-13726666821",
+      "source": "strava",
+      "name": "D15 backpack + rain \ud83d\ude13",
+      "date": "2025-02-25",
+      "start": "2025-02-25 20:25:10",
+      "sport": "run",
+      "moving_time": 1329.0,
+      "distance": 3181.1
+    },
+    {
+      "id": "strava-13717467606",
+      "source": "strava",
+      "name": "Treadmill D14",
+      "date": "2025-02-24",
+      "start": "2025-02-24 21:31:42",
+      "sport": "run",
+      "moving_time": 1470.0,
+      "distance": 5000.0
+    },
+    {
+      "id": "strava-13707538436",
+      "source": "strava",
+      "name": "Treadmill D13",
+      "date": "2025-02-23",
+      "start": "2025-02-23 17:24:01",
+      "sport": "run",
+      "moving_time": 900.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-13700290526",
+      "source": "strava",
+      "name": "Treadmill D12",
+      "date": "2025-02-23",
+      "start": "2025-02-23 00:40:10",
+      "sport": "run",
+      "moving_time": 960.0,
+      "distance": 3200.0
+    },
+    {
+      "id": "strava-13691917081",
+      "source": "strava",
+      "name": "Treadmill D11",
+      "date": "2025-02-22",
+      "start": "2025-02-22 04:33:15",
+      "sport": "run",
+      "moving_time": 989.0,
+      "distance": 3300.0
+    },
+    {
+      "id": "strava-13683902433",
+      "source": "strava",
+      "name": "Treadmill D10",
+      "date": "2025-02-21",
+      "start": "2025-02-21 04:43:57",
+      "sport": "run",
+      "moving_time": 882.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-13668680644",
+      "source": "strava",
+      "name": "Treadmill D9",
+      "date": "2025-02-19",
+      "start": "2025-02-19 12:12:09",
+      "sport": "run",
+      "moving_time": 900.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-13666212510",
+      "source": "strava",
+      "name": "Treadmill D8",
+      "date": "2025-02-19",
+      "start": "2025-02-19 04:14:48",
+      "sport": "run",
+      "moving_time": 897.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-13651573765",
+      "source": "strava",
+      "name": "Treadmill D7",
+      "date": "2025-02-17",
+      "start": "2025-02-17 15:05:54",
+      "sport": "run",
+      "moving_time": 917.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-13648226462",
+      "source": "strava",
+      "name": "Treadmill D6",
+      "date": "2025-02-17",
+      "start": "2025-02-17 04:47:16",
+      "sport": "run",
+      "moving_time": 930.0,
+      "distance": 3200.0
+    },
+    {
+      "id": "strava-13638800667",
+      "source": "strava",
+      "name": "Treadmill D5",
+      "date": "2025-02-16",
+      "start": "2025-02-16 04:38:20",
+      "sport": "run",
+      "moving_time": 1020.0,
+      "distance": 3200.0
+    },
+    {
+      "id": "strava-13625166267",
+      "source": "strava",
+      "name": "treadmill D4",
+      "date": "2025-02-14",
+      "start": "2025-02-14 14:02:25",
+      "sport": "run",
+      "moving_time": 960.0,
+      "distance": 3100.0
+    },
+    {
+      "id": "strava-13617283254",
+      "source": "strava",
+      "name": "Treadmill",
+      "date": "2025-02-13",
+      "start": "2025-02-13 14:44:19",
+      "sport": "run",
+      "moving_time": 960.0,
+      "distance": 3000.0
+    },
+    {
+      "id": "strava-13611833185",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2025-02-12",
+      "start": "2025-02-12 20:24:43",
+      "sport": "run",
+      "moving_time": 1429.0,
+      "distance": 3324.6
+    },
+    {
+      "id": "strava-13598528227",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2025-02-11",
+      "start": "2025-02-11 11:54:21",
+      "sport": "run",
+      "moving_time": 954.0,
+      "distance": 2696.0
+    },
+    {
+      "id": "strava-12982658155",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-11-25",
+      "start": "2024-11-25 20:33:22",
+      "sport": "run",
+      "moving_time": 821.0,
+      "distance": 2314.6
+    },
+    {
+      "id": "strava-12869726468",
+      "source": "strava",
+      "name": "Lunch Run",
+      "date": "2024-11-10",
+      "start": "2024-11-10 16:04:06",
+      "sport": "run",
+      "moving_time": 1079.0,
+      "distance": 2290.4
+    },
+    {
+      "id": "strava-12402181190",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-09-13",
+      "start": "2024-09-13 19:36:29",
+      "sport": "run",
+      "moving_time": 1466.0,
+      "distance": 3008.4
+    },
+    {
+      "id": "strava-12402066887",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-09-10",
+      "start": "2024-09-10 19:34:15",
+      "sport": "run",
+      "moving_time": 6068.0,
+      "distance": 3278.7
+    },
+    {
+      "id": "strava-12120011900",
+      "source": "strava",
+      "name": "run w luvas",
+      "date": "2024-07-11",
+      "start": "2024-07-11 22:08:58",
+      "sport": "run",
+      "moving_time": 1486.0,
+      "distance": 5001.7
+    },
+    {
+      "id": "strava-11763932525",
+      "source": "strava",
+      "name": "Stairs x.x",
+      "date": "2024-06-29",
+      "start": "2024-06-29 04:17:39",
+      "sport": "run",
+      "moving_time": 38.0,
+      "distance": 86.3
+    },
+    {
+      "id": "strava-11701799695",
+      "source": "strava",
+      "name": "\ud83d\ude48",
+      "date": "2024-06-21",
+      "start": "2024-06-21 01:26:51",
+      "sport": "run",
+      "moving_time": 4505.0,
+      "distance": 13004.5
+    },
+    {
+      "id": "strava-11701542311",
+      "source": "strava",
+      "name": "Lunch Run",
+      "date": "2024-06-18",
+      "start": "2024-06-18 15:23:53",
+      "sport": "run",
+      "moving_time": 99.0,
+      "distance": 391.7
+    },
+    {
+      "id": "strava-11654128768",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2024-06-14",
+      "start": "2024-06-14 22:48:39",
+      "sport": "run",
+      "moving_time": 461.0,
+      "distance": 1602.6
+    },
+    {
+      "id": "strava-11653562485",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2024-06-13",
+      "start": "2024-06-13 23:39:56",
+      "sport": "run",
+      "moving_time": 102.0,
+      "distance": 448.2
+    },
+    {
+      "id": "strava-11629823053",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-06-11",
+      "start": "2024-06-11 19:24:58",
+      "sport": "run",
+      "moving_time": 852.0,
+      "distance": 3028.7
+    },
+    {
+      "id": "strava-11629692749",
+      "source": "strava",
+      "name": "Lunch Run",
+      "date": "2024-06-11",
+      "start": "2024-06-11 15:04:42",
+      "sport": "run",
+      "moving_time": 126.0,
+      "distance": 464.0
+    },
+    {
+      "id": "strava-11621707368",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-06-10",
+      "start": "2024-06-10 19:28:39",
+      "sport": "run",
+      "moving_time": 895.0,
+      "distance": 3010.6
+    },
+    {
+      "id": "strava-11595694992",
+      "source": "strava",
+      "name": "Morning Run",
+      "date": "2024-06-07",
+      "start": "2024-06-07 13:31:54",
+      "sport": "run",
+      "moving_time": 121.0,
+      "distance": 473.3
+    },
+    {
+      "id": "strava-11546858936",
+      "source": "strava",
+      "name": "Morning treadmill run",
+      "date": "2024-06-01",
+      "start": "2024-06-01 11:40:34",
+      "sport": "run",
+      "moving_time": 737.0,
+      "distance": 2786.4
+    },
+    {
+      "id": "strava-11546743609",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-05-29",
+      "start": "2024-05-29 19:26:36",
+      "sport": "run",
+      "moving_time": 1244.0,
+      "distance": 3087.2
+    },
+    {
+      "id": "strava-11481278663",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-05-23",
+      "start": "2024-05-23 19:00:09",
+      "sport": "run",
+      "moving_time": 431.0,
+      "distance": 1262.4
+    },
+    {
+      "id": "strava-11412107621",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-05-14",
+      "start": "2024-05-14 19:31:42",
+      "sport": "run",
+      "moving_time": 1343.0,
+      "distance": 2874.3
+    },
+    {
+      "id": "strava-11411284793",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-05-07",
+      "start": "2024-05-07 19:29:14",
+      "sport": "run",
+      "moving_time": 290.0,
+      "distance": 1027.8
+    },
+    {
+      "id": "strava-11270556366",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-04-26",
+      "start": "2024-04-26 19:29:13",
+      "sport": "run",
+      "moving_time": 1459.0,
+      "distance": 3232.7
+    },
+    {
+      "id": "strava-11248962117",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-04-23",
+      "start": "2024-04-23 19:23:08",
+      "sport": "run",
+      "moving_time": 1273.0,
+      "distance": 3001.2
+    },
+    {
+      "id": "strava-11166826593",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-04-12",
+      "start": "2024-04-12 19:37:41",
+      "sport": "run",
+      "moving_time": 656.0,
+      "distance": 2181.7
+    },
+    {
+      "id": "strava-11044124033",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-03-26",
+      "start": "2024-03-26 19:31:31",
+      "sport": "run",
+      "moving_time": 1075.0,
+      "distance": 2985.5
+    },
+    {
+      "id": "strava-11043964311",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-03-22",
+      "start": "2024-03-22 19:21:51",
+      "sport": "run",
+      "moving_time": 1329.0,
+      "distance": 3400.2
+    },
+    {
+      "id": "strava-10995577903",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-03-19",
+      "start": "2024-03-19 19:29:35",
+      "sport": "run",
+      "moving_time": 728.0,
+      "distance": 2420.4
+    },
+    {
+      "id": "strava-10975299002",
+      "source": "strava",
+      "name": "Butter",
+      "date": "2024-03-16",
+      "start": "2024-03-16 23:29:32",
+      "sport": "run",
+      "moving_time": 1232.0,
+      "distance": 2765.6
+    },
+    {
+      "id": "strava-10962232448",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2024-03-15",
+      "start": "2024-03-15 02:11:47",
+      "sport": "run",
+      "moving_time": 882.0,
+      "distance": 3019.9
+    },
+    {
+      "id": "strava-10947488796",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2024-03-12",
+      "start": "2024-03-12 22:59:28",
+      "sport": "run",
+      "moving_time": 1634.0,
+      "distance": 3075.7
+    },
+    {
+      "id": "strava-10898444917",
+      "source": "strava",
+      "name": "250 dash",
+      "date": "2024-03-05",
+      "start": "2024-03-05 21:00:35",
+      "sport": "run",
+      "moving_time": 47.0,
+      "distance": 263.4
+    },
+    {
+      "id": "strava-10898369960",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2024-03-05",
+      "start": "2024-03-05 20:39:54",
+      "sport": "run",
+      "moving_time": 523.0,
+      "distance": 1715.3
+    },
+    {
+      "id": "strava-10877523463",
+      "source": "strava",
+      "name": "Evening Run",
+      "date": "2024-03-02",
+      "start": "2024-03-02 23:34:09",
+      "sport": "run",
+      "moving_time": 1187.0,
+      "distance": 3537.0
+    },
+    {
+      "id": "strava-10850324947",
+      "source": "strava",
+      "name": "jog home from school",
+      "date": "2024-02-27",
+      "start": "2024-02-27 20:25:54",
+      "sport": "run",
+      "moving_time": 781.0,
+      "distance": 2738.8
+    },
+    {
+      "id": "strava-10353328345",
+      "source": "strava",
+      "name": "morning wake up",
+      "date": "2023-12-09",
+      "start": "2023-12-09 14:40:42",
+      "sport": "run",
+      "moving_time": 419.0,
+      "distance": 1430.7
+    },
+    {
+      "id": "strava-10139442120",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2023-10-24",
+      "start": "2023-10-24 19:31:16",
+      "sport": "run",
+      "moving_time": 512.0,
+      "distance": 1811.4
+    },
+    {
+      "id": "strava-10057494519",
+      "source": "strava",
+      "name": "run back from bus station",
+      "date": "2023-10-17",
+      "start": "2023-10-17 19:28:47",
+      "sport": "run",
+      "moving_time": 551.0,
+      "distance": 2014.9
+    },
+    {
+      "id": "strava-9901191908",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2023-09-22",
+      "start": "2023-09-22 21:57:32",
+      "sport": "run",
+      "moving_time": 138.0,
+      "distance": 671.8
+    },
+    {
+      "id": "strava-9701539299",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2023-08-22",
+      "start": "2023-08-22 02:40:49",
+      "sport": "run",
+      "moving_time": 1487.0,
+      "distance": 3477.4
+    },
+    {
+      "id": "strava-9691721947",
+      "source": "strava",
+      "name": "Night Run",
+      "date": "2023-08-21",
+      "start": "2023-08-21 01:27:30",
+      "sport": "run",
+      "moving_time": 1662.0,
+      "distance": 5153.1
+    },
+    {
+      "id": "strava-9591143496",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2023-08-02",
+      "start": "2023-08-02 23:23:39",
+      "sport": "run",
+      "moving_time": 169.0,
+      "distance": 807.1
+    },
+    {
+      "id": "strava-9572009997",
+      "source": "strava",
+      "name": "Afternoon Run",
+      "date": "2023-07-29",
+      "start": "2023-07-29 21:24:37",
+      "sport": "run",
+      "moving_time": 538.0,
+      "distance": 1707.1
+    },
+    {
+      "id": "strava-9534639402",
+      "source": "strava",
+      "name": "PB (personal best or peanut butter which ever you prefer)",
+      "date": "2023-07-28",
+      "start": "2023-07-28 00:44:04",
+      "sport": "run",
+      "moving_time": 732.0,
+      "distance": 3007.2
+    },
+    {
+      "id": "strava-9515957075",
+      "source": "strava",
+      "name": "crusty after 2 league matches",
+      "date": "2023-07-25",
+      "start": "2023-07-25 03:21:33",
+      "sport": "run",
+      "moving_time": 800.0,
+      "distance": 3012.8
+    }
+  ]
+}

@@ -1,10 +1,19 @@
 name: Parse Strava Export
 
+# Manual fallback path. Garmin is the primary source (garmin-sync.yml); this
+# picks up activities that were uploaded straight to Strava and never recorded
+# on the watch. Drop a fresh activities.csv in the repo root and push.
+
 on:
   push:
     paths:
       - 'activities.csv'
-  workflow_dispatch:   # allow manual trigger from GitHub UI
+  workflow_dispatch:
+
+# Never let this race the Garmin sync — both commit strava-data.json
+concurrency:
+  group: activity-data
+  cancel-in-progress: false
 
 jobs:
   parse:
@@ -22,10 +31,14 @@ jobs:
       - name: Parse Strava export
         run: python scripts/parse_export.py
 
-      - name: Commit strava-data.json if changed
+      - name: Rebuild site data
+        run: python scripts/build_data.py
+
+      - name: Commit if changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add strava-data.json
-          git diff --cached --quiet || git commit -m "chore: update strava data from export"
+          git add strava-data.json data/
+          git diff --cached --quiet || git commit -m "chore: rebuild activity data from Strava export"
+          git pull --rebase origin main
           git push

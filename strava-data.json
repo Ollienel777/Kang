@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-08-02",
+  "updated_at": "2026-08-06",
   "totals": {
     "all_time_km": 1654.5,
-    "ytd_km": 1032.0,
-    "ytd_runs": 132,
-    "ytd_time": "102:20:33"
+    "ytd_km": 1010.9,
+    "ytd_runs": 131,
+    "ytd_time": "100:23:36"
   },
   "sport_totals": {
     "run": {
       "all_time_km": 1654.5,
-      "ytd_km": 1032.0,
-      "ytd_count": 132,
-      "ytd_time": "102:20:33"
+      "ytd_km": 1010.9,
+      "ytd_count": 131,
+      "ytd_time": "100:23:36"
     },
     "swim": {
       "all_time_km": 3.9,
@@ -121,58 +121,64 @@
   },
   "recent_runs": [
     {
-      "id": "19558675224",
+      "id": "strava-19558675224",
       "name": "Give or take 19km for 19th birthday",
       "distance": 30.64,
       "time": "3:26:03",
-      "pace": "6:43 /km",
-      "date": "2026-08-01"
+      "perf": "6:43 /km",
+      "date": "2026-08-01",
+      "pace": "6:43 /km"
     },
     {
-      "id": "19540039248",
+      "id": "strava-19540039248",
       "name": "we did NOT make it to OU",
       "distance": 14.25,
       "time": "1:31:14",
-      "pace": "6:24 /km",
-      "date": "2026-07-31"
+      "perf": "6:24 /km",
+      "date": "2026-07-31",
+      "pace": "6:24 /km"
     },
     {
-      "id": "19519436126",
+      "id": "strava-19519436126",
       "name": "Afternoon Run",
       "distance": 2.35,
       "time": "13:45",
-      "pace": "5:50 /km",
-      "date": "2026-07-29"
+      "perf": "5:50 /km",
+      "date": "2026-07-29",
+      "pace": "5:50 /km"
     },
     {
-      "id": "19515461023",
+      "id": "strava-19515461023",
       "name": "Evening Run",
       "distance": 3.17,
       "time": "18:57",
-      "pace": "5:58 /km",
-      "date": "2026-07-29"
+      "perf": "5:58 /km",
+      "date": "2026-07-29",
+      "pace": "5:58 /km"
     },
     {
-      "id": "19440785228",
+      "id": "strava-19440785228",
       "name": "Night Run",
       "distance": 1.2,
       "time": "6:53",
-      "pace": "5:43 /km",
-      "date": "2026-07-24"
+      "perf": "5:43 /km",
+      "date": "2026-07-24",
+      "pace": "5:43 /km"
     },
     {
-      "id": "19440699065",
+      "id": "strava-19440699065",
       "name": "Toronto Night Run",
       "distance": 4.01,
       "time": "18:12",
-      "pace": "4:32 /km",
-      "date": "2026-07-24"
+      "perf": "4:32 /km",
+      "date": "2026-07-24",
+      "pace": "4:32 /km"
     }
   ],
   "recent_activities": {
     "run": [
       {
-        "id": "19558675224",
+        "id": "strava-19558675224",
         "name": "Give or take 19km for 19th birthday",
         "distance": 30.64,
         "time": "3:26:03",
@@ -180,7 +186,7 @@
         "date": "2026-08-01"
       },
       {
-        "id": "19540039248",
+        "id": "strava-19540039248",
         "name": "we did NOT make it to OU",
         "distance": 14.25,
         "time": "1:31:14",
@@ -188,7 +194,7 @@
         "date": "2026-07-31"
       },
       {
-        "id": "19519436126",
+        "id": "strava-19519436126",
         "name": "Afternoon Run",
         "distance": 2.35,
         "time": "13:45",
@@ -196,7 +202,7 @@
         "date": "2026-07-29"
       },
       {
-        "id": "19515461023",
+        "id": "strava-19515461023",
         "name": "Evening Run",
         "distance": 3.17,
         "time": "18:57",
@@ -204,7 +210,7 @@
         "date": "2026-07-29"
       },
       {
-        "id": "19440785228",
+        "id": "strava-19440785228",
         "name": "Night Run",
         "distance": 1.2,
         "time": "6:53",
@@ -212,7 +218,7 @@
         "date": "2026-07-24"
       },
       {
-        "id": "19440699065",
+        "id": "strava-19440699065",
         "name": "Toronto Night Run",
         "distance": 4.01,
         "time": "18:12",
@@ -222,7 +228,7 @@
     ],
     "swim": [
       {
-        "id": "19179413673",
+        "id": "strava-19179413673",
         "name": "IM113 Swim leg",
         "distance": 1.9,
         "time": "56:09",
@@ -230,7 +236,7 @@
         "date": "2026-07-04"
       },
       {
-        "id": "19131472210",
+        "id": "strava-19131472210",
         "name": "Evening Swim",
         "distance": 2.0,
         "time": "1:00:00",
@@ -240,7 +246,7 @@
     ],
     "ride": [
       {
-        "id": "19178108078",
+        "id": "strava-19178108078",
         "name": "IM113 Bike Leg",
         "distance": 90.0,
         "time": "3:21:57",
@@ -248,7 +254,7 @@
         "date": "2026-07-04"
       },
       {
-        "id": "19073030654",
+        "id": "strava-19073030654",
         "name": "Afternoon Ride",
         "distance": 13.5,
         "time": "28:55",
@@ -256,7 +262,7 @@
         "date": "2026-06-25"
       },
       {
-        "id": "18966417637",
+        "id": "strava-18966417637",
         "name": "Pain cave",
         "distance": 100.26,
         "time": "3:37:43",
@@ -264,7 +270,7 @@
         "date": "2026-06-17"
       },
       {
-        "id": "18911067937",
+        "id": "strava-18911067937",
         "name": "Night ride while finishing an assignment",
         "distance": 50.21,
         "time": "1:57:04",
@@ -272,7 +278,7 @@
         "date": "2026-06-14"
       },
       {
-        "id": "18897924376",
+        "id": "strava-18897924376",
         "name": "bike while completing security training \ud83d\ude05",
         "distance": 24.78,
         "time": "1:01:16",
@@ -280,7 +286,7 @@
         "date": "2026-06-13"
       },
       {
-        "id": "18885985963",
+        "id": "strava-18885985963",
         "name": "Whys biking hard",
         "distance": 3.54,
         "time": "7:30",
@@ -292,7 +298,7 @@
   "top_sessions": {
     "swim": [
       {
-        "id": "19131472210",
+        "id": "strava-19131472210",
         "name": "Evening Swim",
         "distance": 2.0,
         "time": "1:00:00",
@@ -300,7 +306,7 @@
         "date": "2026-07-01"
       },
       {
-        "id": "19179413673",
+        "id": "strava-19179413673",
         "name": "IM113 Swim leg",
         "distance": 1.9,
         "time": "56:09",
@@ -310,7 +316,7 @@
     ],
     "ride": [
       {
-        "id": "18966417637",
+        "id": "strava-18966417637",
         "name": "Pain cave",
         "distance": 100.26,
         "time": "3:37:43",
@@ -318,7 +324,7 @@
         "date": "2026-06-17"
       },
       {
-        "id": "19178108078",
+        "id": "strava-19178108078",
         "name": "IM113 Bike Leg",
         "distance": 90.0,
         "time": "3:21:57",
@@ -326,7 +332,7 @@
         "date": "2026-07-04"
       },
       {
-        "id": "18911067937",
+        "id": "strava-18911067937",
         "name": "Night ride while finishing an assignment",
         "distance": 50.21,
         "time": "1:57:04",
@@ -334,7 +340,7 @@
         "date": "2026-06-14"
       },
       {
-        "id": "18897924376",
+        "id": "strava-18897924376",
         "name": "bike while completing security training \ud83d\ude05",
         "distance": 24.78,
         "time": "1:01:16",
@@ -342,7 +348,7 @@
         "date": "2026-06-13"
       },
       {
-        "id": "19073030654",
+        "id": "strava-19073030654",
         "name": "Afternoon Ride",
         "distance": 13.5,
         "time": "28:55",

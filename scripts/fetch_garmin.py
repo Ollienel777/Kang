@@ -105,12 +105,38 @@ def fetch_all(api):
 def login_helper():
     """Interactive: mint a token blob for the GARMINTOKENS secret."""
     import getpass
+    from garminconnect import (
+        GarminConnectAuthenticationError,
+        GarminConnectTooManyRequestsError,
+    )
+
     print('Garmin Connect login — credentials are sent to Garmin only, never stored.\n')
     email    = input('Garmin email: ').strip()
     password = getpass.getpass('Garmin password: ')
 
     api = Garmin(email, password, prompt_mfa=lambda: input('MFA code: ').strip())
-    api.login()
+    try:
+        api.login()
+    except GarminConnectAuthenticationError:
+        # garminconnect raises this only when Garmin's own response says
+        # INVALID_USERNAME_PASSWORD — it is a real credential rejection, not a
+        # rate-limit misfire (429s raise GarminConnectTooManyRequestsError).
+        print('\nGarmin rejected the email/password combination.\n', file=sys.stderr)
+        print('Worth checking, in rough order of likelihood:', file=sys.stderr)
+        print('  1. Does this account sign in with "Continue with Google/Apple"?', file=sys.stderr)
+        print('     Those accounts have no Garmin password until you set one:', file=sys.stderr)
+        print('     Garmin Connect -> Account Settings -> Sign-In Information.', file=sys.stderr)
+        print('  2. Is this the email the Garmin account is actually registered', file=sys.stderr)
+        print('     under? (It need not match the one you use elsewhere.)', file=sys.stderr)
+        print('  3. Confirm the same credentials work at https://connect.garmin.com', file=sys.stderr)
+        print('\nAvoid retrying in a loop — repeated failures tighten Garmin\'s', file=sys.stderr)
+        print('IP rate limiting and can temporarily lock the account.', file=sys.stderr)
+        sys.exit(2)
+    except GarminConnectTooManyRequestsError:
+        print('\nGarmin is rate limiting this IP (HTTP 429).', file=sys.stderr)
+        print('Wait 30-60 minutes and try again — this is not a credential problem.', file=sys.stderr)
+        sys.exit(3)
+
     tokens = api.client.dumps()
 
     out = os.path.join(common.REPO_ROOT, 'garmin_tokens.txt')

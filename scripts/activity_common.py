@@ -152,19 +152,30 @@ def is_duplicate(a, b):
     if a['sport'] != b['sport']:
         return False
 
+    # Shape: same session should agree closely on duration and distance.
+    dur_close  = abs(a['moving_time'] - b['moving_time']) <= max(120, 0.05 * max(a['moving_time'], b['moving_time'], 1))
+    dist_close = abs(a['distance'] - b['distance']) <= max(200, 0.05 * max(a['distance'], b['distance'], 1))
+    same_shape = dur_close and dist_close
+
     da, db = _start_dt(a), _start_dt(b)
     if da and db:
-        if abs((da - db).total_seconds()) <= 600:      # within 10 minutes
+        delta = abs((da - db).total_seconds())
+        if delta <= 600:                    # within 10 minutes
             return True
+        # Timezone artifact: sources disagreeing by a near-whole number of
+        # hours on an otherwise identical session (e.g. an activity recorded
+        # in another timezone). Guarded by same_shape so genuinely distinct
+        # sessions on nearby days don't collapse into one.
+        if same_shape and delta <= 14 * 3600:
+            off_by_hours = delta % 3600
+            if min(off_by_hours, 3600 - off_by_hours) <= 180:
+                return True
         if da.date() != db.date():
             return False
     elif a['date'] != b['date']:
         return False
 
-    # No usable start times (or same day, times slightly off): compare shape.
-    dur_close  = abs(a['moving_time'] - b['moving_time']) <= max(120, 0.05 * max(a['moving_time'], b['moving_time'], 1))
-    dist_close = abs(a['distance'] - b['distance']) <= max(200, 0.05 * max(a['distance'], b['distance'], 1))
-    return dur_close and dist_close
+    return same_shape
 
 
 def merge_sources(primary, secondary):
@@ -178,9 +189,21 @@ def merge_sources(primary, secondary):
     sessions of the same sport (a split recording, a two-part workout) are
     legitimately separate activities.
     """
-    added = [a for a in secondary
-             if not any(is_duplicate(a, p) for p in primary)]
-    merged = list(primary) + added
+    merged = [dict(p) for p in primary]
+    added  = []
+    for cand in secondary:
+        match = next((p for p in merged if is_duplicate(cand, p)), None)
+        if match is None:
+            added.append(cand)
+            continue
+        # Overlap: keep the primary's metrics (device of record) but take the
+        # secondary's title. Garmin auto-names everything ("Ottawa Running");
+        # Strava is where activities actually get named by hand, and those
+        # titles are what the site surfaces under RECENT RUNS.
+        if cand.get('name'):
+            match['name'] = cand['name']
+
+    merged += added
     merged.sort(key=lambda a: a['start'] or a['date'], reverse=True)
     return merged, len(added)
 

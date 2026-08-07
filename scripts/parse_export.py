@@ -14,9 +14,17 @@ import csv
 import os
 import sys
 import traceback
-from datetime import datetime
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 import activity_common as common
+
+# Strava's bulk export stores "Activity Date" in UTC, even though the activity
+# *names* it generates ("Evening Run") come from local time. Left unconverted,
+# every activity after ~20:00 local lands on the following day — wrong day in
+# the heatmap, and it breaks de-duplication against Garmin's local timestamps.
+# Change this if you relocate; DST is handled automatically.
+LOCAL_TZ = ZoneInfo('America/Toronto')
 
 # Column indices in Strava's bulk-export activities.csv. Several headers repeat;
 # the later occurrences hold clean numeric values (plain metres / seconds)
@@ -53,7 +61,9 @@ def main():
                 continue
 
             try:
-                dt = datetime.strptime(row[COL_DATE].strip(), DATE_FMT)
+                dt = (datetime.strptime(row[COL_DATE].strip(), DATE_FMT)
+                      .replace(tzinfo=timezone.utc)      # column is UTC
+                      .astimezone(LOCAL_TZ))             # -> local wall clock
             except ValueError:
                 bad_dates += 1
                 continue

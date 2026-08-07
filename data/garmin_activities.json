@@ -1,0 +1,107 @@
+{
+  "source": "garmin",
+  "fetched_at": "2026-08-07 16:46:55",
+  "count": 10,
+  "activities": [
+    {
+      "id": "garmin-23881011000",
+      "source": "garmin",
+      "name": "Indoor Cycling",
+      "date": "2026-08-06",
+      "start": "2026-08-06 18:54:59",
+      "sport": "ride",
+      "moving_time": 2096.5400390625,
+      "distance": 15288.768000000004
+    },
+    {
+      "id": "garmin-23869795726",
+      "source": "garmin",
+      "name": "Toronto - Threshold",
+      "date": "2026-08-05",
+      "start": "2026-08-05 23:02:23",
+      "sport": "run",
+      "moving_time": 1954.7680053710938,
+      "distance": 6104.81005859375
+    },
+    {
+      "id": "garmin-23856729049",
+      "source": "garmin",
+      "name": "Indoor Cycling",
+      "date": "2026-08-04",
+      "start": "2026-08-04 21:55:23",
+      "sport": "ride",
+      "moving_time": 3697.384033203125,
+      "distance": 24140.160000000003
+    },
+    {
+      "id": "garmin-23814891692",
+      "source": "garmin",
+      "name": "Ottawa Running",
+      "date": "2026-08-01",
+      "start": "2026-08-01 08:37:06",
+      "sport": "run",
+      "moving_time": 12349.441986083984,
+      "distance": 30638.48046875
+    },
+    {
+      "id": "garmin-23798391662",
+      "source": "garmin",
+      "name": "Ottawa Running",
+      "date": "2026-07-31",
+      "start": "2026-07-31 03:43:50",
+      "sport": "run",
+      "moving_time": 5467.2550048828125,
+      "distance": 14246.8896484375
+    },
+    {
+      "id": "garmin-23780528411",
+      "source": "garmin",
+      "name": "Toronto - Base",
+      "date": "2026-07-29",
+      "start": "2026-07-29 15:01:58",
+      "sport": "run",
+      "moving_time": 814.0,
+      "distance": 2353.239990234375
+    },
+    {
+      "id": "garmin-23776739320",
+      "source": "garmin",
+      "name": "Treadmill Running",
+      "date": "2026-07-28",
+      "start": "2026-07-28 20:44:44",
+      "sport": "run",
+      "moving_time": 1112.0,
+      "distance": 3170.0
+    },
+    {
+      "id": "garmin-23710648662",
+      "source": "garmin",
+      "name": "Toronto Running",
+      "date": "2026-07-24",
+      "start": "2026-07-24 00:38:08",
+      "sport": "run",
+      "moving_time": 409.0,
+      "distance": 1204.47998046875
+    },
+    {
+      "id": "garmin-23710564020",
+      "source": "garmin",
+      "name": "Toronto Running",
+      "date": "2026-07-24",
+      "start": "2026-07-24 00:06:00",
+      "sport": "run",
+      "moving_time": 1111.4259948730469,
+      "distance": 4012.469970703125
+    },
+    {
+      "id": "garmin-23685065781",
+      "source": "garmin",
+      "name": "Toronto - Base",
+      "date": "2026-07-21",
+      "start": "2026-07-21 20:46:44",
+      "sport": "run",
+      "moving_time": 3338.697998046875,
+      "distance": 10031.48046875
+    }
+  ]
+}

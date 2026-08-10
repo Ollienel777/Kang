@@ -150,6 +150,33 @@ def login_helper():
     print('then DELETE the local file — it grants access to your Garmin account.')
 
 
+def save_rotated_token(api):
+    """Write the session back out if Garmin rotated it during this run.
+
+    Garmin issues a NEW refresh token every time the access token is refreshed
+    and invalidates the previous one. Running from a secret means that rotated
+    value is lost when the job ends, so the next run presents a consumed token
+    and gets a 401. The workflow pushes this file back into the GARMINTOKENS
+    secret to close the loop.
+    """
+    out_path = os.environ.get('GARMIN_TOKEN_OUT')
+    if not out_path:
+        return
+    try:
+        current = api.client.dumps()
+    except Exception as e:
+        print(f'  could not serialise session ({e}) — leaving stored token alone')
+        return
+
+    if current.strip() == os.environ.get('GARMINTOKENS', '').strip():
+        print('  token unchanged this run — no secret update needed')
+        return
+
+    with open(out_path, 'w', encoding='utf-8') as f:
+        f.write(current)
+    print(f'  token was rotated by Garmin — wrote refreshed session ({len(current)} chars)')
+
+
 def main():
     if '--login' in sys.argv:
         login_helper()
@@ -168,6 +195,7 @@ def main():
         by_sport[a['sport']] = by_sport.get(a['sport'], 0) + 1
     print(f'Normalized {len(activities)} activities: {by_sport}')
     common.save_cache('garmin', activities)
+    save_rotated_token(api)
 
 
 if __name__ == '__main__':

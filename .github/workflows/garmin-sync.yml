@@ -30,6 +30,7 @@ jobs:
         id: fetch
         env:
           GARMINTOKENS: ${{ secrets.GARMINTOKENS }}
+          GARMIN_TOKEN_OUT: ${{ runner.temp }}/garmin_tokens_refreshed.json
         run: |
           # Garmin's private API is occasionally flaky — retry before failing.
           # `|| EXIT_CODE=$?` is required: steps run under `bash -e`, so a bare
@@ -49,12 +50,38 @@ jobs:
             fi
           done
 
+      # Garmin rotates the refresh token on every use and invalidates the old
+      # one. Without writing the new value back, the stored secret is good for
+      # exactly one refresh and every later run 401s. GITHUB_TOKEN cannot write
+      # secrets, so this needs a PAT with secrets:write on this repo.
+      - name: Persist rotated Garmin token
+        if: steps.fetch.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GH_SECRETS_PAT }}
+          TOKEN_FILE: ${{ runner.temp }}/garmin_tokens_refreshed.json
+        run: |
+          if [ ! -f "$TOKEN_FILE" ]; then
+            echo "Token unchanged this run — nothing to persist."
+            exit 0
+          fi
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::Garmin rotated the token but GH_SECRETS_PAT is not set,"
+            echo "::warning::so it cannot be saved. The next run will fail with a 401."
+            echo "::warning::Add a PAT with secrets:write as GH_SECRETS_PAT to fix this."
+            exit 0
+          fi
+          gh secret set GARMINTOKENS --repo "$GITHUB_REPOSITORY" < "$TOKEN_FILE"
+          echo "Updated GARMINTOKENS with the rotated session."
+          shred -u "$TOKEN_FILE" 2>/dev/null || rm -f "$TOKEN_FILE"
+
       - name: Log failure details
         if: failure() && steps.fetch.outcome == 'failure'
         run: |
           echo "::error::garmin-sync failed. Common causes:"
-          echo "  1. GARMINTOKENS expired — re-run 'python scripts/fetch_garmin.py --login'"
-          echo "     locally and update the repo secret."
+          echo "  1. 'Failed to retrieve social profile' / 401 — the stored refresh"
+          echo "     token was consumed. Garmin rotates it on every refresh, so it"
+          echo "     must be written back (needs the GH_SECRETS_PAT secret). Re-mint"
+          echo "     with 'python scripts/fetch_garmin.py --login' and update GARMINTOKENS."
           echo "  2. Garmin changed their private API — check for a garminconnect release."
           echo "  3. Rate limited / temporary Garmin outage — re-run the workflow."
           echo "  The site keeps serving the last committed strava-data.json meanwhile."

@@ -399,7 +399,7 @@ fetch('strava-data.json')
   .then(r => r.json())
   .then(data => {
     _stravaData = data;
-    document.getElementById('strava-updated').textContent = data.updated_at;
+    document.getElementById('garmin-updated').textContent = data.updated_at;
 
     // Build dailyActivities for heatmap
     const dailyActivities = {};

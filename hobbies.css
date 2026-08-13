@@ -600,7 +600,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 }
 
 /* ── UPDATED TIMESTAMP ── */
-.strava-updated {
+.garmin-updated {
   margin-top: 20px;
   font-size: 0.65rem;
   color: var(--gray-lite);

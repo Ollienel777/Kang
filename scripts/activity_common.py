@@ -202,6 +202,10 @@ def merge_sources(primary, secondary):
         # titles are what the site surfaces under RECENT RUNS.
         if cand.get('name'):
             match['name'] = cand['name']
+        # Remember the Strava id too. Garmin Connect activities are private by
+        # default, so a visitor clicking through would hit a login wall —
+        # link these to the public Strava copy instead.
+        match['alt_id'] = cand['id']
 
     merged += added
     merged.sort(key=lambda a: a['start'] or a['date'], reverse=True)
@@ -240,7 +244,7 @@ def build_output(activities):
                     'elapsed_time': elapsed,
                     'time':         fmt_time(elapsed),
                     'pace':         fmt_pace(elapsed, effort_dist),
-                    'activity_id':  act['id'],
+                    'activity_id':  act.get('alt_id') or act['id'],
                     'date':         act['date'],
                 }
 
@@ -272,7 +276,9 @@ def build_output(activities):
 
     def row(a):
         return {
-            'id':       a['id'],
+            # alt_id (the public Strava copy) wins when we have it — see
+            # merge_sources. Falls back to the source-prefixed id.
+            'id':       a.get('alt_id') or a['id'],
             'name':     a['name'],
             'distance': round(a['distance'] / 1000, 2),
             'time':     fmt_time(a['moving_time']),

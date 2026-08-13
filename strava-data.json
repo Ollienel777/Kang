@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-12",
+  "updated_at": "2026-08-13",
   "totals": {
     "all_time_km": 1662.1,
     "ytd_km": 1005.5,
@@ -139,7 +139,7 @@
       "pace": "5:20 /km"
     },
     {
-      "id": "garmin-23814891692",
+      "id": "strava-19558675224",
       "name": "Give or take 19km for 19th birthday",
       "distance": 30.64,
       "time": "3:25:49",
@@ -148,7 +148,7 @@
       "pace": "6:43 /km"
     },
     {
-      "id": "garmin-23798391662",
+      "id": "strava-19540039248",
       "name": "we did NOT make it to OU",
       "distance": 14.25,
       "time": "1:31:07",
@@ -157,7 +157,7 @@
       "pace": "6:23 /km"
     },
     {
-      "id": "garmin-23780528411",
+      "id": "strava-19519436126",
       "name": "Afternoon Run",
       "distance": 2.35,
       "time": "13:34",
@@ -166,7 +166,7 @@
       "pace": "5:45 /km"
     },
     {
-      "id": "garmin-23776739320",
+      "id": "strava-19515461023",
       "name": "Evening Run",
       "distance": 3.17,
       "time": "18:32",
@@ -194,7 +194,7 @@
         "date": "2026-08-05"
       },
       {
-        "id": "garmin-23814891692",
+        "id": "strava-19558675224",
         "name": "Give or take 19km for 19th birthday",
         "distance": 30.64,
         "time": "3:25:49",
@@ -202,7 +202,7 @@
         "date": "2026-08-01"
       },
       {
-        "id": "garmin-23798391662",
+        "id": "strava-19540039248",
         "name": "we did NOT make it to OU",
         "distance": 14.25,
         "time": "1:31:07",
@@ -210,7 +210,7 @@
         "date": "2026-07-31"
       },
       {
-        "id": "garmin-23780528411",
+        "id": "strava-19519436126",
         "name": "Afternoon Run",
         "distance": 2.35,
         "time": "13:34",
@@ -218,7 +218,7 @@
         "date": "2026-07-29"
       },
       {
-        "id": "garmin-23776739320",
+        "id": "strava-19515461023",
         "name": "Evening Run",
         "distance": 3.17,
         "time": "18:32",

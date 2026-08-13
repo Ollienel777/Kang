@@ -309,7 +309,7 @@ function renderBests(sport) {
     } else {
       bestsEl.innerHTML = bestKeys.map(k => {
         const e = bests[k];
-        return `<a class="hobby-best-row" href="https://www.strava.com/activities/${e.activity_id}" target="_blank" rel="noopener">
+        return `<a class="hobby-best-row" href="${activityUrl(e.activity_id)}" target="_blank" rel="noopener">
           <span class="hobby-best-dist">${BEST_EFFORT_LABELS[k]}</span>
           <span class="hobby-best-time">${e.time}</span>
           <span class="hobby-best-pace">${e.pace}</span>
@@ -335,13 +335,23 @@ function renderBests(sport) {
     return;
   }
   bestsEl.innerHTML = sessions.map(s => `
-    <a class="hobby-run-row" href="https://www.strava.com/activities/${s.id}" target="_blank" rel="noopener">
+    <a class="hobby-run-row" href="${activityUrl(s.id)}" target="_blank" rel="noopener">
       <span class="hobby-run-name">${s.name}</span>
       <span class="hobby-run-dist">${s.distance} km</span>
       <span class="hobby-run-pace">${s.perf}</span>
       <span class="hobby-run-time">${s.time}</span>
       <span class="hobby-run-date">${s.date}</span>
     </a>`).join('');
+}
+
+// Activity ids are source-prefixed ("garmin-123" / "strava-456") since the data
+// is merged from both. Route each to the right service; bare numeric ids are
+// legacy Strava PRs saved before the migration.
+function activityUrl(id) {
+  const s = String(id);
+  if (s.startsWith('garmin-')) return `https://connect.garmin.com/modern/activity/${s.slice(7)}`;
+  if (s.startsWith('strava-')) return `https://www.strava.com/activities/${s.slice(7)}`;
+  return `https://www.strava.com/activities/${s}`;
 }
 
 function renderRecent(sport) {
@@ -360,7 +370,7 @@ function renderRecent(sport) {
     return;
   }
   recentEl.innerHTML = activities.map(a => `
-    <a class="hobby-run-row" href="https://www.strava.com/activities/${a.id}" target="_blank" rel="noopener">
+    <a class="hobby-run-row" href="${activityUrl(a.id)}" target="_blank" rel="noopener">
       <span class="hobby-run-name">${a.name}</span>
       <span class="hobby-run-dist">${a.distance} km</span>
       <span class="hobby-run-pace">${a.perf}</span>

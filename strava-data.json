@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-13",
+  "updated_at": "2026-08-14",
   "totals": {
     "all_time_km": 1662.1,
     "ytd_km": 1005.5,
@@ -20,10 +20,10 @@
       "ytd_time": "1:56:09"
     },
     "ride": {
-      "all_time_km": 345.6,
-      "ytd_km": 345.6,
-      "ytd_count": 10,
-      "ytd_time": "13:04:18"
+      "all_time_km": 360.0,
+      "ytd_km": 360.0,
+      "ytd_count": 11,
+      "ytd_time": "13:35:23"
     }
   },
   "best_efforts": {
@@ -246,6 +246,14 @@
     ],
     "ride": [
       {
+        "id": "garmin-23962675955",
+        "name": "Indoor Cycling",
+        "distance": 14.4,
+        "time": "31:04",
+        "perf": "27.8 km/h",
+        "date": "2026-08-13"
+      },
+      {
         "id": "garmin-23944030409",
         "name": "Indoor Cycling",
         "distance": 15.85,
@@ -284,14 +292,6 @@
         "time": "28:55",
         "perf": "28.0 km/h",
         "date": "2026-06-25"
-      },
-      {
-        "id": "strava-18966417637",
-        "name": "Pain cave",
-        "distance": 100.26,
-        "time": "3:37:43",
-        "perf": "27.6 km/h",
-        "date": "2026-06-17"
       }
     ]
   },
@@ -611,6 +611,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-08-13": {
+      "ride": 14.4
+    },
     "2026-08-11": {
       "ride": 15.85
     },

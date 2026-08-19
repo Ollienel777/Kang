@@ -1,8 +1,18 @@
 {
   "source": "garmin",
-  "fetched_at": "2026-08-18 08:32:25",
-  "count": 15,
+  "fetched_at": "2026-08-19 08:32:57",
+  "count": 16,
   "activities": [
+    {
+      "id": "garmin-24030809365",
+      "source": "garmin",
+      "name": "Toronto - Base",
+      "date": "2026-08-18",
+      "start": "2026-08-18 22:04:25",
+      "sport": "run",
+      "moving_time": 1942.906997680664,
+      "distance": 5500.919921875
+    },
     {
       "id": "garmin-23988763449",
       "source": "garmin",

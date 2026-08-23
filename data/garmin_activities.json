@@ -1,8 +1,28 @@
 {
   "source": "garmin",
-  "fetched_at": "2026-08-22 08:24:49",
-  "count": 16,
+  "fetched_at": "2026-08-23 08:25:17",
+  "count": 18,
   "activities": [
+    {
+      "id": "garmin-24076682905",
+      "source": "garmin",
+      "name": "Toronto Running",
+      "date": "2026-08-22",
+      "start": "2026-08-22 13:45:17",
+      "sport": "run",
+      "moving_time": 1824.7319946289062,
+      "distance": 5405.330078125
+    },
+    {
+      "id": "garmin-24075660354",
+      "source": "garmin",
+      "name": "Toronto Running",
+      "date": "2026-08-22",
+      "start": "2026-08-22 11:32:58",
+      "sport": "run",
+      "moving_time": 2962.7149963378906,
+      "distance": 8036.60009765625
+    },
     {
       "id": "garmin-24030809365",
       "source": "garmin",

@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-08-26",
+  "updated_at": "2026-08-27",
   "totals": {
     "all_time_km": 1706.2,
-    "ytd_km": 1006.8,
-    "ytd_runs": 129,
-    "ytd_time": "100:27:44"
+    "ytd_km": 1004.8,
+    "ytd_runs": 128,
+    "ytd_time": "100:10:28"
   },
   "sport_totals": {
     "run": {
       "all_time_km": 1706.2,
-      "ytd_km": 1006.8,
-      "ytd_count": 129,
-      "ytd_time": "100:27:44"
+      "ytd_km": 1004.8,
+      "ytd_count": 128,
+      "ytd_time": "100:10:28"
     },
     "swim": {
       "all_time_km": 3.9,

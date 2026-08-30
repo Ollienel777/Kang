@@ -1,8 +1,18 @@
 {
   "source": "garmin",
-  "fetched_at": "2026-08-29 13:35:20",
-  "count": 19,
+  "fetched_at": "2026-08-30 13:30:05",
+  "count": 20,
   "activities": [
+    {
+      "id": "garmin-24172333107",
+      "source": "garmin",
+      "name": "Ottawa Running",
+      "date": "2026-08-30",
+      "start": "2026-08-30 08:38:00",
+      "sport": "run",
+      "moving_time": 284.0,
+      "distance": 813.760009765625
+    },
     {
       "id": "garmin-24117363321",
       "source": "garmin",

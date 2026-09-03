@@ -134,14 +134,15 @@ challenge is just figuring out where to start.
           <h2 class="col-title" style="font-size:clamp(1.4rem,3.2vw,2.6rem);white-space:nowrap;">AQUANOW</h2>
           <div class="project-details">
             <p class="col-body">
-              Backend &amp; Data Engineering Co-op at Aquanow. Built and own a daily
-              credit-exposure reporting pipeline (PyIceberg, AWS Athena) covered by
-              31 unit tests, and fixed 5 production bugs in a live regulatory
-              reporting system — restoring reconciliation to 107/107 currencies.
+              Backend &amp; Data Engineering Co-op at Aquanow. Ported a legacy
+              reconciliation job to a Kafka-triggered Lakeflow worker over Apache
+              Iceberg, then led its expansion into an AI-agentic workflow. Fixed 5
+              critical bugs in a live regulatory system reporting to Turkey's MKK —
+              restoring reconciliation to 107/107 currencies.
             </p>
             <div class="project-tags">
-              <span>Python</span><span>PyIceberg</span><span>AWS Athena</span>
-              <span>DuckDB</span><span>Kafka</span>
+              <span>Python</span><span>Apache Iceberg</span><span>Lakeflow</span>
+              <span>Kafka</span><span>AWS Athena</span><span>PyIceberg</span>
             </div>
           </div>
         </div>
@@ -560,30 +561,32 @@ challenge is just figuring out where to start.
       <div class="project-modal-content">
         <div class="project-modal-meta">
           <span class="project-modal-num">03</span>
-          <span class="project-modal-date">Jun 2026 – Present</span>
+          <span class="project-modal-date">Jun 2026 – Aug 2026</span>
         </div>
         <h2 class="project-modal-title">Aquanow</h2>
         <p class="project-modal-sub">Backend &amp; Data Engineering Co-op &mdash; Toronto, ON</p>
         <p class="project-modal-body">
-          Built and own a daily <strong>credit-exposure reporting pipeline</strong> (Python, PyIceberg,
-          AWS Athena, S3) scanning multi-currency client balances against Apache Iceberg tables and
-          converting exposure to USD via live FX rates; covered by <strong>31 unit tests</strong> with all
-          AWS/Kafka dependencies mocked.
+          Ported a legacy JavaScript monthly reconciliation job to a <strong>Lakeflow</strong> worker
+          (Kafka-triggered, containerized) over <strong>Apache Iceberg</strong>, validating
+          <strong>3,800+</strong> identities against legacy output. Root-caused two long-existing
+          production discrepancies that had gone undetected.
         </p>
         <p class="project-modal-body">
-          Diagnosed and fixed <strong>5 production bugs</strong> in a live regulatory reporting system
-          submitting daily trading activity to a national financial regulator, including a full-day
-          snapshot-boundary offset and in-asset fee misattribution — restoring reconciliation from
-          <strong>0% to 107/107 currencies</strong> across three reporting days.
+          Led its expansion into an <strong>AI-agentic reconciliation workflow</strong> that classifies
+          breaks by failure mode and fans out investigation on residuals. Directing a second co-op
+          engineer, extracted a shared <strong>recon-kernel</strong>, proved it on a second reporting
+          domain, and authored the org-level <strong>RFC and ADR</strong> for scheduled alerting.
         </p>
         <p class="project-modal-body">
-          Engineered an offline <strong>reconciliation harness</strong> (Python, DuckDB) reproducing the
-          regulator's consistency checks against production data, auditing 10+ files across three report
-          jobs and surfacing silent data-loss bugs by severity.
+          Diagnosed and fixed <strong>5 critical production bugs</strong> in a live regulatory reporting
+          system (Python, AWS S3, Athena, PyIceberg) submitting daily trading activity to
+          <strong>Turkey's national regulator (MKK)</strong>, including a full-day snapshot-boundary
+          offset and in-asset fee misattribution — restoring reconciliation from
+          <strong>0% to 107/107 currencies</strong>.
         </p>
         <div class="project-modal-stack">
-          <span>Python</span><span>PyIceberg</span><span>AWS Athena</span><span>S3</span>
-          <span>Apache Iceberg</span><span>DuckDB</span><span>Kafka</span>
+          <span>Python</span><span>Apache Iceberg</span><span>Lakeflow</span><span>Kafka</span>
+          <span>AWS Athena</span><span>S3</span><span>PyIceberg</span>
         </div>
       </div>
     </div>

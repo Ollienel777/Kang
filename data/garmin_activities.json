@@ -1,8 +1,38 @@
 {
   "source": "garmin",
-  "fetched_at": "2026-09-03 12:33:47",
-  "count": 22,
+  "fetched_at": "2026-09-04 12:28:35",
+  "count": 25,
   "activities": [
+    {
+      "id": "garmin-24230387634",
+      "source": "garmin",
+      "name": "Strength Training",
+      "date": "2026-09-03",
+      "start": "2026-09-03 23:44:55",
+      "sport": "lift",
+      "moving_time": 3600.0,
+      "distance": 0.0
+    },
+    {
+      "id": "garmin-24230242774",
+      "source": "garmin",
+      "name": "New York Running",
+      "date": "2026-09-03",
+      "start": "2026-09-03 22:54:49",
+      "sport": "run",
+      "moving_time": 380.0,
+      "distance": 1310.550048828125
+    },
+    {
+      "id": "garmin-24229307235",
+      "source": "garmin",
+      "name": "Treadmill Running",
+      "date": "2026-09-03",
+      "start": "2026-09-03 19:43:25",
+      "sport": "run",
+      "moving_time": 339.0,
+      "distance": 1010.8300170898438
+    },
     {
       "id": "garmin-24213220297",
       "source": "garmin",

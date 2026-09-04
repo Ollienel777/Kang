@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-09-03",
+  "updated_at": "2026-09-04",
   "totals": {
-    "all_time_km": 1726.2,
-    "ytd_km": 994.0,
+    "all_time_km": 1728.6,
+    "ytd_km": 993.5,
     "ytd_runs": 125,
-    "ytd_time": "99:33:45"
+    "ytd_time": "99:30:46"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1726.2,
-      "ytd_km": 994.0,
+      "all_time_km": 1728.6,
+      "ytd_km": 993.5,
       "ytd_count": 125,
-      "ytd_time": "99:33:45"
+      "ytd_time": "99:30:46"
     },
     "swim": {
       "all_time_km": 3.9,
@@ -121,6 +121,24 @@
   },
   "recent_runs": [
     {
+      "id": "garmin-24230242774",
+      "name": "New York Running",
+      "distance": 1.31,
+      "time": "6:20",
+      "perf": "4:49 /km",
+      "date": "2026-09-03",
+      "pace": "4:49 /km"
+    },
+    {
+      "id": "garmin-24229307235",
+      "name": "Treadmill Running",
+      "distance": 1.01,
+      "time": "5:39",
+      "perf": "5:35 /km",
+      "date": "2026-09-03",
+      "pace": "5:35 /km"
+    },
+    {
       "id": "garmin-24213220297",
       "name": "New York Running",
       "distance": 9.06,
@@ -155,28 +173,26 @@
       "perf": "5:37 /km",
       "date": "2026-08-22",
       "pace": "5:37 /km"
-    },
-    {
-      "id": "garmin-24075660354",
-      "name": "Toronto Running",
-      "distance": 8.04,
-      "time": "49:22",
-      "perf": "6:08 /km",
-      "date": "2026-08-22",
-      "pace": "6:08 /km"
-    },
-    {
-      "id": "garmin-24030809365",
-      "name": "Toronto - Base",
-      "distance": 5.5,
-      "time": "32:22",
-      "perf": "5:53 /km",
-      "date": "2026-08-18",
-      "pace": "5:53 /km"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": "garmin-24230242774",
+        "name": "New York Running",
+        "distance": 1.31,
+        "time": "6:20",
+        "perf": "4:49 /km",
+        "date": "2026-09-03"
+      },
+      {
+        "id": "garmin-24229307235",
+        "name": "Treadmill Running",
+        "distance": 1.01,
+        "time": "5:39",
+        "perf": "5:35 /km",
+        "date": "2026-09-03"
+      },
       {
         "id": "garmin-24213220297",
         "name": "New York Running",
@@ -208,22 +224,6 @@
         "time": "30:24",
         "perf": "5:37 /km",
         "date": "2026-08-22"
-      },
-      {
-        "id": "garmin-24075660354",
-        "name": "Toronto Running",
-        "distance": 8.04,
-        "time": "49:22",
-        "perf": "6:08 /km",
-        "date": "2026-08-22"
-      },
-      {
-        "id": "garmin-24030809365",
-        "name": "Toronto - Base",
-        "distance": 5.5,
-        "time": "32:22",
-        "perf": "5:53 /km",
-        "date": "2026-08-18"
       }
     ],
     "swim": [
@@ -358,6 +358,7 @@
     ]
   },
   "daily_km": {
+    "2026-09-03": 2.32,
     "2026-09-02": 9.06,
     "2026-08-31": 10.15,
     "2026-08-30": 0.81,
@@ -618,6 +619,10 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-09-03": {
+      "lift": 60.0,
+      "run": 2.32
+    },
     "2026-09-02": {
       "run": 9.06
     },

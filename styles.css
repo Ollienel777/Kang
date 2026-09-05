@@ -273,13 +273,13 @@ html, body {
   opacity: 0.75;
 }
 
-/* Skrypt Health has no photo yet — placeholder art keeps the column reading
-   as a card rather than an empty panel. Swap the url() when a real image lands. */
+/* Team dinner photo. It fills the column height exactly, so only the
+   horizontal position matters and centre keeps the table and faces in frame. */
 .col-bg--skrypt {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/placeholder.svg') center / cover no-repeat;
-  opacity: 0.55;
+    url('Images/ColumnThumbnail/Skrypt.webp') center / cover no-repeat;
+  opacity: 0.6;
 }
 
 /* The prize shot is the cover: in a 380px column it keeps both of us in frame,

@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-09-05",
+  "updated_at": "2026-09-06",
   "totals": {
-    "all_time_km": 1728.6,
-    "ytd_km": 990.5,
+    "all_time_km": 1739.4,
+    "ytd_km": 998.4,
     "ytd_runs": 124,
-    "ytd_time": "99:15:44"
+    "ytd_time": "100:06:25"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1728.6,
-      "ytd_km": 990.5,
+      "all_time_km": 1739.4,
+      "ytd_km": 998.4,
       "ytd_count": 124,
-      "ytd_time": "99:15:44"
+      "ytd_time": "100:06:25"
     },
     "swim": {
       "all_time_km": 3.9,
@@ -121,6 +121,15 @@
   },
   "recent_runs": [
     {
+      "id": "garmin-24247403693",
+      "name": "New York Running",
+      "distance": 10.85,
+      "time": "1:07:07",
+      "perf": "6:11 /km",
+      "date": "2026-09-05",
+      "pace": "6:11 /km"
+    },
+    {
       "id": "garmin-24230242774",
       "name": "New York Running",
       "distance": 1.31,
@@ -164,19 +173,18 @@
       "perf": "5:48 /km",
       "date": "2026-08-30",
       "pace": "5:48 /km"
-    },
-    {
-      "id": "garmin-24076682905",
-      "name": "Toronto Running",
-      "distance": 5.41,
-      "time": "30:24",
-      "perf": "5:37 /km",
-      "date": "2026-08-22",
-      "pace": "5:37 /km"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": "garmin-24247403693",
+        "name": "New York Running",
+        "distance": 10.85,
+        "time": "1:07:07",
+        "perf": "6:11 /km",
+        "date": "2026-09-05"
+      },
       {
         "id": "garmin-24230242774",
         "name": "New York Running",
@@ -216,14 +224,6 @@
         "time": "4:44",
         "perf": "5:48 /km",
         "date": "2026-08-30"
-      },
-      {
-        "id": "garmin-24076682905",
-        "name": "Toronto Running",
-        "distance": 5.41,
-        "time": "30:24",
-        "perf": "5:37 /km",
-        "date": "2026-08-22"
       }
     ],
     "swim": [
@@ -358,6 +358,7 @@
     ]
   },
   "daily_km": {
+    "2026-09-05": 10.85,
     "2026-09-03": 2.32,
     "2026-09-02": 9.06,
     "2026-08-31": 10.15,
@@ -619,6 +620,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-09-05": {
+      "run": 10.85
+    },
     "2026-09-03": {
       "lift": 60.0,
       "run": 2.32

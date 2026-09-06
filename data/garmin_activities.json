@@ -1,8 +1,18 @@
 {
   "source": "garmin",
-  "fetched_at": "2026-09-05 11:35:55",
-  "count": 25,
+  "fetched_at": "2026-09-06 11:56:00",
+  "count": 26,
   "activities": [
+    {
+      "id": "garmin-24247403693",
+      "source": "garmin",
+      "name": "New York Running",
+      "date": "2026-09-05",
+      "start": "2026-09-05 08:01:14",
+      "sport": "run",
+      "moving_time": 4027.0880126953125,
+      "distance": 10851.0400390625
+    },
     {
       "id": "garmin-24230387634",
       "source": "garmin",

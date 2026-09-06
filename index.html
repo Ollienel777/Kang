@@ -380,6 +380,13 @@ challenge is just figuring out where to start.
           YOLOv8 inference. Supabase Auth with ES256 JWKS verification handles per-user
           data isolation and Row-Level Security.
         </p>
+        <p class="project-modal-body">
+          <strong>Founded and lead a team of 4 engineers</strong> on the project, and established its
+          engineering process: <strong>Agile</strong> sprints over a scoped issue board, protected
+          main, and <strong>CI gates</strong> (ruff, mypy, pytest, ESLint) on every merge. Built an
+          <strong>autonomous overnight AI agent loop</strong> that clears non-blocking tickets, opens
+          PRs with multi-pass automated review, and reports each morning for human sign-off.
+        </p>
         <div class="project-modal-stack">
           <span>Python</span><span>FastAPI</span><span>Celery</span>
           <span>Next.js</span><span>TypeScript</span><span>YOLOv8-pose</span>
@@ -566,23 +573,29 @@ challenge is just figuring out where to start.
         <h2 class="project-modal-title">Aquanow</h2>
         <p class="project-modal-sub">Backend &amp; Data Engineering Co-op &mdash; Toronto, ON</p>
         <p class="project-modal-body">
-          Ported a legacy JavaScript monthly reconciliation job to a <strong>Lakeflow</strong> worker
-          (Kafka-triggered, containerized) over <strong>Apache Iceberg</strong>, validating
-          <strong>3,800+</strong> identities against legacy output. Root-caused two long-existing
-          production discrepancies that had gone undetected.
+          Migrated the <strong>company-wide month-end client reconciliation</strong> from a legacy
+          JavaScript job to a containerized, Kafka-triggered <strong>Lakeflow</strong> worker (an
+          internal job framework) over <strong>Apache Iceberg</strong>, validating
+          <strong>3,800+</strong> account identities against legacy output. Root-caused two
+          long-standing production discrepancies that had gone undetected.
         </p>
         <p class="project-modal-body">
-          Led its expansion into an <strong>AI-agentic reconciliation workflow</strong> that classifies
-          breaks by failure mode and fans out investigation on residuals. Directing a second co-op
-          engineer, extracted a shared <strong>recon-kernel</strong>, proved it on a second reporting
-          domain, and authored the org-level <strong>RFC and ADR</strong> for scheduled alerting.
+          Designed and built an <strong>AI-agent reconciliation workflow</strong> that classifies
+          breaks by failure mode and <strong>auto-investigates unexplained residuals</strong>,
+          producing review-ready reports for the finance team.
+        </p>
+        <p class="project-modal-body">
+          Extracted a shared <strong>reconciliation library</strong>, reused it on a second reporting
+          domain alongside a second co-op engineer, and authored the org-level
+          <strong>RFC and ADR</strong> for scheduled alerting — proposing it as a
+          <strong>company-wide pattern</strong>.
         </p>
         <p class="project-modal-body">
           Diagnosed and fixed <strong>5 critical production bugs</strong> in a live regulatory reporting
-          system (Python, AWS S3, Athena, PyIceberg) submitting daily trading activity to
-          <strong>Turkey's national regulator (MKK)</strong>, including a full-day snapshot-boundary
-          offset and in-asset fee misattribution — restoring reconciliation from
-          <strong>0% to 107/107 currencies</strong>.
+          pipeline (Python, AWS S3/Athena, PyIceberg) submitting daily trading activity to
+          <strong>Turkey's securities depository (MKK)</strong>, including a full-day snapshot-boundary
+          offset and an in-asset fee misattribution — restoring reconciliation from
+          <strong>0 to all 107 currencies</strong>.
         </p>
         <div class="project-modal-stack">
           <span>Python</span><span>Apache Iceberg</span><span>Lakeflow</span><span>Kafka</span>

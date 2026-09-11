@@ -1,8 +1,18 @@
 {
   "source": "garmin",
-  "fetched_at": "2026-09-10 12:40:56",
-  "count": 30,
+  "fetched_at": "2026-09-11 12:34:17",
+  "count": 31,
   "activities": [
+    {
+      "id": "garmin-24316559627",
+      "source": "garmin",
+      "name": "Treadmill Running",
+      "date": "2026-09-10",
+      "start": "2026-09-10 22:14:42",
+      "sport": "run",
+      "moving_time": 1115.35400390625,
+      "distance": 3022.820068359375
+    },
     {
       "id": "garmin-24303184373",
       "source": "garmin",

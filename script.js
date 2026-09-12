@@ -104,23 +104,12 @@ function preloadImages(urls) {
         const startAt = i * STAGGER;
 
         setTimeout(() => {
-          col.classList.add('is-sliding');
           col.style.transition =
             `transform ${SLIDE_DUR}ms cubic-bezier(0.16, 1, 0.3, 1), `
-          + `opacity 280ms ease, `
-          + `box-shadow ${SLIDE_DUR}ms ease`;
+          + `opacity 280ms ease`;
           col.style.transform = 'translateX(0)';
           col.style.opacity   = '1';
         }, startAt);
-
-        setTimeout(() => {
-          col.classList.remove('is-sliding');
-
-          const flash = document.createElement('div');
-          flash.className = 'col-land-flash';
-          col.appendChild(flash);
-          flash.addEventListener('animationend', () => flash.remove());
-        }, startAt + SLIDE_DUR);
       });
 
       const allDone = (cols.length - 1) * STAGGER + SLIDE_DUR + 60;

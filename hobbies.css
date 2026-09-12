@@ -72,7 +72,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
   border: none;
   border-right: 1px solid var(--gray-mid);
   color: var(--gray-lite);
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -124,7 +124,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 }
 
 .hobby-strava-link {
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -154,7 +154,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
   border: 1px solid var(--gray-mid);
   background: transparent;
   color: var(--gray-lite);
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.63rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -243,7 +243,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 }
 
 .hobby-activity-label {
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -264,7 +264,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 }
 
 .hobby-subsection-title {
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -300,7 +300,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 .hobby-best-row:hover { background: var(--gray); }
 
 .hobby-best-dist {
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--white);
@@ -310,7 +310,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
   font-size: 1rem;
   font-weight: 700;
   color: var(--white);
-  font-family: var(--font-head);
+  font-family: var(--font-body);
 }
 .hobby-best-pace {
   font-size: 0.75rem;
@@ -415,7 +415,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 
 .heatmap-month-label {
   position: absolute;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -580,7 +580,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
   border-radius: 4px;
   color: var(--gray-lite);
   cursor: pointer;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -692,7 +692,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 
 .poker-photo-label {
   display: block;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -723,7 +723,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 
 .hobby-placeholder-label {
   display: block;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.22em;

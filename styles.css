@@ -70,7 +70,7 @@ html, body {
   border: 1.5px solid transparent;
   border-radius: 999px;
   cursor: pointer;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -103,7 +103,7 @@ html, body {
 }
 
 .nav-cta {
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -152,7 +152,7 @@ html, body {
 
 .filter-btn {
   flex-shrink: 0;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -214,14 +214,9 @@ html, body {
   background-size: cover;
   background-position: center;
   opacity: 0.15;
-  transition: opacity 0.4s ease, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.4s ease;
   z-index: 0;
-  will-change: transform;
 }
-
-/* slow Ken Burns push-in while hovered */
-.col-project:hover .col-bg,
-.col-project.is-in-view .col-bg { transform: scale(1.07); }
 
 .col-bg--hero {
   background:
@@ -301,21 +296,6 @@ html, body {
   background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 45%, var(--black) 100%);
   opacity: 0.9;
 }
-/* animated red bloom that breathes behind the CTA */
-.col-end::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse at 30% 78%, rgba(191,44,58,0.55) 0%, transparent 62%);
-  animation: end-bloom 6s ease-in-out infinite alternate;
-}
-@keyframes end-bloom {
-  from { opacity: 0.5; transform: scale(1); }
-  to   { opacity: 1;   transform: scale(1.12); }
-}
-
 /* Bigger, louder end statement */
 .col-end .col-title--end {
   font-size: clamp(2.8rem, 5vw, 4rem);
@@ -403,11 +383,6 @@ html, body {
   display: flex;
   align-items: center;
   gap: 8px;
-  animation: hint-nudge 2.6s ease-in-out infinite;
-}
-@keyframes hint-nudge {
-  0%, 100% { transform: translateX(0);   opacity: 0.65; }
-  50%      { transform: translateX(6px); opacity: 1; }
 }
 
 /* Red left border accent on hero */
@@ -430,20 +405,13 @@ html, body {
   overflow: hidden;
 }
 
-@keyframes hero-float {
-  from { transform: translateY(10%); }
-  to   { transform: translateY(-10%); }
-}
-
 .hero-slide {
   position: absolute;
-  inset: -12% 0;      /* extra vertical room so float doesn't expose edges */
+  inset: 0;
   background-size: cover;
   background-position: center bottom;
   opacity: 0;
   transition: opacity 1.4s ease;
-  animation: hero-float 12s ease-in-out infinite alternate;
-  will-change: transform, opacity;
 }
 .hero-slide.is-active { opacity: 0.6; }
 
@@ -458,58 +426,6 @@ html, body {
   opacity: 0.9;
 }
 
-/* Radial red bloom */
-.col-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 30% 80%, rgba(191,44,58,0.6) 0%, rgba(191,44,58,0.12) 45%, transparent 68%);
-  opacity: 0;
-  z-index: 0;
-  pointer-events: none;
-  transition: opacity 0.6s ease;
-}
-.col-hero:hover::after { opacity: 1; }
-
-/* Scan line sweep */
-.col-hero::before {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  left: -80%;
-  width: 55%;
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.03) 50%, transparent 100%);
-  z-index: 2;
-  pointer-events: none;
-}
-.col-hero:hover::before {
-  animation: hero-scan 2.8s ease-in-out infinite;
-}
-@keyframes hero-scan {
-  0%   { left: -80%; opacity: 0; }
-  8%   { opacity: 1; }
-  92%  { opacity: 1; }
-  100% { left: 120%; opacity: 0; }
-}
-
-/* Border accent grows and glows */
-.col-hero .col-inner::before {
-  transition: top 0.5s ease, bottom 0.5s ease, box-shadow 0.5s ease;
-}
-.col-hero:hover .col-inner::before {
-  top: 4%;
-  bottom: 4%;
-  box-shadow: 0 0 14px rgba(191,44,58,0.8), 0 0 40px rgba(191,44,58,0.3);
-}
-
-/* Name and subtitle lift */
-.hero-name { transition: text-shadow 0.5s ease, letter-spacing 0.4s ease; }
-.col-hero:hover .hero-name {
-  text-shadow: 0 0 80px rgba(191,44,58,0.4);
-  letter-spacing: 0em;
-}
-.hero-tag { transition: color 0.4s ease; }
-.col-hero:hover .hero-tag { color: var(--white); }
 
 /* ── ABOUT COLUMN ── */
 .col-title {
@@ -561,16 +477,6 @@ html, body {
   padding-left: 14px;
   border-left: 2px solid var(--red);
   cursor: default;
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 0.3s ease, box-shadow 0.3s ease,
-              background 0.3s ease;
-}
-/* individual block hover: border glows, label brightens, block nudges right */
-.skill-block:hover {
-  transform: translateX(6px);
-  border-left-color: var(--red);
-  box-shadow: -2px 0 0 0 var(--red), -8px 0 20px -6px rgba(191,44,58,0.7);
-  background: linear-gradient(to right, rgba(191,44,58,0.08), transparent 80%);
 }
 
 .skill-cat {
@@ -579,12 +485,9 @@ html, body {
   letter-spacing: 0.2em;
   color: var(--red);
   text-transform: uppercase;
-  transition: color 0.25s ease, letter-spacing 0.3s ease;
+  transition: color 0.25s ease;
 }
-.skill-block:hover .skill-cat {
-  color: var(--white);
-  letter-spacing: 0.26em;
-}
+.skill-block:hover .skill-cat { color: var(--white); }
 
 .skill-list {
   font-size: 0.78rem;
@@ -593,29 +496,6 @@ html, body {
   transition: color 0.25s ease;
 }
 .skill-block:hover .skill-list { color: var(--off-white); }
-
-/* staggered entrance for the four blocks when the column opens */
-.skills-grid .skill-block {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-.col-skills:hover .skills-grid .skill-block,
-.col-skills.is-in-view .skills-grid .skill-block {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-.col-skills:hover .skills-grid .skill-block:nth-child(1),
-.col-skills.is-in-view .skills-grid .skill-block:nth-child(1) { transition-delay: 0.10s; }
-.col-skills:hover .skills-grid .skill-block:nth-child(2),
-.col-skills.is-in-view .skills-grid .skill-block:nth-child(2) { transition-delay: 0.18s; }
-.col-skills:hover .skills-grid .skill-block:nth-child(3),
-.col-skills.is-in-view .skills-grid .skill-block:nth-child(3) { transition-delay: 0.26s; }
-.col-skills:hover .skills-grid .skill-block:nth-child(4),
-.col-skills.is-in-view .skills-grid .skill-block:nth-child(4) { transition-delay: 0.34s; }
-/* restore instant hover feedback once revealed (override the entrance delay) */
-.col-skills:hover .skills-grid .skill-block:hover { transition-delay: 0s; }
 
 /* ── PROJECT COLUMNS ── */
 .project-num {
@@ -708,7 +588,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -718,13 +598,10 @@ html, body {
   padding: 0;
   pointer-events: none;
   opacity: 0.6;
-  transition: opacity 0.3s ease, letter-spacing 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 .col-project:hover .project-open-cue,
-.col-project.is-in-view .project-open-cue {
-  opacity: 1;
-  letter-spacing: 0.28em;
-}
+.col-project.is-in-view .project-open-cue { opacity: 1; }
 
 /* ── PROJECT FILTER HIDE ── */
 .col-project {
@@ -796,53 +673,17 @@ html, body {
   max-height: 90px;
   opacity: 1;
   margin-bottom: -12px;
-  transition-delay: 0.05s;
 }
 .col-project:hover .project-details {
   max-height: 420px;
-  transition-delay: 0.08s;
 }
 
 .col-project:hover { background: rgba(191,44,58,0.04); }
 
-/* red accent bar draws in under the title as it lifts */
-.col-project .col-title::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 3px;
-  background: var(--red);
-  margin-top: 14px;
-  transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.col-project:hover .col-title::after,
-.col-project.is-in-view .col-title::after { width: 52px; transition-delay: 0.12s; }
-
-/* details content cascades up as the panel expands */
-.project-details .col-body,
-.project-details .project-tags,
-.project-details .project-link {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.col-project:hover .project-details .col-body,
-.col-project.is-in-view .project-details .col-body {
-  opacity: 1; transform: translateY(0); transition-delay: 0.14s;
-}
-.col-project:hover .project-details .project-tags,
-.col-project.is-in-view .project-details .project-tags {
-  opacity: 1; transform: translateY(0); transition-delay: 0.24s;
-}
-.col-project:hover .project-details .project-link,
-.col-project.is-in-view .project-details .project-link {
-  opacity: 1; transform: translateY(0); transition-delay: 0.34s;
-}
-
 /* ── END COLUMN ── */
 .cta-btn {
   display: inline-block;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -936,9 +777,9 @@ html, body {
 }
 .hobby-label {
   display: inline-block;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.7rem;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--red);
@@ -1224,7 +1065,7 @@ html, body {
 }
 
 .project-modal-num {
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -1380,7 +1221,7 @@ html, body {
   border: none;
   border-bottom: 1px solid rgba(255,255,255,0.05);
   cursor: pointer;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1458,95 +1299,29 @@ html, body {
 
 /* Hero column accents */
 .col-hero.is-in-view .col-bg--hero     { opacity: 0.9; }
-.col-hero.is-in-view::after            { opacity: 1; }
-.col-hero.is-in-view .col-inner::before {
-  top: 4%;
-  bottom: 4%;
-  box-shadow: 0 0 14px rgba(191,44,58,0.8), 0 0 40px rgba(191,44,58,0.3);
-}
-.col-hero.is-in-view .hero-name {
-  text-shadow: 0 0 80px rgba(191,44,58,0.4);
-}
 
 /* GPU hint */
 .col { will-change: transform, opacity; }
 
-/* Glowing red leading edge while a column is sliding in */
-.col.is-sliding {
-  box-shadow:
-    4px 0 0 0 var(--red),
-    4px 0 24px 4px rgba(191,44,58,0.55);
-  z-index: 20;
-}
-
-/* Flash overlay that fires when a column lands */
-@keyframes col-land-flash {
-  0%   { opacity: 0.18; }
-  100% { opacity: 0; }
-}
-.col-land-flash {
-  position: absolute;
-  inset: 0;
-  background: var(--red);
-  pointer-events: none;
-  z-index: 15;
-  animation: col-land-flash 0.45s ease forwards;
-}
-
-/* Content inside columns rises up after all columns land */
+/* Content inside columns fades in once the columns have landed */
 .col-inner {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.55s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.6s ease;
 }
-.is-content-revealed .col-inner { opacity: 1; transform: translateY(0); }
-
-.is-content-revealed .col:nth-child(1) .col-inner { transition-delay: 0.00s; }
-.is-content-revealed .col:nth-child(2) .col-inner { transition-delay: 0.07s; }
-.is-content-revealed .col:nth-child(3) .col-inner { transition-delay: 0.14s; }
-.is-content-revealed .col:nth-child(4) .col-inner { transition-delay: 0.21s; }
-.is-content-revealed .col:nth-child(5) .col-inner { transition-delay: 0.28s; }
-.is-content-revealed .col:nth-child(6) .col-inner { transition-delay: 0.35s; }
-.is-content-revealed .col:nth-child(7) .col-inner { transition-delay: 0.42s; }
+.is-content-revealed .col-inner { opacity: 1; }
 
 
 /* ── KEYBOARD SCROLL FOCUS ── */
 body:focus { outline: none; }
 
 /* ── REDUCED MOTION ──
-   Kill continuous/large-scale motion for users who ask for it, but keep
-   the reveals functional as instant opacity fades so nothing stays hidden. */
+   Little motion remains, so a blanket rule is now the right tool: every
+   transition and animation collapses to instant. Reveals still happen —
+   they just don't animate. */
 @media (prefers-reduced-motion: reduce) {
-  /* stop all looping animations */
-  .hero-slide,
-  .hero-scroll-hint,
-  .col-end::after,
-  .col-hero:hover::before {
+  *, *::before, *::after {
     animation: none !important;
-  }
-
-  /* no Ken Burns zoom */
-  .col-project:hover .col-bg,
-  .col-project.is-in-view .col-bg { transform: none !important; }
-
-  /* content reveal: fade only, no rise */
-  .col-inner { transform: none !important; }
-
-  /* cascade + cue: appear in place, no translate, minimal delay */
-  .project-details .col-body,
-  .project-details .project-tags,
-  .project-details .project-link,
-  .project-open-cue,
-  .skills-grid .skill-block,
-  .col-skills:hover .skills-grid .skill-block,
-  .col-skills.is-in-view .skills-grid .skill-block {
-    transform: none !important;
-    transition-duration: 0.2s !important;
+    transition-duration: 0.01ms !important;
     transition-delay: 0s !important;
   }
-  /* keep skill-block hover feedback subtle (no shift) */
-  .skill-block:hover { transform: none !important; }
-
-  /* hero float keyframe target sits still */
-  .hero-slide { transform: none !important; }
 }

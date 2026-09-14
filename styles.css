@@ -274,37 +274,43 @@ html, body {
 }
 
 .col-bg--end {
-  background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 45%, var(--black) 100%);
-  opacity: 0.9;
-}
-/* Bigger, louder end statement */
-.col-end .col-title--end {
-  font-size: clamp(2.8rem, 5vw, 4rem);
-  margin-bottom: 20px;
+  /* Quiet close: near-black field with a trace of red in one corner. */
+  background: linear-gradient(160deg, var(--red-dark) 0%, var(--black) 55%);
+  opacity: 0.35;
 }
 
+/* The email is the one action in the column, so it carries the weight. */
 .end-email {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   color: var(--white);
   text-decoration: none;
-  margin-bottom: 24px;
-  padding-bottom: 3px;
-  border-bottom: 1.5px solid rgba(255,255,255,0.35);
-  transition: border-color 0.25s ease, color 0.25s ease;
+  margin-bottom: 28px;
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid var(--red);
+  transition: color 0.25s ease, border-color 0.25s ease;
   width: fit-content;
 }
-.end-email:hover { color: var(--white); border-color: var(--white); }
+.end-email:hover { color: var(--red); }
 
-.col-end .cta-btn--end {
-  background: var(--white);
-  color: var(--red);
+.end-more {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-lite);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   align-self: flex-start;
+  transition: color 0.2s ease;
 }
-.col-end .cta-btn--end:hover { background: var(--off-white); color: var(--red-dark); }
+.end-more:hover { color: var(--white); }
 
 /* ── COLUMN INNER (content sits above bg + carousel) ── */
 .col-inner {

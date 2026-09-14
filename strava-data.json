@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-09-13",
+  "updated_at": "2026-09-14",
   "totals": {
-    "all_time_km": 1764.8,
-    "ytd_km": 1008.1,
-    "ytd_runs": 124,
-    "ytd_time": "101:03:11"
+    "all_time_km": 1768.3,
+    "ytd_km": 1011.5,
+    "ytd_runs": 126,
+    "ytd_time": "101:27:05"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1764.8,
-      "ytd_km": 1008.1,
-      "ytd_count": 124,
-      "ytd_time": "101:03:11"
+      "all_time_km": 1768.3,
+      "ytd_km": 1011.5,
+      "ytd_count": 126,
+      "ytd_time": "101:27:05"
     },
     "swim": {
       "all_time_km": 3.9,
@@ -121,6 +121,24 @@
   },
   "recent_runs": [
     {
+      "id": "garmin-24352181466",
+      "name": "Waterloo Running",
+      "distance": 1.97,
+      "time": "16:15",
+      "perf": "8:15 /km",
+      "date": "2026-09-13",
+      "pace": "8:15 /km"
+    },
+    {
+      "id": "garmin-24351434866",
+      "name": "Waterloo Running",
+      "distance": 1.53,
+      "time": "7:38",
+      "perf": "4:59 /km",
+      "date": "2026-09-13",
+      "pace": "4:59 /km"
+    },
+    {
       "id": "garmin-24340257617",
       "name": "Waterloo Running",
       "distance": 3.74,
@@ -155,28 +173,26 @@
       "perf": "5:54 /km",
       "date": "2026-09-09",
       "pace": "5:54 /km"
-    },
-    {
-      "id": "garmin-24271901261",
-      "name": "Treadmill Running",
-      "distance": 3.0,
-      "time": "17:26",
-      "perf": "5:49 /km",
-      "date": "2026-09-07",
-      "pace": "5:49 /km"
-    },
-    {
-      "id": "garmin-24247403693",
-      "name": "New York Running",
-      "distance": 10.85,
-      "time": "1:07:07",
-      "perf": "6:11 /km",
-      "date": "2026-09-05",
-      "pace": "6:11 /km"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": "garmin-24352181466",
+        "name": "Waterloo Running",
+        "distance": 1.97,
+        "time": "16:15",
+        "perf": "8:15 /km",
+        "date": "2026-09-13"
+      },
+      {
+        "id": "garmin-24351434866",
+        "name": "Waterloo Running",
+        "distance": 1.53,
+        "time": "7:38",
+        "perf": "4:59 /km",
+        "date": "2026-09-13"
+      },
       {
         "id": "garmin-24340257617",
         "name": "Waterloo Running",
@@ -208,22 +224,6 @@
         "time": "59:14",
         "perf": "5:54 /km",
         "date": "2026-09-09"
-      },
-      {
-        "id": "garmin-24271901261",
-        "name": "Treadmill Running",
-        "distance": 3.0,
-        "time": "17:26",
-        "perf": "5:49 /km",
-        "date": "2026-09-07"
-      },
-      {
-        "id": "garmin-24247403693",
-        "name": "New York Running",
-        "distance": 10.85,
-        "time": "1:07:07",
-        "perf": "6:11 /km",
-        "date": "2026-09-05"
       }
     ],
     "swim": [
@@ -358,6 +358,7 @@
     ]
   },
   "daily_km": {
+    "2026-09-13": 3.5,
     "2026-09-12": 9.34,
     "2026-09-10": 3.02,
     "2026-09-09": 10.02,
@@ -624,6 +625,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-09-13": {
+      "run": 3.5
+    },
     "2026-09-12": {
       "run": 9.34
     },

@@ -1,5 +1,6 @@
 <!-- Shared resume modal — injected into both index.html and hobbies.html
-     by resume-include.js. Edit this ONE file to update the on-page resume. -->
+     by resume-include.js. Edit this ONE file to update the on-page resume.
+     Mirrors Nelson_Kang_Resume.pdf; the project modals carry the longer versions. -->
 <div class="modal" id="resume-modal">
   <div class="modal-box modal-box--wide">
     <button class="modal-close">✕</button>
@@ -22,9 +23,18 @@
         </div>
         <span class="resume-role">Bachelor of Computing and Financial Management (CFM)</span>
         <ul class="resume-bullets">
-          <li><strong>Coursework:</strong> Advanced Functional Programming (Racket), Data Structures &amp; Algorithms (C), Linux/Bash/Git Tooling, Linear Algebra, Calculus</li>
           <li><strong>Activities:</strong> Poker Club Executive, Competitive Intramural Volleyball Captain, Training for Ironman 70.3 Muskoka 2027</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3>Technical Skills</h3>
+      <div class="resume-skills-list">
+        <div class="resume-skill-row"><span class="resume-skill-cat">Languages</span><span>Python, C#, C, C++, SQL, TypeScript, JavaScript, HTML/CSS</span></div>
+        <div class="resume-skill-row"><span class="resume-skill-cat">Data &amp; Infrastructure</span><span>AWS (S3, Athena, EventBridge, CodePipeline), Apache Iceberg, PyIceberg, DuckDB, Kafka, PostgreSQL, SQL Server, Redis, Docker, Terraform</span></div>
+        <div class="resume-skill-row"><span class="resume-skill-cat">Frameworks &amp; Tools</span><span>FastAPI, Next.js, Celery, Modal, Supabase, Pandas, NumPy, Power BI, Postman, Git, Linux</span></div>
+        <div class="resume-skill-row"><span class="resume-skill-cat">ML / CV</span><span>PyTorch, YOLOv8, Roboflow, OpenCV, FFmpeg</span></div>
       </div>
     </div>
 
@@ -37,10 +47,10 @@
         </div>
         <span class="resume-role">Backend &amp; Data Engineering Co-op &mdash; Toronto, ON</span>
         <ul class="resume-bullets">
-          <li>Migrated the <strong>company-wide month-end client reconciliation</strong> from a legacy JavaScript job to a containerized, <strong>Kafka</strong>-triggered <strong>Lakeflow</strong> worker (internal job framework) over <strong>Apache Iceberg</strong>, validating <strong>3,800+</strong> account identities against legacy output. Root-caused <strong>two long-standing production discrepancies</strong> that had gone undetected.</li>
-          <li>Designed and built an <strong>AI-agent reconciliation workflow</strong> that classifies breaks by failure mode and <strong>auto-investigates unexplained residuals</strong>, producing review-ready reports for the finance team.</li>
-          <li>Extracted a shared <strong>reconciliation library</strong>, reused it on a <strong>second reporting domain</strong> alongside a second co-op engineer, and authored the org-level <strong>RFC and ADR</strong> for scheduled alerting, proposing it as a <strong>company-wide pattern</strong>.</li>
-          <li>Diagnosed and fixed <strong>5 critical production bugs</strong> in a live regulatory reporting pipeline (<strong>Python, AWS S3/Athena, PyIceberg</strong>) submitting daily trading activity to <strong>Turkey's securities depository (MKK)</strong>, including a full-day snapshot-boundary offset and an in-asset fee misattribution. Restored reconciliation from <strong>0 to all 107 currencies</strong>.</li>
+          <li>Migrated the company-wide month-end client reconciliation from a legacy JavaScript job to a containerized, <strong>Kafka</strong>-triggered <strong>Lakeflow</strong> worker (internal job framework) over <strong>Apache Iceberg</strong>, validating <strong>3,800+</strong> account identities against legacy output; root-caused <strong>two long-standing production discrepancies</strong>.</li>
+          <li>Designed and built an <strong>AI-agent reconciliation workflow</strong> that classifies breaks by failure mode and auto-investigates unexplained residuals, producing review-ready reports for the finance team.</li>
+          <li>Extracted a shared <strong>reconciliation library</strong>, reused it on a second reporting domain alongside a second co-op engineer, and authored the org-level <strong>RFC and ADR</strong> proposing it as a company-wide pattern.</li>
+          <li>Diagnosed and fixed <strong>5 critical production bugs</strong> in a live regulatory reporting pipeline (<strong>Python, AWS S3/Athena, PyIceberg</strong>) submitting daily trading activity to <strong>Turkey&rsquo;s securities depository (MKK)</strong>, including a full-day snapshot-boundary offset and an in-asset fee misattribution; restored reconciliation from <strong>0 to all 107 currencies</strong>.</li>
         </ul>
       </div>
       <div class="resume-item">
@@ -50,9 +60,8 @@
         </div>
         <span class="resume-role">Software Engineer Intern &mdash; Ottawa, ON</span>
         <ul class="resume-bullets">
-          <li>Developed <strong>4 ETL pipelines</strong> using <strong>C# and SQL Server</strong> to extract Jira data from JSON payloads, transform custom field mappings, and load into reporting tables; used <strong>temporal tables</strong> for full change-history tracking.</li>
-          <li>Audited and catalogued all existing team pipelines, identifying faulty custom-field mappings producing <strong>NULL data</strong>; created a reference spreadsheet that became the team's primary <strong>pipeline debugging resource</strong>.</li>
-          <li>Maintained <strong>Power BI dashboards</strong> for trouble report visibility, supporting stakeholder reporting and data-driven decision-making across the BI team.</li>
+          <li>Built <strong>4 C#/SQL Server ETL pipelines</strong> joining multiple Jira endpoints with internal tables into reporting tables, using <strong>temporal tables</strong> for full change-history tracking.</li>
+          <li>Audited and catalogued all team pipelines, documenting faulty custom-field mappings in a reference that became the team&rsquo;s standard <strong>debugging resource</strong>; maintained <strong>Power BI</strong> dashboards for trouble-report visibility.</li>
         </ul>
       </div>
     </div>
@@ -64,12 +73,12 @@
           <span class="resume-place">ClipFarm — Automated Volleyball Highlight Generator</span>
           <span class="resume-date">Mar 2026 – Present</span>
         </div>
-        <span class="resume-role">Python, FastAPI, Celery, Redis, Modal, Next.js, TypeScript, YOLOv8-pose, Roboflow, PostgreSQL, Docker, Cloudflare R2</span>
+        <span class="resume-role">Python, FastAPI, Celery, Redis, Modal, TypeScript, YOLOv8-pose, Roboflow, PostgreSQL, Docker, R2</span>
         <ul class="resume-bullets">
-          <li><strong>Founded and lead a team of 4 engineers</strong> building a <strong>multi-signal highlight pipeline</strong>: a custom-trained <strong>Roboflow</strong> ball detector tracks trajectory to bound rallies, <strong>audio cheer detection</strong> and rally-shape scoring gate highlights, and <strong>YOLOv8-pose</strong> classifies player actions.</li>
-          <li>Containerized with <strong>Docker Compose</strong>; <strong>FastAPI</strong> serves auth-gated endpoints, <strong>Celery + Redis</strong> distributes processing jobs, and <strong>Modal</strong> offloads GPU inference. Auth via <strong>Supabase JWKS</strong> with <strong>Row-Level Security</strong>.</li>
-          <li>Implemented the frontend in <strong>Next.js + TypeScript</strong> with a filterable clip grid, inline multi-label correction UI for future model training, clip trimming with background re-cut via Celery, and lazy-loaded thumbnails.</li>
-          <li>Established the team's engineering process: <strong>Agile</strong> sprints over a scoped issue board, <strong>protected main</strong>, and <strong>CI gates</strong> (ruff, mypy, pytest, ESLint) on every merge. Built an <strong>autonomous overnight AI agentic loop</strong> that clears non-blocking tickets, opens PRs with multi-pass automated review, and reports each morning for human sign-off.</li>
+          <li><strong>Founded and lead a team of 4 engineers</strong> building a <strong>multi-signal highlight pipeline</strong>: a custom-trained ball detector bounds rallies by trajectory, audio cheer detection and rally-shape scoring gate highlights, and <strong>YOLOv8-pose</strong> classifies player actions.</li>
+          <li>Containerized with <strong>Docker Compose</strong>: <strong>FastAPI</strong> serves auth-gated endpoints, <strong>Celery + Redis</strong> distributes jobs, <strong>Modal</strong> offloads GPU inference; auth via <strong>Supabase JWKS</strong> with <strong>Row-Level Security</strong>.</li>
+          <li>Built the <strong>Next.js + TypeScript</strong> frontend: filterable clip grid, inline multi-label correction UI feeding future training, background clip re-cut via Celery, and lazy-loaded thumbnails.</li>
+          <li>Built an <strong>autonomous overnight AI agent loop</strong> that clears non-blocking tickets, opens PRs with multi-pass automated review, and reports each morning for human sign-off.</li>
         </ul>
       </div>
       <div class="resume-item">
@@ -77,11 +86,10 @@
           <span class="resume-place">HUME — Belief-Revision Engine for Biology Research Findings</span>
           <span class="resume-date">Jul 2026</span>
         </div>
-        <span class="resume-role">1st Place, CORTEX BioSciences Track @ Hack the 6ix ($1,500 + work trial) &middot; Python (no external libraries), Knowledge Graphs, Adversarial Robustness, Metamorphic Testing</span>
+        <span class="resume-role">1st Place, CORTEX BioSciences Track @ Hack the 6ix ($1,500) &middot; Python, no external libraries</span>
         <ul class="resume-bullets">
           <li>Built a <strong>deterministic belief-revision engine</strong> (<strong>no LLM</strong>) that ingests streaming evidence into a <strong>knowledge graph</strong>, sizing each update in <strong>log-odds</strong> by evidence strength and scoping refuted claims to the condition that breaks them.</li>
-          <li>Blocked <strong>prompt-injection</strong> structurally. Untrusted text cannot mutate state; writes pass a closed <strong>delta vocabulary</strong> with magnitude from <strong>structured provenance</strong> only. Independent ~90-attack red-team: <strong>zero</strong> text-driven mutations.</li>
-          <li>Locked extraction behind one audited seam with <strong>19 probe suites</strong>: <strong>metamorphic tests</strong> (paraphrase, entity renaming, negation) plus an <strong>AST build guard</strong>, catching two silent false-negative regressions.</li>
+          <li>Blocked <strong>prompt injection</strong> structurally: untrusted text can never write state, and all updates flow through a fixed schema with provenance-derived weights. Independent <strong>90-attack red-team</strong>: <strong>zero</strong> text-driven mutations.</li>
         </ul>
       </div>
       <div class="resume-item">
@@ -91,31 +99,8 @@
         </div>
         <span class="resume-role">Python, Pandas, NumPy, yfinance</span>
         <ul class="resume-bullets">
-          <li>Optimized a <strong>$1M portfolio</strong> achieved <strong>5.7% return</strong> vs. 3.7% market average benchmark, placing <strong>1st out of 18 teams</strong>.</li>
-          <li>Implemented a <strong>multi-factor portfolio construction pipeline</strong> applying momentum, volatility, correlation, and trend signals inspired by the <strong>Ranked Asset Allocation Model</strong> (RAAM).</li>
-          <li>Automated end-to-end: data ingestion, liquidity screening, factor ranking, <strong>sector-cap enforcement</strong>, and <strong>Sharpe-ratio optimization</strong> under real-world constraints (transaction fees, FX conversion, position limits).</li>
+          <li>Simulated <strong>$1M portfolio</strong> returned <strong>5.7%</strong> vs. a 3.7% benchmark, placing <strong>1st of 18 teams</strong>; built a <strong>multi-factor pipeline</strong> (momentum, volatility, trend) with <strong>sector-cap enforcement</strong> and <strong>Sharpe-ratio optimization</strong> under real-world constraints.</li>
         </ul>
-      </div>
-      <div class="resume-item">
-        <div class="resume-item-header">
-          <span class="resume-place">ChessAI — Neural Network Chess Engine</span>
-          <span class="resume-date">Nov 2025</span>
-        </div>
-        <span class="resume-role">Python, PyTorch, Modal</span>
-        <ul class="resume-bullets">
-          <li>Trained a <strong>neural-network chess engine</strong> on millions of <strong>Stockfish-labeled positions</strong> using <strong>distributed GPU compute</strong> on Modal; designed a scalable ML pipeline for ingesting and labeling large Lichess datasets.</li>
-          <li>Integrated classical <strong>alpha-beta search</strong> with <strong>deep neural evaluation</strong> for real-time gameplay, balancing search depth with inference latency.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="resume-section">
-      <h3>Technical Skills</h3>
-      <div class="resume-skills-list">
-        <div class="resume-skill-row"><span class="resume-skill-cat">Languages</span><span>Python, C#, C, C++, SQL, TypeScript, JavaScript, HTML/CSS</span></div>
-        <div class="resume-skill-row"><span class="resume-skill-cat">Frameworks</span><span>FastAPI, Next.js, .NET, PyTorch, Pandas, NumPy, Celery, SQLAlchemy, PyIceberg, DuckDB</span></div>
-        <div class="resume-skill-row"><span class="resume-skill-cat">Infrastructure</span><span>PostgreSQL, SQL Server, SSMS, Supabase, Redis, Modal, AWS (S3, Athena, EventBridge, CodePipeline), Terraform, Apache Iceberg, Lakeflow, Kafka, Cloudflare R2, Git, Linux, Power BI</span></div>
-        <div class="resume-skill-row"><span class="resume-skill-cat">Tools</span><span>Jira, Postman, FFmpeg, OpenCV, YOLOv8, Selenium, Alembic, Docker, Roboflow</span></div>
       </div>
     </div>
 

@@ -161,7 +161,7 @@ html, body {
   background: var(--off-white);
   border: 1px solid var(--off-white);
   border-radius: 999px;
-  color: var(--black);
+  color: var(--red);
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
   white-space: nowrap;
@@ -275,7 +275,7 @@ html, body {
 
 .col-bg--end {
   background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 45%, var(--black) 100%);
-  opacity: 0.3;
+  opacity: 0.9;
 }
 /* Bigger, louder end statement */
 .col-end .col-title--end {
@@ -299,7 +299,12 @@ html, body {
 }
 .end-email:hover { color: var(--white); border-color: var(--white); }
 
-.col-end .cta-btn--end { align-self: flex-start; }   /* standard red CTA: the column's one accent */
+.col-end .cta-btn--end {
+  background: var(--white);
+  color: var(--red);
+  align-self: flex-start;
+}
+.col-end .cta-btn--end:hover { background: var(--off-white); color: var(--red-dark); }
 
 /* ── COLUMN INNER (content sits above bg + carousel) ── */
 .col-inner {
@@ -317,7 +322,7 @@ html, body {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--gray-lite);
+  color: var(--red);
   text-transform: uppercase;
   margin-bottom: 16px;
 }
@@ -327,7 +332,7 @@ html, body {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.25em;
-  color: var(--gray-lite);
+  color: var(--red);
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -459,17 +464,15 @@ html, body {
   flex-direction: column;
   gap: 6px;
   padding-left: 14px;
-  border-left: 2px solid var(--gray-mid);
+  border-left: 2px solid var(--red);
   cursor: default;
-  transition: border-color 0.25s ease;
 }
-.skill-block:hover { border-left-color: var(--red); }
 
 .skill-cat {
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--gray-lite);
+  color: var(--red);
   text-transform: uppercase;
   transition: color 0.25s ease;
 }
@@ -516,16 +519,16 @@ html, body {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--off-white);
+  color: var(--red);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding-bottom: 2px;
-  border-bottom: 1px solid var(--gray-mid);
+  border-bottom: 1px solid var(--red);
   transition: color 0.2s, border-color 0.2s;
 }
-.project-link:hover { color: var(--red); border-color: var(--red); }
+.project-link:hover { color: var(--white); border-color: var(--white); }
 
 /* ── SKILLS HOVER REVEAL ── */
 .col-skills { cursor: default; }
@@ -553,6 +556,7 @@ html, body {
   transition-delay: 0.06s;
 }
 
+.col-skills:hover { background: rgba(191,44,58,0.03); }
 
 /* ── PROJECT TEXT BOX — structural only, no visual ── */
 .project-text-box {
@@ -578,7 +582,7 @@ html, body {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gray-lite);
+  color: var(--red);
   background: none;
   padding: 0;
   pointer-events: none;
@@ -663,6 +667,7 @@ html, body {
   max-height: 420px;
 }
 
+.col-project:hover { background: rgba(191,44,58,0.04); }
 
 /* ── "ALSO BUILT" LIST COLUMN ──
    A typographic column: no image, content always visible, each row opens
@@ -826,8 +831,8 @@ html, body {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gray-lite);
-  border: 1px solid var(--gray-mid);
+  color: var(--red);
+  border: 1px solid var(--red);
   border-radius: 999px;
   padding: 3px 12px;
   margin-bottom: 14px;
@@ -853,7 +858,7 @@ html, body {
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--gray-lite);
+  color: var(--red);
   text-transform: uppercase;
 }
 .contact-list a {
@@ -931,7 +936,7 @@ html, body {
   content: '–';
   position: absolute;
   left: 0;
-  color: var(--gray-lite);
+  color: var(--red);
 }
 
 .resume-section {
@@ -941,7 +946,7 @@ html, body {
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--gray-lite);
+  color: var(--red);
   text-transform: uppercase;
   margin-bottom: 16px;
   padding-bottom: 8px;
@@ -959,7 +964,7 @@ html, body {
 }
 .resume-date {
   font-size: 0.7rem;
-  color: var(--gray-lite);
+  color: var(--red);
   letter-spacing: 0.08em;
   display: block;
   margin-bottom: 6px;
@@ -1113,7 +1118,7 @@ html, body {
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--gray-lite);
+  color: var(--red);
 }
 
 .project-modal-date {
@@ -1136,7 +1141,7 @@ html, body {
 .project-modal-sub {
   font-size: 0.75rem;
   letter-spacing: 0.08em;
-  color: var(--gray-lite);
+  color: var(--red);
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -1307,6 +1312,7 @@ html, body {
 
 /* Project columns */
 .col-project.is-in-view .col-bg        { opacity: 0.9; }
+.col-project.is-in-view                { background: rgba(191,44,58,0.04); }
 .col-project.is-in-view .section-label {
   max-height: 30px;
   opacity: 1;
@@ -1329,6 +1335,7 @@ html, body {
 .col-about.is-in-view .col-bg--about   { opacity: 0.85; }
 
 /* Skills column */
+.col-skills.is-in-view                 { background: rgba(191,44,58,0.03); }
 .col-skills.is-in-view .section-label  {
   max-height: 30px;
   opacity: 1;

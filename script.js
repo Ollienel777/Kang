@@ -51,10 +51,7 @@ const HERO_IMAGES = [
 const COLUMN_IMAGES = [
   'Images/ColumnThumbnail/Aquanow.webp',
   'Images/ColumnThumbnail/ClipFarm.webp',
-  'Images/ColumnThumbnail/ML_Chess_Model.webp',
   'Images/ColumnThumbnail/CFM_Market_Beat.webp',
-  'Images/ColumnThumbnail/quilify.webp',
-  'Images/ColumnThumbnail/TBPoker.webp',
   'Images/ColumnThumbnail/TechStack.webp',
   'Images/Garden/20250719_115730_cpy.webp',
 ];
@@ -292,6 +289,10 @@ window.addEventListener('mouseup', () => {
 
 // ── PROJECT COLUMN → MODAL ──
 document.querySelectorAll('.col-project').forEach(col => {
+  // The "Also built" list column has no card-level modal — each of its rows
+  // opens its own via [data-modal]. Skip the cue and the whole-card click.
+  if (!col.dataset.projectModal) return;
+
   // Inject an "OPEN ›" affordance chip that reveals with the hover cascade
   const cue = document.createElement('span');
   cue.className = 'project-open-cue';

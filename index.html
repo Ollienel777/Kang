@@ -14,10 +14,7 @@
   <link rel="preload" as="image" href="Images/ColumnThumbnail/TechStack.webp" type="image/webp" />
   <link rel="preload" as="image" href="Images/ColumnThumbnail/Aquanow.webp" type="image/webp" />
   <link rel="preload" as="image" href="Images/ColumnThumbnail/ClipFarm.webp" type="image/webp" />
-  <link rel="preload" as="image" href="Images/ColumnThumbnail/ML_Chess_Model.webp" type="image/webp" />
   <link rel="preload" as="image" href="Images/ColumnThumbnail/CFM_Market_Beat.webp" type="image/webp" />
-  <link rel="preload" as="image" href="Images/ColumnThumbnail/quilify.webp" type="image/webp" />
-  <link rel="preload" as="image" href="Images/ColumnThumbnail/TBPoker.webp" type="image/webp" />
 </head>
 <body>
 
@@ -245,72 +242,29 @@ challenge is just figuring out where to start.
       <div class="col-bg col-bg--p3"></div>
     </section>
 
-    <!-- COLUMN 6 — ChessAI -->
-    <section class="col col-project" data-type="project" data-skills="ml-ai" data-project-modal="project-chessai">
+    <!-- COLUMN — Also built (compact list; each row opens its own modal) -->
+    <section class="col col-project col-project--list" data-type="project" data-skills="ml-ai,web,tools">
       <div class="col-inner">
-        <div class="project-text-box">
-          <div class="section-label">08 &nbsp;/&nbsp; PROJECTS</div>
-          <h2 class="col-title">CHESS<br/>AI</h2>
-          <div class="project-details">
-            <p class="col-body">
-              Neural-network chess engine trained on millions of Stockfish-labeled
-              positions using distributed GPU compute on Modal. Classical alpha-beta
-              search paired with deep neural evaluation for real-time gameplay,
-              balancing search depth with inference latency.
-            </p>
-            <div class="project-tags">
-              <span>Python</span><span>PyTorch</span><span>Modal</span>
-            </div>
-            <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
-          </div>
+        <div class="section-label">08 &nbsp;/&nbsp; ALSO BUILT</div>
+        <h2 class="col-title">ALSO<br/>BUILT</h2>
+        <div class="also-list">
+          <button class="also-row" data-modal="project-chessai">
+            <span class="also-name">ChessAI</span>
+            <span class="also-desc">Neural-network chess engine trained on millions of Stockfish-labeled positions on Modal; alpha-beta search paired with neural evaluation.</span>
+            <span class="also-tags">Python · PyTorch · Modal</span>
+          </button>
+          <button class="also-row" data-modal="project-quillify">
+            <span class="also-name">QuillifyEdu</span>
+            <span class="also-desc">Educational content platform on ASP.NET Core 8 with Identity auth, Entity Framework and SQL Server.</span>
+            <span class="also-tags">C# · ASP.NET Core · SQL Server</span>
+          </button>
+          <button class="also-row" data-modal="project-tbpoker">
+            <span class="also-name">TBPoker</span>
+            <span class="also-desc">Discord bot tracking poker stats and a live leaderboard, persisted through Google Sheets.</span>
+            <span class="also-tags">Python · Discord.py · Google Sheets API</span>
+          </button>
         </div>
       </div>
-      <div class="col-bg col-bg--p2"></div>
-    </section>
-
-    <!-- COLUMN 7 — QuillifyEdu -->
-    <section class="col col-project" data-type="project" data-skills="web" data-project-modal="project-quillify">
-      <div class="col-inner">
-        <div class="project-text-box">
-          <div class="section-label">09 &nbsp;/&nbsp; PROJECTS</div>
-          <h2 class="col-title">QUILLIFY<br/>EDU</h2>
-          <div class="project-details">
-            <p class="col-body">
-              Educational content management platform built with ASP.NET Core.
-              Full user auth with email confirmation, account lockout policies,
-              and strong password enforcement. Notes management, contact forms,
-              and content creation with Entity Framework + SQL Server.
-            </p>
-            <div class="project-tags">
-              <span>C#</span><span>ASP.NET Core</span><span>Razor Pages</span>
-              <span>Entity Framework</span><span>SQL Server</span><span>Bootstrap</span>
-            </div>
-            <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-bg col-bg--p4"></div>
-    </section>
-
-    <!-- COLUMN 8 — TBPoker -->
-    <section class="col col-project" data-type="project" data-skills="tools" data-project-modal="project-tbpoker">
-      <div class="col-inner">
-        <div class="project-text-box">
-          <div class="section-label">10 &nbsp;/&nbsp; PROJECTS</div>
-          <h2 class="col-title">TBPOKER</h2>
-          <div class="project-details">
-            <p class="col-body">
-              Discord bot managing poker stats and a live leaderboard for a private server.
-              Integrates with Google Sheets for persistent player data and real-time chip tracking.
-            </p>
-            <div class="project-tags">
-              <span>Python</span><span>Discord.py</span><span>Google Sheets API</span><span>gspread</span>
-            </div>
-            <a href="https://github.com/Ollienel777" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB ›</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-bg col-bg--p5"></div>
     </section>
 
     <!-- COLUMN 10 — End / CTA -->
@@ -533,7 +487,7 @@ challenge is just figuring out where to start.
       </div>
       <div class="project-modal-content">
         <div class="project-modal-meta">
-          <span class="project-modal-num">10</span>
+          <span class="project-modal-num">08</span>
           <span class="project-modal-date">2024</span>
         </div>
         <h2 class="project-modal-title">TBPoker</h2>
@@ -649,7 +603,7 @@ challenge is just figuring out where to start.
       </div>
       <div class="project-modal-content">
         <div class="project-modal-meta">
-          <span class="project-modal-num">09</span>
+          <span class="project-modal-num">08</span>
           <span class="project-modal-date">2025</span>
         </div>
         <h2 class="project-modal-title">QuillifyEdu</h2>

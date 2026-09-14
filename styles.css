@@ -245,29 +245,10 @@ html, body {
     url('Images/ColumnThumbnail/ClipFarm.webp') center / cover no-repeat;
   opacity: 0.55;
 }
-.col-bg--p2 {
-  background:
-    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/ColumnThumbnail/ML_Chess_Model.webp') center / cover no-repeat;
-  opacity: 0.55;
-}
 .col-bg--p3 {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
     url('Images/ColumnThumbnail/CFM_Market_Beat.webp') center / cover no-repeat;
-  opacity: 0.55;
-}
-.col-bg--p4 {
-  background:
-    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/ColumnThumbnail/quilify.webp') center / cover no-repeat;
-  opacity: 0.55;
-}
-
-.col-bg--p5 {
-  background:
-    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
-    url('Images/ColumnThumbnail/TBPoker.webp') center / cover no-repeat;
   opacity: 0.55;
 }
 
@@ -679,6 +660,66 @@ html, body {
 }
 
 .col-project:hover { background: rgba(191,44,58,0.04); }
+
+/* ── "ALSO BUILT" LIST COLUMN ──
+   A typographic column: no image, content always visible, each row opens
+   its own modal. Doubled class selectors out-rank the generic .col-project
+   card rules (hidden label, scrim, pointer cursor, hover tint). */
+.col-project.col-project--list { cursor: default; }
+.col-project.col-project--list:hover { background: none; }
+.col-project.col-project--list .col-inner::after { display: none; }
+.col-project.col-project--list .section-label {
+  max-height: none;
+  opacity: 1;
+  margin-bottom: 16px;
+}
+
+.also-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.also-row {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--gray-mid);
+  padding: 18px 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+.also-row:first-child { border-top: 0; padding-top: 0; }
+.also-row:last-child  { padding-bottom: 0; }
+
+.also-name {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+  transition: color 0.2s ease;
+}
+.also-row:hover .also-name { color: var(--red); }
+
+.also-desc {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--gray-lite);
+  margin-bottom: 8px;
+}
+
+.also-tags {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-lite);
+}
 
 /* ── END COLUMN ── */
 .cta-btn {

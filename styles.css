@@ -273,14 +273,21 @@ html, body {
   opacity: 0.75;
 }
 
-/* Skrypt Health and Dogwatch have no photo yet — placeholder art keeps the
-   column reading as a card rather than an empty panel. Swap the url() when
-   real images land, and drop the extra dimming if the photo is dark. */
-.col-bg--skrypt,
-.col-bg--dogwatch {
+/* Skrypt Health has no photo yet — placeholder art keeps the column reading
+   as a card rather than an empty panel. Swap the url() when a real image lands. */
+.col-bg--skrypt {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
     url('Images/placeholder.svg') center / cover no-repeat;
+  opacity: 0.55;
+}
+
+/* The prize shot is the cover: in a 380px column it keeps both of us in frame,
+   where the wide backdrop photo cuts one of us off. That one lives in the modal. */
+.col-bg--dogwatch {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/ColumnThumbnail/Dogwatch_Prize.webp') center 35% / cover no-repeat;
   opacity: 0.55;
 }
 

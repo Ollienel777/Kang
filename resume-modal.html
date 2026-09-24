@@ -23,7 +23,8 @@
         </div>
         <span class="resume-role">Bachelor of Computing and Financial Management (CFM)</span>
         <ul class="resume-bullets">
-          <li><strong>Activities:</strong> Poker Club Executive, Competitive Intramural Volleyball Captain, Training for Ironman 70.3 Muskoka 2027</li>
+          <li><strong>Activities:</strong> Competitive Intramural Volleyball Captain, Training for Ironman 70.3 Muskoka 2027</li>
+          <li><strong>Awards:</strong> 1st of 18, Market Beat Portfolio Competition (2025)</li>
         </ul>
       </div>
     </div>
@@ -40,6 +41,16 @@
 
     <div class="resume-section">
       <h3>Experience</h3>
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <span class="resume-place">Skrypt Health</span>
+          <span class="resume-date">Sep 2026 – Present</span>
+        </div>
+        <span class="resume-role">AI Engineer (Part-time) &mdash; Remote</span>
+        <ul class="resume-bullets">
+          <li>Building <strong>lab-result triage</strong> on a live EHR, routing abnormal results into a staff review queue. Designed an <strong>autonomous coding harness</strong>, and fixed a <strong>production outage</strong> that had hidden every clinic support request since launch.</li>
+        </ul>
+      </div>
       <div class="resume-item">
         <div class="resume-item-header">
           <span class="resume-place">Aquanow</span>
@@ -60,8 +71,7 @@
         </div>
         <span class="resume-role">Software Engineer Intern &mdash; Ottawa, ON</span>
         <ul class="resume-bullets">
-          <li>Built <strong>4 C#/SQL Server ETL pipelines</strong> joining multiple Jira endpoints with internal tables into reporting tables, using <strong>temporal tables</strong> for full change-history tracking.</li>
-          <li>Audited and catalogued all team pipelines, documenting faulty custom-field mappings in a reference that became the team&rsquo;s standard <strong>debugging resource</strong>; maintained <strong>Power BI</strong> dashboards for trouble-report visibility.</li>
+          <li>Built <strong>4 C#/SQL Server ETL pipelines</strong> from Jira into reporting tables with <strong>temporal</strong> change history, and audited every team pipeline into the reference that became the team&rsquo;s standard <strong>debugging resource</strong>.</li>
         </ul>
       </div>
     </div>
@@ -73,12 +83,21 @@
           <span class="resume-place">ClipFarm — Automated Volleyball Highlight Generator</span>
           <span class="resume-date">Mar 2026 – Present</span>
         </div>
-        <span class="resume-role">Python, FastAPI, Celery, Redis, Modal, TypeScript, YOLOv8-pose, Roboflow, PostgreSQL, Docker, R2</span>
+        <span class="resume-role">Founded and lead a team of 4 &middot; Python, FastAPI, Celery, Redis, Modal, TypeScript, YOLOv8-pose</span>
         <ul class="resume-bullets">
-          <li><strong>Founded and lead a team of 4 engineers</strong> building a <strong>multi-signal highlight pipeline</strong>: a custom-trained ball detector bounds rallies by trajectory, audio cheer detection and rally-shape scoring gate highlights, and <strong>YOLOv8-pose</strong> classifies player actions.</li>
-          <li>Containerized with <strong>Docker Compose</strong>: <strong>FastAPI</strong> serves auth-gated endpoints, <strong>Celery + Redis</strong> distributes jobs, <strong>Modal</strong> offloads GPU inference; auth via <strong>Supabase JWKS</strong> with <strong>Row-Level Security</strong>.</li>
-          <li>Built the <strong>Next.js + TypeScript</strong> frontend: filterable clip grid, inline multi-label correction UI feeding future training, background clip re-cut via Celery, and lazy-loaded thumbnails.</li>
-          <li>Built an <strong>autonomous overnight AI agent loop</strong> that clears non-blocking tickets, opens PRs with multi-pass automated review, and reports each morning for human sign-off.</li>
+          <li>Turns a full match video into a filtered feed of <strong>highlight clips</strong>: a custom-trained ball detector bounds rallies by trajectory, cheer audio and rally-shape scoring keep the ones worth watching, and <strong>YOLOv8-pose</strong> labels each by action.</li>
+          <li>Full stack: <strong>FastAPI</strong> endpoints with <strong>Supabase JWKS</strong> auth and <strong>Row-Level Security</strong>, <strong>Celery + Redis</strong> jobs, <strong>Modal</strong> GPU inference, and a <strong>Next.js</strong> clip grid whose correction UI feeds future training.</li>
+        </ul>
+      </div>
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <span class="resume-place">Dogwatch — Arctic Search Fleet Coordinator</span>
+          <span class="resume-date">Sep 2026</span>
+        </div>
+        <span class="resume-role">2nd Place, Dominion Dynamics WHITEOUT Track @ Hack the North 2026 ($1,000) &middot; Python, MAVLink, ArduPilot</span>
+        <ul class="resume-bullets">
+          <li>Four machines (quadcopter, fixed-wing, two towers) search a <strong>25 km Arctic strait</strong> for an unlit vessel and hold a track once found; a water-only <strong>probability field</strong> counts every empty camera sweep as evidence, so the fleet reasons instead of sweeping.</li>
+          <li>Designed the <strong>autonomous build harness</strong> our two-person team ran on: planner, implementer, reviewer and fixer agents in isolated worktrees off a ranked backlog; <strong>56 merged PRs</strong> and <strong>739 tests</strong> in <strong>29 hours</strong>.</li>
         </ul>
       </div>
       <div class="resume-item">
@@ -88,18 +107,7 @@
         </div>
         <span class="resume-role">1st Place, CORTEX BioSciences Track @ Hack the 6ix ($1,500) &middot; Python, no external libraries</span>
         <ul class="resume-bullets">
-          <li>Built a <strong>deterministic belief-revision engine</strong> (<strong>no LLM</strong>) that ingests streaming evidence into a <strong>knowledge graph</strong>, sizing each update in <strong>log-odds</strong> by evidence strength and scoping refuted claims to the condition that breaks them.</li>
-          <li>Blocked <strong>prompt injection</strong> structurally: untrusted text can never write state, and all updates flow through a fixed schema with provenance-derived weights. Independent <strong>90-attack red-team</strong>: <strong>zero</strong> text-driven mutations.</li>
-        </ul>
-      </div>
-      <div class="resume-item">
-        <div class="resume-item-header">
-          <span class="resume-place">Multi-Factor Portfolio Advisor — 1st Place, Market Beat Competition</span>
-          <span class="resume-date">Nov 2025</span>
-        </div>
-        <span class="resume-role">Python, Pandas, NumPy, yfinance</span>
-        <ul class="resume-bullets">
-          <li>Simulated <strong>$1M portfolio</strong> returned <strong>5.7%</strong> vs. a 3.7% benchmark, placing <strong>1st of 18 teams</strong>; built a <strong>multi-factor pipeline</strong> (momentum, volatility, trend) with <strong>sector-cap enforcement</strong> and <strong>Sharpe-ratio optimization</strong> under real-world constraints.</li>
+          <li>Reads a stream of biology findings and tracks which claims still hold, sizing each update in <strong>log-odds</strong> and scoping refutations to the condition that breaks them. <strong>No LLM</strong>, and an independent <strong>90-attack red team</strong> produced <strong>zero</strong> text-driven mutations.</li>
         </ul>
       </div>
     </div>

@@ -273,6 +273,17 @@ html, body {
   opacity: 0.75;
 }
 
+/* Skrypt Health and Dogwatch have no photo yet — placeholder art keeps the
+   column reading as a card rather than an empty panel. Swap the url() when
+   real images land, and drop the extra dimming if the photo is dark. */
+.col-bg--skrypt,
+.col-bg--dogwatch {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/placeholder.svg') center / cover no-repeat;
+  opacity: 0.55;
+}
+
 .col-bg--end {
   /* Quiet close: near-black field with a trace of red in one corner. */
   background: linear-gradient(160deg, var(--red-dark) 0%, var(--black) 55%);

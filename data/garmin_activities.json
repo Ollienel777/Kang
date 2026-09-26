@@ -1,8 +1,18 @@
 {
   "source": "garmin",
-  "fetched_at": "2026-09-25 13:13:44",
-  "count": 35,
+  "fetched_at": "2026-09-26 12:38:58",
+  "count": 36,
   "activities": [
+    {
+      "id": "garmin-24498378468",
+      "source": "garmin",
+      "name": "Strength",
+      "date": "2026-09-25",
+      "start": "2026-09-25 17:52:39",
+      "sport": "lift",
+      "moving_time": 388.8370056152344,
+      "distance": 0.0
+    },
     {
       "id": "garmin-24352181466",
       "source": "garmin",

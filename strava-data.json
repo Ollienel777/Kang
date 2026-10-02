@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01",
+  "updated_at": "2026-10-02",
   "totals": {
     "all_time_km": 1774.4,
     "ytd_km": 946.7,
@@ -20,10 +20,10 @@
       "ytd_time": "1:56:09"
     },
     "ride": {
-      "all_time_km": 360.0,
-      "ytd_km": 360.0,
-      "ytd_count": 11,
-      "ytd_time": "13:35:23"
+      "all_time_km": 382.6,
+      "ytd_km": 382.6,
+      "ytd_count": 12,
+      "ytd_time": "14:24:56"
     }
   },
   "best_efforts": {
@@ -246,6 +246,14 @@
     ],
     "ride": [
       {
+        "id": "garmin-24571322623",
+        "name": "Indoor Cycling",
+        "distance": 22.53,
+        "time": "49:33",
+        "perf": "27.3 km/h",
+        "date": "2026-10-01"
+      },
+      {
         "id": "garmin-23962675955",
         "name": "Indoor Cycling",
         "distance": 14.4,
@@ -284,14 +292,6 @@
         "time": "3:21:57",
         "perf": "26.7 km/h",
         "date": "2026-07-04"
-      },
-      {
-        "id": "strava-19073030654",
-        "name": "Afternoon Ride",
-        "distance": 13.5,
-        "time": "28:55",
-        "perf": "28.0 km/h",
-        "date": "2026-06-25"
       }
     ]
   },
@@ -626,6 +626,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-10-01": {
+      "ride": 22.53
+    },
     "2026-09-27": {
       "run": 6.15
     },

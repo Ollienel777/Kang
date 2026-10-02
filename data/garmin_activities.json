@@ -1,8 +1,18 @@
 {
   "source": "garmin",
-  "fetched_at": "2026-10-01 15:03:30",
-  "count": 37,
+  "fetched_at": "2026-10-02 14:25:24",
+  "count": 38,
   "activities": [
+    {
+      "id": "garmin-24571322623",
+      "source": "garmin",
+      "name": "Indoor Cycling",
+      "date": "2026-10-01",
+      "start": "2026-10-01 14:23:30",
+      "sport": "ride",
+      "moving_time": 2973.802978515625,
+      "distance": 22530.816000000003
+    },
     {
       "id": "garmin-24523861390",
       "source": "garmin",

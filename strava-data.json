@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-10-16",
+  "updated_at": "2026-10-17",
   "totals": {
-    "all_time_km": 1779.9,
-    "ytd_km": 925.6,
-    "ytd_runs": 114,
-    "ytd_time": "93:41:44"
+    "all_time_km": 1789.3,
+    "ytd_km": 935.1,
+    "ytd_runs": 115,
+    "ytd_time": "94:35:27"
   },
   "sport_totals": {
     "run": {
-      "all_time_km": 1779.9,
-      "ytd_km": 925.6,
-      "ytd_count": 114,
-      "ytd_time": "93:41:44"
+      "all_time_km": 1789.3,
+      "ytd_km": 935.1,
+      "ytd_count": 115,
+      "ytd_time": "94:35:27"
     },
     "swim": {
       "all_time_km": 3.9,
@@ -121,6 +121,15 @@
   },
   "recent_runs": [
     {
+      "id": "garmin-24747810367",
+      "name": "Ottawa Running",
+      "distance": 9.42,
+      "time": "53:43",
+      "perf": "5:42 /km",
+      "date": "2026-10-16",
+      "pace": "5:42 /km"
+    },
+    {
       "id": "garmin-24733062243",
       "name": "Ottawa Running",
       "distance": 5.44,
@@ -164,19 +173,18 @@
       "perf": "6:09 /km",
       "date": "2026-09-12",
       "pace": "6:09 /km"
-    },
-    {
-      "id": "garmin-24334574949",
-      "name": "Waterloo Running",
-      "distance": 5.6,
-      "time": "33:38",
-      "perf": "6:00 /km",
-      "date": "2026-09-12",
-      "pace": "6:00 /km"
     }
   ],
   "recent_activities": {
     "run": [
+      {
+        "id": "garmin-24747810367",
+        "name": "Ottawa Running",
+        "distance": 9.42,
+        "time": "53:43",
+        "perf": "5:42 /km",
+        "date": "2026-10-16"
+      },
       {
         "id": "garmin-24733062243",
         "name": "Ottawa Running",
@@ -215,14 +223,6 @@
         "distance": 3.74,
         "time": "22:59",
         "perf": "6:09 /km",
-        "date": "2026-09-12"
-      },
-      {
-        "id": "garmin-24334574949",
-        "name": "Waterloo Running",
-        "distance": 5.6,
-        "time": "33:38",
-        "perf": "6:00 /km",
         "date": "2026-09-12"
       }
     ],
@@ -358,6 +358,7 @@
     ]
   },
   "daily_km": {
+    "2026-10-16": 9.42,
     "2026-10-15": 5.44,
     "2026-09-27": 6.15,
     "2026-09-13": 3.5,
@@ -627,6 +628,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-10-16": {
+      "run": 9.42
+    },
     "2026-10-15": {
       "run": 5.44
     },

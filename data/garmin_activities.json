@@ -1,8 +1,18 @@
 {
   "source": "garmin",
-  "fetched_at": "2026-10-31 14:16:04",
-  "count": 43,
+  "fetched_at": "2026-11-01 14:42:17",
+  "count": 44,
   "activities": [
+    {
+      "id": "garmin-24920328152",
+      "source": "garmin",
+      "name": "Waterloo Running",
+      "date": "2026-10-31",
+      "start": "2026-10-31 12:45:36",
+      "sport": "run",
+      "moving_time": 417.0,
+      "distance": 1321.6099853515625
+    },
     {
       "id": "garmin-24864094029",
       "source": "garmin",

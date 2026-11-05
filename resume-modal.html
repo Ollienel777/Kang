@@ -1,6 +1,8 @@
 <!-- Shared resume modal — injected into both index.html and hobbies.html
      by resume-include.js. Edit this ONE file to update the on-page resume.
-     Mirrors Nelson_Kang_Resume.pdf; the project modals carry the longer versions. -->
+     Mirrors Nelson_Kang_Resume.pdf; the project modals carry the longer versions.
+     The EHR platform (athenahealth) is named, as the resume does; individual
+     clinics and their data never are. -->
 <div class="modal" id="resume-modal">
   <div class="modal-box modal-box--wide">
     <button class="modal-close">✕</button>
@@ -19,11 +21,10 @@
       <div class="resume-item">
         <div class="resume-item-header">
           <span class="resume-place">University of Waterloo</span>
-          <span class="resume-date">Expected Apr 2030</span>
         </div>
         <span class="resume-role">Bachelor of Computing and Financial Management (CFM)</span>
         <ul class="resume-bullets">
-          <li><strong>Activities:</strong> Competitive Intramural Volleyball Captain, Training for Ironman 70.3 Muskoka 2027</li>
+          <li><strong>Activities:</strong> Competitive Intramural Volleyball Captain, Poker Club Executive, Training for Ironman 70.3 Muskoka 2027</li>
           <li><strong>Awards:</strong> 1st of 18, Market Beat Portfolio Competition (2025)</li>
         </ul>
       </div>
@@ -33,9 +34,9 @@
       <h3>Technical Skills</h3>
       <div class="resume-skills-list">
         <div class="resume-skill-row"><span class="resume-skill-cat">Languages</span><span>Python, C#, C, C++, SQL, TypeScript, JavaScript, HTML/CSS</span></div>
-        <div class="resume-skill-row"><span class="resume-skill-cat">Data &amp; Infrastructure</span><span>AWS (S3, Athena, EventBridge, CodePipeline), Apache Iceberg, PyIceberg, DuckDB, Kafka, PostgreSQL, SQL Server, Redis, Docker, Terraform</span></div>
+        <div class="resume-skill-row"><span class="resume-skill-cat">Data &amp; Infrastructure</span><span>AWS (S3, Athena, EventBridge, CodePipeline), Apache Iceberg, PyIceberg, DuckDB, Kafka, PostgreSQL, SQL Server, Redis, Docker, Terraform, Data Pipelines, CI/CD</span></div>
         <div class="resume-skill-row"><span class="resume-skill-cat">Frameworks &amp; Tools</span><span>FastAPI, Next.js, Celery, Modal, Supabase, Pandas, NumPy, Power BI, Postman, Git, Linux</span></div>
-        <div class="resume-skill-row"><span class="resume-skill-cat">ML / CV</span><span>PyTorch, YOLOv8, Roboflow, OpenCV, FFmpeg</span></div>
+        <div class="resume-skill-row"><span class="resume-skill-cat">ML / CV</span><span>PyTorch, YOLOv8, Roboflow, Machine Learning, OpenCV, FFmpeg</span></div>
       </div>
     </div>
 
@@ -44,11 +45,14 @@
       <div class="resume-item">
         <div class="resume-item-header">
           <span class="resume-place">Skrypt Health</span>
-          <span class="resume-date">Sep 2026 – Present</span>
+          <span class="resume-date">Sep 2026 – Oct 2026</span>
         </div>
         <span class="resume-role">AI Engineer (Part-time) &mdash; Remote</span>
         <ul class="resume-bullets">
-          <li>Building <strong>lab-result triage</strong> on a live EHR, routing abnormal results into a staff review queue. Designed an <strong>autonomous coding harness</strong>, and fixed a <strong>production outage</strong> that had hidden every clinic support request since launch.</li>
+          <li>Owned the <strong>autonomous build harness</strong> on <strong>Amazon Bedrock</strong>: cloud agent loops, peaking at <strong>40 jobs a day</strong>, took PRs to a ship verdict for human merge. Jobs held no credentials, and model calls were budget-capped.</li>
+          <li>Shipped <strong>lab results end to end</strong> on a clinic's live <strong>athenahealth EHR</strong>: deterministic triage that staff can audit, plus a <strong>write-back</strong> of reviewed results to the chart, guarded by a re-read before each save.</li>
+          <li>Built the <strong>flagged-call loop</strong>: AI calls that clinics flag as wrong are labeled by root cause, answered with an approved reply, and closed automatically when the fix ships.</li>
+          <li>Merged <strong>99 PRs</strong> across four repos in five weeks. Fixed a <strong>production outage</strong> that had hidden every clinic support request, took a Windows test suite from 148 failures to 0, and cut CI cost.</li>
         </ul>
       </div>
       <div class="resume-item">
@@ -56,12 +60,11 @@
           <span class="resume-place">Aquanow</span>
           <span class="resume-date">Jun 2026 – Aug 2026</span>
         </div>
-        <span class="resume-role">Backend &amp; Data Engineering Co-op &mdash; Toronto, ON</span>
+        <span class="resume-role">Software Engineering Co-op &mdash; Toronto, ON</span>
         <ul class="resume-bullets">
-          <li>Migrated the company-wide month-end client reconciliation from a legacy JavaScript job to a containerized, <strong>Kafka</strong>-triggered <strong>Lakeflow</strong> worker (internal job framework) over <strong>Apache Iceberg</strong>, validating <strong>3,800+</strong> account identities against legacy output; root-caused <strong>two long-standing production discrepancies</strong>.</li>
-          <li>Designed and built an <strong>AI-agent reconciliation workflow</strong> that classifies breaks by failure mode and auto-investigates unexplained residuals, producing review-ready reports for the finance team.</li>
-          <li>Extracted a shared <strong>reconciliation library</strong>, reused it on a second reporting domain alongside a second co-op engineer, and authored the org-level <strong>RFC and ADR</strong> proposing it as a company-wide pattern.</li>
-          <li>Diagnosed and fixed <strong>5 critical production bugs</strong> in a live regulatory reporting pipeline (<strong>Python, AWS S3/Athena, PyIceberg</strong>) submitting daily trading activity to <strong>Turkey&rsquo;s securities depository (MKK)</strong>, including a full-day snapshot-boundary offset and an in-asset fee misattribution; restored reconciliation from <strong>0 to all 107 currencies</strong>.</li>
+          <li>Fixed <strong>5 critical production bugs</strong> in a live regulatory pipeline (<strong>Python, AWS S3/Athena, PyIceberg</strong>) reporting to <strong>Turkey&rsquo;s securities depository (MKK)</strong>; restored reconciliation from <strong>0 to all 107 currencies</strong>.</li>
+          <li>Extracted a shared <strong>reconciliation library</strong> with an <strong>AI-agent workflow</strong> that classifies and investigates breaks, reused it on a second domain with another co-op, and wrote the org-level <strong>RFC and ADR</strong> proposing it company-wide.</li>
+          <li>Migrated company-wide month-end reconciliation onto <strong>Apache Iceberg</strong>, validating <strong>3,800+</strong> account identities.</li>
         </ul>
       </div>
       <div class="resume-item">
@@ -80,10 +83,21 @@
       <h3>Projects</h3>
       <div class="resume-item">
         <div class="resume-item-header">
+          <span class="resume-place">Skein — Decision Layer for Coding Agents</span>
+          <span class="resume-date">Oct 2026 – Present</span>
+        </div>
+        <span class="resume-role">Solo &middot; TypeScript, MCP, Claude API, AWS &middot; <a href="https://skeinai.ca" target="_blank" rel="noopener">skeinai.ca</a></span>
+        <ul class="resume-bullets">
+          <li>Coding agents ask Skein before stopping for a person: it answers from the team's <strong>recorded decisions</strong> with a citation, or routes the question to the one person who owns it, and records the answer so the next ask settles.</li>
+          <li>Built and deployed in two weeks by an <strong>agent build loop</strong> I designed (fresh-agent reviews, fixers, CI gates): <strong>74 merged PRs</strong>, plus a <strong>replay eval</strong> that scores each citation against the record as it stood when asked.</li>
+        </ul>
+      </div>
+      <div class="resume-item">
+        <div class="resume-item-header">
           <span class="resume-place">ClipFarm — Automated Volleyball Highlight Generator</span>
           <span class="resume-date">Mar 2026 – Present</span>
         </div>
-        <span class="resume-role">Founded and lead a team of 4 &middot; Python, FastAPI, Celery, Redis, Modal, TypeScript, YOLOv8-pose</span>
+        <span class="resume-role">Founded and lead a team of 4 &middot; Python, FastAPI, Celery, Redis, Modal, TypeScript, YOLOv8-pose &middot; <a href="https://clipfarm.ca" target="_blank" rel="noopener">clipfarm.ca</a></span>
         <ul class="resume-bullets">
           <li>Turns a full match video into a filtered feed of <strong>highlight clips</strong>: a custom-trained ball detector bounds rallies by trajectory, cheer audio and rally-shape scoring keep the ones worth watching, and <strong>YOLOv8-pose</strong> labels each by action.</li>
           <li>Full stack: <strong>FastAPI</strong> endpoints with <strong>Supabase JWKS</strong> auth and <strong>Row-Level Security</strong>, <strong>Celery + Redis</strong> jobs, <strong>Modal</strong> GPU inference, and a <strong>Next.js</strong> clip grid whose correction UI feeds future training.</li>
@@ -94,20 +108,9 @@
           <span class="resume-place">Dogwatch — Arctic Search Fleet Coordinator</span>
           <span class="resume-date">Sep 2026</span>
         </div>
-        <span class="resume-role">2nd Place, Dominion Dynamics WHITEOUT Track @ Hack the North 2026 ($1,000) &middot; Python, MAVLink, ArduPilot</span>
+        <span class="resume-role">2nd Place, Dominion Dynamics WHITEOUT @ Hack the North 2026 ($1,000) &middot; Python, MAVLink, ArduPilot</span>
         <ul class="resume-bullets">
-          <li>Four machines (quadcopter, fixed-wing, two towers) search a <strong>25 km Arctic strait</strong> for an unlit vessel and hold a track once found; a water-only <strong>probability field</strong> counts every empty camera sweep as evidence, so the fleet reasons instead of sweeping.</li>
-          <li>Designed the <strong>autonomous build harness</strong> our two-person team ran on: planner, implementer, reviewer and fixer agents in isolated worktrees off a ranked backlog; <strong>56 merged PRs</strong> and <strong>739 tests</strong> in <strong>29 hours</strong>.</li>
-        </ul>
-      </div>
-      <div class="resume-item">
-        <div class="resume-item-header">
-          <span class="resume-place">HUME — Belief-Revision Engine for Biology Research Findings</span>
-          <span class="resume-date">Jul 2026</span>
-        </div>
-        <span class="resume-role">1st Place, CORTEX BioSciences Track @ Hack the 6ix ($1,500) &middot; Python, no external libraries</span>
-        <ul class="resume-bullets">
-          <li>Reads a stream of biology findings and tracks which claims still hold, sizing each update in <strong>log-odds</strong> and scoping refutations to the condition that breaks them. <strong>No LLM</strong>, and an independent <strong>90-attack red team</strong> produced <strong>zero</strong> text-driven mutations.</li>
+          <li>Four machines (quadcopter, fixed-wing, two towers) search a <strong>25 km strait</strong> for an unlit vessel; a <strong>probability field</strong> counts every empty sweep as evidence. Built on my agent harness: <strong>56 merged PRs</strong> and <strong>739 tests</strong> in <strong>29 hours</strong>.</li>
         </ul>
       </div>
     </div>

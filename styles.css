@@ -284,6 +284,14 @@ html, body {
 
 /* The prize shot is the cover: in a 380px column it keeps both of us in frame,
    where the wide backdrop photo cuts one of us off. That one lives in the modal. */
+/* Skein has no photo yet; placeholder art until one exists. */
+.col-bg--skein {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),
+    url('Images/placeholder.svg') center / cover no-repeat;
+  opacity: 0.55;
+}
+
 .col-bg--dogwatch {
   background:
     linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.2) 65%, transparent 100%),

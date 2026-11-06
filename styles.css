@@ -1046,6 +1046,10 @@ html, body {
    type — show the whole image against the panel's grid backdrop instead. */
 .project-modal-thumb--contain { object-fit: contain; }
 
+/* A tall phone screenshot. Beside the text there is room for the whole frame,
+   so show all of it. */
+.project-modal-thumb--shot { object-fit: contain; }
+
 .project-modal-video {
   position: absolute;
   inset: 0;
@@ -1118,6 +1122,22 @@ html, body {
   transition: background 0.2s;
 }
 .carousel-dot.is-active { background: var(--red); }
+
+/* The Skein shot is a demo team of fictional people. The app says so in its own
+   banner, but that line is unreadable once the panel shrinks, so label it too. */
+.project-modal-media-note {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-lite);
+  background: rgba(10, 10, 10, 0.72);
+  border: 1px solid var(--gray-mid);
+  padding: 5px 10px;
+}
 
 .project-modal-media-label {
   font-size: 0.62rem;
@@ -1228,6 +1248,15 @@ html, body {
     border-right: none;
     border-bottom: 1px solid var(--gray-mid);
   }
+  /* Crop to the top of the shot instead, where the demo banner and the inbox
+     heading are, so it stays readable. */
+  .project-modal-thumb--shot {
+    object-fit: cover;
+    object-position: top center;
+  }
+  /* That crop fills the panel and carries the app's own demo banner at a
+     readable size, so the added label is redundant and only covers content. */
+  .project-modal-media-note { display: none; }
   .project-modal-content {
     flex: 1;
     min-width: 0;

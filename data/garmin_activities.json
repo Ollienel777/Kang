@@ -1,8 +1,18 @@
 {
   "source": "garmin",
-  "fetched_at": "2026-11-06 15:38:20",
-  "count": 46,
+  "fetched_at": "2026-11-07 14:38:51",
+  "count": 47,
   "activities": [
+    {
+      "id": "garmin-24993481389",
+      "source": "garmin",
+      "name": "Pool Swim",
+      "date": "2026-11-06",
+      "start": "2026-11-06 22:15:05",
+      "sport": "swim",
+      "moving_time": 536.3489990234375,
+      "distance": 475.0
+    },
     {
       "id": "garmin-24970638556",
       "source": "garmin",

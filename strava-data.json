@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06",
+  "updated_at": "2026-11-07",
   "totals": {
     "all_time_km": 1805.3,
     "ytd_km": 925.0,
@@ -14,10 +14,10 @@
       "ytd_time": "93:34:13"
     },
     "swim": {
-      "all_time_km": 3.9,
-      "ytd_km": 3.9,
-      "ytd_count": 2,
-      "ytd_time": "1:56:09"
+      "all_time_km": 4.4,
+      "ytd_km": 4.4,
+      "ytd_count": 3,
+      "ytd_time": "2:05:05"
     },
     "ride": {
       "all_time_km": 382.6,
@@ -228,6 +228,14 @@
     ],
     "swim": [
       {
+        "id": "garmin-24993481389",
+        "name": "Pool Swim",
+        "distance": 0.47,
+        "time": "8:56",
+        "perf": "1:52/100m",
+        "date": "2026-11-06"
+      },
+      {
         "id": "strava-19179413673",
         "name": "IM113 Swim leg",
         "distance": 1.9,
@@ -312,6 +320,14 @@
         "time": "56:09",
         "perf": "2:57/100m",
         "date": "2026-07-04"
+      },
+      {
+        "id": "garmin-24993481389",
+        "name": "Pool Swim",
+        "distance": 0.47,
+        "time": "8:56",
+        "perf": "1:52/100m",
+        "date": "2026-11-06"
       }
     ],
     "ride": [
@@ -634,6 +650,9 @@
     "2023-07-24": 3.01
   },
   "daily_activities": {
+    "2026-11-06": {
+      "swim": 0.47
+    },
     "2026-11-04": {
       "run": 5.01
     },
